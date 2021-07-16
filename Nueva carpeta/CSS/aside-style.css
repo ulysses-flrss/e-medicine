@@ -2,5 +2,10 @@ aside.mainMenu {
     position: fixed;
     width: 20vw;
     height: 100vh;
-    background-color: aquamarine;
+    background-color: #6ef0b1;
+}
+
+ul.listMenu li {
+    padding: 1vh 5vw;
+    font-size: 1.25vw;
 }
