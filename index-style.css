@@ -1,0 +1,67 @@
+    /*font-family: 'Alegreya Sans SC', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Rubik Mono One', sans-serif;*/
+    /*6ef0b1 - AQUA
+21d873 - AQUA (LETRA E-MEDICINE)
+f14d60 - ROJO
+bf003b - ROJO OSCURO
+fec08c - PIEL CLARO
+da7f3d - PIEL OSCURO
+FFFFFF - CAFE
+*/
+    /*
+    flex-flow{
+    flex-direction 
+    flex-wrap}
+
+    justify-content
+    align-items
+    align-content
+
+    order
+
+    flex{
+    flex-grow
+    flex-shrink
+    flex-basis
+    }
+
+    */
+    
+    * {
+        box-sizing: border-box; 
+        padding: 0;
+        margin: 0;
+    }
+    
+    .allContainer {
+        display: flex;
+        
+    }
+    
+    header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    
+    .bienvenida {
+        text-align: center;
+        font-family: 'Rubik Mono One', sans-serif;
+        font-size: 2.5vw;
+        margin: auto;
+    }
+    
+    .logo {
+        margin: 2vh 2vw;
+        width: 8%;
+        height: 8%;
+        max-width: 100%;
+    }
+
+    section.tablonAnuncios {
+        background-color: grey;
+
+    }
