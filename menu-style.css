@@ -22,8 +22,9 @@ aside.mainMenu {
 }
 
 .editarPerfil  {
-text-align: center;
-    margin: -5vh 0 0 0;
+ text-align: center;
+    margin: 0.1vh 0 0 0 ;
+    font-size: 1vw
 }
 
 li.fecha {
