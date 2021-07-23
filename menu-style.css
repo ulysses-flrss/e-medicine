@@ -21,7 +21,7 @@ aside.mainMenu {
     margin: -5vh 0 0 0;
 }
 
-.editarPerfil  {
+li.editarPerfil  {
  text-align: center;
     margin: 0.1vh 0 0 0 ;
     font-size: 1vw
