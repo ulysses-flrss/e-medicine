@@ -86,14 +86,18 @@ FFFFFF - CAFE
         border-radius: 10px;
         background-color: #ffc69e;
         border: 3px black solid;
+        justify-content: center;
+        vertical-align: middle;
         
         
     }
 
     div#autor {
+        font-weight: bolder;
+        text-align: center;
         padding: 1vh 1vw;
         margin: 1vh 1vw;
-        width: 100vw;
+        width: 50vw;
         height: 6vh;
         font-size: 1.5vw;
         
@@ -101,6 +105,7 @@ FFFFFF - CAFE
         
     }
     div#descripcion{
+        text-align: justify;
         padding: 1vh 1vw;
         width: 46vw;
         margin-bottom: 1.5vh;
@@ -109,8 +114,34 @@ FFFFFF - CAFE
     }
 
     div#fechaPublicacion{
-        padding: 1vh 1vw;
-        font-size: 1vw;   
+        padding: 0.5vh 1vw;
+        font-size: 1.05vw;   
+    }
+
+    section.especialidadesMedica {
+
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        
+        
+    }
+
+    img.imagenEspecialidad{
+        width: 5vw;
+        margin: 5vh 2vw 0vh 0vw;
+    }
+
+    section div {
+        margin: 2vh 2vw;
+        
+    }
+
+    .especialidadNombre{
+        font-family: 'Alegreya Sans SC', sans-serif;
+        font-size: 2vw;
+        
+        
     }
 
 
