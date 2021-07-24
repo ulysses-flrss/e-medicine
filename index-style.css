@@ -26,53 +26,66 @@ FFFFFF - CAFE
     flex-shrink
     flex-basis
     }
-
-    */
+*/
     
+
+:root {
+    --aquaMenu-bg-color: #21d873;
+    --aqua-bg-color:#b2dac6;;
+    --aquaBright-bg-color: #6ef0b1;
+    --red-bg-color: #f14d60;
+    --darkRed-bg-color: #bf003b;
+    --skinBright-bg-color: #fec08c;
+    --skinDark-bg-color: #da7f3d;
+    
+    --font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--font-size);
+
+    --menuFont: 'Alegreya Sans SC', sans-serif;
+    --bienvenidaFont: 'Rubik Mono One', sans-serif;
+    --bodyFont: 
+}   
+
     * {
+        
         box-sizing: border-box; 
         padding: 0;
         margin: 0;
     }
 
+
     body {
-        background-color: #f5ffea;
+        background-color: #e0e0e0;
     }
     
-    .allContainer {
-        display: flex;
-        flex-wrap: wrap;
-        
-        
-    }
     
 
     
     .bienvenida {
+        
         text-align: center;
-        font-family: 'Rubik Mono One', sans-serif;
-        font-size: 2.5vw;
-        margin: auto;
+        font-family: var(--bienvenidaFont);
+        font-size: 3rem;
+        
     }
     
     .logo {
-        margin: 2vh 2vw;
-        width: 8%;
-        height: 8%;
-        max-width: 100%;
-    }
-
-    .mainArticle {
-        margin: auto;
+        display: flex;
+        margin: 2rem 2rem;
+        float: right;
+        width: 8rem;
+        height: 8rem;
     }
 
     section.tablonAnuncios {
         display: flex;
         flex-wrap: wrap;
-        font-size: 1.5vw;
+        font-size: 1.5rem;
         background-color: hsl(27, 100%, 87%);
-        padding: 2vh 2vh;
+        padding: 2rem 2rem;
         width: 50vw;
+        margin: auto;
         height: fit-content;
         justify-content:center;        
         font-family: 'Nunito', sans-serif;
@@ -95,27 +108,27 @@ FFFFFF - CAFE
     div#autor {
         font-weight: bolder;
         text-align: center;
-        padding: 1vh 1vw;
-        margin: 1vh 1vw;
+        padding: 1rem 1rem;
+        margin: 1rem 1rem;
         width: 50vw;
         height: 6vh;
-        font-size: 1.5vw;
+        font-size: 2rem;
         
 
         
     }
     div#descripcion{
         text-align: justify;
-        padding: 1vh 1vw;
+        padding: 1rem 1rem;
         width: 46vw;
         margin-bottom: 1.5vh;
         height:30vh;
-        font-size: 1.5vw;   
+        font-size: 1.75rem;   
     }
 
     div#fechaPublicacion{
         padding: 0.5vh 1vw;
-        font-size: 1.05vw;   
+        font-size: 1.25rem;   
     }
 
     section.especialidadesMedica {

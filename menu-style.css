@@ -1,54 +1,95 @@
-aside.mainMenu {
-    display: flex;
+nav.nav {
     position: fixed;
-    height: 100%;
-    width: 18.5%;
-    font-family: 'Alegreya Sans SC', sans-serif;
+    width: 8rem;
+    height: 100vh;
+    background-color: var(--aquaMenu-bg-color);
+    margin-right: 7.5rem;
+    display: flex;
+    font-family: var(--menuFont);
     
-    background-color: #b2dac6;
-
+    
 }
 
-
-#profilePicture {
-    width: 7vw;
-    margin: 0vh 5vw;
-
+.profile-picture {
+    width: 4rem;
+    
 }
 
-.nombrePaciente {
-    text-align: center;
-    margin: -5vh 0 0 0;
-}
-
-li.editarPerfil  {
- text-align: center;
-    margin: 0.1vh 0 0 0 ;
-    font-size: 1vw
-}
-
-li.fecha {
-    text-align: center;
-    margin: 0.1vh 0 0 0 ;
-    font-size: 1vw
-
-}
-
-
-ul {
-    margin: 0.5vh 1vw;
-    height: auto;
-    justify-content: center;
+.navbar-nav, .nav-header {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    margin: auto;
+    
 }
 
-ul li {
-    font-size: 1.5vw;
-    min-inline-size: 1.5vw;
-    margin:5vh 1vw;
+.nav-header {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    margin-left: 0.1rem !important;
+
 }
 
-ul a {
+
+
+.nav-item {
+    margin: 1.10rem 0;
+    display: flex;
+}
+
+
+.nav-link, .nav-header-link, .nav-header-text {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: #000000;
 }
+
+.nav-header-text {
+    font-size: 1em !important;
+}
+
+.link-text, .nav-header-text {
+    display: none;
+    padding: 0rem 0.5rem;
+    font-size: 1.5em;
+}
+
+.nav-picture {
+    width: 4rem;
+    margin: auto;
+}
+
+/* hovers */
+
+.nav:hover{
+    width: 20rem;
+    margin-right: 7.5rem;
+    transition: 500ms all;
+    
+    
+}
+
+.nav:hover .profile-picture {
+    transition: 300ms;
+    width: 7rem;
+}
+
+.nav:hover .navbar-nav {
+    margin-left: 1rem;
+}
+.nav:hover .link-text, .nav:hover .nav-header-text{
+
+
+    display: block;
+    margin: 0;
+    
+}
+
+
+
+
