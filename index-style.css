@@ -110,9 +110,9 @@ FFFFFF - CAFE
         text-align: center;
         padding: 1rem 1rem;
         margin: 1rem 1rem;
-        width: 50vw;
+        width: 43vw;
         height: 6vh;
-        font-size: 2rem;
+        font-size: calc(100% - 0.1vw);
         
 
         

@@ -1,11 +1,13 @@
 nav.nav {
     position: fixed;
-    width: 8rem;
-    height: 100vh;
+    width: 100vw;
+    height: 5.5rem;
     background-color: var(--aquaMenu-bg-color);
-    margin-right: 7.5rem;
+    margin-bottom: 7.5rem;
     display: flex;
     font-family: var(--menuFont);
+    
+    
     
     
 }
@@ -15,30 +17,35 @@ nav.nav {
     
 }
 
-.navbar-nav, .nav-header {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.navbar-nav{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-items: flex-start;
-    margin: auto;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+
+    
+    
+    
+    
     
 }
 
-.nav-header {
+
+/*.nav-header {
     align-items: flex-start !important;
     justify-content: flex-start !important;
     margin-left: 0.1rem !important;
 
-}
+}*/
 
 
 
 .nav-item {
-    margin: 1.10rem 0;
+    
     display: flex;
+    justify-content: space-between;
+    
 }
 
 
@@ -54,20 +61,30 @@ nav.nav {
 }
 
 .link-text, .nav-header-text {
-    display: none;
+    
     padding: 0rem 0.5rem;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
+
+/*i {
+    width: 4rem;
+    padding-right: 3rem;
+    font-size: 3rem;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+}*/
 
 .nav-picture {
-    width: 4rem;
-    margin: auto;
+    width: 2.5rem;
+    margin: auto auto auto 1rem;
 }
 
-/* hovers */
+
+/* hovers 
 
 .nav:hover{
-    width: 20rem;
+    
     margin-right: 7.5rem;
     transition: 500ms all;
     
