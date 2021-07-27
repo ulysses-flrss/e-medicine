@@ -70,13 +70,7 @@ FFFFFF - CAFE
         
     }
     
-    .logo {
-        display: flex;
-        margin: 2rem 2rem;
-        float: right;
-        width: 8rem;
-        height: 8rem;
-    }
+ 
 
     section.tablonAnuncios {
         display: flex;
@@ -153,8 +147,6 @@ FFFFFF - CAFE
     .especialidadNombre{
         font-family: 'Alegreya Sans SC', sans-serif;
         font-size: 2vw;
-        
-        
     }
 
 

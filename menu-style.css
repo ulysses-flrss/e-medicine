@@ -1,34 +1,27 @@
 nav.nav {
     position: fixed;
     width: 100vw;
-    height: 5.5rem;
+    height: 7rem;
     background-color: var(--aquaMenu-bg-color);
     margin-bottom: 7.5rem;
-    display: flex;
-    font-family: var(--menuFont);
-    
-    
-    
-    
+    font-family: var(--menuFont);  
+}
+
+.logo {
+    width: 5rem;
+    height: auto;
 }
 
 .profile-picture {
-    width: 4rem;
-    
+    width: 4rem; 
 }
 
 .navbar-nav{
     display: flex;
     list-style: none;
     flex-direction: row;
-    justify-content: space-evenly;
-    
-
-    
-    
-    
-    
-    
+    align-items: center;
+    justify-content: space-around;   
 }
 
 
@@ -42,10 +35,10 @@ nav.nav {
 
 
 .nav-item {
-    
     display: flex;
-    justify-content: space-between;
-    
+    align-items: center;
+    padding-top: 1rem;
+    height: 100%;
 }
 
 
@@ -81,30 +74,10 @@ nav.nav {
 }
 
 
-/* hovers 
+/* hovers ¨*/
 
-.nav:hover{
-    
-    margin-right: 7.5rem;
-    transition: 500ms all;
-    
-    
-}
-
-.nav:hover .profile-picture {
-    transition: 300ms;
-    width: 7rem;
-}
-
-.nav:hover .navbar-nav {
-    margin-left: 1rem;
-}
-.nav:hover .link-text, .nav:hover .nav-header-text{
-
-
-    display: block;
-    margin: 0;
-    
+.navbar-nav li:hover  {
+    background-color: var(--aqua-bg-color);
 }
 
 
