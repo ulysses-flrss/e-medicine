@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  background: #E4E4E4;
+}
+/*
+.barraSuperior{
+  top: 0;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  margin-bottom: 25px;
+  padding-top: 20px;
+}
+
+.barraSuperior > div > nav > ul > li{
+  display: inline-block;
+}
+
+.barraSuperior nav{
+  width: 75%;
+  background: darkslategray;
+  border: 8px solid #ffffff;
+  margin: auto;
+  border-radius: 100px;
+  padding: 20px 0 20px 0;
+}
+
+.opciones{
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 22px auto;
+  padding: 0 80px;
+}*/
+
+form{
+  /*margin-left: 500px;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#usuario{
+  font-size: 20px;
+  margin-top: -55px;
+}
+
+#espacioComent{
+  display: block;
+  width: 500px;
+  height: 50px;
+}
+
+#perfil{
+  width: 50px;
+  height: 50px;
+  margin-left: -60px;
+}
+
+#enviar{
+  width: 60px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  margin: 20px auto auto auto;
+}
