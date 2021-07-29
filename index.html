@@ -13,13 +13,13 @@ FFFFFF - CAFE
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display&family=Sacramento&div=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index-style.css">
     <link rel="stylesheet" href="menu-style.css">
-    
+    <script src="jquery-3.6.0.js"></script>
 
     <title>Inicio - eMedicine</title>
 </head>
@@ -48,103 +48,119 @@ FFFFFF - CAFE
                 <img src="logoEMedicine.png" alt="" class="logo">
             </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <img src="imgs/document.png" alt="" class="nav-picture">
+            <li class="nav-item" id="li-cita">
+                <a href="#" class="nav-link" >
+                    <img src="imgs/document.png" alt="" class="nav-picture" id="cita">
                     <span class="link-text">Programar Cita</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <img src="imgs/group.png" alt="" class="nav-picture">
+            <li class="nav-item" id="li-familiares">
+                <a href="#" class="nav-link" >
+                    <img src="imgs/group.png" alt="" class="nav-picture" id="familiares">
                     <span class="link-text">Familiares</span>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" id="li-doctor">
                 <a href="#" class="nav-link">
-                    <img src="imgs/doctor.png" alt="" class="nav-picture">
+                    <img src="imgs/doctor.png" alt="" class="nav-picture" id="doctor">
                     <span class="link-text">Especialidades Medicas</span>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" id="li-faq">
                 <a href="#" class="nav-link">
-                    <img src="imgs/comment.png" alt="" class="nav-picture">
+                    <img src="imgs/faq.png" alt="" class="nav-picture" id="faq">
                     <span class="link-text">Preguntas Frecuentes</span>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" id="li-comentarios">
                 <a href="#" class="nav-link">
-                    <img src="imgs/conversation.png" alt="" class="nav-picture">
+                    <img src="imgs/comment.png" alt="" class="nav-picture" id="comentarios">
                     <span class="link-text">Comentarios</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <img src="imgs/information.png" alt="" class="nav-picture">
+            <li class="nav-item" id="li-about">
+                <a href="#" class="nav-link" id="li-info">
+                    <img src="imgs/information.png" alt="" class="nav-picture" id="about">
                     <span class="link-text">Acerca de Nosotros</span>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" id="li-logout">
                 <a href="#" class="nav-link">
-                    <img src="imgs/logout.png" alt="" class="nav-picture">
+                    <img src="imgs/logout.png" alt="" class="nav-picture" id="logout">
                     <span class="link-text">Cerrar Sesión</span>
                 </a>
             </li>
         </ul>
     </nav>
+    
     <main class="allContainer">
         
 
-        <div class="bienvenida" id="bienvenida">Bienvenido/a @usuario</div>
+        <div class="bienvenida" id="container-bienvenida">
+        <a class="imagen-texto">
+            <div class="img-layout"><img src="psd.jpg" alt="" class="profile-picture"></div>
+            <span class="editar">Editar Perfil</span>
+        </a>
+            <span id="bienvenida">Bienvenido/a Ulises</span>
+    </div>
         
-
 
         <article class="mainArticle">
             <section class="tablonAnuncios">
                 <div class="objetoTablon" id="autor">
                     <span>Ulises Adonay Flores Martínez</span>
                 </div>
-
-                <div class="objetoTablon" id="descripcion">
-                    <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt distinctio provident, expedita et veritatis nostrum iste dignissimos ut, voluptatum non nisi necessitatibus hic aut, ea vero quisquam asperiores minus sed!
-                    </span>
-                </div>
-
                 <div class="objetoTablon" id="fechaPublicacion">
                     <span>16/Julio/2021</span>
                 </div>
+
+                <div class="objetoTablon" id="descripcion">
+                    <span>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
+                    </span>
+                </div>
             </section>
 
-            <section class="especialidadesMedica">
-                <div id="especialidad_1">
-                    <img src="imagenPrueba.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre">Especialidades</div>
-                </div>
-                <div id="especialidad_2">
-                    <img src="imagenPrueba.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre">Especialidades</div>
-                </div>
-                <div id="especialidad_3">
-                    <img src="imagenPrueba.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre">Especialidades</div>
-                </div>
 
+
+            <section class="especialidadesMedica">
+            
+                <a class="div-especialidades">
+                    <img src="imgs/medicina.png" alt="" class="imagenEspecialidad">
+                    <div class="especialidadNombre">Medicina General</div>
+                </a>
+
+                    <a class="div-especialidades">
+                        <img src="imgs/chico.png" alt="" class="imagenEspecialidad">
+                        <div class="especialidadNombre">Pediatría</div>
+                    </a>
+        
+
+                <a class="div-especialidades">
+                    <img src="imgs/idea-genial.png" alt="" class="imagenEspecialidad">
+                    <div class="especialidadNombre">Neurología</div>
+                </a>
+            
+                <a class="div-especialidades">
+                    <img src="imgs/corazon.png" alt="" class="imagenEspecialidad">
+                    <div class="especialidadNombre">Cardiología</div>
+                </a>
 
             </section>
         </article>
 
+
+
         
         
     </main>
-
-
     <script src="javascript.js"></script>
 </body>
 
