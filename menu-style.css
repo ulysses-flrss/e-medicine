@@ -6,6 +6,7 @@ nav.nav {
     background-color: var(--aquaMenu-bg-color);
     margin-bottom: 7.5rem;
     font-family: var(--menuFont);  
+    z-index: 100;
 }
 
 .logo {
@@ -24,6 +25,7 @@ nav.nav {
     list-style: none;
     align-items: center;
     justify-content: space-around;   
+    z-index: 100;
     
 }
 
@@ -106,30 +108,6 @@ nav.nav {
 
 
 }
-
-::-webkit-scrollbar {
-    width: 5px;
-
-}
-
-
-::-webkit-scrollbar-track {
-    color: black;
-    background-color: black;
-}
-
-::-webkit-scrollbar-corner {
-    background-color: red;
-}
-
-::-webkit-scrollbar-track-piece {
-    background-color: var(--aqua-bg-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background-color:#1c7548;
-}
-
 
 
 /* hovers ¨*/

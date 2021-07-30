@@ -16,6 +16,7 @@
     --bienvenidaFont: 'Rubik Mono One', sans-serif;
     --bodyFont: 'Nunito', sans-serif;
     --extraFont: 'Rubik', sans-serif;
+    --footerFont: 'Yanone Kaffeesatz', sans-serif;
 
 }   
 
@@ -231,6 +232,7 @@
         color: #FFFFFF;
         transform: scale(1.03);
     }
+
 
 
 
