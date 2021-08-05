@@ -43,5 +43,5 @@ $(document).ready(function () {
     }, function () {
         $("#logout").attr("src", "imgs/logout.png");
     })
-    
+
 })

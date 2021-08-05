@@ -2,7 +2,6 @@ nav.nav {
     position: fixed;
     width: 100vw;
     height: 7rem;
-
     background-color: var(--aquaMenu-bg-color);
     margin-bottom: 7.5rem;
     font-family: var(--menuFont);  
