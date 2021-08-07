@@ -76,23 +76,33 @@
 
     <main class="all-container">
         <article>
-            <section class="form-cita-container">
+            <section class="form-container">
                 <form action="">
+                
+                    <div class="perfil">
+                        <label for="">Seleccione Perfil:</label>
+                        <select name="" id="">
+                            <option value="">Perfil 1</option>
+                            <option value="">Perfil 2</option>
+                            <option value="">Perfil 2</option>
+                        </select>
+                    </div>
+
                     <div class="first-line">
-                        <label for="">Código:</label>
-                        <input type="text" name="" id="" placeholder="Ingrese su Código">
-                    </div>    
-                        
-                    <div class="second-line">
                         <label for="">Nombre:</label>
                         <input type="text" name="" id="" placeholder="Ingrese su Nombre">
                     </div>
                         
-                    <div class="third-line">
+                    <div class="second-line">
                         <div class="peso">
                             <label for="">Peso(lb):</label>
                             <input type="text" name="" id="" placeholder="Peso en Libras">
                         </div>
+
+                        <div class="fecha">
+                            <label for="">Fecha de Nacimiento:</label>
+                            <input type="date" name="" id="">
+                        </div> 
                         
                         <div class="altura">
                             <label for="">Altura(cm):</label>
@@ -101,34 +111,46 @@
                     </div>
                         
     
-                    <div class="fourth-line">
-                        <div class="fecha">
-                            <label for="">Fecha de Nacimiento:</label>
-                            <input type="date" name="" id="">
-                        </div>
-                        
-                        <div class="genre">
-                            <div class="male">
-                                <label for="masculino">Masculino</label>
-                                <input type="radio" name="gender" id="masculino">
-                            </div>
-                        
-                            
-                            <div class="female">
-                                <label for="femenino">Femenino</label>
-                                <input type="radio" name="gender" id="femenino">
-                            </div>
-    
-                            
-                        </div>
-                        
+                    <div class="third-line">
                         <div class="especialidad-medica">
-                            <label for="especialidad-medica">Municipio</label>
+                            <label for="especialidad-medica">Especialidad Médica</label>
                             <select name="especialidad-medica" id="">
-                                <option value="">--Seleccione una Especialidad Médica</option>
+                                <option value="">-- Seleccione una Especialidad</option>
                                 <option value="Neurología">Neurología</option>
                                 <option value="Cardiología">Cardiología</option>
+                                <option value="Cardiología">Cardiología</option>
+                                <option value="Cardiología">Cardiología</option>
                             </select>
+                        </div>
+
+                        <div class="fecha">
+                            <label for="">Fecha de Cita:</label>
+                            <input type="date" name="" id="">
+                        </div>  
+
+                        <div class="doctor">
+                            <label for="doctor">Elija el doctor</label>
+
+                            <select name="doctor" id="">
+                                <option value="">Ulises Adonay Flores Martínez</option>
+                                <option value="">José David López Pacas</option>
+                                <option value="">José Guillermo Granadino Rivas</option>
+                                <option value="">Jefferson Alexis Castro Castro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="fourth-line">
+                        <div class="enfermedades">
+                            <label for="">Enfermedades Crónicas y Alergias (sino tiene ninguna deje vació este campo)</label>
+                            <input type="text">
+                        </div>
+                    </div>
+
+                    <div class="fifth-line">
+                        <div class="motivo">
+                            <label for="">¿Cuál es la razón de su cita? (escriba sus sintomas   )</label>
+                            <input type="text" name="" id="">
                         </div>
                     </div>
     
@@ -142,7 +164,7 @@
     </main>
 <!--FIN DEL MENÚ-->
 
-<!-- <footer class="footer">
+<footer class="footer">
     <div class="columna1">
         <strong class="titulo-footer">Nuestra Empresa</strong>
         <a href="#" class="footer-item">¿Quienes Somos?</a>
@@ -166,7 +188,7 @@
                 <a href="#" class="footer-item"><i class="fab fa-instagram"></i><span class="red-social">Instagram</span></a>
                 <a href="#" class="footer-item"><i class="fab fa-twitter"></i><span class="red-social">Twitter</span></a>
     </div>
-</footer> -->
+</footer> 
 <script src="javascript.js"></script>
 </body>
 </html>

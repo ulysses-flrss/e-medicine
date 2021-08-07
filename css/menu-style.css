@@ -124,7 +124,7 @@ nav.nav {
     width: 3.5rem;
 }
 
-.navbar-nav:hover .logo{
+.navbar-nav:hover .nav{
     transition: 250ms all;
     width: 5rem;
 }
