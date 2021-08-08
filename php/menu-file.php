@@ -6,14 +6,14 @@
             </li>
 
             <li class="nav-item" id="li-cita">
-                <a href="#" class="nav-link" >
+                <a href="cita.php" class="nav-link" >
                     <img src="imgs/document.png" alt="" class="nav-picture" id="cita">
                     <span class="link-text">Programar Cita</span>
                 </a>
             </li>
 
             <li class="nav-item" id="li-familiares">
-                <a href="#" class="nav-link" >
+                <a href="perfilFamiliares.php" class="nav-link" >
                     <img src="imgs/group.png" alt="" class="nav-picture" id="familiares">
                     <span class="link-text">Familiares</span>
                 </a>
@@ -27,7 +27,7 @@
             </li>
 
             <li class="nav-item" id="li-faq">
-                <a href="#" class="nav-link">
+                <a href="faq.php" class="nav-link">
                     <img src="imgs/faq.png" alt="" class="nav-picture" id="faq">
                     <span class="link-text">Preguntas Frecuentes</span>
                 </a>
@@ -41,7 +41,7 @@
             </li>
 
             <li class="nav-item" id="li-about">
-                <a href="#" class="nav-link" id="li-info">
+                <a href="aboutUs.php" class="nav-link" id="li-info">
                     <img src="imgs/information.png" alt="" class="nav-picture" id="about">
                     <span class="link-text">Acerca de Nosotros</span>
                 </a>

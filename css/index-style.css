@@ -164,7 +164,7 @@
         padding: 1rem;
     }
 
- .div-especialidades:hover img.imagenEspecialidad{
+     .div-especialidades:hover img.imagenEspecialidad{
      transition: 500ms;
         width: 8rem;
         height: auto;
