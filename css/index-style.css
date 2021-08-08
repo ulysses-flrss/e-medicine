@@ -1,5 +1,3 @@
-
-
     * { 
         box-sizing: border-box; 
         padding: 0;
@@ -48,13 +46,13 @@
     }
 
     .editar {
+        text-decoration: none;
+        color: black;
         font-size: 2rem;
         font-family: var(--menuFont);
         text-align: center;
 
     }
-
-    
 
     .profile-picture {
         width: 100%;
@@ -193,6 +191,7 @@
         box-shadow: 4px 4px 2px #000000;
         transition: 500ms all;
         cursor: pointer;
+        text-decoration: none;
     }
 
     .div-especialidades:hover {
