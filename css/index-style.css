@@ -43,6 +43,8 @@
         flex-direction: column;
         align-items: center;
         cursor: pointer;
+        text-decoration: none;
+        color: black;
     }
 
     .editar {
@@ -192,6 +194,7 @@
         transition: 500ms all;
         cursor: pointer;
         text-decoration: none;
+        color: black;
     }
 
     .div-especialidades:hover {

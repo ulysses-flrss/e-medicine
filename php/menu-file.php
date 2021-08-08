@@ -2,7 +2,7 @@
 <nav class="nav">
         <ul class="navbar-nav" id="nav">
             <li class="nav-item">
-                <img src="logoEMedicine.png" alt="" class="logo">
+                <a href="index.php"><img src="logoEMedicine.png" alt="" class="logo"></a>
             </li>
 
             <li class="nav-item" id="li-cita">
