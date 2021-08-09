@@ -64,8 +64,9 @@
     
     #bienvenida {
         margin: 0rem 0rem 0rem 4rem;
-        font-family: 'Anton', sans-serif;  /*'Sacramento', cursive*/
-        font-size: 5.25rem;  
+        font-family: 'Sacramento', cursive;
+        font-size: 5.25rem;
+        cursor: default;  
     }
 
     
@@ -84,6 +85,10 @@
         border-radius: 15px;
         border: 3px solid black;
         box-shadow: 10px 7px 3px #a1785a;
+    }
+
+    section.tablonAnuncios * {
+        cursor:default;
     }
 
     section.tablonAnuncios div.objetoTablon {

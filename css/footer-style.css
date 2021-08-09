@@ -6,6 +6,7 @@
     height: 50vh;
     background-color: rgb(43, 43, 43);
     justify-content: space-between;
+    
 }
 
 i {
@@ -18,6 +19,7 @@ i {
     font-size: 2.75rem;
     font-family: var(--footerFont);
     margin-bottom: 3rem;
+    cursor: default;
 }
 
 .footer-item {
@@ -27,6 +29,7 @@ i {
     font-size: 1.75rem;
     margin: 1.25rem 0;
     align-items: center;
+    
 }
 
 .red-social {
@@ -49,5 +52,22 @@ i {
 .columna3 {
     display: flex;
     flex-direction: column;
+}
 
+#facebook:hover {
+    transition: 500ms ease;
+    transform: scale(1.25);
+    color: #3B5998;
+}
+
+#instagram:hover {
+    transition: 500ms ease;
+    transform: scale(1.25);
+    color: #E1306C;
+}
+
+#twitter:hover {
+    transition: 500ms ease;
+    transform: scale(1.25);
+    color: #00acee;
 }

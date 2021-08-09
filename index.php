@@ -17,27 +17,27 @@
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
             <a href="#" class="imagen-texto">
-                <div class="img-layout"><img src="psd.jpg" alt="" class="profile-picture"></div>
-                <span class="editar">Editar Perfil</span>
+                <div class="img-layout"><img src="psd.jpg" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
+                <span class="editar" title="Editar Perfil">Editar Perfil</span>
             </a>
-                <span id="bienvenida">Bienvenido/a Ulises</span>
+                <span id="bienvenida" title="Bienvenida">Bienvenido/a Ulises</span>
         </div>
         
 
         <article class="mainArticle">
             <section class="tablonAnuncios">
                 <div class="objetoTablon" id="autor">
-                    <span>Ulises Adonay Flores Martínez</span>
+                    <span title="Escritor del Anuncio">Ulises Adonay Flores Martínez</span>
                 </div>
                 <div class="objetoTablon" id="fechaPublicacion">
-                    <span>16/Julio/2021</span>
+                    <span title="Fecha de Publicación del Anuncio">16/Julio/2021</span>
                 </div>
 
                 <div class="objetoTablon" id="descripcion">
-                    <span>
+                    <p title="Contenido del Anuncio">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
-                    </span>
+                    </p>
                 </div>
             </section>
 
@@ -45,23 +45,23 @@
 
             <section class="especialidadesMedica">
             
-                <a href="" class="div-especialidades">
+                <a href="" class="div-especialidades" title="Medicina General">
                     <img src="imgs/medicina.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre">Medicina General</div>
+                    <div class="especialidadNombre" title="Medicina General">Medicina General</div>
                 </a>
 
-                <a href="" class="div-especialidades">
+                <a href="" class="div-especialidades" title="Pediatría">
                     <img src="imgs/chico.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre">Pediatría</div>
+                    <div class="especialidadNombre" title="Pediatría">Pediatría</div>
                 </a>
         
 
-                <a href="" class="div-especialidades">
+                <a href="" class="div-especialidades" title="Neurlogía">
                     <img src="imgs/idea-genial.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre">Neurología</div>
+                    <div class="especialidadNombre" title="Neurología">Neurología</div>
                 </a>
             
-                <a href="" class="div-especialidades">
+                <a href="" class="div-especialidades" title="Cardiología">
                     <img src="imgs/corazon.png" alt="" class="imagenEspecialidad">
                     <div class="especialidadNombre">Cardiología</div>
                 </a>

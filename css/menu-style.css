@@ -67,14 +67,6 @@ nav.nav {
     font-size: 1.2em;
 }
 
-/*i {
-    width: 4rem;
-    padding-right: 3rem;
-    font-size: 3rem;
-    margin: auto;
-    padding: auto;
-    text-align: center;
-}*/
 
 .nav-picture {
     transition: 100ms ease;
@@ -109,7 +101,7 @@ nav.nav {
 }
 
 
-/* hovers ¨*/
+/* hovers */
 
 .navbar-nav li:hover {
     transition: 250ms all;
