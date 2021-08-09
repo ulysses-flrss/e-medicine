@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programar Cita - E-Medicine</title>
     <link rel="stylesheet" href="css/cita-style.css">
-    <?php require("php/default-head.php") ?>
+    <?php require("plugins/default-head.php") ?>
 </head>
 <body>
-<?php require("php/menu-file.php") ?>
+<?php require("plugins/menu-file.php") ?>
 
     <main class="all-container">
         <article>
@@ -101,7 +101,7 @@
     </main>
 <!--FIN DEL MENÚ-->
 
-<?php require("php/footer-file.php") ?>
+<?php require("plugins/footer-file.php") ?>
 
 <script src="javascript.js"></script>
 </body>
