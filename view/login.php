@@ -32,7 +32,7 @@
                     <div class="submit">
                         <a href="#" class="submit-text">Olvidé mi contraseña</a>
                         <input type="submit" value="Enviar">
-                        <a href="#" class="submit-text">No tengo Cuenta</a>
+                        <a href="../index.php" class="submit-text">No tengo Cuenta</a>
                     </div>
                 </form>
             </section>

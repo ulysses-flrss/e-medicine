@@ -12,34 +12,34 @@
 <body>
     <main>
         <div class="inicio-register">
-            <img src="logoEMedicine.png" alt="" class="logo">
+            <img src="assets/logoEMedicine.png" alt="" class="logo">
             <h1 class="bienvenida-register">Bienvenido a E-Medicine</h1>                
         </div>
         
 
         <article>
             <section class="form-container">
-                <form action="" class="form-register">
+                <form action="model/paciente.php" class="form-register" method="GET">
 
                 <div class="first-line">
                     <label for="">Código: *</label>
-                    <input type="text" name="" id="" placeholder="Ingrese su Código" required>
+                    <input type="text" name="codigo" id="" placeholder="Ejem: P-001" required>
                 </div>    
                     
                 <div class="second-line">
                     <label for="">Nombre: *</label>
-                    <input type="text" name="" id="" placeholder="Ingrese su Nombre" required>
+                    <input type="text" name="nombre" id="" placeholder="Ingrese su Nombre" required>
                 </div>
                     
                 <div class="third-line">
                     <div class="peso">
                         <label for="">Peso(lb): *</label>
-                        <input type="text" name="" id="" placeholder="Peso en Libras" required>
+                        <input type="text" name="peso" id="" placeholder="Peso en Libras"  required>
                     </div>
                     
                     <div class="altura">
                         <label for="">Altura(cm): *</label>
-                        <input type="text" name="" id="" placeholder="Altura en cm" required>    
+                        <input type="text" name="altura" id="" placeholder="Altura en cm" required>
                     </div>  
                 </div>
                     
@@ -47,7 +47,7 @@
                 <div class="fourth-line">
                     <div class="fecha">
                         <label for="">Fecha de Nacimiento: *</label>
-                        <input type="date" name="" id="" required>
+                        <input type="date" name="fechaNac" id="" required>
                     </div>
                     
                     <div class="genre">
@@ -94,17 +94,20 @@
 
                     <div class="fifth-line">
                         <label for="">Correo Electronico:</label>
-                        <input type="email" name="" id="" placeholder="Ingrese su Correo">
+                        <input type="email" name="email" id="" placeholder="Ingrese su Correo">
                     </div>
 
                     <div class="sixth-line">
                         <label for="">Contraseña: *</label>
-                        <input type="password" name="" id="" placeholder="Ingrese su Contraseña" required>
+                        <input type="password" name="contraseña" id="password" placeholder="Ingrese su Contraseña" required>
+                        <img src="assets/eye.png" alt="" class="show-hide" id="eye1">
                     </div>
 
                     <div class="seventh-line">
                         <label for="">Confirmar Contraseña: *</label>
-                        <input type="password" name="" id="" placeholder="Repita su Contraseña" required>
+                        <input type="password" name="contraseña2" id="password2" placeholder="Repita su Contraseña" required>
+                        <img src="assets/eye.png" alt="" class="show-hide" id="eye2">
+
                     </div>
 
                     <div class="submit">
@@ -115,5 +118,6 @@
             </section>
         </article>
     </main>
+    <script src="view/js/password.js"></script>
 </body>
 </html>

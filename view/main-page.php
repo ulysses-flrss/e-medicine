@@ -17,7 +17,7 @@
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
             <a href="#" class="imagen-texto">
-                <div class="img-layout"><img src="psd.jpg" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
+                <div class="img-layout"><img src="../imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
                 <span class="editar" title="Editar Perfil">Editar Perfil</span>
             </a>
                 <span id="bienvenida" title="Bienvenida">Bienvenido/a Ulises</span>
@@ -46,7 +46,7 @@
             <section class="especialidadesMedica">
             
                 <a href="" class="div-especialidades" title="Medicina General">
-                    <img src="imgs/medicina.png" alt="" class="imagenEspecialidad">
+                    <img src="../assets/medicina.png" alt="" class="imagenEspecialidad">
                     <div class="especialidadNombre" title="Medicina General">Medicina General</div>
                 </a>
 

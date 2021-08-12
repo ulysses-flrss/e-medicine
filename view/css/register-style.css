@@ -197,5 +197,10 @@ input:focus:not(.submit input) {
     box-shadow: none;   
 }
 
+.show-hide {
+    width: 5rem;
+    height: auto;
+}
+
 
 

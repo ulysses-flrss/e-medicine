@@ -10,7 +10,6 @@
 </head>
 <body>
 <?php require("plugins/menu-file.php") ?>
-
     <main class="all-container">
         <article>
             <section class="form-container">
