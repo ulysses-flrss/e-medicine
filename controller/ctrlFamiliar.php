@@ -1,12 +1,12 @@
 <?php 
-
-$nombre = isset($_POST['nombre-F'])?$_POST['nombre-F']:"";
-$peso = isset($_POST['peso-F'])?$_POST['peso-F']:"";
-$altura = isset($_POST['altura-F'])?$_POST['altura-F']:"";
-$fechaNac = isset($_POST['fechaNac-F'])?$_POST['fechaNac-F']:"";
-$genero = isset($_POST['gender'])?$_POST['gender']:"";
-$municipio = isset($_POST['municipio-F'])?$_POST['municipio-F']:"";
-$enfermedades = isset($_POST['enfermedades-F'])?$_POST['enfermedades-F']:"";
+ 
+$nombre = isset($_POST['nombre'])?$_POST['nombre']:"";
+$peso = isset($_POST['peso'])?$_POST['peso']:"";
+$altura = isset($_POST['altura'])?$_POST['altura']:"";
+$fechaNac = isset($_POST['fechaNac'])?$_POST['fechaNac']:"";
+$genero = isset($_POST['genero'])?$_POST['genero']:"";
+$municipio = isset($_POST['municipio'])?$_POST['municipio']:"";
+$enfermedades = isset($_POST['enfermedades'])?$_POST['enfermedades']:"";
 
 if (!isset($nombre)) {
     require_once ("../view/perfilFamiliares-form.php");

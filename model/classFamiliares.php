@@ -54,7 +54,8 @@ class Familiar {
             $this->enfermedades = $enfermedades;
         }
     }
-    
+
+    //GETTERS
     public function getPeso() {
         return $this->peso;
     }

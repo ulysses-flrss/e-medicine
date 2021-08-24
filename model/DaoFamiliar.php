@@ -11,8 +11,9 @@ require_once("../model/classConexion.php");
 
             try {
                 $stmt = $dbh->prepare($sql);
-    
+
                 /*$stmt->bindParam(':nombre',$familiar->nombre);
+                $stmt->bindParam(':nombre',$familiar->nombre);
                 $stmt->bindParam(':peso',$familiar->peso);
                 $stmt->bindParam(':altura',$familiar->altura);
                 $stmt->bindParam(':fechaNac',$familiar->fechaNac);
@@ -21,6 +22,9 @@ require_once("../model/classConexion.php");
                 $stmt->bindParam(':enfermedades',$familiar->enfermedades);*/
                 $stmt->execute((array) $familiar);
                 //$stmt->execute();
+                //
+                /*$stmt->bindParam(':enfermedades',$familiar->enfermedades);
+                $stmt->execute();*/
 
                 echo "<a href = '../view/perfilFamiliares.php'>GUARDADO EXITOSAMENTE</a>";
 
