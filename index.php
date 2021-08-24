@@ -1,5 +1,5 @@
 <?php 
 
-    require_once("view/register.php");
+    require_once("view/login.php");
 
 ?>
