@@ -23,18 +23,18 @@
                     
                 <div class="first-line">
                     <label for="">Nombre: *</label>
-                    <input type="text" name="nombre-F" id="" placeholder="Ingrese su Nombre" required>
+                    <input type="text" name="nombre" id="" placeholder="Ingrese su Nombre" required>
                 </div>
                     
                 <div class="second-line">
                     <div class="peso">
                         <label for="">Peso(lb): *</label>
-                        <input type="text" name="peso-F" id="" placeholder="Peso en Libras"  required>
+                        <input type="text" name="peso" id="" placeholder="Peso en Libras"  required>
                     </div>
                     
                     <div class="altura">
                         <label for="">Altura(cm): *</label>
-                        <input type="text" name="altura-F" id="" placeholder="Altura en cm" required>
+                        <input type="text" name="altura" id="" placeholder="Altura en cm" required>
                     </div>  
                 </div>
                     
@@ -42,19 +42,19 @@
                 <div class="third-line">
                     <div class="fecha">
                         <label for="">Fecha de Nacimiento: *</label>
-                        <input type="date" name="fechaNac-F" id="" required>
+                        <input type="date" name="fechaNac" id="" required>
                     </div>
                     
                     <div class="genre">
-                        <div class="male">
+                        <div class="masculino">
                             <label for="masculino">Masculino</label>
-                            <input type="radio" name="gender" id="masculino" value="Masculino" required>
+                            <input type="radio" name="genero" id="masculino" value="Masculino" required>
                         </div>
                     
                         
                         <div class="female">
                             <label for="femenino">Femenino</label>
-                            <input type="radio" name="gender" id="femenino" value="Femenino" required>
+                            <input type="radio" name="genero" id="femenino" value="Femenino" required>
                         </div>
 
                         
@@ -62,7 +62,7 @@
                     
                     <div class="municipio">
                         <label for="municipio">Municipio *</label>
-                        <select name="municipio-F" id="" required>
+                        <select name="municipio" id="" required>
                             <option value="">-- Seleccione un Municipio</option>
                             <option value="San Salvador">San Salvador</option>
                             <option value="Aguilares">Aguilares</option>
@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="fifth-line">
-                    <textarea name="enfermedades-F" id="textarea" cols="50" rows="1" maxlength="255"></textarea>
+                    <textarea name="enfermedades" id="textarea" cols="50" rows="1" maxlength="255"></textarea>
                 </div>
 
                     <div class="submit">

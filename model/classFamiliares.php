@@ -55,7 +55,7 @@ class Familiar {
     }
 
 
-    
+
     public function getPeso() {
         return $this->peso;
     }
