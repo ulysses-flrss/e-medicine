@@ -14,10 +14,10 @@ if (!isset($nombre)) {
     require_once("../model/classFamiliares.php");
     require_once("../model/DaoFamiliar.php");
     require_once("../model/classConexion.php");
-
-    $dao = new DaoFamiliar;
     
     $familiar = new Familiar($nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades);
+
+    $dao = new DaoFamiliar;
     
     $dao->insertar($familiar);
     

@@ -37,14 +37,15 @@ class Familiar {
             throw new Exception("GENERO INVALIDO");
         }
 
-        if (!empty($fechaNac)) {
-            explode("-", $fechaNac);
-        } else {
-            throw new Exception("FECHA DE NACIMIENTO INVALIDA");
+        if(!empty($fechaNac)){
+            $fecha = explode('-',$fechaNac);
+            $this->fechaNac = $fechaNac;
+        }else{
+            throw new Exception('Error. Fecha vacía');
         }
 
         if (!empty($municipio)) {
-            $this-> municipio = $municipio;
+            $this->municipio = $municipio;
         } else {    
             throw new Exception("MUNICIPIO INVALIDO");
         }
@@ -53,8 +54,6 @@ class Familiar {
             $this->enfermedades = $enfermedades;
         }
     }
-
-
     
     public function getPeso() {
         return $this->peso;

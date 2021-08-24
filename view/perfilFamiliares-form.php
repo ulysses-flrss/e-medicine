@@ -42,7 +42,7 @@
                 <div class="third-line">
                     <div class="fecha">
                         <label for="">Fecha de Nacimiento: *</label>
-                        <input type="date" name="fechaNac-F" id="" required>
+                        <input type="date" name="fechaNac-F" id="fechaNac-F" required>
                     </div>
                     
                     <div class="genre">
