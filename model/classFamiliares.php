@@ -8,9 +8,9 @@ class Familiar {
     public $fechaNac;
     public $genero;
     public $municipio;
-    public $enfermedad;
+    public $enfermedades;
 
-    public function __construct( $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedad) {
+    public function __construct( $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades) {
         
 
         if (!empty($nombre)) {
@@ -51,7 +51,7 @@ class Familiar {
         }
 
         if (!empty($enfermedad)) {
-            $this->enfermedad = $enfermedad;
+            $this->enfermedades = $enfermedades;
         }
     }
 
