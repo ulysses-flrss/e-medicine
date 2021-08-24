@@ -21,7 +21,7 @@ if (!isset($nombre)) {
     $dao = new DaoFamiliar;
     
     $dao->insertar($familiar);
-    
+    //Que será lo que pasa
 }
 
 
