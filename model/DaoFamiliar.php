@@ -11,20 +11,9 @@ require_once("../model/classConexion.php");
 
             try {
                 $stmt = $dbh->prepare($sql);
-
-                /*$stmt->bindParam(':nombre',$familiar->nombre);
-                $stmt->bindParam(':nombre',$familiar->nombre);
-                $stmt->bindParam(':peso',$familiar->peso);
-                $stmt->bindParam(':altura',$familiar->altura);
-                $stmt->bindParam(':fechaNac',$familiar->fechaNac);
-                $stmt->bindParam(':genero',$familiar->genero);
-                $stmt->bindParam(':municipio',$familiar->municipio);
-                $stmt->bindParam(':enfermedades',$familiar->enfermedades);*/
                 $stmt->execute((array) $familiar);
-                //$stmt->execute();
-                //
-                /*$stmt->bindParam(':enfermedades',$familiar->enfermedades);
-                $stmt->execute();*/
+                $rowAf = $stmt->rowCount();
+                echo $rowAf . " ";
 
                 echo "<a href = '../view/perfilFamiliares.php'>GUARDADO EXITOSAMENTE</a>";
 

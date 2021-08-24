@@ -15,6 +15,7 @@ if (!isset($nombre)) {
     require_once("../model/DaoFamiliar.php");
     require_once("../model/classConexion.php");
     
+
     $familiar = new Familiar($nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades);
 
     $dao = new DaoFamiliar;

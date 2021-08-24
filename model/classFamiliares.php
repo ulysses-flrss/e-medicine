@@ -1,17 +1,17 @@
 <?php
 
 class Familiar {
+
     public $nombre;
     public $peso;
     public $altura;
     public $fechaNac;
     public $genero;
     public $municipio;
-    public $enfermedades;
+    public $enfermedad;
 
-    public function __construct($nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades) {
+    public function __construct( $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedad) {
         
-
 
         if (!empty($nombre)) {
             $this->nombre = $nombre;
@@ -50,8 +50,8 @@ class Familiar {
             throw new Exception("MUNICIPIO INVALIDO");
         }
 
-        if (!empty($enfermedades)) {
-            $this->enfermedades = $enfermedades;
+        if (!empty($enfermedad)) {
+            $this->enfermedad = $enfermedad;
         }
     }
 
@@ -76,7 +76,7 @@ class Familiar {
         return $this->municipio;
     }
 
-    public function getEnfermedades() {
+    public function getEnfermedad() {
         return $this->nombre;
     }
 }
