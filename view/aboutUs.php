@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acerca de Nosotros - E-Medicine</title>
     <link rel="stylesheet" href="css/about-us-style.css">
-    <?php require("php/default-head.php") ?>
+    <?php require("plugins/default-head.php") ?>
 </head>
 <body>
     
-    <?php require("php/menu-file.php") ?>
+    <?php require("plugins/menu-file.php") ?>
 
 <main class="all-container">
     <article>
@@ -18,7 +18,7 @@
         <div class="card-container">
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="imgs/20170252.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/20090066.jpg" alt="" class="profile-picture">    
                 </div>
                 
                 <h1>Jefferson Alexis Castro Castro</h1>
@@ -41,7 +41,7 @@
             
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="imgs/20170252.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/20170252.jpg" alt="" class="profile-picture">    
                 </div>
                 
                 <h1>Ulises Adonay Flores Martínez</h1>
@@ -64,7 +64,7 @@
 
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="imgs/20170252.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/20200090.jpg" alt="" class="profile-picture">    
                 </div>
                 
                 <h1>José Guillermo Granadino Rivas</h1>
@@ -113,8 +113,8 @@
     </article>
 </main>
 
-<?php require("php/footer-file.php") ?>
+<?php require("plugins/footer-file.php") ?>
 
-<script src="javascript.js"></script>
+<script src="js/javascript.js"></script>
 </body>
 </html>

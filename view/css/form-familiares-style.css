@@ -62,11 +62,19 @@ input:focus:not(.submit input) {
     border-bottom-right-radius: 50px;
 }
 
-.first-line, .second-line,.fifth-line, .sixth-line, .seventh-line {
+.first-line, .third-line, .fourth-line {
     display: flex;
     font-size: 1.75rem;
     width: 100%;
     justify-content: flex-start;
+    margin:1.5rem 0;
+}
+
+.second-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.75rem;
+    width: 100%;
     margin:1.5rem 0;
 }
 
@@ -80,34 +88,30 @@ input:focus:not(.submit input) {
 
 .fourth-line {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     margin: 1.5rem 0;
     font-size: 1.75rem;
 }
 
-.first-line > *, .second-line > *, .third-line > *, .fourth-line  > *, .fifth-line > *, .sixth-line > *, .seventh-line > *{
+.first-line > *, .second-line > *, .third-line > *, .fourth-line  > *, .fifth-line{
     margin: 0.10rem 0.5rem;
 }
 
+
+
 .first-line input {
-    width: 25%;
-} 
-
-
-.second-line input {
     width: 80%;
 }
 
 
-.third-line input {
+.second-line input {
+    justify-content: space-around;
     width: 48%;
     text-align: center;
 }
-
-
-
 
 .fecha {
     display: flex;
@@ -140,56 +144,62 @@ input:focus:not(.submit input) {
 }
 
 
-.fifth-line input {
+.fourth-line input {
     width: 75%;
 }
 
-.sixth-line input {
-    width: 34%;
+.fifth-line  {
+    display: flex;
+    justify-content: center;
 }
 
-.seventh-line input{
-    width: 24.5%;
+.fifth-line textarea {
+    font-family: var(--bodyFont);
+    display: flex;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    outline: none;
+    border: 1.5px solid black;
+    box-shadow: 3px 3px 0;
 }
+
+.fifth-line textarea:focus {
+    transition: 150ms all;
+    background-color: black;
+    color: white;
+    box-shadow: none;
+}
+
 
 
 .submit {
     display: flex;
     width: 100%;
-    justify-content: space-between;
-    margin: 3rem;
+    justify-content: center;
+    margin-top: 7rem;
     align-items: center;
 }
 
 
 .submit input {
     border-radius: 5px;
-    width: 10rem;
-    height: 3.5rem;
+    width: 12rem;
+    height: 4.5rem;
     font-family: var(--menuFont);
     box-shadow: 3px 3px 0px;
     font-size: 1.5rem;
-    cursor: pointer;;
+    cursor: pointer;
 }
 
-.account {
-    align-content: center;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    padding: 0.75rem;
-    text-decoration: none;
-    border: 2px solid black;
-    color: black;
-    font-size: 1.25rem;
-    box-shadow: 3px 3px 0px;
-}
 
-.submit input:hover, .account:hover {
+
+.submit input:hover{
     transition: 350ms ease-in;
     background-color: rgb(184, 184, 184);
 }
 
-.submit input:active, .account:active {
+.submit input:active{
     transition: 150ms ease-in;
     border: 0;
     background-color: black;

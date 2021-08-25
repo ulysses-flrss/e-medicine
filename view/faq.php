@@ -7,11 +7,11 @@
     <title>Preguntas Frecuentes - E-Medicine</title>
     <link rel="stylesheet" href="css/faq-style.css">
 
-    <?php require("php/default-head.php") ?>
+    <?php require("plugins/default-head.php") ?>
     
 </head>
 <body>
-    <?php require("php/menu-file.php") ?>
+    <?php require("plugins/menu-file.php") ?>
 
 <main class="all-container">
     <article>
@@ -85,7 +85,7 @@
     </article>
 </main>
 
-<?php require("php/footer-file.php") ?>
+<?php require("plugins/footer-file.php") ?>
 
 <script src="javascript.js"></script>
 </body>
