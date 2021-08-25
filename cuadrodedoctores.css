@@ -1,27 +1,64 @@
 body {
-	margin: 500;
-	background-image: url(../Doctores/Doctores.jpg);
+	margin: 400;
+	background-color: #632432;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	min-height: 100vh;
+	min-height: 70vh;
 	background-position: center;
+	font-family: Arial;
 	}
 
+#main-container{
+	margin: 150px auto;
+	width: 10px;
+}
 
 table {
 	width: 100%;
 	border: 1px solid #000;
+	position: center;
+	background-color: white;
+	padding: 8;
+	align-content: center;
+
+
 }
 
 th, td {
-	width: 25%;
+	width: 10%;
 	text-align: center;
-	vertical-align: top;
+	vertical-align: center;
 	border: 1px solid #000;
+	padding: 20px;
+	size: 15%;
 }
+
+thead {
+	background-color: #246355;
+	border-bottom: solid 10px #0F362D;
+	color:  white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #369681;
+	color: white;
+}
+
 
 .Titulo {
 	text-align: center;
 	border-top-width: 100px;
+	padding: 30px;
+	border-bottom: solid;
+	background-color: greenyellow;
+	border-bottom: solid 5px blue;
+	color:  black solid 5px;
 }
+
+
+
