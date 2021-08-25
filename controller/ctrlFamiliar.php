@@ -1,5 +1,20 @@
+
+
 <?php 
- 
+
+'<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>';
+
 $nombre = isset($_POST['nombre'])?$_POST['nombre']:"";
 $peso = isset($_POST['peso'])?$_POST['peso']:"";
 $altura = isset($_POST['altura'])?$_POST['altura']:"";
@@ -21,7 +36,7 @@ if (!isset($nombre)) {
     $dao = new DaoFamiliar;
     
     $dao->insertar($familiar);
-    //Que será lo que pasa
+    
 }
 
 

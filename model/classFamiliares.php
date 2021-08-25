@@ -6,11 +6,11 @@ class Familiar {
     public $peso;
     public $altura;
     public $fechaNac;
-    public $genero;
+    public $genero  ;
     public $municipio;
     public $enfermedades;
 
-    public function __construct( $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades) {
+    public function __construct($nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades) {
         
 
         if (!empty($nombre)) {
@@ -38,7 +38,7 @@ class Familiar {
         }
 
         if(!empty($fechaNac)){
-            $fecha = explode('-',$fechaNac);
+
             $this->fechaNac = $fechaNac;
         }else{
             throw new Exception('Error. Fecha vacía');
@@ -50,8 +50,10 @@ class Familiar {
             throw new Exception("MUNICIPIO INVALIDO");
         }
 
-        if (!empty($enfermedad)) {
+        if (!empty($enfermedades)) {
             $this->enfermedades = $enfermedades;
+        } else {
+            throw new Exception("ENFERMEDADES NO VALIDAD");
         }
     }
 
@@ -77,7 +79,7 @@ class Familiar {
     }
 
     public function getEnfermedad() {
-        return $this->nombre;
+        return $this->enfermedades;
     }
 }
 
