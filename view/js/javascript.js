@@ -1,22 +1,22 @@
 $(document).ready(function () {
 
     $("#li-cita").hover(function() {
-        $("#cita").attr("src", "imgs/document (1).png");
+        $("#cita").attr("src", "../../assets/document(1).png");
     }, function () {
-        $("#cita").attr("src", "imgs/document.png");
+        $("#cita").attr("src", "../assets/document.png");
     })
 
 
     $("#li-doctor").hover(function() {
-        $("#doctor").attr("src", "imgs/doctor(1).png");
+        $("#doctor").attr("src", "../../assets/doctor(1).png");
     }, function () {
-        $("#doctor").attr("src", "imgs/doctor.png");
+        $("#doctor").attr("src", "../../assets/doctor.png");
     })
 
     $("#li-familiares").hover(function() {
-        $("#familiares").attr("src", "imgs/family.png");
+        $("#familiares").attr("src", "../assets/family.png");
     }, function () {
-        $("#familiares").attr("src", "imgs/group.png");
+        $("#familiares").attr("src", "../assets/group.png");
     })
     
     $("#li-faq").hover(function() {
@@ -32,7 +32,7 @@ $(document).ready(function () {
     })
 
     $("#li-comentarios").hover(function() {
-        $("#comentarios").attr("src", "imgs/comments.png");
+        $("#comentarios").attr("src", "../assets/comments.png");
     }, function () {
         $("#comentarios").attr("src", "imgs/comment.png");
     })

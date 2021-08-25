@@ -17,7 +17,7 @@
     margin: 3rem 12rem 3rem 15rem ;
     display: flex;
     background-color: var(--skinBright-bg-color);
-    width: 40rem;
+    width: 35rem;
     height: 40rem;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +31,7 @@
     transition: 500ms ease;
     transform: scale(1.02);
     border: 2px solid var(--skinDark-bg-color);
+    box-shadow: none;
 }
 
 .user-card:active {
@@ -44,14 +45,14 @@
 .img-layout {
     width: 14rem;
     height: 14rem;
-    border-radius: 50%;
+    border-radius: 20%;
     box-shadow: 0 0 10px black;
 }
 
 .profile-picture {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 20%;
 }
 
 h1 {

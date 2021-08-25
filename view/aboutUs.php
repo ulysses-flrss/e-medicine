@@ -18,7 +18,7 @@
         <div class="card-container">
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="imgs/20170252.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/20090066.jpg" alt="" class="profile-picture">    
                 </div>
                 
                 <h1>Jefferson Alexis Castro Castro</h1>
@@ -41,7 +41,7 @@
             
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="imgs/20170252.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/20170252.jpg" alt="" class="profile-picture">    
                 </div>
                 
                 <h1>Ulises Adonay Flores Martínez</h1>
@@ -64,7 +64,7 @@
 
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="imgs/20170252.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/20200090.jpg" alt="" class="profile-picture">    
                 </div>
                 
                 <h1>José Guillermo Granadino Rivas</h1>
@@ -115,6 +115,6 @@
 
 <?php require("plugins/footer-file.php") ?>
 
-<script src="javascript.js"></script>
+<script src="js/javascript.js"></script>
 </body>
 </html>
