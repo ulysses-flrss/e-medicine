@@ -14,7 +14,13 @@
 
 <main class="all-container">
     <article>
+        <div class = "add-button">
+            <a href="">
+                <img class = "add-image" src="../assets/add.png" alt="">
+            </a>
+        </div>
         <section class="familiar-profiles">
+
             <div class="familiar-card">
                 <div class="profile-picture-container">
                     <img src="imagenPrueba.png" alt="" class="familiares-profile-picture">    
