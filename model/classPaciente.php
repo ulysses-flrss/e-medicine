@@ -1,145 +1,125 @@
-<?php 
-
-    Class Paciente {
-
-        private $codigo;
-        public $nombre;
+<?php
+    class Paciente{
+        //Propiedades
+        public $idPaciente;
+        public $nombre;   
+        public $apellido;
         public $peso;
         public $altura;
         public $fechaNac;
+        public $fechaIng;
         public $genero;
         public $municipio;
-        public $email;
-        private $password;
-
-        public function __construct($codigo, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $email, $password) {
-            if (!empty($codigo) && is_numeric($codigo)) {
-                $this->codigo = $codigo;
-            } else {
-                throw new Exception("CÓDIGO INCORRECTI");
+        public $eMail;
+        public $password;
+        public $telefono;
+        //Método constructor
+        public function __construct($cod,$nom,$ape,$pe,$al,$fn,$gen,$muni,$email,$pass,$tel){
+            if(!empty($cod))
+                $this->idPaciente= $cod;
+            else
+                throw new Exception('Error. Correlativo incorrecto');
+            if(!empty($nom))
+                $this->nombre = $nom;
+            else
+                throw new Exception('Error. Nombre incorrecto');
+            if(!empty($ape))
+                $this->apellido = $ape;
+            else
+                throw new Exception('Error. Apellido vacío');
+            if(!empty($pe))
+                $this->peso = $pe;
+            else
+                throw new Exception('Error. Peso vacío');
+            if(!empty($al))
+                $this->altura = $al;
+            else
+                throw new Exception('Error. Peso vacío');
+            if(!empty($fn)){
+                $fecha = explode('-',$fn);       
+                $this->fechaNac = $fn;
             }
-
-            if (!empty ($nombre)) {
-                $this->nombre = $nombre;
-            } else {
-                throw new Exception("NOMBRE VACÍO");
-            }
-
-            if (!empty($peso) && is_numeric($peso)) {
-                $this->peso = $peso;
-            } else {
-                throw new Exception("EL PESO INGRESADO ESTÁ VACÍO O NO ES NÚMERICO");
-            }
-
-            if (!empty ($altura) && is_numeric($altura)) {
-                $this->altura = $altura;
-            } else {
-                throw new Exception("LA ALTURA ESTÁ VACÍA O NO ES NUMERICA");
-            }
-
-            if (!empty ($fechaNac)) {
-                $fechaNac = explode("-", $fechaNac);
-                $this->fechaNac = $fechaNac;
-            } else {
-                throw new Exception("FECHA INVALIDA");
-            }
-
-            if (!empty ($genero)) {
-                $this->genero = $genero;
-            } else {
-                throw new Exception("NO ELIGIÓ GENERO");
-            }
-
-            if (!empty ($municipio)) {
-                $this->municipio = $municipio;
-            } else {
-                throw new Exception("MUNICIPIO INVALIDO");
-            }
-
-            if (!empty($email) && preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $email)) {
-                $this->email = $email;
-            } else {
-                throw new Exception("EMAIL INVALIDO");
-            }
-
-            if (!empty($password)) {
-                $this->password = $password;
-            } else {
-                throw new Exception("CONTRASEÑA INVALIDA");
-            }
-
+            else
+                throw new Exception('Error. Fecha vacía');
+            if(!empty($gen))
+                $this->genero = $gen;
+            else
+                throw new Exception('Error. Género vacío');
+            if(!empty($muni))
+                $this->municipio = $muni;
+            else
+                throw new Exception('Error. Municipio vacío');
+            if(!empty($pass))
+                $this->password = $pass;
+            else
+                throw new Exception('Error. Contraseña vacío');
+            if(!empty($tel))
+                $this->telefono = $tel;
+            else
+                throw new Exception('Error. Contraseña vacío');
+            $this->valEmail($email);
+            $this->fechaIng = date('Y/m/d');
         }
 
-
-        public function setNombre($nombre) {
-            $this->nombre = $nombre;
-        }
-
-        public function setPeso($peso) {
-            $this->peso = $peso;
-        }
-
-        public function setAltura($altura) {
-            $this->altura = $altura;
-        }
-
-        public function setFechaNac($fechaNac) {
-            $this->fechaNac = $fechaNac;
-        }
-
-        public function setGenero($genero) {
-            $this->genero = $genero;
-        }
-
-        public function setMunicipio($municipio) {
-            $this->municipio = $municipio;
-        }
-
-        public function setEmail($email) {
-            $this->email = $email;
-        }
-
-        public function setPassword($password) {
-            $this->password = $password;
-        }
-
-        //Getters
-
-        public function getNombre() {
-            return $this->nombre;
-        }
-
-        public function getPeso() {
-            return $this->peso;
-        }
-
-        public function getAltura() {
-            return $this->altura;
-        }
-
-        public function getFechaNac() {
-            return $this->fechaNac;
-        }
-
-        public function getGenero() {
-            return $this->genero;
-        }
-
-        public function getMunicipio() {
-            $this->nombre;
-        }
-
-        public function getEdad() {
-            $edad = date("Y") - $this->fechaNac [0];
-        }
-
-        public function toString() {
-            return $this->codigo . " " . $this->nombre;
-        }
-
-
-
+    private function valEmail($email){
+        if(!empty($email) && preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/',$email))
+            $this->eMail = $email;
+        else
+            throw new Exception('Error. email vacío');
     }
-
-
+    //Setters
+    public function setEmail($email){
+        $this->valEmail($email);
+    }
+    public function setIdPaciente($id){
+        $this->idPaciente = $id;
+    }
+    public function getTelefono($tel){
+        return $this->telefono = $tel;
+    }
+    //Getters
+    public function getIdPaciente(){
+        return $this->idPaciente;
+    }
+    public function getNombre(){
+        return $this->nombre;
+    }
+    public function getApellido(){
+        return $this->apellido;
+    }
+    public function getPeso(){
+        return $this->peso;
+    }
+    public function getAltura(){
+        return $this->altura;
+    }
+    public function getFecNac(){
+        return $this->fecNac;
+    }
+    public function getGen(){
+        return $this->genero;
+    }
+    public function getMuni(){
+        return $this->municipio;
+    }
+    public function getFechaIngreso(){
+        return $this->fechaIng;
+    }
+    public function getPassword(){
+        return $this->password;
+    }
+    public function getEmail(){
+        return $this->email;
+    }
+    public function getNombreCompleto(){
+        return $this->nombre . " " . $this->apellido;
+    }
+    public function getEdad(){
+        $fecha = explode('/',$this->fechaNac);
+        return date('Y') - $fecha[0];
+    }
+    public function toString(){
+        return $this->idPaciente.  " - " . $this->nombre . " " . $this->apellido;
+    }
+}//Fin clase
 ?>

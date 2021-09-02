@@ -14,25 +14,6 @@ body {
     padding-top: 10rem;
 }
 
-.add-button {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    border-radius: 50%;
-    margin: 3rem 0;
-}
-
-.add-boton * {
-    display: flex;
-    justify-content: center;
-    padding: auto;
-}
-
-.add-image {
-    width: 10rem;
-    height: auto;
-}
-
 .familiar-profiles {
     width: 100%;
     height: 100%;
