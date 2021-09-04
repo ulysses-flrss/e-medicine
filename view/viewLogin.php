@@ -11,7 +11,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <title>Iniciar Sesión | E-Medicine</title>
-    <link rel="stylesheet" href="css/root-style.css">
+    <link rel="stylesheet" href="view/css/root-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&family=Anton&div=swap" rel="stylesheet">
     <link rel="stylesheet" href="view/css/login_style.css">
 </head>

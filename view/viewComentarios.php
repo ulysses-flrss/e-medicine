@@ -1,6 +1,7 @@
 <?php
   require_once 'plugins/funciones.php'; 
   require_once '../controller/ctrlUsuario.php';
+  require_once '../model/classComentario.php';
 
   $dataUser = username();
   $datos = explode("/", $dataUser);
@@ -30,12 +31,32 @@
         <textarea type="text" placeholder="Escriba su opinión..." id="mensaje" name="mensaje"></textarea>
         <input type="submit" name="accion" id="accion" value="publicar" required></div>
       </form>
-    </div>
 
-    <div class="division">
-        <hr id="barra">
-    </div>
+      <div class="division">
+          <hr id="barra">
+      </div>
 
+      <div class="comentariosPublicados">
+        <h2>Comentarios Publicados</h2>
+
+        <?php
+          $coment = new Comentario();
+          $comentarios = $coment->mostrarComentarios();
+          
+          foreach ($comentarios as $comentario) {
+            echo "
+            <div class='comentarios'>
+              <div id='nombreComentario'>".$comentario['nombre']."</div>
+
+              <div id='contenidoComentario'>".$comentario['mensaje']."</div>
+
+              <div id='fechaComentario'>".$comentario['fecha']."
+            </div>";
+          }
+        ?>
+      </div>
+
+    </div>
   <?php footer() ?>
 </body>
 </html>
