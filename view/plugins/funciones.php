@@ -22,54 +22,54 @@
         echo "<nav class='nav'>
             <ul class='navbar-nav' id='nav'>
                 <li class='nav-item'>
-                    <a href='../index.php?codUsuario=".$datos[0]."'><img src='../view/imgs/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'></a>
+                    <a href='../index.php?codUsuario=".$datos[0]."'><img src='../assets/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'></a>
                 </li>
 
                 <li class='nav-item' id='li-cita' title='Programar Cita'>
                     <a href='../controller/ctrlCita.php?idUsuario=".$datos[0]."' class='nav-link' >
-                        <img src='../view/imgs/document.png' alt='' class='nav-picture' id='cita'>
+                        <img src='../assets/document.png' alt='' class='nav-picture' id='cita'>
                         <span class='link-text'>Programar Cita</span>
                     </a>
                 </li>
 
                 <li class='nav-item' id='li-familiares' title='Familiares'>
                     <a href='../controller/perfilFamiliares.php?idUsuario=".$datos[0]."' class='nav-link' >
-                        <img src='../view/imgs/group.png' alt='' class='nav-picture' id='familiares'>
+                        <img src='../assets/family.png' alt='' class='nav-picture' id='familiares'>
                         <span class='link-text'>Familiares</span>
                     </a>
                 </li>
 
                 <li class='nav-item' id='li-doctor' title='Especialidades Médicas'>
                     <a href='#' class='nav-link'>
-                        <img src='../view/imgs/doctor.png' alt='' class='nav-picture' id='doctor'>
+                        <img src='../assets/doctor.png' alt='' class='nav-picture' id='doctor'>
                         <span class='link-text'>Especialidades Medicas</span>
                     </a>
                 </li>
 
                 <li class='nav-item' id='li-faq' title='Preguntas Frecuentes'>
                     <a href='../view/faq.php' class='nav-link'>
-                        <img src='../view/imgs/faq.png' alt='' class='nav-picture' id='faq'>
+                        <img src='../assets/faq.png' alt='' class='nav-picture' id='faq'>
                         <span class='link-text'>Preguntas Frecuentes</span>
                     </a>
                 </li>
 
                 <li class='nav-item' id='li-comentarios' title='Comentarios'>
                     <a href='../controller/ctrlComentarios.php?idUsuario=".$datos[0]."' class='nav-link'>
-                        <img src='../view/imgs/comment.png' alt='' class='nav-picture' id='comentarios'>
+                        <img src='../assets/comments.png' alt='' class='nav-picture' id='comentarios'>
                         <span class='link-text'>Comentarios</span>
                     </a>
                 </li>
 
                 <li class='nav-item' id='li-about' title='Acerca de Nosotros'>
                     <a href='../view/aboutUs.php' class='nav-link' id='li-info'>
-                        <img src='../view/imgs/information.png' alt='' class='nav-picture' id='about'>
+                        <img src='../assets/information.png' alt='' class='nav-picture' id='about'>
                         <span class='link-text'>Acerca de Nosotros</span>
                     </a>
                 </li>
 
                 <li class='nav-item' id='li-logout' title='Cerrar Sesión'>
                     <a href='#' class='nav-link'>
-                        <img src='../view/imgs/logout.png' alt='' class='nav-picture' id='logout'>
+                        <img src='../assets/sign-out.png' alt='' class='nav-picture' id='logout'>
                         <span class='link-text'>Cerrar Sesión</span>
                     </a>
                 </li>

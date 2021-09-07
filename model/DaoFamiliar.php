@@ -49,14 +49,14 @@ require_once("../model/classConexion.php");
       
 
 
-        public function eliminar($familiar){
+        public function eliminar($id){
             $cn = new Conexion;        
             $dbh = $cn->getConexion();
             $sql = "DELETE FROM familiar WHERE id=:id";
 
             try{
                 $stmt = $dbh->prepare($sql);
-               
+                $stmt->bindParam(':id',$id);
                 $stmt->execute();    
             }catch(PDOException $e){
                 echo "Error: " . $e->getMessage();

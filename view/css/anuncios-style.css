@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.all-container {
+    padding-top: 10rem;
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    margin: 1rem;
+    font-size: 5rem;
+}
+
+
+.anuncio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: auto;
+    background-color: aqua;
+    margin: auto;
+    width: 40%;
+    height: 25%;
+    padding: 1rem;
+}
+
+.anuncio-container * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+
+.imagen-anuncio {
+    width: 5rem;
+    height: auto;
+}
+
+textarea {
+    font-family: var(--bodyFont);
+    display: flex;
+    width:90%;
+    margin: auto;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    outline: none;
+    border: 1.5px solid black;
+    box-shadow: 3px 3px 0;
+}
+
+textarea:focus {
+    transition: 150ms all;
+    background-color: black;
+    color: white;
+    box-shadow: none;
+}
+
+.submit {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 3rem 0;
+    align-items: center;
+}
+
+.submit input {
+    border-radius: 5px;
+    width: 15rem;
+    height: 3.5rem;
+    font-family: var(--menuFont);
+    box-shadow: 3px 3px 0px;
+    font-size: 1.5rem;
+    cursor: pointer;;
+}
+
+.submit input:hover {
+    transition: 350ms ease-in;
+    background-color: rgb(184, 184, 184);
+}
+
+.submit input:active{
+    transition: 150ms ease-in;
+    border: 0;
+    background-color: black;
+    color: white;
+    box-shadow: none;   
+}
+

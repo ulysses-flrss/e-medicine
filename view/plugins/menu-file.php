@@ -42,7 +42,7 @@
 
             <li class="nav-item" id="li-about" title="Acerca de Nosotros">
                 <a href="aboutUs.php" class="nav-link" id="li-info">
-                    <img src="../assets/doctor.png" alt="" class="nav-picture" id="about">
+                    <img src="../assets/information.png" alt="" class="nav-picture" id="about">
                     <span class="link-text">Acerca de Nosotros</span>
                 </a>
             </li>

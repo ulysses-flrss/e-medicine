@@ -13,54 +13,64 @@ class Familiar {
 
     public function __construct($id, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades) {
 
-        if (!empty($id)) {
-            $this->id = $id;
-        } else {
-            $this->id = NULL;
-        }
+    //     if (!empty($id)) {
+    //         $this->id = $id;
+    //     } else {
+    //         $this->id = NULL;
+    //     }
 
-        if (!empty($nombre)) {
-           $this->nombre = $nombre;
-        } else {
-           throw new Exception("ERROR: NOMBRE INVALIDO");
-        }   
+    //     if (!empty($nombre)) {
+    //        $this->nombre = $nombre;
+    //     } else {
+    //        throw new Exception("ERROR: NOMBRE INVALIDO");
+    //     }   
         
-        if (!empty($peso)&& is_numeric($peso)) {
-           $this->peso = $peso;
-        } else {
-           throw new Exception("PESO INVALIDO");
-        }
+    //     if (!empty($peso)&& is_numeric($peso)) {
+    //        $this->peso = $peso;
+    //     } else {
+    //        throw new Exception("PESO INVALIDO");
+    //     }
 
-        if (!empty($altura)&& is_numeric($altura)) {
-           $this->altura = $altura;
-        } else {
-           throw new Exception("ALTURA INVALIDA");
-        }
+    //     if (!empty($altura)&& is_numeric($altura)) {
+    //        $this->altura = $altura;
+    //     } else {
+    //        throw new Exception("ALTURA INVALIDA");
+    //     }
 
-        if (!empty($genero)) {
-           $this->genero = $genero;
-        } else {
-           throw new Exception("GENERO INVALIDO");
-        }
+    //     if (!empty($genero)) {
+    //        $this->genero = $genero;
+    //     } else {
+    //        throw new Exception("GENERO INVALIDO");
+    //     }
 
-        if(!empty($fechaNac)){
-           $this->fechaNac = $fechaNac;
-        }else{
-           throw new Exception('Error. Fecha vacía');
-        }
+    //     if(!empty($fechaNac)){
+    //        $this->fechaNac = $fechaNac;
+    //     }else{
+    //        throw new Exception('Error. Fecha vacía');
+    //     }
 
-        if (!empty($municipio)) {
-            $this->municipio = $municipio;
-        } else {    
-           throw new Exception("MUNICIPIO INVALIDO");
-        }
+    //     if (!empty($municipio)) {
+    //         $this->municipio = $municipio;
+    //     } else {    
+    //        throw new Exception("MUNICIPIO INVALIDO");
+    //     }
 
-       if (!empty($enfermedades)) {
-        $this->enfermedades = $enfermedades;
-       } else {
-           $this->enfermedades = " ";
-       }
+    //    if (!empty($enfermedades)) {
+    //     $this->enfermedades = $enfermedades;
+    //    } else {
+    //        $this->enfermedades = " ";
+    //    }
            
+       //PRUEBA
+
+       $this->id = $id;
+       $this->nombre = $nombre;
+       $this->peso = $peso;
+       $this->altura = $altura;
+       $this->genero = $genero;
+       $this->fechaNac = $fechaNac;
+       $this->municipio = $municipio;
+       $this->enfermedades = $enfermedades;
 
     }
 

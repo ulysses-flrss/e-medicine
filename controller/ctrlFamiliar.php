@@ -26,58 +26,56 @@ $id = isset($_GET['id'])?$_GET['id']:"";
 
 
 if($accion=="eliminar"){
-    
+    require_once("../model/DaoFamiliar.php");
     $dao = new DaoFamiliar();
-    $dao->eliminar($familiar);
+    $dao->eliminar($id);
     echo "<p>Registro Eliminado exitosamente...</p>";
-    echo "<a href='perfilFamiliares.php'>Regresar</a>";
+    echo "<a href='../view/perfilFamiliares.php'>Regresar</a>";
 }
 
 
-if($id != "" && $accion=="modificar"){
+if($accion=="modificar"){
     require_once '../model/DaoFamiliar.php';
-    $dao = new DaoFamiliaR();
+    $dao = new DaoFamiliar();
     $familiar = $dao->mostrarFamiliar($id); 
-    $html = <<<'EOD'
+    $html = '
     <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<?php require_once("../view/plugins/default-head.php") ?>
 <title>familia</title>
 </head>
 <body>
 
-<div class="container">
-<h1>Modificar familia</h1>
-    <div class="form-group">
-        <form action="ctrlFamiliar.php" method="post">
-    <fieldset>
-        <label>
-            Nombre:
-        </label>
-EOD;
+<div class="container">';
+
 echo $html;
-echo '<section class="form-container">
+require_once("../view/plugins/menu-file.php");
+
+echo '
+
+<section class="form-container">
 <form action="../controller/ctrlFamiliar.php" class="form-register" method="POST">
     
 <div class="first-line">
     <label for="">Nombre: *</label>
-    <input type="text" name="nombre" id="" placeholder="Ingrese su Nombre" value = '.$nombre.' required>
+    <input type="text" name="nombre" id="" placeholder="Ingrese su Nombre" value =' .$familiar['1'].' >
 </div>
     
 <div class="second-line">
     <div class="peso">
         <label for="">Peso(lb): *</label>
-        <input type="text" name="peso" id="" placeholder="Peso en Libras" value= '.$peso.'  required>
+        <input type="text" name="peso" id="" placeholder="Peso en Libras" value= '.$familiar['2'].'  >
     </div>
     
     <div class="altura">
         <label for="">Altura(cm): *</label>
-        <input type="text" name="altura" id="" placeholder="Altura en cm"value = '.$altura.' required>
+        <input type="text" name="altura" id="" placeholder="Altura en cm"value = '.$familiar['3'].' >
     </div>  
 </div>
     
@@ -87,13 +85,13 @@ echo '<section class="form-container">
     <div class="genre">
         <div class="masculino">
             <label for="masculino">Masculino</label>
-            <input type="radio" name="genero" id="masculino" value="Masculino" required>
+            <input type="radio" name="genero" id="masculino" value="Masculino" >
         </div>
     
         
         <div class="female">
             <label for="femenino">Femenino</label>
-            <input type="radio" name="genero" id="femenino" value="Femenino" required>
+            <input type="radio" name="genero" id="femenino" value="Femenino" >
         </div>
 
         
@@ -102,7 +100,7 @@ echo '<section class="form-container">
     <div class="municipio">
         <label for="municipio">Municipio *</label>
         <select name="municipio" id="" required>
-            <option value="">-- Actual:'.$municipio.'</option>
+            <option value='.$familiar['6'].'>-- Actual:'.$familiar['6'].'</option>
             <option value="San Salvador">San Salvador</option>
             <option value="Aguilares">Aguilares</option>
             <option value="Apopa">Apopa</option>
@@ -131,7 +129,7 @@ echo '<section class="form-container">
 </div>
 
 <div class="fifth-line">
-    <textarea name="enfermedades" id="textarea" cols="50" rows="1" maxlength="255" value='.$enfermedades.'>$</textarea>
+    <textarea name="enfermedades" id="textarea" cols="50" rows="1" maxlength="255">'.$familiar['7'].'</textarea>
 </div>
 
     <div class="submit">

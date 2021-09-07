@@ -87,7 +87,7 @@
 
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="imgs/20170252.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/20150418.jpg" alt="" class="profile-picture">    
                 </div>
                 
                 <h1>José David López Pacas</h1>
