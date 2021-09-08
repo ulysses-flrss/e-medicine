@@ -120,6 +120,6 @@
             </section>
         </article>
     </main>
-    <script src="js/password.js"></script>
+    <script src="../view/js/password.js"></script>
 </body>
 </html>

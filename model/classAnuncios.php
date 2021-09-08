@@ -2,29 +2,31 @@
 
 class Anuncio {
     
-    //public $idUsuario;
-    public $anuncio;
+    public $idUsuario;
+    public $contenidoAnuncio;
 
-    public function __construct( $anuncio) {
-//        if (!empty($idUsuario)) {
-      //      $this->idUsuario = $idUsuario;
-  //      } else {
-    //        throw new Exception("CODIGO DE DOCTOR INVALIDO");
-      //  }
+    public function __construct($idUsuario, $contenidoAnuncio) {
+       if (!empty($idUsuario)) {
+           $this->idUsuario = $idUsuario;
+       } else {
+           $this->idUsuario = NULL;
+       }
 
-        if (!empty($anuncio)) {
-            $this->anuncio = $anuncio;
+        if (!empty($contenidoAnuncio)) {
+            $this->contenidoAnuncio = $contenidoAnuncio;
         } else {
             throw new Exception("MENSAJE INVALIDO");
         }
+
+
     }
 
-    // public function getIdUsuario () {
-    //     return $this->idUsuario;
-    // }
+    public function getIdUsuario () {
+        return $this->idUsuario;
+    }
 
     public function getAnuncio() {
-        return $this->anuncio;
+        return $this->contenidoAnuncio;
     }
     
 }

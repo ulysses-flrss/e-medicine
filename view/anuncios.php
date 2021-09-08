@@ -39,7 +39,7 @@ require_once("plugins/funciones.php");
 
                 <div class="contenido-anuncio">
                     <form action="../controller/ctrlAnuncios.php" method="post">
-                        <textarea name="anuncio" class="message-area" id="" cols="30" rows="10">
+                        <textarea name="contenidoAnuncio" class="message-area" id="" cols="30" rows="10">
 
                         </textarea>
                     <div class="submit">

@@ -8,6 +8,8 @@ class DaoPaciente{
         try{
             $stmt = $dbh->prepare($sql);
             $stmt->execute((array) $paciente);
+            $rowAf = $stmt->rowCount();
+            echo $rowAf;
         }catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
@@ -52,17 +54,21 @@ class DaoPaciente{
         $stmt=$dbh->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetch();
+        // $c = "porqueaGuillermoleFuncionayaMiNo";
+        // return $c;
         if(isset($row[0])){
-            if ($row[0] < 10){
-                $c = "P-0000" . $row[0]+1;
+            if ($row[0] < 9){
+                $c = "P-0000" . ($row[0]+1);
                 return $c;
-            }elseif ($row[0] < 100){
-                $c = "P-000" . $row[0]+1;
+            }elseif ($row[0] < 99){
+                $c = "P-000" . ($row[0]+1);
                 return $c;
-            }elseif ($row[0] < 1000) {
-                $c = "P-00" . $row[0]+1;
+            }elseif ($row[0] <   999) {
+                $c = "P-00" . ($row[0]+1);
+                return $c;
             }else{
-                $c = "P-0" . $row[0]+1;
+                $c = "P-0" . ($row[0]+1);
+                return $c;
             }
         }else{
             $c = "P-00001";

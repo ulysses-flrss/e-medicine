@@ -1,7 +1,7 @@
 <?php 
 
-//$idUsuario = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
-$anuncio = isset($_POST['anuncio'])?$_POST['anuncio']:"";
+$idUsuario = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+$contenidoAnuncio = isset($_POST['contenidoAnuncio'])?$_POST['contenidoAnuncio']:"";
 
 
     require_once("../model/classConexion.php");
@@ -9,7 +9,7 @@ $anuncio = isset($_POST['anuncio'])?$_POST['anuncio']:"";
     require_once("../model/classAnuncios.php");
 
 
-    $anuncio = new Anuncio($anuncio);
+    $anuncio = new Anuncio($idUsuario, $contenidoAnuncio);
 
     $dao = new DaoAnuncio;
 

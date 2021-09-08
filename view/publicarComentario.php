@@ -1,3 +1,9 @@
+<?php 
+
+require_once("plugins/funciones.php");
+
+?>
+
 <!DOCTYPE html>
 <html=lang="en">
 <head>
@@ -16,66 +22,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&family=Anton&div=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="jquery-3.6.0.js"></script>
+    <?php links() ?>
    
 </head>
 <body>
  <!--INICIO DEL MENÚ-->
-    <nav class="nav">
-        <ul class="navbar-nav" id="nav">
-            <li class="nav-item">
-                <img src="logoEMedicine.png" alt="" class="logo">
-            </li>
-
-            <li class="nav-item" id="li-cita">
-                <a href="#" class="nav-link" >
-                    <img src="assets/document.png" alt="" class="nav-picture" id="cita">
-                    <span class="link-text">Programar Cita</span>
-                </a>
-            </li>
-
-            <li class="nav-item" id="li-familiares">
-                <a href="#" class="nav-link" >
-                    <img src="assets/family.png" alt="" class="nav-picture" id="familiares">
-                    <span class="link-text">Familiares</span>
-                </a>
-            </li>
-
-            <li class="nav-item" id="li-doctor">
-                <a href="#" class="nav-link">
-                    <img src="assets/doctor.png" alt="" class="nav-picture" id="doctor">
-                    <span class="link-text">Especialidades Medicas</span>
-                </a>
-            </li>
-
-            <li class="nav-item" id="li-faq">
-                <a href="#" class="nav-link">
-                    <img src="assets/faq.png" alt="" class="nav-picture" id="faq">
-                    <span class="link-text">Preguntas Frecuentes</span>
-                </a>
-            </li>
-
-            <li class="nav-item" id="li-comentarios">
-                <a href="#" class="nav-link">
-                    <img src="assets/comments.png" alt="" class="nav-picture" id="comentarios">
-                    <span class="link-text">Comentarios</span>
-                </a>
-            </li>
-
-            <li class="nav-item" id="li-about">
-                <a href="#" class="nav-link" id="li-info">
-                    <img src="assets/information.png" alt="" class="nav-picture" id="about">
-                    <span class="link-text">Acerca de Nosotros</span>
-                </a>
-            </li>
-
-            <li class="nav-item" id="li-logout">
-                <a href="#" class="nav-link">
-                    <img src="assets/logout.png" alt="" class="nav-picture" id="logout">
-                    <span class="link-text">Cerrar Sesión</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <?php menu ()?>
     <!--FIN DEL MENÚ-->
     <center>
 

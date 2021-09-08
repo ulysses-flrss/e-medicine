@@ -6,12 +6,11 @@ class DaoAnuncio {
     public function publicarAnuncio ($anuncio) {
         $cn = new Conexion;
         $dbh = $cn->getConexion();
-        $sql = "INSERT INTO anuncios (anuncio) VALUES (:anuncio)";
+        $sql = "INSERT INTO anuncios (idUsuario, contenidoAnuncio) VALUES (:idUsuario, :contenidoAnuncio)";
 
         try {
             $stmt = $dbh->prepare($sql);
-            //$stmt->bindParam(':idUsuario', $anuncio->idUsuario);
-            $stmt->bindParam(':anuncio', $anuncio->anuncio);
+            $stmt->execute((array) $anuncio);
             $rowAf = $stmt->rowCount();
             echo $rowAf;
 

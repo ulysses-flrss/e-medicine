@@ -78,6 +78,8 @@
     //FINAL MENÚ
   }
 
+  
+
   function footer(){
     echo "<footer class='footer'>
         <div class='columna1'>
