@@ -1,5 +1,3 @@
-<?php 
-
-    require_once("view/login.php");
-
+<?php
+    require_once 'controller/ctrlLogin.php';
 ?>

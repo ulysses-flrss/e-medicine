@@ -62,7 +62,7 @@ input:focus:not(.submit input) {
     border-bottom-right-radius: 50px;
 }
 
-.first-line, .second-line,.fifth-line, .sixth-line, .seventh-line {
+.second-line,.fifth-line, .sixth-line, .seventh-line {
     display: flex;
     font-size: 1.75rem;
     width: 100%;
@@ -70,12 +70,12 @@ input:focus:not(.submit input) {
     margin:1.5rem 0;
 }
 
-.third-line {
+.first-line, .third-line {
     display: flex;
     font-size: 1.75rem;
     width: 100%;
     justify-content: space-between;
-    margin:1.5rem 0;
+    margin: 1.5rem 0;
 }
 
 .fourth-line {
@@ -92,7 +92,7 @@ input:focus:not(.submit input) {
 }
 
 .first-line input {
-    width: 25%;
+    width: 60%;
 } 
 
 

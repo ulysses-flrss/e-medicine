@@ -1,3 +1,4 @@
+<?php require("plugins/funciones.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,68 +6,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programar Cita - E-Medicine</title>
-    <link rel="stylesheet" href="css/cita-style.css">
-    <?php require("plugins/default-head.php") ?>
+    <link rel="stylesheet" href="../view/css/cita-style.css">
+    <?php links(); ?>
 </head>
 <body>
-<?php require("plugins/menu-file.php") ?>
+<?php menu(); ?>
     <main class="all-container">
         <article>
             <section class="form-container">
-                <form action="">
+                <form action="../controller/ctrlCita.php">
                 
                     <div class="perfil">
                         <label for="">Seleccione Perfil:</label>
-                        <select name="" id="">
-                            <option value="">Perfil 1</option>
-                            <option value="">Perfil 2</option>
-                            <option value="">Perfil 3</option>
+                        <select name="perfil" id="">
+                            <option value="perfil1">Perfil 1</option>
+                            <option value="perfil2">Perfil 2</option>
+                            <option value="perfil3">Perfil 3</option>
                         </select>
-                    </div>
-
-                    <div class="first-line">
-                        <label for="">Nombre:</label>
-                        <input type="text" name="" id="" placeholder="Ingrese su Nombre">
                     </div>
                         
                     <div class="second-line">
                         <div class="peso">
                             <label for="">Peso(lb):</label>
-                            <input type="text" name="" id="" placeholder="Peso en Libras">
-                        </div>
-
-                        <div class="fecha">
-                            <label for="">Fecha de Nacimiento:</label>
-                            <input type="date" name="" id="">
+                            <input type="text" name="pe" id="" placeholder="Peso en Libras">
                         </div> 
                         
                         <div class="altura">
                             <label for="">Altura(cm):</label>
-                            <input type="text" name="" id="" placeholder="Altura en cm">    
+                            <input type="text" name="al" id="" placeholder="Altura en cm">    
                         </div>  
+
+                        <div class="fecha">
+                            <label for="">Fecha de Nacimiento:</label>
+                            <input type="date" name="fn" id="">
+                        </div>
                     </div>
                         
     
                     <div class="third-line">
                         <div class="especialidad-medica">
                             <label for="especialidad-medica">Especialidad Médica</label>
-                            <select name="especialidad-medica" id="">
-                                <option value="">-- Seleccione una Especialidad</option>
-                                <option value="Neurología">Neurología</option>
-                                <option value="Cardiología">Cardiología</option>
-                                <option value="Cardiología">Cardiología</option>
-                                <option value="Cardiología">Cardiología</option>
+                            <select name="em" id="">
+                                <option value="">-- Seleccione una Especialidad --</option>
+                                <option value="cardiologia">Cardiología</option>
+                                <option value="medicinaGeneral">Médicina General</option>
+                                <option value="neurologia">Neurología</option>
+                                <option value="pediatria">Pediatría</option>
+                            </select>
+                        </div>
+
+                        <div class="doctor">
+                            <label for="doctor">Elija el doctor</label>
+
+                            <select name="doctor" id="">
+                                <option value="D-001">Ulises Adonay Flores Martínez</option>
+                                <option value="D-002">José David López Pacas</option>
+                                <option value="D-003">José Guillermo Granadino Rivas</option>
+                                <option value="D-004">Jefferson Alexis Castro Castro</option>
                             </select>
                         </div>
 
                         <div class="fecha">
                             <label for="">Fecha de Cita:</label>
-                            <input type="date" name="" id="">
+                            <input type="date" name="fc" id="">
                         </div>  
 
                         <div class="doctor">
                             <label for="">Hora de Cita</label>
-                            <select name="" id="">
+                            <select name="hc" id="">
                             <option value="7:00am">7:00am</option>
                             <option value="7:30am">7:30am</option>
                             <option value="8:00am">8:00am</option>
@@ -88,36 +95,25 @@
                             </select>
                             
                         </div>
-
-                        <div class="doctor">
-                            <label for="doctor">Elija el doctor</label>
-
-                            <select name="doctor" id="">
-                                <option value="">Ulises Adonay Flores Martínez</option>
-                                <option value="">José David López Pacas</option>
-                                <option value="">José Guillermo Granadino Rivas</option>
-                                <option value="">Jefferson Alexis Castro Castro</option>
-                            </select>
-                        </div>
                     </div>
 
                     <div class="fourth-line">
                         <div class="enfermedades">
                             <label for="">Enfermedades Crónicas y Alergias (sino tiene ninguna deje vació este campo)</label>
-                            <input type="text">
+                            <input type="text" name="enfermedades">
                         </div>
                     </div>
 
                     <div class="fifth-line">
                         <div class="motivo">
-                            <label for="">¿Cuál es la razón de su cita? (escriba sus sintomas   )</label>
-                            <input type="text" name="" id="">
+                            <label for="">¿Cuál es la razón de su cita? (escriba sus sintomas)</label>
+                            <input type="text" name="razon" id="">
                         </div>
                     </div>
     
                 
                         <div class="submit">
-                            <input type="submit" value="Programar Cita">
+                            <input type="submit" name="accion" value="programar cita">
                         </div>
                 </form>
             </section>
@@ -125,7 +121,7 @@
     </main>
 <!--FIN DEL MENÚ-->
 
-<?php require("plugins/footer-file.php") ?>
+<?php footer(); ?>
 
 <script src="javascript.js"></script>
 </body>
