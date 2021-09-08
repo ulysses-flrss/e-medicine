@@ -22,7 +22,7 @@
         echo "<nav class='nav'>
             <ul class='navbar-nav' id='nav'>
                 <li class='nav-item'>
-                    <a href='../index.php?codUsuario=".$datos[0]."'><img src='../assets/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'></a>
+                    <a href='../view/viewPaciente.php?idUsuario=".$datos[0]."'><img src='../assets/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'></a>
                 </li>
 
                 <li class='nav-item' id='li-cita' title='Programar Cita'>
@@ -68,7 +68,7 @@
                 </li>
 
                 <li class='nav-item' id='li-logout' title='Cerrar Sesión'>
-                    <a href='#' class='nav-link'>
+                    <a href='../controller/ctrlPaciente.php?accion=cerrarSesion' class='nav-link'>
                         <img src='../assets/sign-out.png' alt='' class='nav-picture' id='logout'>
                         <span class='link-text'>Cerrar Sesión</span>
                     </a>

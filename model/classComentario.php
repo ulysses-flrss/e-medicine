@@ -19,7 +19,7 @@
     public function mostrarComentarios(){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
-      $sql = "SELECT CONCAT(nombre, ' ', apellido) AS nombre, mensaje, DATE_FORMAT(fecha, '%H:%i %d/%m/%Y') AS fecha FROM comentarios INNER JOIN pacientes ON pacientes.idPaciente=comentarios.idPaciente ORDER BY fecha DESC";
+      $sql = "SELECT CONCAT(nombre, ' ', apellido) AS nombre, mensaje, DATE_FORMAT(fecha, '%H:%i %d/%m/%Y') AS fecha FROM comentarios INNER JOIN pacientes ON pacientes.idPaciente=comentarios.idPaciente ORDER BY idComentario DESC";
       $stmt = $dbh->prepare($sql);
       $stmt->execute();
       $resultado = $stmt->fetchAll();

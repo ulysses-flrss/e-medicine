@@ -16,48 +16,67 @@
   <?php
     links();
   ?>
-  <link rel="stylesheet" href="../view/css/anuncios-style.css">
-  <link rel="stylesheet" href="../view/css/anuncio.css">
+  <link rel="stylesheet" href="../view/css/comentarios-style.css">
 </head>
 <body>
   <?php menu(); ?>
-  <center><h2>COMENTARIOS</h2></center>
+  
 
-    <div class="all-container">
-      <form id="formucom" action="../controller/ctrlComentarios.php" method="POST">
-        <div class="cajita">
-        <h3><?php echo $datos[1].":";?></h3>
-        <?php echo "<input type='hidden' name='idUsuario' value='".$datos[0]."'>"  ?>
-        <?php echo "<input type='hidden' name='nombre' value='".$datos[1]."'>"  ?>
-        <textarea type="text" placeholder="Escriba su opinión..." id="mensaje" name="mensaje"></textarea>
-        <input type="submit" name="accion" id="accion" value="publicar" required></div>
-      </form>
+    <main class="all-container">
+      <article>
+        <section class="publicarComentario">
+        <h2>Comentarios</h2>
+          <form id="formucom" action="../controller/ctrlComentarios.php" method="POST">
+            <div class="cajita">
+            <div class="nombrePerfil"><?php echo $datos[1].":";?></div>
+            <?php echo "<input type='hidden' name='idUsuario' value='".$datos[0]."'>"  ?>
+            <?php echo "<input type='hidden' name='nombre' value='".$datos[1]."'>"  ?>
+            <textarea type="text" placeholder="Escriba su opinión..." id="mensaje" name="mensaje"></textarea>
+            <div class="submit">
+                <input type="submit" name="accion" id="accion" value="publicar" required></div>
+            </div>
+            
+          </form>
+        </section>
 
-      <div class="division">
-          <hr id="barra">
-      </div>
+        <section>
+            <h2>Comentarios Publicados</h2>
 
-      <div class="comentariosPublicados">
-        <h2>Comentarios Publicados</h2>
+            <?php
+              $coment = new Comentario();
+              $comentarios = $coment->mostrarComentarios();
+              
+              foreach ($comentarios as $comentario) {
+                echo '
+                <div class = "comentariosPublicados">
+                  
+                    <div class="objetoComentarios"  id="autor">
+                        <span title="Escritor del Comentario">'.$comentario['nombre'].'</span>
+                    </div>
 
-        <?php
-          $coment = new Comentario();
-          $comentarios = $coment->mostrarComentarios();
-          
-          foreach ($comentarios as $comentario) {
-            echo "
-            <div class='comentarios'>
-              <div id='nombreComentario'>".$comentario['nombre']."</div>
+                    <div class="objetoComentarios" id="fechaPublicacion">
+                        <span title="Fecha de Publicación del Anuncio">'.$comentario['fecha'].'</span>
+                    </div>
 
-              <div id='contenidoComentario'>".$comentario['mensaje']."</div>
+                    <div class="objetoComentarios" id="descripcion">
+                        <p title="Contenido del Anuncio">
+                          '.$comentario['mensaje'].'
+                        </p>
+                    </div>
+                  
+                </div>';
 
-              <div id='fechaComentario'>".$comentario['fecha']."
-            </div>";
-          }
-        ?>
-      </div>
+                
+                
+              }
+            ?>
+        </section>
+      </article>
+  
 
-    </div>
+      
+
+        </main>
   <?php footer() ?>
 </body>
 </html>

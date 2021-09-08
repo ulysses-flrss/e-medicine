@@ -98,5 +98,13 @@ class DaoPaciente{
             }
         }
     }
+
+    public function cerrarSesion($idPaciente) {
+        $conexion = new Conexion;
+        $dbh = $conexion->getConexion();
+
+        session_unset();
+
+    }
 }
 ?>

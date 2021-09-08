@@ -27,8 +27,19 @@
         $_SESSION['codUsuario'] = $cod; //Se guarda el código del usuario que inicio sesión
         //Este session solo funciona en la carpeta "controller"
         echo "<script>alert('".$mensaje."')</script>"; //MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
+        echo "<body style='background-color:#daffec;'><a href='../index.php' style='text-decoration:none;color:black;font-size:1.5rem;font-weight:bold;'>Iniciar Sesión</a></body>";
+    }
+
+    if ($accion = "cerrarSesion") {
+        require_once "../model/classPaciente.php";
+        require_once "../model/daoPaciente.php";
+
+        $dao = new DaoPaciente();
+        $cod = $dao->getCodigo();
+
+        $dao->cerrarSesion($cod);
+
         header("location:../index.php");
-        //echo "<body style='background-color:#daffec;'><a href='../index.php' style='text-decoration:none;color:black;font-size:1.5rem;font-weight:bold;'>Iniciar Sesión</a></body>";
     }
     //Eliminar paciente
     /*if($id != "" && $accion=="eliminar"){
