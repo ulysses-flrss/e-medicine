@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
   function username(){
     require_once '../model/classConexion.php';
     $idUsuario = $_SESSION['codUsuario'];

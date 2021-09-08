@@ -16,13 +16,14 @@
   <?php
     links();
   ?>
-  <link rel="stylesheet" href="../view/css/comentarios.css">
+  <link rel="stylesheet" href="../view/css/anuncios-style.css">
+  <link rel="stylesheet" href="../view/css/anuncio.css">
 </head>
 <body>
   <?php menu(); ?>
   <center><h2>COMENTARIOS</h2></center>
 
-    <div class="allContainer">
+    <div class="all-container">
       <form id="formucom" action="../controller/ctrlComentarios.php" method="POST">
         <div class="cajita">
         <h3><?php echo $datos[1].":";?></h3>

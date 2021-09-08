@@ -8,7 +8,7 @@
     padding-top: 10rem;
 }
 
-h1 {
+h2 {
     font-family: 'Sacramento', cursive;
     margin: 1rem;
     font-size: 5rem;
@@ -75,7 +75,7 @@ textarea:focus {
     font-family: var(--menuFont);
     box-shadow: 3px 3px 0px;
     font-size: 1.5rem;
-    cursor: pointer;;
+    cursor: pointer;
 }
 
 .submit input:hover {
