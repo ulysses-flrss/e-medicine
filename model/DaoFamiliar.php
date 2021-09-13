@@ -25,10 +25,10 @@ require_once("../model/classConexion.php");
         public function modificar($familiar){
             $cn = new Conexion();        
             $dbh = $cn->getConexion();
-            $sql = "UPDATE familiar SET nombre=:nombre,  peso=:peso, altura=:altura, municipio=:municipio, enfermedades=:enfermedades WHERE id=:id";
+            $sql = "UPDATE familiar SET nombre=:nombre,  peso=:peso, altura=:altura, fechaNac=:fechaNac, genero=:genero,  municipio=:municipio, enfermedades=:enfermedades WHERE id=:id";
             try{
                 $stmt = $dbh->prepare($sql);
-                $stmt->bindParam(':id', $familiar->id);
+
                 $stmt->bindParam(':nombre',$familiar->nombre);
                 $stmt->bindParam(':peso',$familiar->peso);
                 $stmt->bindParam(':altura',$familiar->altura);
@@ -36,9 +36,13 @@ require_once("../model/classConexion.php");
                 $stmt->bindParam(':genero',$familiar->genero);
                 $stmt->bindParam(':municipio',$familiar->municipio);
                 $stmt->bindParam(':enfermedades',$familiar->enfermedades);
-                
+                $stmt->bindParam(':id', $familiar->id);
     
-                $stmt->execute();
+                if ($stmt->execute()) {
+                    echo "SUCCESS";
+                } else {
+                    echo "ERROR";
+                };
             }catch(PDOException $e){
                 echo "Error: " . $e->getMessage();
             }
@@ -61,7 +65,7 @@ require_once("../model/classConexion.php");
 
 
         public function listadoFamiliar(){
-            $sql = "SELECT id, nombre FROM familiar ORDER BY id";
+            $sql = "SELECT id, nombre, peso, altura, fechaNac, genero municipio, enfermedades FROM familiar ORDER BY id";
             $cn = new Conexion();
             $dbh = $cn->getConexion();
             $stmt = $dbh->prepare($sql);
@@ -70,16 +74,22 @@ require_once("../model/classConexion.php");
             return $familiar;
         }
 
-        public function mostrarFamiliar($id) {
-            $sql = "SELECT * FROM familiar WHERE id=:id";
-            $cn = new Conexion;
-            $dbh = $cn->getConexion();
-            $stmt = $dbh->prepare($sql);
-            $stmt->bindParam(':id',$id);
-            $stmt->execute();
-            $familiar = $stmt->fetch();
-            return $familiar;
-        }
+    public function mostrarFamiliar($id) {
+        $sql = "SELECT id, nombre, peso, altura,fechaNac, genero, municipio, enfermedades FROM familiar WHERE id=:id";
+        $cn = new Conexion;
+        $dbh = $cn->getConexion();
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $familiar = $stmt->fetch();
+        return $familiar;
+
+
+            
+            
+    
+
+    }
     
     
     }

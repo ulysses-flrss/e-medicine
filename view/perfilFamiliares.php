@@ -31,9 +31,6 @@ require_once("plugins/funciones.php") ?>
             require_once "../model/DaoFamiliar.php";
         $dao = new DaoFamiliar();
         $familiar = $dao->listadoFamiliar();
-        $enlace ="<a href='controlador/ctrlCliente.php?accion=modificar&id=";
-        $enlace2 ="<a href='controlador/ctrlCliente.php?accion=eliminar&id=";
-
         foreach($familiar as $familia){
             echo
             "<div class='familiar-card'>
@@ -41,7 +38,7 @@ require_once("plugins/funciones.php") ?>
                 <img src='../imagenPrueba.png' alt='' class='familiares-profile-picture'>    
             </div>
             
-            <span class='familiares-profile-name'>".$familia['id'].$familia['nombre']."</span>
+            <span class='familiares-profile-name'>".$familia['nombre']."</span>
             <div class='familiares-functions'>
                 <a href='../controller/ctrlFamiliar.php?accion=modificar&id=".$familia['id']."'><i class='fas fa-edit'></i></a>
                 <a href='../controller/ctrlFamiliar.php?accion=eliminar&id=".$familia['id']."'><i class='fas fa-trash-alt'></i></a>

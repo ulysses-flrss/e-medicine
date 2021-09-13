@@ -40,6 +40,7 @@ if($accion == "Modificar Perfil"){
     $dao = new DaoFamiliar();
     $familiar = new Familiar($id, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades); 
     $dao->modificar($familiar);
+
     echo "<p>Registro modificado exitosamente...</p>";
     echo "<a href='../view/perfilFamiliares.php'>Regresar</a>";
 }
@@ -60,7 +61,7 @@ if($accion=="modificar"){
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel = "stylesheet" href="../view/css/form-familiares-style.css">
-<title>familia</title>
+<title>Familiar "'.$familiar[1].'"</title>
 </head>
 <body>  
 
@@ -80,27 +81,35 @@ echo '
     
 <div class="first-line">
     <label for="">Nombre: *</label>
-    <input type="text" name="nombre" id="" placeholder="Ingrese su Nombre" value =' .$familiar['1'].' >
+    <input type="text" name="nombre" id="" placeholder="Ingrese su Nombre" value =' .$familiar[1].' >
 </div>
     
 <div class="second-line">
     <div class="peso">
         <label for="">Peso(lb): *</label>
-        <input type="text" name="peso" id="" placeholder="Peso en Libras" value= '.$familiar['2'].'  >
+        <input type="text" name="peso" id="" placeholder="Peso en Libras" value= '.$familiar[2].'  >
     </div>
     
     <div class="altura">
         <label for="">Altura(cm): *</label>
-        <input type="text" name="altura" id="" placeholder="Altura en cm"value = '.$familiar['3'].' >
+        <input type="text" name="altura" id="" placeholder="Altura en cm"value = '.$familiar[3].' >
     </div>  
 </div>
+
+<div class = "third-line">
+    <div class = "fecha">
+   
+        <input type = "hidden" name = "fechaNac" value ='.$familiar[4].'>
+    </div>
+
+   
     
 
     
     <div class="municipio">
         <label for="municipio">Municipio *</label>
         <select name="municipio" id="" required>
-            <option value='.$familiar['6'].'>-- Actual:'.$familiar['6'].'</option>
+            <option value='.$familiar[6].'>-- Actual:'.$familiar[6].'</option>
             <option value="San Salvador">San Salvador</option>
             <option value="Aguilares">Aguilares</option>
             <option value="Apopa">Apopa</option>
@@ -124,12 +133,19 @@ echo '
     </div>
 </div>
 
+
+<div class="genre">
+<input type = "hidden" name = "genero" value ='.$familiar[5].' >
+</div>
+
+
+</div>
 <div class="fourth-line">
     <label for="">¿Tiene alguna Enfermedad o Alergia? Describalas (Si no tiene, omita este campo)</label>
 </div>
 
 <div class="fifth-line">
-    <textarea name="enfermedades" id="textarea" cols="50" rows="1" maxlength="255">'.$familiar['7'].'</textarea>
+    <textarea name="enfermedades" id="textarea" cols="50" rows="1" maxlength="255">'.$familiar[7].'</textarea>
 </div>
 
     <div class="submit">

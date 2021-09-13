@@ -54,7 +54,7 @@ require_once("plugins/funciones.php") ?>
                     <div class="genre">
                         <div class="masculino">
                             <label for="masculino">Masculino</label>
-                            <input type="radio" name="genero" id="masculino" value="Masculino" required>
+                            <input type="radio" class="male" name="genero" id="masculino" value="Masculino" required>
                         </div>
                     
                         
