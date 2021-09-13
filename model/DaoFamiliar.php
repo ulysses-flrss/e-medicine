@@ -70,21 +70,16 @@ require_once("../model/classConexion.php");
             return $familiar;
         }
 
-    public function mostrarFamiliar() {
-        $sql = "SELECT * FROM familiar";
-        $cn = new Conexion;
-        $dbh = $cn->getConexion();
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute();
-        $familiar = $stmt->fetch();
-        return $familiar;
-
-
-            
-            
-    
-
-    }
+        public function mostrarFamiliar($id) {
+            $sql = "SELECT * FROM familiar WHERE id=:id";
+            $cn = new Conexion;
+            $dbh = $cn->getConexion();
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':id',$id);
+            $stmt->execute();
+            $familiar = $stmt->fetch();
+            return $familiar;
+        }
     
     
     }
