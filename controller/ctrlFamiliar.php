@@ -8,7 +8,7 @@ $genero = isset($_POST['genero'])?$_POST['genero']:"";
 $municipio = isset($_POST['municipio'])?$_POST['municipio']:"";
 $enfermedades = isset($_POST['enfermedades'])?$_POST['enfermedades']:"";
 $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
-$id = isset($_GET['id'])?$_GET['id']:"";
+$id = isset($_REQUEST['id'])?$_REQUEST['id']:"";
 
 
     require_once("../model/classFamiliares.php");
@@ -16,26 +16,38 @@ $id = isset($_GET['id'])?$_GET['id']:"";
     require_once("../model/classConexion.php");
     
 
-    $familiar = new Familiar($id, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades);
-
-    $dao = new DaoFamiliar;
+if($accion == "Crear Perfil") {
     
+    $familiar = new Familiar($id, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades);
+    $dao = new DaoFamiliar;
     $dao->insertar($familiar);
-
-
+    
+    echo "<p>Registro Guardado exitosamente...</p>";
+    echo "<a href='../view/perfilFamiliares.php'>Regresar</a>";
+}
 
 
 if($accion=="eliminar"){
-    require_once("../model/DaoFamiliar.php");
     $dao = new DaoFamiliar();
     $dao->eliminar($id);
     echo "<p>Registro Eliminado exitosamente...</p>";
     echo "<a href='../view/perfilFamiliares.php'>Regresar</a>";
 }
 
+if($accion == "Modificar Perfil"){
+    require_once '../model/classFamiliares.php';
+    require_once '../model/DaoFamiliar.php';
+    $dao = new DaoFamiliar();
+    $familiar = new Familiar($id, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades); 
+    $dao->modificar($familiar);
+    echo "<p>Registro modificado exitosamente...</p>";
+    echo "<a href='../view/perfilFamiliares.php'>Regresar</a>";
+}
 
 if($accion=="modificar"){
     require_once '../model/DaoFamiliar.php';
+    require_once("../view/plugins/funciones.php");
+    links();
     $dao = new DaoFamiliar();
     $familiar = $dao->mostrarFamiliar($id); 
     $html = '
@@ -47,17 +59,21 @@ if($accion=="modificar"){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<?php require_once("../view/plugins/default-head.php") ?>
+<link rel = "stylesheet" href="../view/css/form-familiares-style.css">
 <title>familia</title>
 </head>
-<body>
+<body>  
 
 <div class="container">';
 
 echo $html;
-require_once("../view/plugins/menu-file.php");
 
 echo '
+
+<div class="inicio-register">
+            <img src="../assets/logoEMedicine.png" alt="" class="logo">
+            <h1 class="bienvenida-register">Modifica el perfil de '.$familiar[1].'</h1>                
+        </div>
 
 <section class="form-container">
 <form action="../controller/ctrlFamiliar.php" class="form-register" method="POST">
@@ -80,22 +96,6 @@ echo '
 </div>
     
 
-<div class="third-line">
-    
-    <div class="genre">
-        <div class="masculino">
-            <label for="masculino">Masculino</label>
-            <input type="radio" name="genero" id="masculino" value="Masculino" >
-        </div>
-    
-        
-        <div class="female">
-            <label for="femenino">Femenino</label>
-            <input type="radio" name="genero" id="femenino" value="Femenino" >
-        </div>
-
-        
-    </div>
     
     <div class="municipio">
         <label for="municipio">Municipio *</label>
@@ -133,20 +133,18 @@ echo '
 </div>
 
     <div class="submit">
-        <input type="submit" value="Modificar Perfil">
-    </div>';    
+        <input type="submit" name = "accion" value="Modificar Perfil">
+    </div>';
+    
+    
+
     
     
 }
-if($accion == "modificar"){
-    require_once '../model/classFamiliares.php';
-    require_once '../model/DaoFamiliar.php';
-    $dao = new DaoFamiliar();
-    $familiar = new Familiar($id, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades); 
-    $dao->modificar($familiar);
-    echo "<p>Registro modificado exitosamente...</p>";
-    echo "<a href='../view/perfilFamiliares.php'>Regresar</a>";
-}
+
+
+
+
 
 
 

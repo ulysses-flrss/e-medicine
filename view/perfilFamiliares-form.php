@@ -15,7 +15,7 @@ require_once("plugins/funciones.php") ?>
     <?php links() ?>
 </head>
 <body>
-    <?php menu() ?>
+
     <main>
         <div class="inicio-register">
             <img src="../assets/logoEMedicine.png" alt="" class="logo">
@@ -102,7 +102,7 @@ require_once("plugins/funciones.php") ?>
                 </div>
 
                     <div class="submit">
-                        <input type="submit" value="Crear Perfil">
+                        <input type="submit" name="accion" value="Crear Perfil">
                     </div>
                 </form>
             </section>

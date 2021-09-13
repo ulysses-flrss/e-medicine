@@ -14,6 +14,11 @@ body {
     padding-top: 10rem;
 }
 
+.add-image {
+    width: 10rem;
+    margin-left: 8rem;
+}
+
 .familiar-profiles {
     width: 100%;
     height: 100%;

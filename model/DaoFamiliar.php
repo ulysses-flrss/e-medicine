@@ -25,9 +25,10 @@ require_once("../model/classConexion.php");
         public function modificar($familiar){
             $cn = new Conexion();        
             $dbh = $cn->getConexion();
-            $sql = "UPDATE familiar SET nombre=:nombre,  peso=:peso, altura=:altura, fechaNac=:fechaNac, genero=:genero, municipio=:municipio, enfermedades=:enfermedades";
+            $sql = "UPDATE familiar SET nombre=:nombre,  peso=:peso, altura=:altura, municipio=:municipio, enfermedades=:enfermedades WHERE id=:id";
             try{
                 $stmt = $dbh->prepare($sql);
+                $stmt->bindParam(':id', $familiar->id);
                 $stmt->bindParam(':nombre',$familiar->nombre);
                 $stmt->bindParam(':peso',$familiar->peso);
                 $stmt->bindParam(':altura',$familiar->altura);
@@ -44,11 +45,6 @@ require_once("../model/classConexion.php");
         } 
 
  
-
-        
-      
-
-
         public function eliminar($id){
             $cn = new Conexion;        
             $dbh = $cn->getConexion();

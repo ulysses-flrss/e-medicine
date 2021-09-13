@@ -41,10 +41,10 @@ require_once("plugins/funciones.php") ?>
                 <img src="../imagenPrueba.png" alt="" class="familiares-profile-picture">    
             </div>
             
-            <span class="familiares-profile-name">'.$familiar['nombre'].'</span>
+            <span class="familiares-profile-name">'.$familiar['id'].$familiar['nombre'].'</span>
             <div class="familiares-functions">
-                <a href="../controller/ctrlFamiliar.php?accion=modificar"><i class="fas fa-edit"></i></a>
-                <a href="../controller/ctrlFamiliar.php?accion=eliminar"><i class="fas fa-trash-alt"></i></a>
+                <a href="../controller/ctrlFamiliar.php?accion=modificar&id="'.$familiar['id'].'"><i class="fas fa-edit"></i></a>
+                <a href="../controller/ctrlFamiliar.php?accion=eliminar&id="'.$familiar['id'].'"><i class="fas fa-trash-alt"></i></a>
             </div>
             </div>';
         }

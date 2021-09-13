@@ -33,7 +33,7 @@
                 </li>
 
                 <li class='nav-item' id='li-familiares' title='Familiares'>
-                    <a href='../controller/perfilFamiliares.php?idUsuario=".$datos[0]."' class='nav-link' >
+                    <a href='../view/perfilFamiliares.php?idUsuario=".$datos[0]."' class='nav-link' >
                         <img src='../assets/family.png' alt='' class='nav-picture' id='familiares'>
                         <span class='link-text'>Familiares</span>
                     </a>
