@@ -34,19 +34,19 @@ require_once("plugins/funciones.php") ?>
         $enlace ="<a href='controlador/ctrlCliente.php?accion=modificar&id=";
         $enlace2 ="<a href='controlador/ctrlCliente.php?accion=eliminar&id=";
 
-        foreach($familiar as $familiar){
+        foreach($familiar as $familia){
             echo
-            '<div class="familiar-card">
-            <div class="profile-picture-container">
-                <img src="../imagenPrueba.png" alt="" class="familiares-profile-picture">    
+            "<div class='familiar-card'>
+            <div class='profile-picture-container'>
+                <img src='../imagenPrueba.png' alt='' class='familiares-profile-picture'>    
             </div>
             
-            <span class="familiares-profile-name">'.$familiar['id'].$familiar['nombre'].'</span>
-            <div class="familiares-functions">
-                <a href="../controller/ctrlFamiliar.php?accion=modificar&id="'.$familiar['id'].'"><i class="fas fa-edit"></i></a>
-                <a href="../controller/ctrlFamiliar.php?accion=eliminar&id="'.$familiar['id'].'"><i class="fas fa-trash-alt"></i></a>
+            <span class='familiares-profile-name'>".$familia['id'].$familia['nombre']."</span>
+            <div class='familiares-functions'>
+                <a href='../controller/ctrlFamiliar.php?accion=modificar&id=".$familia['id']."'><i class='fas fa-edit'></i></a>
+                <a href='../controller/ctrlFamiliar.php?accion=eliminar&id=".$familia['id']."'><i class='fas fa-trash-alt'></i></a>
             </div>
-            </div>';
+            </div>";
         }
 ?>
            
