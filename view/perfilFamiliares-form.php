@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once("plugins/funciones.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +12,10 @@
     <link rel="stylesheet" href="css/root-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&family=Anton&div=swap" rel="stylesheet">
     <title>Registro - E-Medicine</title>
+    <?php links() ?>
 </head>
 <body>
+    <?php menu() ?>
     <main>
         <div class="inicio-register">
             <img src="../assets/logoEMedicine.png" alt="" class="logo">
@@ -102,6 +108,8 @@
             </section>
         </article>
     </main>
+
+    <?php footer() ?>
     <script src="view/js/password.js"></script>
 </body>
 </html>

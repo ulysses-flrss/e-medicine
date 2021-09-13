@@ -1,3 +1,7 @@
+<?php 
+session_start();
+require_once("plugins/funciones.php"); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,12 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index-style.css">
     <title>Inicio - eMedicine</title>
-    <?php require("plugins/default-head.php")?>
+    <?php links() ?>
 </head>
 
 <body>
 
-    <?php require("plugins/menu-file.php") ?>
+    <?php menu() ?>
     
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
@@ -70,7 +74,7 @@
         </article>
     </main>
 
-    <?php require("plugins/footer-file.php") ?>
+    <?php footer() ?>
 
     <script src="javascript.js"></script>
 </body>

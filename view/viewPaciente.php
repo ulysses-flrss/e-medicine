@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require_once 'plugins/funciones.php';
     require_once '../controller/ctrlUsuario.php';
     $dataUser = username();

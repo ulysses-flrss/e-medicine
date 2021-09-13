@@ -1,4 +1,6 @@
-<?php require_once 'plugins/funciones.php'; ?>
+<?php 
+session_start();
+require_once 'plugins/funciones.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,7 @@
     <title>Registro - E-Medicine</title>
     <?php $location = "dentro";  links($location);?>
     <link rel="stylesheet" href="../view/css/register-style.css">
+    <?php links() ?>
 </head>
 <body>
     <main>

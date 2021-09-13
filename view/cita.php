@@ -1,3 +1,8 @@
+<?php 
+session_start();
+require_once("plugins/funciones.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programar Cita - E-Medicine</title>
     <link rel="stylesheet" href="css/cita-style.css">
-    <?php require("plugins/default-head.php") ?>
+    <?php links() ?>
 </head>
 <body>
-<?php require("plugins/menu-file.php") ?>
+<?php menu() ?>
     <main class="all-container">
         <article>
             <section class="form-container">
@@ -125,7 +130,7 @@
     </main>
 <!--FIN DEL MENÚ-->
 
-<?php require("plugins/footer-file.php") ?>
+<?php footer() ?>
 
 <script src="javascript.js"></script>
 </body>

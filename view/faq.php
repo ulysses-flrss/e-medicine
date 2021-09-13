@@ -1,3 +1,9 @@
+<?php 
+session_start();
+require_once("plugins/funciones.php");
+require_once("../controller/ctrlUsuario.php");
+$idUsuario = $_SESSION['codUsuario'];?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,50 +13,47 @@
     <title>Preguntas Frecuentes - E-Medicine</title>
     <link rel="stylesheet" href="css/faq-style.css">
 
-    <?php require("plugins/default-head.php") ?>
+    <?php links() ?>
     
 </head>
 <body>
-    <?php require("plugins/menu-file.php") ?>
+    <?php menu() ?>
 
 <main class="all-container">
     <article>
         <section class="question-container">
             <div class="question-card" id="Q1">
                 <div class="objeto-pregunta" id="pregunta">
-                    <span>¿Cuál es el límite de citas que se puede programar?</span>
+                    <span>¿Por qué la página?</span>
                 </div>
 
                 <div class="objeto-pregunta" id="respuesta">
                     <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
+                    Se creó con el fin de agendar citas médicas mucho más rápido, viendo también la situación actual del mundo con la pandemia y así no arriesgar vidas humanas asistiendo hasta alguna clínica para programar una cita.
                     </span>
                 </div>
             </div>
 
             <div class="question-card" id="Q2">
                 <div class="objeto-pregunta" id="pregunta">
-                    <span>¿Cuál es el límite de citas que se puede programar?</span>
+                    <span>¿Con qué especialidades cuentan? </span>
                 </div>
 
                 <div class="objeto-pregunta" id="respuesta">
                     <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
+                            Contamos con la especialidad de cardiologia, Medicina general y. Pediatra, Neurología, Nutrición, Citologia, Otorrinolatingologia y gastroenterologia
                     </span>
                 </div>
             </div>
 
             <div class="question-card" id="Q3">
                 <div class="objeto-pregunta" id="pregunta">
-                    <span>¿Cuál es el límite de citas que se puede programar?</span>
+                    <span>¿Puedo programar una cita para mi hijo menor de edad o mi papá?</span>
                 </div>
 
                 <div class="objeto-pregunta" id="respuesta">
                     <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
+                        Si, hay un apartado para crear un nuevo perfil en la sección "perfil familiar" y ahí se encarga de ingresar los datos
                     </span>
                 </div>
             </div>
@@ -62,8 +65,7 @@
 
                 <div class="objeto-pregunta" id="respuesta">
                     <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
+                        Teoricamente no lo hay, la unica condición es la de no programar dos citas para la misma hora y día o tratar de programar una cita en un horario no establecido.
                     </span>
                 </div>
             </div>
@@ -71,13 +73,12 @@
             
             <div class="question-card" id="Q5">
                 <div class="objeto-pregunta" id="pregunta">
-                    <span>¿Cuál es el límite de citas que se puede programar?</span>
+                    <span>¿Le seguirán dando mantenimiento a la página web?</span>
                 </div>
 
                 <div class="objeto-pregunta" id="respuesta">
                     <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
+                        Si, seguiremos dándole mantenimiento a la página web, también dependerá de las calificaciones del usuario ya que siempre buscamos el bien para todos
                     </span>
                 </div>
             </div>
@@ -85,7 +86,7 @@
     </article>
 </main>
 
-<?php require("plugins/footer-file.php") ?>
+<?php footer() ?>
 
 <script src="javascript.js"></script>
 </body>
