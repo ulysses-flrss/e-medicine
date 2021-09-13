@@ -39,7 +39,7 @@ if($accion == "Modificar Perfil"){
     require_once '../model/DaoFamiliar.php';
     $dao = new DaoFamiliar();
     $familiar = new Familiar($id, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades); 
-    $dao->modificar($familiar);
+    $dao->modificar($familiar,$id);
 
     echo "<p>Registro modificado exitosamente...</p>";
     echo "<a href='../view/perfilFamiliares.php'>Regresar</a>";
@@ -78,6 +78,8 @@ echo '
 
 <section class="form-container">
 <form action="../controller/ctrlFamiliar.php" class="form-register" method="POST">
+
+    <input type="hidden" name="id" id="" value =' .$familiar[0].' >
     
 <div class="first-line">
     <label for="">Nombre: *</label>
@@ -95,8 +97,6 @@ echo '
         <input type="text" name="altura" id="" placeholder="Altura en cm"value = '.$familiar[3].' >
     </div>  
 </div>
-
-<div class = "third-line">
     <div class = "fecha">
    
         <input type = "hidden" name = "fechaNac" value ='.$familiar[4].'>
@@ -105,7 +105,8 @@ echo '
    
     
 
-    
+
+<div class = "fourth-line">
     <div class="municipio">
         <label for="municipio">Municipio *</label>
         <select name="municipio" id="" required>
