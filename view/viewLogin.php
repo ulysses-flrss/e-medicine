@@ -1,5 +1,7 @@
-<?php session_start();?>
-
+<?php 
+  // Notificar todos los errores excepto E_NOTICE
+  error_reporting(E_ALL ^ E_NOTICE); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +30,7 @@
                 <form action="controller/ctrlLogin.php" class="form-login" method="POST">
                     <div class="codUsuario">
                         <label for="idUsuario">Código de Usuario:</label>
-                        <input type="text" name="idUsuario" id="codUsuario" placeholder="Ingrese su Código de Usuario">
+                        <input type="text" name="idUsuario" id="idUsuario" placeholder="Ingrese su Código de Usuario">
                     </div>
 
                     <div class="password">

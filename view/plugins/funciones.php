@@ -1,4 +1,7 @@
 <?php
+  // Notificar todos los errores excepto E_NOTICE
+  error_reporting(E_ALL ^ E_NOTICE);
+
   function links(){
     echo "<link rel='preconnect' href='https://fonts.googleapis.com'>
       <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
@@ -8,9 +11,7 @@
       
       <link rel='stylesheet' href='../view/css/root-style.css'>
       <link rel='stylesheet' href='../view/css/menu-style.css'>
-      <link rel='stylesheet' href='../view/css/footer-style.css'>
-
-      <script src='jquery-3.6.0.js'></script>";
+      <link rel='stylesheet' href='../view/css/footer-style.css'>";
   }
 
   function menu(){

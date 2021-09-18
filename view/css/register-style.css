@@ -46,6 +46,10 @@ input:focus:not(.submit input) {
     box-shadow: none;
 }
 
+#eye1, #eye2{
+    cursor: pointer;
+}
+
 .bienvenida-register {
     font-size: 6.5rem;
     font-family: var(--register-welcome-font);

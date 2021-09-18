@@ -1,16 +1,16 @@
 <?php
+  // Notificar todos los errores excepto E_NOTICE
+  error_reporting(E_ALL ^ E_NOTICE);
+  session_start();
   $codUsuario = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
   $password = isset($_POST['password'])?$_POST['password']:"";
   $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
   $mensaje = isset($_SESSION['mensaje'])?$_SESSION['mensaje']:"";
 
+  $_SESSION['codUsuario'] = $codUsuario;
+
   if ($accion == "" && $codUsuario == "") {
-    if (isset($mensaje)){
-      require_once 'view/viewLogin.php';
-    }else{
-      echo "<script>alert('".$mensaje."')</script>";
-      require_once 'view/viewLogin.php';
-    }
+    require_once 'view/viewLogin.php';
   }
   if ($accion == "cambiarPass"){
     require_once '../view/viewCambiarPass.php';

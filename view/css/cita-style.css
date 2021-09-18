@@ -27,9 +27,36 @@
     width: 100%;
 }
 
+.motivo:first-child, .enfermedades:first-child{
+    margin: auto;
+}
 
+.motivo>textarea, .enfermedades>textarea{
+    display: flex;
+    margin: auto;
+}
 
+textarea {
+    font-family: var(--bodyFont);
+    padding: 1rem;
+    display: flex;
+    text-align: justify;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    outline: none;
+    border: 1.5px solid black;
+    box-shadow: 3px 3px 0;
+    width: 30rem;
+    height: 6rem;
+    max-height: 20rem;
+}
 
+textarea:focus {
+    transition: 150ms all;
+    background-color: black;
+    color: white;
+    box-shadow: none;
+}
 
 input:not(.submit input){
     transition: 350ms all;

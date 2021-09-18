@@ -1,4 +1,6 @@
 <?php
+  // Notificar todos los errores excepto E_NOTICE
+  error_reporting(E_ALL ^ E_NOTICE);
 require_once 'classConexion.php';
 class DaoPaciente{
     public function insertar($paciente){
@@ -54,8 +56,6 @@ class DaoPaciente{
         $stmt=$dbh->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetch();
-        // $c = "porqueaGuillermoleFuncionayaMiNo";
-        // return $c;
         if(isset($row[0])){
             if ($row[0] < 9){
                 $c = "P-0000" . ($row[0]+1);

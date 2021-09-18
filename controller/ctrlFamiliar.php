@@ -1,5 +1,6 @@
-
-<?php 
+<?php
+  // Notificar todos los errores excepto E_NOTICE
+  error_reporting(E_ALL ^ E_NOTICE);
 $nombre = isset($_POST['nombre'])?$_POST['nombre']:"";
 $peso = isset($_POST['peso'])?$_POST['peso']:"";
 $altura = isset($_POST['altura'])?$_POST['altura']:"";

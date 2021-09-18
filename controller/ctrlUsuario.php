@@ -1,4 +1,6 @@
 <?php
+  // Notificar todos los errores excepto E_NOTICE
+  error_reporting(E_ALL ^ E_NOTICE);
 
   function username(){
     require_once '../model/classConexion.php';

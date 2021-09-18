@@ -1,4 +1,6 @@
-<?php 
+<?php
+  // Notificar todos los errores excepto E_NOTICE
+  error_reporting(E_ALL ^ E_NOTICE);
     session_start();
     require_once 'plugins/funciones.php';
     require_once '../controller/ctrlUsuario.php';
@@ -28,7 +30,7 @@
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
             <div class="img-layout"><img src="../imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
-            <span id="bienvenida" title="Bienvenida">Bienvenido/a <b><?php echo $datos[1]; ?></b><span>
+            <span id="bienvenida" title="Bienvenida">Bienvenido <b><?php echo $datos[1]; ?></b><span>
         </div>
         
 
@@ -81,6 +83,8 @@
     <?php footer(); ?>
 
     <script src="javascript.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../view/js/sweetAlert.js"></script>
 </body>
 
 </html>
