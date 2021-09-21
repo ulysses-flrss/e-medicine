@@ -39,9 +39,15 @@ require_once("plugins/funciones.php") ?>
             </div>
             
             <span class='familiares-profile-name'>".$familia['nombre']."</span>
+            <span class= 'familiares-data'><b>Altura:</b> ".$familia['altura']."cm</span>
+            <span class= 'familiares-data'><b>Peso:</b> ".$familia['peso']."lb</span>
+            <span class= 'familiares-data'><b>Municipio:</b> ".$familia['municipio']."</span>
+            
+    
             <div class='familiares-functions'>
                 <a href='../controller/ctrlFamiliar.php?accion=modificar&id=".$familia['id']."'><i class='fas fa-edit'></i></a>
                 <a href='../controller/ctrlFamiliar.php?accion=eliminar&id=".$familia['id']."'><i class='fas fa-trash-alt'></i></a>
+                <a href = '../controller/ctrlFamiliar.php?accion=programarCita&id=".$familia['id']."'><i class='fas fa-briefcase-medical'></i></a>
             </div>
             </div>";
         }

@@ -24,6 +24,140 @@
 
   function menu(){
     //INICIO MENÚ
+    $cod = "";
+    require_once '../controller/ctrlUsuario.php';
+    $dataUser = username($cod);
+    $datos = explode('/', $dataUser);
+      
+        echo "<nav class='nav'>
+            <ul class='navbar-nav' id='nav'>
+                <li class='nav-item'>
+                    <a href='../view/viewPaciente.php?idUsuario=".$datos[0]."'><img src='../assets/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'></a>
+                </li>
+
+                <li class='nav-item' id='li-cita' title='Programar Cita'>
+                    <a href='../controller/ctrlCita.php?idUsuario=".$datos[0]."' class='nav-link' >
+                        <img src='../assets/document.png' alt='' class='nav-picture' id='cita'>
+                        <span class='link-text'>Programar Cita</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-familiares' title='Familiares'>
+                    <a href='../view/perfilFamiliares.php?idUsuario=".$datos[0]."' class='nav-link' >
+                        <img src='../assets/family.png' alt='' class='nav-picture' id='familiares'>
+                        <span class='link-text'>Familiares</span>
+                    </a>
+                </li>
+            
+                <li class='nav-item' id='li-doctor' title='Especialidades Médicas'>
+                    <a href='../view/especialidadesMedicas.php' class='nav-link'>
+                        <img src='../assets/doctor.png' alt='' class='nav-picture' id='doctor'>
+                        <span class='link-text'>Especialidades Medicas</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-faq' title='Preguntas Frecuentes'>
+                    <a href='../view/faq.php' class='nav-link'>
+                        <img src='../assets/faq.png' alt='' class='nav-picture' id='faq'>
+                        <span class='link-text'>Preguntas Frecuentes</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-comentarios' title='Comentarios'>
+                    <a href='../controller/ctrlComentarios.php?idUsuario=".$datos[0]."' class='nav-link'>
+                        <img src='../assets/comments.png' alt='' class='nav-picture' id='comentarios'>
+                        <span class='link-text'>Comentarios</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-about' title='Acerca de Nosotros'>
+                    <a href='../view/aboutUs.php' class='nav-link' id='li-info'>
+                        <img src='../assets/information.png' alt='' class='nav-picture' id='about'>
+                        <span class='link-text'>Acerca de Nosotros</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-logout' title='Cerrar Sesión'>
+                    <a href='../controller/ctrlPaciente.php?accion=cerrarSesion' class='nav-link'>
+                        <img src='../assets/sign-out.png' alt='' class='nav-picture' id='logout'>
+                        <span class='link-text'>Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>";
+    //FINAL MENÚ
+  }
+
+
+  function menuDoc(){
+    //INICIO MENÚ
+    $cod = "";
+    require_once '../controller/ctrlUsuario.php';
+    $dataUser = username($cod);
+    $datos = explode('/', $dataUser);
+      
+        echo "<nav class='nav'>
+            <ul class='navbar-nav' id='nav'>
+                <li class='nav-item'>
+                    <a href='../view/viewDoctor.php?idUsuario=".$datos[0]."'><img src='../assets/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'></a>
+                </li>
+
+                <li class='nav-item' id='li-cita' title='Programar Cita'>
+                    <a href='../view/viewDoctorCitas.php?idUsuario=".$datos[0]."' class='nav-link' >
+                        <img src='../assets/document.png' alt='' class='nav-picture' id='cita'>
+                        <span class='link-text'>Ver Citas</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-familiares' title='Familiares'>
+                    <a href='../view/viewDoctorPacientes.php?idUsuario=".$datos[0]."' class='nav-link' >
+                        <img src='../assets/family.png' alt='' class='nav-picture' id='familiares'>
+                        <span class='link-text'>Ver Pacientes</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-doctor' title='Especialidades Médicas'>
+                    <a href='../view/especialidadesMedicas.php' class='nav-link'>
+                        <img src='../assets/doctor.png' alt='' class='nav-picture' id='doctor'>
+                        <span class='link-text'>Especialidades Médicas</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-faq' title='Preguntas Frecuentes'>
+                    <a href='../view/faq.php' class='nav-link'>
+                        <img src='../assets/faq.png' alt='' class='nav-picture' id='faq'>
+                        <span class='link-text'>Preguntas Frecuentes</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-comentarios' title='Comentarios'>
+                    <a href='../controller/ctrlComentarios.php?idUsuario=".$datos[0]."' class='nav-link'>
+                        <img src='../assets/comments.png' alt='' class='nav-picture' id='comentarios'>
+                        <span class='link-text'>Comentarios</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-about' title='Acerca de Nosotros'>
+                    <a href='../view/aboutUs.php' class='nav-link' id='li-info'>
+                        <img src='../assets/information.png' alt='' class='nav-picture' id='about'>
+                        <span class='link-text'>Acerca de Nosotros</span>
+                    </a>
+                </li>
+
+                <li class='nav-item' id='li-logout' title='Cerrar Sesión'>
+                    <a href='../controller/ctrlPaciente.php?accion=cerrarSesion' class='nav-link'>
+                        <img src='../assets/sign-out.png' alt='' class='nav-picture' id='logout'>
+                        <span class='link-text'>Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>";
+    //FINAL MENÚ
+  }
+
+
+  function menuAdmin(){
+    //INICIO MENÚ
     require_once '../controller/ctrlUsuario.php';
     $cod = "";
     $dataUser = username($cod);
@@ -104,18 +238,18 @@
     echo "<footer class='footer'>
         <div class='columna1'>
             <strong class='titulo-footer' title='Nuestra Empresa'>Nuestra Empresa</strong>
-            <a href='aboutUs.php' class='footer-item' title='¿Quiénes Somos?'>¿Quiénes Somos?</a>
-            <a href='#' class='footer-item' title='Misión'>Misión</a>
-            <a href='#' class='footer-item' title='Visión'>Visión</a>
+            <a href='../view/aboutUs.php' class='footer-item' title='¿Quiénes Somos?'>¿Quiénes Somos?</a>
+            <a href='../view/aboutUs.php#QUIENESSOMOS' class='footer-item' title='Misión'>Misión</a>
+            <a href='../view/aboutUs.php#MISION' class='footer-item' title='Visión'>Visión</a>
 
 
         </div>
 
         <div class='columna2'>
             <strong class='titulo-footer' title='¿Te Ayudamos?'>¿Te Ayudamos?</strong>
-            <a href='#' class='footer-item' title='Contactanos'>Contactanos</a>
-            <a href='faq.php' class='footer-item' title='Preguntas Frecuentes'>Preguntas Frecuentes</a>
-            <a href='#' class='footer-item' title='Comentarios'>Comentarios</a>
+            <a href='../view/aboutUs.php#VISION' class='footer-item' title='Horarios de Atención'>Horarios de Atención</a>
+            <a href='..view/faq.php' class='footer-item' title='Preguntas Frecuentes'>Preguntas Frecuentes</a>
+            <a href='../view/aboutUs.php#creadores' class='footer-item' title='Creadores'>Creadores</a>
         </div>
             
         <div class='columna3'>
