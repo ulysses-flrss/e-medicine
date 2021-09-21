@@ -15,7 +15,7 @@ require_once 'plugins/funciones.php'; ?>
 <body>
     <main>
         <div class="inicio-register">
-            <img src="../assets/logoEMedicine.png" alt="" class="logo">
+            <img src="../assets/imgs/logoEMedicine.png" alt="" class="logo">
             <h1 class="bienvenida-register">Bienvenido a E-Medicine</h1>                
         </div>
 
@@ -103,11 +103,11 @@ require_once 'plugins/funciones.php'; ?>
                     <div class="fourth-line">
                         <label for="pass">Contraseña: *</label>
                         <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" required>
-                        <img src="../assets/eye.png" alt="" class="show-hide" id="eye1">
+                        <img src="../assets/imgs/eye.png" alt="" class="show-hide" id="eye1">
                     
                         <label for="pass">Confirmar Contraseña: *</label>
                         <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" required>
-                        <img src="../assets/eye.png" alt="" class="show-hide" id="eye2">
+                        <img src="../assets/imgs/eye.png" alt="" class="show-hide" id="eye2">
                     </div>
 
                     <div class="seventh-line">

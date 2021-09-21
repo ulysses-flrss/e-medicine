@@ -9,8 +9,8 @@ require_once("plugins/funciones.php"); ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index-style.css">
     <title>Inicio - eMedicine</title>
-    
     <?php links() ?>
 </head>
 
@@ -55,18 +55,18 @@ require_once("plugins/funciones.php"); ?>
                 </a>
 
                 <a href="" class="div-especialidades" title="Pediatría">
-                    <img src="../assets/chico.png" alt="" class="imagenEspecialidad">
+                    <img src="imgs/chico.png" alt="" class="imagenEspecialidad">
                     <div class="especialidadNombre" title="Pediatría">Pediatría</div>
                 </a>
         
 
                 <a href="" class="div-especialidades" title="Neurlogía">
-                    <img src="../assets/idea-genial.png" alt="" class="imagenEspecialidad">
+                    <img src="imgs/idea-genial.png" alt="" class="imagenEspecialidad">
                     <div class="especialidadNombre" title="Neurología">Neurología</div>
                 </a>
             
                 <a href="" class="div-especialidades" title="Cardiología">
-                    <img src="../assets/corazon.png" alt="" class="imagenEspecialidad">
+                    <img src="imgs/corazon.png" alt="" class="imagenEspecialidad">
                     <div class="especialidadNombre">Cardiología</div>
                 </a>
 

@@ -2,31 +2,21 @@
 
 class Anuncio {
     
-    
     public $idUsuario;
-    public $nombre;
     public $contenidoAnuncio;
-    
 
-    public function __construct($idUsuario, $nombre, $contenidoAnuncio) {
+    public function __construct($idUsuario, $contenidoAnuncio) {
        if (!empty($idUsuario)) {
            $this->idUsuario = $idUsuario;
        } else {
            $this->idUsuario = NULL;
        }
 
-
-           $this->nombre = $nombre;
-       
-       
-
         if (!empty($contenidoAnuncio)) {
             $this->contenidoAnuncio = $contenidoAnuncio;
         } else {
             throw new Exception("MENSAJE INVALIDO");
         }
-
-
 
 
     }

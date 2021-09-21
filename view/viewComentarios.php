@@ -3,7 +3,9 @@
   require_once '../controller/ctrlUsuario.php';
   require_once '../model/classComentario.php';
 
-  $dataUser = username();
+  $cod = "";
+
+  $dataUser = username($cod);
   $datos = explode("/", $dataUser);
 ?>
 
@@ -31,7 +33,7 @@
             <div class="nombrePerfil"><?php echo $datos[1].":";?></div>
             <?php echo "<input type='hidden' name='idUsuario' value='".$datos[0]."'>"  ?>
             <?php echo "<input type='hidden' name='nombre' value='".$datos[1]."'>"  ?>
-            <textarea type="text" placeholder="Escriba su opinión..." id="mensaje" name="mensaje"></textarea>
+            <textarea type="text" placeholder="Escriba su opinión..." id="mensaje" name="mensaje" required></textarea>
             <div class="submit">
                 <input type="submit" name="accion" id="accion" value="publicar" required></div>
             </div>
