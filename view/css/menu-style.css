@@ -106,11 +106,19 @@ nav ul li .opcionesCita .opciones li a{
     color: #000000;
 }
 
+.bar-link:hover, .bar-header-link:hover, .bar-header-text:hover {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+}
+
 
 .link-text, .bar-header-text {
     
     padding: 0rem 0.5rem;
     font-size: 1.2em;
+    
 }
 
 
@@ -155,6 +163,7 @@ nav ul li .opcionesCita .opciones li a{
     background-color: var(--aqua-body-color);
     border-bottom: 7px solid #26975f;
     opacity: 0.99;
+    
 }
 
 .barNavegacion :hover .bar-picture{

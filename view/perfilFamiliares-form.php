@@ -131,6 +131,7 @@ $datos = explode('/', $dataUser);
     </main>
 
     <?php footer();?>
+    
     <script src="../view/js/perfil.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../view/js/all.min.js"></script>
