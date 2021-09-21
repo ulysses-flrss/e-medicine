@@ -27,6 +27,10 @@ if($accion == "Crear Perfil") {
     echo "<a href='../view/perfilFamiliares.php'>Regresar</a>";
 }
 
+if ($accion='programarCita') {
+    require_once("../view/citaFamiliar.php");
+}
+
 
 if($accion=="eliminar"){
     $dao = new DaoFamiliar();

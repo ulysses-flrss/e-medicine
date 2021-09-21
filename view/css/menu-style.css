@@ -49,6 +49,7 @@ nav.nav {
     border-radius: 50px;
     margin: 2rem;
     padding: 0.30rem;
+
     
 }
 
@@ -129,6 +130,9 @@ nav.nav {
     background-color: #26975f;
     border-bottom: 5px solid black;
 }
+
+
+
 
 /*Cierre primeros hover*/
 

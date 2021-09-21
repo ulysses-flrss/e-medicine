@@ -67,7 +67,7 @@ require_once("../model/classConexion.php");
 
 
         public function listadoFamiliar(){
-            $sql = "SELECT id, nombre, peso, altura, fechaNac, genero municipio, enfermedades FROM familiar ORDER BY id";
+            $sql = "SELECT id, nombre, peso, altura, fechaNac, genero, municipio, enfermedades FROM familiar ORDER BY id";
             $cn = new Conexion();
             $dbh = $cn->getConexion();
             $stmt = $dbh->prepare($sql);

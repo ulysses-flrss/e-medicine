@@ -1,10 +1,10 @@
-<?php
-  // Notificar todos los errores excepto E_NOTICE
-  error_reporting(E_ALL ^ E_NOTICE);
+<?php 
+   error_reporting(E_ALL ^ E_NOTICE);
     session_start();
     require_once 'plugins/funciones.php';
     require_once '../controller/ctrlUsuario.php';
-    $dataUser = username();
+    $cod = "";
+    $dataUser = username($cod);
 
     $datos = explode('/', $dataUser);
 ?>
@@ -35,49 +35,36 @@
         
 
         <article class="mainArticle">
+            <?php
+        if(!isset($anuncio)){
+            require_once "../model/daoAnuncios.php";
+        }else
+            require_once "../controller/ctrlAnuncios.php";
+        $dao = new DaoAnuncio();
+        $anuncio=$dao->listadoAnuncios();
+        foreach($anuncio as $anun){
+            echo
+            '
             <section class="tablonAnuncios">
-                <div class="objetoTablon" id="autor">
-                    <span title="Escritor del Anuncio">Ulises Adonay Flores Martínez</span>
-                </div>
-                <div class="objetoTablon" id="fechaPublicacion">
-                    <span title="Fecha de Publicación del Anuncio">16/Julio/2021</span>
-                </div>
+            <div class="objetoTablon" id="autor">
+            <span title="Escritor del Anuncio">'.$anun['nombre'].'</span>
+        </div>
+        <div class="objetoTablon" id="fechaPublicacion">
+            <span title="Fecha de Publicación del Anuncio">'.$anun['fechaPublicacion'].'</span>
+        </div>
 
-                <div class="objetoTablon" id="descripcion">
-                    <p title="Contenido del Anuncio">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
-                    </p>
-                </div>
-            </section>
+        <div class="objetoTablon" id="descripcion">
+            <p title="Contenido del Anuncio">
+                '.$anun['contenidoAnuncio'].'
+            </p>
+        </div>
+        </section>';
+        }
+?>
 
 
 
-            <section class="especialidadesMedica">
-            
-                <a href="" class="div-especialidades" title="Medicina General">
-                    <img src="imgs/medicina.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre" title="Medicina General">Medicina General</div>
-                </a>
-
-                <a href="" class="div-especialidades" title="Pediatría">
-                    <img src="imgs/chico.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre" title="Pediatría">Pediatría</div>
-                </a>
-        
-
-                <a href="" class="div-especialidades" title="Neurlogía">
-                    <img src="imgs/idea-genial.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre" title="Neurología">Neurología</div>
-                </a>
-            
-                <a href="" class="div-especialidades" title="Cardiología">
-                    <img src="imgs/corazon.png" alt="" class="imagenEspecialidad">
-                    <div class="especialidadNombre">Cardiología</div>
-                </a>
-
-            </section>
-        </article>
+                  </article>
     </main>
 
     <?php footer(); ?>
