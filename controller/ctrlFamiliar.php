@@ -56,10 +56,6 @@ if($accion == "crearPerfil") {
     echo json_encode($r);
 }
 
-if ($accion='programarCita') {
-    require_once("../view/citaFamiliar.php");
-}
-
 
 if($accion=="eliminar"){
     $dao = new DaoFamiliar();

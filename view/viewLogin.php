@@ -21,7 +21,7 @@
 <body>
     <main>
         <div class="inicio-register">
-            <img src="logoEMedicine.png" alt="" class="logo" >
+            <img src="assets/imgs/logoEMedicine.png" alt="" class="logo" >
             <h1 class="bienvenida-register">Bienvenido a E-Medicine</h1> 
         </div>
 

@@ -1,5 +1,6 @@
-<?php 
-   error_reporting(E_ALL ^ E_NOTICE);
+<?php
+  // Notificar todos los errores excepto E_NOTICE
+  error_reporting(E_ALL ^ E_NOTICE);
     session_start();
     require_once 'plugins/funciones.php';
     require_once '../controller/ctrlUsuario.php';
@@ -16,7 +17,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - eMedicine</title>
+    <title>Inicio | E-Medicine</title>
     <?php
         links();
     ?>
@@ -29,42 +30,56 @@
     
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
-            <div class="img-layout"><img src="../imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
+            <div class="img-layout">
+                <img src="../assets/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"><?php echo "<a href='../controller/ctrlPaciente.php?".$datos[0]."&accion=editar'>" ?><span class='editar' title='Editar Perfil'>Editar</span></a></div>
             <span id="bienvenida" title="Bienvenida">Bienvenido <b><?php echo $datos[1]; ?></b><span>
         </div>
         
 
         <article class="mainArticle">
-            <?php
-        if(!isset($anuncio)){
-            require_once "../model/daoAnuncios.php";
-        }else
-            require_once "../controller/ctrlAnuncios.php";
-        $dao = new DaoAnuncio();
-        $anuncio=$dao->listadoAnuncios();
-        foreach($anuncio as $anun){
-            echo
-            '
             <section class="tablonAnuncios">
-            <div class="objetoTablon" id="autor">
-            <span title="Escritor del Anuncio">'.$anun['nombre'].'</span>
-        </div>
-        <div class="objetoTablon" id="fechaPublicacion">
-            <span title="Fecha de Publicación del Anuncio">'.$anun['fechaPublicacion'].'</span>
-        </div>
+                <div class="objetoTablon" id="autor">
+                    <span title="Escritor del Anuncio">Ulises Adonay Flores Martínez</span>
+                </div>
+                <div class="objetoTablon" id="fechaPublicacion">
+                    <span title="Fecha de Publicación del Anuncio">16/Julio/2021</span>
+                </div>
 
-        <div class="objetoTablon" id="descripcion">
-            <p title="Contenido del Anuncio">
-                '.$anun['contenidoAnuncio'].'
-            </p>
-        </div>
-        </section>';
-        }
-?>
-
+                <div class="objetoTablon" id="descripcion">
+                    <p title="Contenido del Anuncio">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolores tenetur sint, quas, consequatur ipsam harum odit aliquam fugiat doloribus quam, tempore repudiandae mollitia error nostrum quo minus nihil consequuntur.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, saepe facere atque, incidunt exercitationem delectus id eius ad asperiores ipsam, laboriosam nemo eligendi perferendis voluptatum nobis beatae porro cupiditate ipsum.
+                    </p>
+                </div>
+            </section>
 
 
-                  </article>
+
+            <section class="especialidadesMedica">
+            
+                <a href="" class="div-especialidades" title="Medicina General">
+                    <img src="imgs/medicina.png" alt="" class="imagenEspecialidad">
+                    <div class="especialidadNombre" title="Medicina General">Medicina General</div>
+                </a>
+
+                <a href="" class="div-especialidades" title="Pediatría">
+                    <img src="imgs/chico.png" alt="" class="imagenEspecialidad">
+                    <div class="especialidadNombre" title="Pediatría">Pediatría</div>
+                </a>
+        
+
+                <a href="" class="div-especialidades" title="Neurlogía">
+                    <img src="imgs/idea-genial.png" alt="" class="imagenEspecialidad">
+                    <div class="especialidadNombre" title="Neurología">Neurología</div>
+                </a>
+            
+                <a href="" class="div-especialidades" title="Cardiología">
+                    <img src="imgs/corazon.png" alt="" class="imagenEspecialidad">
+                    <div class="especialidadNombre">Cardiología</div>
+                </a>
+
+            </section>
+        </article>
     </main>
 
     <?php footer(); ?>

@@ -26,7 +26,7 @@
       $stmt = $dbh->prepare($sql);
       $stmt->bindParam(':idDoctor', $idDoctor);
       $stmt->execute();
-      $citas = $stmt->fetchAll(PDO::FETCH_ASSOC)
+      $citas = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $citas;
     }
 

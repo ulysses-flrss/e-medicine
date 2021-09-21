@@ -61,15 +61,19 @@
     $citas = $dao->validarCita($idDoctor);
 
     foreach ($citas as $cita) {
-      if ($cita[]) {
-        // code...
+      if (($cita['horaCita'] == $horaCita) && ($cita['fechaCita'] == $fechaCita)) {
+        $validacion = "copia";
       }
     }
-    
-    $cita = new Cita($codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
 
-    $r = $dao->insertar($cita);
-    echo json_encode($r);
-    
+    if ($validacion == "copia") {
+      $r = "El doctor ya tiene ocupado ese horario.";
+      echo json_encode($r);
+    }else{
+      $cita = new Cita($codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
+
+      $r = $dao->insertar($cita);
+      echo json_encode($r);
+    }    
   }
 ?>
