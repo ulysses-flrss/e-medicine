@@ -60,7 +60,7 @@
                 </li>
 
                 <li class='bar-item' id='li-doctor' title='Especialidades Médicas'>
-                    <a href='#' class='bar-link'>
+                    <a href='../view/especialidadesMedicas.php' class='bar-link'>
                         <img src='../assets/imgs/doctor.png' alt='' class='bar-picture' id='doctor'>
                         <span class='link-text'>Especialidades Medicas</span>
                     </a>
@@ -104,18 +104,15 @@
     echo "<footer class='footer'>
         <div class='columna1'>
             <strong class='titulo-footer' title='Nuestra Empresa'>Nuestra Empresa</strong>
-            <a href='aboutUs.php' class='footer-item' title='¿Quiénes Somos?'>¿Quiénes Somos?</a>
-            <a href='#' class='footer-item' title='Misión'>Misión</a>
-            <a href='#' class='footer-item' title='Visión'>Visión</a>
-
-
+            <a href='../view/aboutUs.php' class='footer-item' title='¿Quiénes Somos?'>¿Quiénes Somos?</a>
+            <a href='../view/aboutUs.php#QUIENESSOMOS' class='footer-item' title='Misión'>Misión</a>
+            <a href='../view/aboutUs.php#MISION' class='footer-item' title='Visión'>Visión</a>
         </div>
-
         <div class='columna2'>
             <strong class='titulo-footer' title='¿Te Ayudamos?'>¿Te Ayudamos?</strong>
-            <a href='#' class='footer-item' title='Contactanos'>Contactanos</a>
-            <a href='faq.php' class='footer-item' title='Preguntas Frecuentes'>Preguntas Frecuentes</a>
-            <a href='#' class='footer-item' title='Comentarios'>Comentarios</a>
+            <a href='../view/aboutUs.php#VISION' class='footer-item' title='Horarios de Atención'>Horarios de Atención</a>
+            <a href='../view/faq.php' class='footer-item' title='Preguntas Frecuentes'>Preguntas Frecuentes</a>
+            <a href='../view/aboutUs.php#creadores' class='footer-item' title='Creadores'>Creadores</a>
         </div>
             
         <div class='columna3'>

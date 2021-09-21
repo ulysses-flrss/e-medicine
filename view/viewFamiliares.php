@@ -59,26 +59,6 @@
             </div>";
         }
 ?>
-<<<<<<< HEAD
-           
-                
-
-
-            </div>
-            
-
-            
-       
-        </section>
-    </article>
-</main>
-
-    <?php footer() ?>
-
-<script src="javascript.js"></script>
-
-<script src="javascript.js"></script>
-=======
             </div>
         </section>
     </article>
@@ -86,7 +66,6 @@
 </main>
 
     <script src="javascript.js"></script>
->>>>>>> 179cb00b93344cb20d12bef118f8e3b3ad0d3faa
     <script src="js/perfil.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/bootstrap.min.js"></script>
