@@ -35,7 +35,11 @@ $datos = explode('/', $dataUser);
             <section class="form-container">
                 <!--<form action="../controller/ctrlFamiliar.php" class="form-register" method="POST">-->
 
-                <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>"; ?>
+                <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>"; 
+
+                    echo "<input type='hidden' id='idPerfil' name='idPerfil' value=''>";
+
+                ?>
                     
                 <div class="third-line">
                     <div class="nombres">

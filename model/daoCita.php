@@ -4,7 +4,7 @@
     public function insertar($cita){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
-      $sql = "INSERT INTO citas (paciente, peso, altura, fechaNacimiento, especialidadM, doctor, fechaCita, horaCita, enfermedades, razonCita) VALUES (:idPaciente, :peso, :altura, :fechaNac, :especialidadM, :doctor, :fechaCita, :horaCita, :enfermedades, :razonCita)";
+      $sql = "INSERT INTO citas (paciente, peso, altura, fechaNacimiento, fechaCreacion, especialidadM, doctor, fechaCita, horaCita, enfermedades, razonCita) VALUES (:idPaciente, :peso, :altura, :fechaNac, :fechaCreacion, :especialidadM, :doctor, :fechaCita, :horaCita, :enfermedades, :razonCita)";
       try{
         $stmt = $dbh->prepare($sql);
         if ($stmt->execute((array) $cita)) {
@@ -19,15 +19,20 @@
       }
     }
 
-    public function validarCita($idDoctor){
+    public function validarCita($idDoctor, $fechaCita, $horaCita){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
       $sql = "SELECT fechaCita, horaCita FROM citas WHERE doctor=:idDoctor";
       $stmt = $dbh->prepare($sql);
       $stmt->bindParam(':idDoctor', $idDoctor);
       $stmt->execute();
-      $citas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $citas;
+      $citas = $stmt->fetchAll();
+      foreach ($citas as $cita) {
+        if (($cita['horaCita'] == $horaCita) && ($cita['fechaCita'] == $fechaCita)) {
+          $validacion = "copia";
+          return $validacion;
+        }
+      }
     }
 
     public function listarEspecialidad(){

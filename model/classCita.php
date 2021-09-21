@@ -5,6 +5,7 @@
     public $peso;
     public $altura;
     public $fechaNac;
+    public $fechaCreacion;
     public $especialidadM;
     public $doctor;
     public $fechaCita;
@@ -21,6 +22,8 @@
       $this->altura = $al;
       
       $this->fechaNac = $fn;
+
+      $this->fechaCreacion = date('Y/m/d');
       
       $this->especialidadM = $em;
       
