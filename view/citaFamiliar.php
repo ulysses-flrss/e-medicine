@@ -1,15 +1,17 @@
-<?php 
-    session_start();
-    require_once 'plugins/funciones.php';
+<?php session_start();
+    require_once("plugins/funciones.php");
     require_once '../controller/ctrlUsuario.php';
-    /*if ($key) 
-        $activador = true;
-    else
-        $activador = false;*/
+    $idPaciente = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+    $sesion = isset($_REQUEST['sesion'])?$_REQUEST['sesion']:"";
+    // if ($sesion == "") {
+    //     header('location:../index.php');
+    // }else{
+        $dataUser = username($idPaciente);
 
-    $dataUser = username();
+        $datos = explode('/', $dataUser);
 
-    $datos = explode('/', $dataUser);
+        $codPaciente = $datos[0];
+    // }
 ?>
 
 <!DOCTYPE html>
