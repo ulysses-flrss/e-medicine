@@ -12,25 +12,23 @@ body{
     padding-top: 10rem;
 }
 
+h2 {
+    font-family: 'Sacramento', cursive;
+    margin: 1rem;
+    font-size: 5rem;
+}
+
 
 .anuncio-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: auto;
-    background-color: var(--aquaBright-bg-color);
-    margin: 6rem auto auto auto;
-    width: 90%;
+    background-color: aqua;
+    margin: auto;
+    width: 40%;
     height: 25%;
     padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 8px 8px 0px #1c4e3e;;
-}
-
-.head-anuncio {
-    font-size: 6rem;
-    margin: 2rem auto;
-    font-family: var(--footerFont);
 }
 
 .anuncio-container * {
@@ -41,18 +39,16 @@ body{
 }
 
 
-
-.contenido-anuncio {
-    display: flex;
-    justify-items: center;
-    width: 100%;
+.imagen-anuncio {
+    width: 5rem;
+    height: auto;
 }
 
-.message-area{
+textarea {
     font-family: var(--bodyFont);
     display: flex;
-    margin: 3rem auto;
-    width: 70vw;
+    width:90%;
+    margin: auto;
     padding: 1rem;
     font-size: 1.5rem;
     border-radius: 15px;
