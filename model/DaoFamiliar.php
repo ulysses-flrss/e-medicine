@@ -104,7 +104,7 @@ require_once("../model/classConexion.php");
         }
 
         public function listadoFamiliar($idPaciente){
-            $sql = "SELECT idPerfil, CONCAT(nombres, ' ', apellidos) AS nombre FROM familiar WHERE idPaciente=:idPaciente ORDER BY idPerfil;";
+            $sql = "SELECT idPerfil, CONCAT(nombres, ' ', apellidos) AS nombre, peso, altura, municipio FROM familiar WHERE idPaciente=:idPaciente ORDER BY idPerfil;";
             $cn = new Conexion();
             $dbh = $cn->getConexion();
             $stmt = $dbh->prepare($sql);

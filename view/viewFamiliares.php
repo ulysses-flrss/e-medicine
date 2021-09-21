@@ -52,6 +52,9 @@
             </div>
             
             <span class='familiares-profile-name'>".$familia['nombre']."</span>
+            <span class= 'familiares-data'><b>Altura:</b> ".$familia['altura']."cm</span>
+            <span class= 'familiares-data'><b>Peso:</b> ".$familia['peso']."lb</span>
+            <span class= 'familiares-data'><b>Municipio:</b> ".$familia['municipio']."</span>
             <div class='familiares-functions'>
                 <a href='../controller/ctrlFamiliar.php?accion=modificar&idPerfil=".$familia['idPerfil']."'><button class='btn btn-primary' id='modificar'><i class='fas fa-edit' id='iconEditar'></i> Editar</button></a>
                 <button class='btn btn-danger' id='eliminar' onclick='eliminarPerfil(\"".$familia['idPerfil']."\",\"".$datos[0]."\");'><i class='fas fa-trash' id='iconTrash'></i> Eliminar</button>
