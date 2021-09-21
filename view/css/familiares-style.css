@@ -18,14 +18,7 @@ body {
 .add-image {
     width: 10rem;
     margin-left: 8rem;
-    transition: all 150ms;
 }
-
-.add-image:hover {
-    transition: all 150ms;
-    transform: scale(1.1);
-}
-
 
 .familiar-profiles {
     width: 100%;
@@ -69,10 +62,6 @@ body {
     text-align:center;
 }
 
-.familiares-data {
-    font-size: 1.25rem;
-}
-
 .familiares-functions {
     display: flex;
     width: 100%;
@@ -91,4 +80,3 @@ body {
     border-radius: 10px;
     text-shadow: 3px 2px 3px black;
 }
-

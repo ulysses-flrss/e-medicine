@@ -3,15 +3,15 @@
     require_once '../controller/ctrlUsuario.php';
     $idPaciente = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
     $sesion = isset($_REQUEST['sesion'])?$_REQUEST['sesion']:"";
-    // if ($sesion == "") {
-    //     header('location:../index.php');
-    // }else{
+    if ($sesion == "") {
+        header('location:../index.php');
+    }else{
         $dataUser = username($idPaciente);
 
         $datos = explode('/', $dataUser);
 
         $codPaciente = $datos[0];
-    // }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +20,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/familiares-style.css">
-    <title>Familiares - E-Medicine</title>
+    <link rel="stylesheet" href="../view/css/familiares-style.css">
+    <title>Familiares | E-Medicine</title>
     <?php links() ?>
 </head>
 <body>
@@ -59,6 +59,7 @@
             </div>";
         }
 ?>
+<<<<<<< HEAD
            
                 
 
@@ -77,6 +78,15 @@
 <script src="javascript.js"></script>
 
 <script src="javascript.js"></script>
+=======
+            </div>
+        </section>
+    </article>
+    <?php footer() ?>
+</main>
+
+    <script src="javascript.js"></script>
+>>>>>>> 179cb00b93344cb20d12bef118f8e3b3ad0d3faa
     <script src="js/perfil.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/bootstrap.min.js"></script>
