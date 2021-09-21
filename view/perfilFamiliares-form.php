@@ -1,6 +1,14 @@
 <?php
 session_start();
-require_once("plugins/funciones.php") ?>
+require_once("plugins/funciones.php");
+require_once '../controller/ctrlUsuario.php';
+
+$cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+
+    $dataUser = username($cod);
+
+$datos = explode('/', $dataUser);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,36 +19,45 @@ require_once("plugins/funciones.php") ?>
     <link rel="stylesheet" href="css/form-familiares-style.css">
     <link rel="stylesheet" href="css/root-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&family=Anton&div=swap" rel="stylesheet">
-    <title>Registro - E-Medicine</title>
+    <title>Registro de un Familiar | E-Medicine</title>
     <?php links() ?>
 </head>
-<body>
+<body class='body'>
 
     <main>
-        <div class="inicio-register">
-            <img src="../assets/logoEMedicine.png" alt="" class="logo">
-            <h1 class="bienvenida-register">Crea Un Perfil Familiar</h1>                
+        <div class="inicio-registro">
+            <img src="../assets/imgs/logoEMedicine.png" alt="" class="logo">
+            <h1 class="bienvenida-registro">Crea Un Perfil Familiar</h1>                
         </div>
         
 
         <article>
             <section class="form-container">
-                <form action="../controller/ctrlFamiliar.php" class="form-register" method="POST">
+                <!--<form action="../controller/ctrlFamiliar.php" class="form-register" method="POST">-->
+
+                <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>"; ?>
                     
-                <div class="first-line">
-                    <label for="">Nombre: *</label>
-                    <input type="text" name="nombre" id="" placeholder="Ingrese su Nombre" required>
+                <div class="third-line">
+                    <div class="nombres">
+                        <label for="">Nombres: *</label>
+                        <input type="text" name="nom" id="nom" placeholder="Ingrese sus Nombres">
+                    </div>
+
+                    <div class="apellidos">
+                        <label for="">Apellidos: *</label>
+                        <input type="text" name="ape" id="ape" placeholder="Ingrese sus Apellidos">
+                    </div>
                 </div>
                     
                 <div class="second-line">
                     <div class="peso">
                         <label for="">Peso(lb): *</label>
-                        <input type="text" name="peso" id="" placeholder="Peso en Libras"  required>
+                        <input type="text" name="pe" id="pe" placeholder="Peso en Libras" >
                     </div>
                     
                     <div class="altura">
                         <label for="">Altura(cm): *</label>
-                        <input type="text" name="altura" id="" placeholder="Altura en cm" required>
+                        <input type="text" name="al" id="al" placeholder="Altura en cm">
                     </div>  
                 </div>
                     
@@ -48,19 +65,19 @@ require_once("plugins/funciones.php") ?>
                 <div class="third-line">
                     <div class="fecha">
                         <label for="">Fecha de Nacimiento: *</label>
-                        <input type="date" name="fechaNac" id="" required>
+                        <input type="date" name="fn" id="fn">
                     </div>
                     
                     <div class="genre">
                         <div class="masculino">
                             <label for="masculino">Masculino</label>
-                            <input type="radio" class="male" name="genero" id="masculino" value="Masculino" required>
+                            <input type="radio" class="male" name="genero" id="genero" value="Masculino" >
                         </div>
                     
                         
                         <div class="female">
                             <label for="femenino">Femenino</label>
-                            <input type="radio" name="genero" id="femenino" value="Femenino" required>
+                            <input type="radio" name="genero" id="genero" value="Femenino">
                         </div>
 
                         
@@ -68,7 +85,7 @@ require_once("plugins/funciones.php") ?>
                     
                     <div class="municipio">
                         <label for="municipio">Municipio *</label>
-                        <select name="municipio" id="" required>
+                        <select name="municipio" id="municipio">
                             <option value="">-- Seleccione un Municipio</option>
                             <option value="San Salvador">San Salvador</option>
                             <option value="Aguilares">Aguilares</option>
@@ -98,18 +115,24 @@ require_once("plugins/funciones.php") ?>
                 </div>
 
                 <div class="fifth-line">
-                    <textarea name="enfermedades" id="textarea" cols="50" rows="1" maxlength="255"></textarea>
+                    <textarea name="enfermedades" id="enfermedades" cols="50" rows="1" maxlength="255"></textarea>
                 </div>
 
                     <div class="submit">
-                        <input type="submit" name="accion" value="Crear Perfil">
+                        <input type="submit" name="accion" value="Crear Perfil" id="crearPerfil" onclick="crearPerfil();">
                     </div>
-                </form>
+                <!--</form>-->
             </section>
         </article>
     </main>
 
-    <?php footer() ?>
-    <script src="view/js/password.js"></script>
+    <?php footer();?>
+    <script src="../view/js/perfil.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../view/js/all.min.js"></script>
+    <script src="../view/js/bootstrap.min.js"></script>
+    <script src="../view/js/jquery.js"></script>
+    <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
+
 </body>
 </html>
