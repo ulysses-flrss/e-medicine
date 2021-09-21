@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+body{
+    color: black;
+}
+
 .all-container {
     padding-top: 10rem;
 }

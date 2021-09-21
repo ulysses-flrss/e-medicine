@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 10rem;
+    background-color: #e0e6e3;
 }
 
 .add-image {
@@ -33,7 +34,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--skinBright-bg-color);
+    background-color: var(--skinBright-body-color);
     padding: 2rem;
     border-radius: 10px;
     width: 25vw;
@@ -54,6 +55,7 @@ body {
 
 .familiares-profile-name {
     font-family: var(--footerFont);
+    color: black;
     margin: 1rem;
     font-size: 3rem;
     font-weight: bold;
@@ -68,8 +70,13 @@ body {
     align-items: center;
 }
 
-i {
-    cursor: pointer;
-    border-radius: 15px;
+#eliminar, #modificar{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#iconTrash, #iconEditar {
+    font-size: 2rem;
+    border-radius: 10px;
     text-shadow: 3px 2px 3px black;
 }

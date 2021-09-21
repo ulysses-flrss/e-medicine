@@ -9,6 +9,10 @@ body {
 	font-family: Arial;
 	}
 
+	body{
+		color: black;
+	}
+
 #main-container{
 	margin: 150px auto;
 	width: 10px;

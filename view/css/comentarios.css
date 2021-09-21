@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    color: black;
+}
+
 .allContainer {
     display: flex;
     margin: 10rem auto auto auto;
@@ -55,7 +59,7 @@
     align-items: center;
     transition: 500ms ease;
     border-radius: 15px;
-    box-shadow: 0px 0px 30px var(--skinDark-bg-color);
+    box-shadow: 0px 0px 30px var(--skinDark-body-color);
 }
 
 .user-card:hover {
@@ -67,7 +71,7 @@
 .user-card:active {
     transition: 1s ease;
     transform: scale(1.10);
-    border: 5px solid var(--skinDark-bg-color);
+    border: 5px solid var(--skinDark-body-color);
 }
 
 

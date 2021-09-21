@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+body{
+    color: black;
+}
+
 .all-container {
     padding-top: 10rem;
 }
@@ -16,7 +20,7 @@
 .user-card {
     margin: 3rem 12rem 3rem 15rem ;
     display: flex;
-    background-color: var(--skinBright-bg-color);
+    background-color: var(--skinBright-body-color);
     width: 40rem;
     height: 40rem;
     flex-direction: column;
@@ -24,19 +28,19 @@
     align-items: center;
     transition: 500ms ease;
     border-radius: 15px;
-    box-shadow: 0px 0px 30px var(--skinDark-bg-color);
+    box-shadow: 0px 0px 30px var(--skinDark-body-color);
 }
 
 .user-card:hover {
     transition: 500ms ease;
     transform: scale(1.02);
-    border: 2px solid var(--skinDark-bg-color);
+    border: 2px solid var(--skinDark-body-color);
 }
 
 .user-card:active {
     transition: 1s ease;
     transform: scale(1.10);
-    border: 5px solid var(--skinDark-bg-color);
+    border: 5px solid var(--skinDark-body-color);
 }
 
 
@@ -62,7 +66,7 @@ h1 {
 
 #social-network-logo {
     transition: 1s ease-in-out;
-    color: var(--skinDark-bg-color);
+    color: var(--skinDark-body-color);
 }
 
 #social-network-logo:hover {
@@ -101,6 +105,6 @@ h1 {
 .social-networks #social-network-logo:hover{
     transition: 250ms ease-in;
     color: white;
-    background-color: var(--skinDark-bg-color);
+    background-color: var(--skinDark-body-color);
 }
 

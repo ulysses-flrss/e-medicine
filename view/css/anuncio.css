@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+body{
+    color: black;
+}
+
 .all-container {
     padding-top: 10rem;
 }
@@ -36,7 +40,7 @@
 .user-card:active {
     transition: 1s ease;
     transform: scale(1.10);
-    border: 5px solid var(--skinDark-bg-color);
+    border: 5px solid var(--skinDark-body-color);
 }
 
 

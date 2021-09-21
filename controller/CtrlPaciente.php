@@ -11,10 +11,17 @@
     $password = isset($_POST['pass'])?$_POST['pass']:"";
     $telefono = isset($_POST['tel'])?$_POST['tel']:"";
     $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
+    $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
     
     if($accion == "" && $id=="" ){
         require "view/viewPaciente.php";
     }
+
+    if ($accion = "cita") {
+        $_SESSION['codUsuario'] = $cod;
+        header('location:../view/viewCita.php?idUsuario=$cod');
+    }
+
     if($accion == "Registrarse"){
         require_once '../model/classPaciente.php';
         require_once '../model/daoPaciente.php';

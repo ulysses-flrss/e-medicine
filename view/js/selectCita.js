@@ -17,7 +17,7 @@ function listarEspecial(){
       var idEspecialidad = $('#em').val();
       listarDoctor(idEspecialidad);
     }else{
-        cadena +="<option value=''>NO SE ENCONTRARON</option";
+        cadena +="<option value=''>-- Seleccione una Especialidad --</option>";
         $("#em").html(cadena);
       }
   })
@@ -45,8 +45,8 @@ function listarDoctor(idEspecialidad){
         }
       }
     }else{
-        cadena +="<option value=''>NO SE ENCONTRARON</option";
-        $("#doctor").html(cadena);
+        cadena +="<option value=''>-- Seleccione un Doctor --</option>";
+        $("#doctores").html(cadena);
       }
   })
 }

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    color: black;
+}
+
 .all-container {
     padding-top: 10rem;
 }

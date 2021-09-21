@@ -7,6 +7,8 @@
   $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
   $mensaje = isset($_SESSION['mensaje'])?$_SESSION['mensaje']:"";
 
+  $pass = md5($password); //encriptar pass enviada por el usuario para compararla con la pass de la BD
+
   $_SESSION['codUsuario'] = $codUsuario;
 
   if ($accion == "" && $codUsuario == "") {

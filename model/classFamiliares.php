@@ -4,8 +4,10 @@
 
 class Familiar {
 
-    public $id;
+    public $idPerfil;
+    public $idPaciente;
     public $nombre;
+    public $apellido;
     public $peso;
     public $altura;
     public $fechaNac;
@@ -13,98 +15,74 @@ class Familiar {
     public $municipio;
     public $enfermedades;
 
-    public function __construct($id, $nombre, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades) {
-
-        if (!empty($id)) {
-            $this->id = $id;
-        } else {
-            $this->id = NULL;
-        }
-
-        if (!empty($nombre)) {
-           $this->nombre = $nombre;
-        } else {
-           throw new Exception("ERROR: NOMBRE INVALIDO");
-        }   
+    public function __construct($idPerfil, $idPaciente, $nombre, $apellido, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades) {
         
-        if (!empty($peso)&& is_numeric($peso)) {
-           $this->peso = $peso;
-        } else {
-           throw new Exception("PESO INVALIDO");
-        }
+        $this->idPerfil = $idPerfil;
+        
+        $this->idPaciente = $idPaciente;
+      
+        $this->nombre = $nombre;
+      
+        $this->apellido = $apellido;
+        
+        $this->peso = $peso;
+        
+        $this->altura = $altura;
 
-        if (!empty($altura)&& is_numeric($altura)) {
-           $this->altura = $altura;
-        } else {
-           throw new Exception("ALTURA INVALIDA");
-        }
+        $this->genero = $genero;
 
-        if (!empty($genero)) {
-           $this->genero = $genero;
-        } else {
-           throw new Exception("GENERO INVALIDO");
-        }
+        $this->fechaNac = $fechaNac;
 
-        if(!empty($fechaNac)){
-           $this->fechaNac = $fechaNac;
-        }else{
-           throw new Exception('Error. Fecha vacía');
-        }
+        $this->municipio = $municipio;
 
-        if (!empty($municipio)) {
-            $this->municipio = $municipio;
-        } else {    
-           throw new Exception("MUNICIPIO INVALIDO");
-        }
-
-       if (!empty($enfermedades)) {
         $this->enfermedades = $enfermedades;
-       } else {
-           $this->enfermedades = " ";
-       }
-           
-       //PRUEBA
-
-    //    $this->id = $id;
-    //    $this->nombre = $nombre;
-    //    $this->peso = $peso;
-    //    $this->altura = $altura;
-    //    $this->genero = $genero;
-    //    $this->fechaNac = $fechaNac;
-    //    $this->municipio = $municipio;
-    //    $this->enfermedades = $enfermedades;
 
     }
 
-    
-
     //GETTERS
+    public function getIdPerfil() {
+        return $this->idPerfil;
+    }
+    public function getIdPaciente() {
+        return $this->idPaciente;
+    }
     public function getNombre() {
         return $this->nombre;
+    }
+    public function getApellido() {
+        return $this->Apellido;
     }
     public function getPeso() {
         return $this->peso;
     }
-    
     public function getAltura() {
         return $this->altura;
     }
-    
     public function getFechaNac() {
         return $this->fechaNac;
     }
-    
     public function getGenero() {
         return $this->genero;
     }
-    
     public function getMunicipio() {
         return $this->municipio;
     }
-
     public function getEnfermedad() {
         return $this->enfermedades;
     }
-}
 
+    //SETTERS
+    public function setterPeso($peso){
+        $this->peso = $peso;
+    }
+    public function setterAltura($altura){
+        $this->altura = $altura;
+    }
+    public function setterMunicipio($municipio){
+        $this->municipio = $municipio;
+    }
+    public function setterEnfermedades($enfermedades){
+        $this->enfermedades = $enfermedades;
+    }
+}
 ?>

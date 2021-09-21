@@ -7,6 +7,7 @@
 
 body {
     background-color: #daffec;
+    color: black;
 }
 
 
@@ -37,7 +38,7 @@ input:not(.submit input)  {
 }
 
 .form-container {
-    background-color: var(--aquaBright-bg-color);
+    background-color: var(--aquaBright-body-color);
     width: 88vw;
     margin: auto;
     padding: 2rem 0;

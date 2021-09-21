@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    color: black;
+}
+
 .all-container {
     padding-top: 10rem;
 }
@@ -28,7 +32,7 @@ h2 {
 
 textarea {
     font-family: var(--bodyFont);
-    background-color: hsl(160, 80%, 50%);;
+    background-color: hsl(160, 80%, 50%);
     display: flex;
     width:70vw;
     margin: auto;

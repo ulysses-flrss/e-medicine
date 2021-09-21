@@ -7,6 +7,7 @@
 
     body {
         background-color: #e0e6e3;
+        color: black;
         
     }
     
@@ -189,7 +190,7 @@
 
     .div-especialidades {
         display: flex;
-        background-color: var(--aqua-bg-color);
+        background-color: var(--aqua-body-color);
         margin: 1rem auto 1rem auto ;
         width: 95vw;
         height: 17.5vh;   
@@ -204,7 +205,7 @@
 
     .div-especialidades:hover {
         transition: 500ms ease;
-        background-color:var(--aquaBright-bg-color);
+        background-color:var(--aquaBright-body-color);
         transform: scale(1.02);
     }
 

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    color: black;
+}
+
 .all-container {
     display: flex;
     flex-direction: column;
@@ -17,7 +21,7 @@
     width: 80%;
     height: fit-content;
     margin: auto;
-    background-color: var(--aquaBright-bg-color);
+    background-color: var(--aquaBright-body-color);
     font-family: var(--menuFont);
     
 }
@@ -34,6 +38,10 @@
 .motivo>textarea, .enfermedades>textarea{
     display: flex;
     margin: auto;
+}
+
+#idUsuario{
+    visibility: none;
 }
 
 textarea {
@@ -186,22 +194,22 @@ input:focus:not(.submit input) {
 }
 
 
-.submit input {
+.submit button {
     border-radius: 5px;
     width: 15rem;
     height: 3.5rem;
     font-family: var(--menuFont);
-    box-shadow: 3px 3px 0px;
+    box-shadow: 3px 3px 0px black;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-.submit input:hover{
+.submit button:hover{
     transition: 350ms ease-in;
     background-color: rgb(184, 184, 184);
 }
 
-.submit input:active {
+.submit button:active {
     transition: 150ms ease-in;
     border: 0;
     background-color: black;
