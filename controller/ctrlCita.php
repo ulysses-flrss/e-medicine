@@ -19,18 +19,57 @@
     require_once '../view/viewCita.php';
   }
 
-  if ($accion == "programar cita") {
+  if ($accion == "programarCita") {
     require_once '../model/classCita.php';
     require_once '../model/daoCita.php';
 
-    $cita = new Cita($codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
+    if ($peso == "") {
+      echo json_encode("Error. Debe ingresar su peso en libras.");
+      return;
+    }
+    if ($altura == "") {
+      echo json_encode("Error. Debe ingresar su altura en cm.");
+      return;
+    }
+    if ($fechaNac == ""){
+      echo json_encode("Error. Debe ingresar su fecha de nacimiento.");
+      return;
+    }
+    if ($especialidadM == ""){
+      echo json_encode("Error. Debe ingresar la especialidad médica para su cita.");
+      return;
+    }
+    if ($doctor == ""){
+      echo json_encode("Error. Debe ingresar el doctor para su cita.");
+      return;
+    }
+    if ($fechaCita == "") {
+      echo json_encode("Error. Debe ingresar la fecha para su cita.");
+      return;
+    }
+    if ($horaCita == "") {
+      echo json_encode("Error. Debe ingresar la hora de su cita.");
+      return;
+    }
+    if ($razonCita == "") {
+      echo json_encode("Error. Debe ingresar la razón de la cita médica y/o sus síntomas.");
+      return;
+    }
 
     $dao = new daoCita();
 
-    $dao->insertar($cita);
+    $citas = $dao->validarCita($idDoctor);
 
-    $mensaje = "Su cita ha sido registrada con éxito";
-    echo "<script>alert('".$mensaje."')";
-    echo "<body style='background-color:#daffec;'><a href='../controller/ctrlPaciente.php?idUsuario='".$codUsuario."></a></body";
+    foreach ($citas as $cita) {
+      if ($cita[]) {
+        // code...
+      }
+    }
+    
+    $cita = new Cita($codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
+
+    $r = $dao->insertar($cita);
+    echo json_encode($r);
+    
   }
 ?>

@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: var(--aquaBright-bg-color);
+    background-color: var(--aquaBright-body-color);
+    color: black;
 }
 
 .form-container{
@@ -15,7 +16,7 @@ body {
     border-radius: 15px;
     width: 80%;
     margin: auto;
-    background-color: var(--aquaBright-bg-color);
+    background-color: var(--aquaBright-body-color);
 }
 
 .form-register {
@@ -44,10 +45,6 @@ input:focus:not(.submit input) {
     background-color: black;
     color: white;
     box-shadow: none;
-}
-
-#eye1, #eye2{
-    cursor: pointer;
 }
 
 .bienvenida-register {

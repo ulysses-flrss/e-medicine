@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    color: black;
+}
+
 .all-container {
     padding-top: 10rem;
 }
@@ -18,7 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     font-size: 1.5rem;
-    background-color: var(--aquaBright-bg-color) /*hsl(27, 100%, 87%)*/;
+    background-color: var(--aquaBright-body-color) /*hsl(27, 100%, 87%)*/;
     padding: 2rem 2rem;
     width: 45vw;
     margin: 3rem auto;

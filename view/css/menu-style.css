@@ -1,8 +1,8 @@
-nav.nav {
+nav.barNav {
     position: fixed;
     width: 100vw;
     height: 7rem;
-    background-color: var(--aquaMenu-bg-color);
+    background-color: var(--aquaMenu-body-color);
     margin-bottom: 7.5rem;
     font-family: var(--menuFont);  
     z-index: 100;
@@ -15,9 +15,55 @@ nav.nav {
     
 }
 
+/* Menú desplegable */
+
+nav ul li .opcionesCita{
+  background-color: var(--aquaMenu-body-color);
+  margin-top: 7rem;
+  padding: 1rem;
+  /*padding: 1rem 1rem 1rem 0rem;*/
+  position: absolute;
+  display: none;
+  transition: 100ms all;
+}
+
+.opcionesCita ul{
+    list-style: none;
+}
+
+.opcionesCita ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+nav > ul > li > .opcionesCita li > a{
+  text-decoration: none;
+}
 
 
-.navbar-nav{
+nav ul li:hover .opcionesCita{
+  display: flex;
+}
+
+nav ul li .opciones{
+  margin-right: 1.5rem;
+    font-family: var(--menuFont);
+}
+
+nav ul li .opcionesCita .opciones li{
+  padding-bottom: 1rem;
+}
+
+nav ul li .opcionesCita .opciones li a{
+  text-decoration: none;
+  color: black;
+}
+
+/* FIN Menú desplegable */
+
+
+
+.barNavegacion{
     display: flex;
     width: 100vw;
     height: 7rem;
@@ -29,7 +75,7 @@ nav.nav {
 }
 
 
-/*.nav-header {
+/*.bar-header {
     align-items: flex-start !important;
     justify-content: flex-start !important;
     margin-left: 0.1rem !important;
@@ -37,7 +83,7 @@ nav.nav {
 }*/
 
 
-.nav-item:not(:first-child){
+.bar-item:not(:first-child){
     transition: 250ms all;
     display: flex;
     width: 100%;
@@ -45,7 +91,7 @@ nav.nav {
     justify-content: center;
 }
 
-.nav-item:first-child {
+.bar-item:first-child {
     border-radius: 50px;
     margin: 2rem;
     padding: 0.30rem;
@@ -54,7 +100,7 @@ nav.nav {
 }
 
 
-.nav-link, .nav-header-link, .nav-header-text {
+.bar-link, .bar-header-link, .bar-header-text {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -62,14 +108,14 @@ nav.nav {
 }
 
 
-.link-text, .nav-header-text {
+.link-text, .bar-header-text {
     
     padding: 0rem 0.5rem;
     font-size: 1.2em;
 }
 
 
-.nav-picture {
+.bar-picture {
     transition: 100ms ease;
     width: 2.5rem;
     margin: auto auto auto 1rem;
@@ -80,7 +126,7 @@ nav.nav {
         display: none;
     }
 
-    .nav-picture {
+    .bar-picture {
         width: 2.25rem;
     }
 
@@ -89,11 +135,11 @@ nav.nav {
         height: auto;
     }
 
-    .navbar-nav {
+    .barNavegacion {
         justify-content: center;
     }
 
-    .nav-item {
+    .bar-item {
         margin: auto;
     }
 
@@ -104,27 +150,27 @@ nav.nav {
 
 /* hovers */
 
-.navbar-nav li:hover {
+.barNavegacion li:hover {
     transition: 250ms all;
     transform: scale(1.15);
-    background-color: var(--aqua-bg-color);
+    background-color: var(--aqua-body-color);
     border-bottom: 7px solid #26975f;
     opacity: 0.99;
 }
 
-.navbar-nav :hover .nav-picture{
+.barNavegacion :hover .bar-picture{
     transition: 250ms all;
     width: 3.5rem;
 }
 
-.navbar-nav:hover .nav{
+.barNavegacion:hover .bar{
     transition: 250ms all;
     width: 5rem;
 }
 
 
 
-.navbar-nav li:active {
+.barNavegacion li:active {
     transition: 150ms all;
     transform: scale(0.98);
     background-color: #26975f;

@@ -4,18 +4,33 @@
     public function insertar($cita){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
-      $sql = "INSERT INTO citas (Paciente, peso, altura, fechaNacimiento, especialidadM, doctor, fechaCita, horaCita, enfermedades, razonCita) VALUES (:idPaciente, :peso, :altura, :fechaNac, :especialidadM, :doctor, :fechaCita, :horaCita, :enfermedades, :razonCita)";
+      $sql = "INSERT INTO citas (paciente, peso, altura, fechaNacimiento, especialidadM, doctor, fechaCita, horaCita, enfermedades, razonCita) VALUES (:idPaciente, :peso, :altura, :fechaNac, :especialidadM, :doctor, :fechaCita, :horaCita, :enfermedades, :razonCita)";
       try{
         $stmt = $dbh->prepare($sql);
-        $stmt->execute((array) $cita);
-        $rowAf = $stmt->rowCount();
-        return $rowAf;
+        if ($stmt->execute((array) $cita)) {
+          return "OK";
+        }else{
+          return "Error: se ha generado un error al guardar la información";
+        }
+        /*$rowAf = $stmt->rowCount();
+        return $rowAf;*/
       }catch (PDOException $e){
         echo "ERROR: " . $e->getMessage();
       }
     }
 
-    function listarEspecialidad(){
+    public function validarCita($idDoctor){
+      $cn = new Conexion();
+      $dbh = $cn->getConexion();
+      $sql = "SELECT fechaCita, horaCita FROM citas WHERE doctor=:idDoctor";
+      $stmt = $dbh->prepare($sql);
+      $stmt->bindParam(':idDoctor', $idDoctor);
+      $stmt->execute();
+      $citas = $stmt->fetchAll(PDO::FETCH_ASSOC)
+      return $citas;
+    }
+
+    public function listarEspecialidad(){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
       $sql = "SELECT idEspecialidad, nombreEsp FROM especialidades";
@@ -26,7 +41,7 @@
       return $resultado;
     }
 
-    function listarDoctor($idEspecialidad){
+    public function listarDoctor($idEspecialidad){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
       $sql = "SELECT idDoctor, CONCAT(nombre, ' ', apellido), genero, vacaciones FROM doctores WHERE especialidadM=:idEspecialidad";
