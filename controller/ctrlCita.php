@@ -75,10 +75,16 @@
       $r = "El doctor ya tiene ocupado ese horario.";
       echo json_encode($r);
     }else{
-      $cita = new Cita($codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
+      $citas = $dao->validarCitaFamiliar($doctor, $fechaCita, $horaCita);
+      if ($citas == "copia") {
+        $r = "El doctor ya tiene ocupado ese horario.";
+        echo json_encode($r);
+      }else{
+        $cita = new Cita($perfil, $codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
 
-      $r = $dao->insertar($cita);
-      echo json_encode($r);
+        $r = $dao->insertar($cita);
+        echo json_encode($r);
+      }
     }    
   }
 ?>

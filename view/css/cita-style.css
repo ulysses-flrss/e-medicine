@@ -38,6 +38,7 @@ body{
 .motivo>textarea, .enfermedades>textarea{
     display: flex;
     margin: auto;
+    font-family: var(--bodyFont);
 }
 
 #idUsuario{
@@ -76,6 +77,7 @@ input:not(.submit input){
     border-radius: 15px;
     background-color: #eafff4;
     box-shadow: 3px 3px 0px;
+    text-align: center;
 }
 
 input:focus:not(.submit input) {
@@ -102,7 +104,7 @@ input:focus:not(.submit input) {
 }
 
 .perfil select {
-    width: 20%;
+    width: auto;
 }
 
 .first-line input {

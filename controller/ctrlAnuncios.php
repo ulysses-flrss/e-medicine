@@ -21,7 +21,9 @@ if($contenidoAnuncio == "" || $contenidoAnuncio == " ") {
 
     $dao->publicarAnuncio($anuncio);
 
-    echo "id: " . $idUsuario." nombre: ".$nombre." contenido: ".$contenidoAnuncio;
+    $mensaje = 'PUBLICADO EXITOSAMENTE!.';
+    echo "<script>alert('".$mensaje."')</script>"; //MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
+    echo "<body style='background-color:#daffec;'><a href='../view/viewDoctor.php' style='text-decoration:none;color:black;font-size:1.5rem;font-weight:bold;'>REGRESAR</a></body>";
 }
     
 

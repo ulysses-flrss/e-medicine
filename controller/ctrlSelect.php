@@ -1,10 +1,8 @@
 <?php
-
-  $idUsuario = isset($_POST['idUsuario'])?$_POST['idUsuario']:"";
-   
-  require_once '../model/daoCita.php';
+  require_once '../model/daoCitaFamiliar.php';
   $listar = isset($_POST['listar'])?$_POST['listar']:"";
   $idEspecialidad = isset($_POST['idEspecialidad'])?$_POST['idEspecialidad']:"";
+  $idUsuario = isset($_POST['idUsuario'])?$_POST['idUsuario']:"";
   
   if ($listar == "especialidad") {
     $dao = new daoCita();
@@ -18,9 +16,9 @@
     echo json_encode($consulta); 
   }
 
-  if ($listar == "familiar") {
+  if ($listar == "familiar"){
     $dao = new daoCita();
     $consulta = $dao->listarFamiliar($idUsuario);
-    echo json_encode($consulta); 
+    echo json_encode($consulta);
   }
 ?>

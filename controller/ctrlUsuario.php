@@ -20,7 +20,7 @@
         $dataUser = $resultado[0].'/'.$resultado[1].'/paciente';
         return $dataUser;
       }else{
-        $sql = "SELECT idDoctor, CONCAT(nombre, ' ', apellido) FROM doctores WHERE idDoctor=:idUsuario";
+        $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor) FROM doctores WHERE idDoctor=:idUsuario";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':idUsuario', $idUsuario);
         $stmt->execute();
@@ -29,7 +29,7 @@
           $dataUser = $resultado[0].'/'.$resultado[1].'/doctor';
           return $dataUser;
         }else{
-          $sql = "SELECT idAdmin, CONCAT(nombre, ' ', apellido) FROM admins WHERE idAdmin=:idUsuario";
+          $sql = "SELECT idAdmin, CONCAT(nombreAdmin, ' ', apellidoAdmin) FROM admins WHERE idAdmin=:idUsuario";
           $stmt = $dbh->prepare($sql);
           $stmt->bindParam(':idUsuario', $idUsuario);
           $stmt->execute();
@@ -52,7 +52,7 @@
         $dataUser = $resultado[0].'/'.$resultado[1].'/paciente';
         return $dataUser;
       }else{
-          $sql = "SELECT idDoctor, CONCAT(nombre, ' ', apellido) FROM doctores WHERE idDoctor=:idUsuario";
+          $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor) FROM doctores WHERE idDoctor=:idUsuario";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':idUsuario', $idUsuario);
         $stmt->execute();
@@ -61,7 +61,7 @@
           $dataUser = $resultado[0].'/'.$resultado[1].'/doctor';
           return $dataUser;
         }else{
-          $sql = "SELECT idAdmin, CONCAT(nombre, ' ', apellido) FROM admins WHERE idAdmin=:idUsuario";
+          $sql = "SELECT idAdmin, CONCAT(nombreAdmin, ' ', apellidoAdmin) FROM admins WHERE idAdmin=:idUsuario";
           $stmt = $dbh->prepare($sql);
           $stmt->bindParam(':idUsuario', $idUsuario);
           $stmt->execute();

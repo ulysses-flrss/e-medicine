@@ -1,32 +1,33 @@
 function retornarDatos(accion) {
   return {
-    "idPerfil":document.getElementById('idPerfil').value,
-    "idUsuario": document.getElementById('idUsuario').value,
+    "nom": document.getElementById('nom').value,
+    "ape": document.getElementById('ape').value,
     "pe": document.getElementById('pe').value,
     "al": document.getElementById('al').value,
     "fn": document.getElementById('fn').value,
-    "em": document.getElementById('em').value,
-    "doctor": document.getElementById('doctores').value,
-    "fc": document.getElementById('fechaCita').value,
-    "hc": document.getElementById('hc').value,
-    "enfermedades": document.getElementById('enfermedades').value,
-    "razon": document.getElementById('razon').value,
+    "genero": document.getElementById('genero').value,
+    "muni": document.getElementById('muni').value,
+    "email": document.getElementById('email').value,
+    "pass": document.getElementById('pass').value,
+    "pass2": document.getElementById('pass2').value,
+    "tel": document.getElementById('tel').value,
     "accion": accion
   };
 }
 
-function programarCita() {
+function crearPaciente(){
   $.ajax({
-      url: '../controller/ctrlCitaFamiliar.php',
-      data: retornarDatos("programarCita"),
+      url: '../controller/ctrlPaciente.php',
+      data: retornarDatos("crearPaciente"),
       type: 'POST',
       dataType: 'json'
   }).done(function(response) {
-    if (response == "OK") {
+    if (response.status == "OK") {
+      mensaje = 'Su cita ha sido guardada con éxito.'+response.usuario;
       Swal.fire({
         type: 'success',
         title: '¡Éxito!',
-        text: 'Su cita ha sido guardada con éxito.',
+        text: mensaje,
         footer: 'E-MEDICINE ©'
       }).then((result)=>{
         window.location.href="../view/viewPaciente.php";

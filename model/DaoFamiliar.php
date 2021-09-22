@@ -104,7 +104,7 @@ require_once("../model/classConexion.php");
         }
 
         public function listadoFamiliar($idPaciente){
-            $sql = "SELECT idPerfil, CONCAT(nombres, ' ', apellidos) AS nombre, peso, altura, municipio FROM familiar WHERE idPaciente=:idPaciente ORDER BY idPerfil;";
+            $sql = "SELECT idPerfil, CONCAT(nombres, ' ', apellidos) AS nombre FROM familiar WHERE idPaciente=:idPaciente ORDER BY idPerfil;";
             $cn = new Conexion();
             $dbh = $cn->getConexion();
             $stmt = $dbh->prepare($sql);
@@ -112,22 +112,6 @@ require_once("../model/classConexion.php");
             $stmt->execute();
             $familiar = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $familiar;
-        }
-
-        public function listadoFamiliarCompleto() {
-            $cn = new Conexion;
-            $dbh = $cn->getConexion();
-            $sql = "SELECT idPerfil, nombres, apellidos FROM familiar ORDER BY idPerfil";
-    
-            try {
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute();
-                $paciente = $stmt->fetchAll();
-                return $paciente;
-            } catch (Exception $e) {
-                $e->getMessage();
-            }
-            
         }
 
         public function mostrarFamiliar($idPerfil) {

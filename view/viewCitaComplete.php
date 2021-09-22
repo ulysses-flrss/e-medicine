@@ -125,7 +125,7 @@
                     <div class="fifth-line">-->
                         <div class="motivo">
                             <label for="">¿Cuál es la razón de su cita? (escriba sus sintomas)</label>
-                            <textarea name="razon" id="razon"></textarea>
+                            <textarea type="text" name="razon" id="razon"></textarea>
                         </div>
                     </div>
     

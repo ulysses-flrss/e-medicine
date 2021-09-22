@@ -12,7 +12,7 @@ require_once 'plugins/funciones.php'; ?>
     <link rel="stylesheet" href="../view/css/register-style.css">
     <?php links() ?>
 </head>
-<body>
+<body class='body'>
     <main>
         <div class="inicio-register">
             <img src="../assets/imgs/logoEMedicine.png" alt="" class="logo">
@@ -21,7 +21,7 @@ require_once 'plugins/funciones.php'; ?>
 
         <article>
             <section class="form-container">
-                <form action="../controller/ctrlPaciente.php?location=dentro" class="form-register" method="POST">
+                <form action="../controller/ctrlPaciente.php" class="form-register" method="POST">
 
                 <div class="first-line">
                     <div class="nombre">

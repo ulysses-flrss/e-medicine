@@ -13,13 +13,8 @@
     $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
     $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
     
-    if($accion == "" && $id=="" ){
-        require "view/viewPaciente.php";
-    }
-
-    if ($accion = "cita") {
-        $_SESSION['codUsuario'] = $cod;
-        header('location:../view/viewCita.php?idUsuario=$cod');
+    if($accion == ""){
+        //require "view/viewPaciente.php";
     }
 
     if($accion == "Registrarse"){
@@ -35,9 +30,9 @@
         //Este session solo funciona en la carpeta "controller"
         echo "<script>alert('".$mensaje."')</script>"; //MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
         echo "<body style='background-color:#daffec;'><a href='../index.php' style='text-decoration:none;color:black;font-size:1.5rem;font-weight:bold;'>Iniciar Sesión</a></body>";
-    }
-
-    if ($accion = "cerrarSesion") {
+        //header("location:../index.php");//MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
+        
+    }elseif ($accion = "cerrarSesion") {
         require_once "../model/classPaciente.php";
         require_once "../model/daoPaciente.php";
 
@@ -46,7 +41,9 @@
 
         $dao->cerrarSesion($cod);
 
-        header("location:../index.php");
+        //require_once '../index.php';
+
+        //header("location:../index.php");
     }
     //Eliminar paciente
     /*if($id != "" && $accion=="eliminar"){

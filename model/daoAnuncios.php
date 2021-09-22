@@ -15,9 +15,6 @@ class DaoAnuncio {
             $stmt->bindParam(':contenidoAnuncio', $anuncio->contenidoAnuncio);
             $stmt->execute();
             $rowAf = $stmt->rowCount();
-            echo $rowAf;
-
-            echo "<a href = '../view/viewDoctor.php'>PUBLICADO EXITOSAMENTE</a>";
         } catch(PDOException $e) {
             echo "ERROR: ". $e->getMessage();
         }

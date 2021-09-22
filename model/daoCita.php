@@ -35,6 +35,22 @@
       }
     }
 
+    public function validarCitaFamiliar($idDoctor, $fechaCita, $horaCita){
+      $cn = new Conexion();
+      $dbh = $cn->getConexion();
+      $sql = "SELECT fechaCita, horaCita FROM citasfamiliares WHERE doctor=:idDoctor";
+      $stmt = $dbh->prepare($sql);
+      $stmt->bindParam(':idDoctor', $idDoctor);
+      $stmt->execute();
+      $citas = $stmt->fetchAll();
+      foreach ($citas as $cita) {
+        if (($cita['horaCita'] == $horaCita) && ($cita['fechaCita'] == $fechaCita)) {
+          $validacion = "copia";
+          return $validacion;
+        }
+      }
+    }
+
     public function listarEspecialidad(){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
@@ -49,7 +65,7 @@
     public function listarDoctor($idEspecialidad){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
-      $sql = "SELECT idDoctor, CONCAT(nombre, ' ', apellido), genero, vacaciones FROM doctores WHERE especialidadM=:idEspecialidad";
+      $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor), genero, vacaciones FROM doctores WHERE especialidadM=:idEspecialidad";
       $stmt = $dbh->prepare($sql);
       $stmt->bindParam(':idEspecialidad', $idEspecialidad);
       $stmt->execute();
@@ -57,21 +73,5 @@
       $especialidades[] = $resultado;
       return $resultado;
     }
-
-    public function listadoCitas() {
-      $cn = new Conexion;
-      $dbh = $cn->getConexion();
-      $sql = "SELECT paciente,  Concat(nombre, ' ', apellido) AS nombre, fechaCita, horaCita, enfermedades, razonCita  FROM citas INNER JOIN pacientes ON pacientes.idPaciente=citas.paciente ORDER BY fechaCita DESC";
-
-      try {
-          $stmt = $dbh->prepare($sql);
-          $stmt->execute();
-          $cita = $stmt->fetchAll();
-          return $cita;
-      } catch (Exception $e) {
-          $e->getMessage();
-      }
-      
-  }
   }
 ?>

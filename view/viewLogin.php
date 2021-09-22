@@ -36,15 +36,12 @@
                     <div class="password">
                         <label for="password">Contraseña:</label>
                         <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
-                        
                     </div>
-                    
 
                     <div class="submit">
-                        
-                           
-                        <a href="controller/ctrlLogin.php?accion=crearCuenta" class="submit-text">No tengo Cuenta</a>
+                        <a href="controller/ctrlLogin.php?accion=cambiarPass" class="submit-text">Olvidé mi contraseña</a>
                         <input type="submit" name="accion" value="enviar">
+                        <a href="controller/ctrlLogin.php?accion=crearCuenta" class="submit-text">No tengo Cuenta</a>
                     </div>
                 </form>
             </section>

@@ -1,6 +1,5 @@
-<?php
-  // Notificar todos los errores excepto E_NOTICE
-  error_reporting(E_ALL ^ E_NOTICE);
+<?php 
+   error_reporting(E_ALL ^ E_NOTICE);
     session_start();
     require_once 'plugins/funciones.php';
     require_once '../controller/ctrlUsuario.php';
@@ -19,14 +18,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | E-Medicine</title>
     <?php
-        links();
+      links();
     ?>
     <link rel="stylesheet" href="../view/css/index-style.css">
 </head>
 
 <body>
 
-    <?php menu();?>
+    <?php menu(); ?>
     
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
@@ -34,7 +33,7 @@
                 <div class="img-layout"><img src="../view/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
                 <span class="editar" title="Editar Perfil"> </span>
             </a>
-            <span id="bienvenida" title="Bienvenida">Bienvenido <b><?php echo $datos[1]; ?></b><span>
+                <span id="bienvenida" title="Bienvenida">Bienvenido/a <b><?php echo $datos[1]; ?></b><span>
         </div>
         
 
@@ -71,8 +70,6 @@
     <?php footer(); ?>
 
     <script src="javascript.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../view/js/sweetAlert.js"></script>
 </body>
 
 </html>

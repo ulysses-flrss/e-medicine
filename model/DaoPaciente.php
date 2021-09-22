@@ -10,8 +10,6 @@ class DaoPaciente{
         try{
             $stmt = $dbh->prepare($sql);
             $stmt->execute((array) $paciente);
-            $rowAf = $stmt->rowCount();
-            echo $rowAf;
         }catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
@@ -88,40 +86,31 @@ class DaoPaciente{
             return require_once '../view/viewPaciente.php';
         }
         else{
-           $sql = "SELECT CONCAT(nombre, '', apellido) AS 'Nombre Completo' FROM doctores WHERE idDoctor=:idPaciente";
+            $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor) FROM doctores WHERE idDoctor=:idPaciente";
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':idPaciente', $idPaciente);
             $stmt->execute();
             $resultado = $stmt->fetch();
             if(isset($resultado[0])){
                 return require_once '../view/viewDoctor.php';
+            }else{  
+              $sql = "SELECT idAdmin, CONCAT(nombreAdmin, ' ', apellidoAdmin) FROM admins WHERE idAdmin=:idPaciente";
+              $stmt = $dbh->prepare($sql);
+              $stmt->bindParam(':idPaciente', $idPaciente);
+              $stmt->execute();
+              $resultado = $stmt->fetch();
+                if(isset($resultado[0]))
+                    return require_once '../view/viewAdmin.php';
             }
         }
     }
-
-    public function listadoPacientes() {
-        $cn = new Conexion;
-        $dbh = $cn->getConexion();
-        $sql = "SELECT idPaciente, nombre, apellido FROM pacientes ORDER BY idPaciente ";
-
-        try {
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute();
-            $paciente = $stmt->fetchAll();
-            return $paciente;
-        } catch (Exception $e) {
-            $e->getMessage();
-        }
-        
-    }
-
-
 
     public function cerrarSesion($idPaciente) {
         $conexion = new Conexion;
         $dbh = $conexion->getConexion();
 
         session_unset();
+        return header("location:../index.php");
 
     }
 }

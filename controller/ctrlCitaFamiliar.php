@@ -1,7 +1,7 @@
 <?php
   session_start();
   $codUsuario = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
-  $perfil = isset($_POST['perfil'])?$_POST['perfil']:"";
+  $perfil = isset($_POST['idPerfil'])?$_POST['idPerfil']:"";
   $peso = isset($_POST['pe'])?$_POST['pe']:"";
   $altura = isset($_POST['al'])?$_POST['al']:"";
   $fechaNac = isset($_POST['fn'])?$_POST['fn']:"";
@@ -22,6 +22,11 @@
   if ($accion == "programarCita") {
     require_once '../model/classCitaFamiliar.php';
     require_once '../model/daoCitaFamiliar.php';
+
+    if ($perfil == "") {
+      echo json_encode("Debe elegir el perfil familiar para la cita.");
+      return;
+    }
 
     if ($peso == "") {
       echo json_encode("Error. Debe ingresar su peso en libras.");
@@ -75,10 +80,16 @@
       $r = "El doctor ya tiene ocupado ese horario.";
       echo json_encode($r);
     }else{
-      $cita = new Cita($codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
+      $citas = $dao->validarCitaFamiliar($doctor, $fechaCita, $horaCita);
+      if ($citas == "copia") {
+        $r = "El doctor ya tiene ocupado ese horario.";
+        echo json_encode($r);
+      }else{
+        $cita = new Cita($perfil, $codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
 
-      $r = $dao->insertar($cita);
-      echo json_encode($r);
-    }    
+        $r = $dao->insertar($cita);
+        echo json_encode($r);
+      }
+    }
   }
 ?>

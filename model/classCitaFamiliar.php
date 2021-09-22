@@ -1,6 +1,7 @@
 <?php
   class Cita{
     //Propiedades
+    public $idPerfil;
     public $idPaciente;
     public $peso;
     public $altura;
@@ -14,7 +15,10 @@
     public $razonCita;
 
     //Método Constructor
-    public function __construct($codUsuario, $pe, $al, $fn, $em, $doctor, $fc, $hc, $enfermedades, $razon){
+    public function __construct($idPerfil, $codUsuario, $pe, $al, $fn, $em, $doctor, $fc, $hc, $enfermedades, $razon){
+
+      $this->idPerfil = $idPerfil;
+
       $this->idPaciente = $codUsuario;
       
       $this->peso = $pe;

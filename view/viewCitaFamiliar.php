@@ -46,12 +46,12 @@
         <article>
             <section class="form-container">
 
-                    <?php echo "<input type='hidden' value='".$datos[0]."' name='idUsuario' id='idUsuario'>" ?>
+                    <?php echo "<input type='hidden' value='".$datos[0]."' name='idUsuario' id='idUsuario'>"?>
                     
-                    <div class="perfil">
-                        <label for="">Perfil:</label>
-                        <select name="perfil" id="prof" class="selectDinamic">
-                            <option value="">-- Seleccione Perfil Para Cita</option>
+                    <div class='perfil'>
+                        <label for=''>Perfil:</label>
+                        <select name='perfil' id='idPerfil' class='selectDinamic'>
+                            <option value=''>-- Seleccione Perfil Para Cita --</option>
                         </select>
                     </div>
 
@@ -154,21 +154,20 @@
     <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
 <script src="../view/js/selectCita.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-<script type="text/javascript">
+<?php echo "<script type='text/javascript'>
     $(document).ready(function(){
         $('.selectDinamic');
         listarEspecial();
     });
 
-    $("#em").change(function(){
-        var idEspecialidad = $("#em").val();
-        listarDoctor(idEspecialidad);
+    $(document).ready(function(){
+        listarFamiliar('".$datos[0]."');
     });
 
-    $(document).ready(function(){
-        $('.selectDinamic');
-        listarFamiliar();
+    $('#em').change(function(){
+        var idEspecialidad = $('#em').val();
+        listarDoctor(idEspecialidad);
     });
-</script>
+</script>";?>
 </body>
 </html>
