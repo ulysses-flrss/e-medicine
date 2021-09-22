@@ -198,7 +198,7 @@
                       <ul>
                         <li title='Programar Cita'><a href='../view/viewCita.php?idUsuario=".$datos[0]."&sesion=true'><span class='link-text'>PROGRAMAR CITA PARA MÍ</span></a></li>
                         <li><a href='../view/viewCitaFamiliar.php?idUsuario=".$datos[0]."&sesion=true'><span class='link-text'>PROGRAMAR CITA PARA UN FAMILIAR</span></a></li>
-                        <li><a href='../view/viewListaCitas.php?idUsuario=".$datos[0]."&sesion=true'><span class='link-text'>VER CITAS PROGRAMADAS</span></a></li>
+                        <li><a href='../view/viewDoctorCitas.php?idUsuario=".$datos[0]."&sesion=true'><span class='link-text'>VER CITAS PROGRAMADAS</span></a></li>
                       </ul>
                     </div>
                   </div>

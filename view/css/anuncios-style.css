@@ -16,7 +16,7 @@
     padding: auto;
     background-color: var(--aquaBright-body-color);
     margin: 6rem auto auto auto;
-    width: 90%;
+    width: 55%;
     height: 25%;
     padding: 1rem;
     border-radius: 10px;
@@ -50,7 +50,7 @@
     font-family: var(--bodyFont);
     display: flex;
     margin: 3rem auto;
-    width: 70vw;
+    width: 45vw;
     height: 10vw;
     padding: 1rem;
     font-size: 1.5rem;
