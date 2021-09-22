@@ -10,7 +10,7 @@
 
 .agregarUser {
     display: flex;
-    background-color: var(--aquaBright-bg-color);
+    background-color: var(--aquaBright-body-color);
     margin: auto auto 5rem auto;
     border-radius: 10px;
     width: 80vw;
@@ -23,9 +23,10 @@
 }
 
 .agregarUser:hover {
-    background-color: var(--aqua-bg-color);
+    background-color: var(--aqua-body-color);
     transition: all 250ms;
     transform: scale(1.1);
+    color: black;
 }
 
 .add-image{ 
@@ -73,6 +74,11 @@ li {
     font-size: 1.5rem;
 }
 
+.focus:hover{
+    transition: all 250ms;
+    transform: scale(1.05);
+}
+
 i.fas {
     color: black;
     font-size: 2.5rem;
@@ -85,6 +91,7 @@ button {
     border: none;
     cursor: pointer;
 }
+
 
 span {
     font-family: var(--bodyFont);
