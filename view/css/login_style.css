@@ -11,6 +11,12 @@ body {
 }
 
 
+.show-hide {
+    width: 5rem;
+    height: auto;
+}
+
+
 .inicio-register {
     display: flex;
     align-items: center;
