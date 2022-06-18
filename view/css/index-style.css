@@ -1,0 +1,227 @@
+* { 
+    box-sizing: border-box; 
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-color: #e0e6e3;
+    color: black;
+}
+
+.allContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10rem;
+}
+
+
+#container-bienvenida {
+    transition: 250ms all;
+    display: flex;
+    margin: auto;        
+    width: 60vw;
+    padding: 1rem;
+    background-color: #f14d60;
+    box-shadow: 8px 8px 0px #6d1923;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-layout {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: black;
+}
+
+.imagen-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.editar {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    font-family: var(--menuFont);
+    text-align: center;
+
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#bienvenida {
+    margin: 0rem 0rem 0rem 4rem;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.25rem;
+    cursor: default;  
+}
+
+
+ section.tablonAnuncios {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    background-color: hsl(27, 100%, 87%);
+    padding: 2rem 2rem;
+    width: 70vw;
+    margin: 5rem auto;
+    height: fit-content;
+    justify-content:center;        
+    font-family: var(--bodyFont);
+
+    border-radius: 15px;
+    border: 3px solid black;
+    box-shadow: 10px 7px 3px #a1785a;
+}
+
+section.tablonAnuncios * {
+    cursor:default;
+}
+
+section.tablonAnuncios div.objetoTablon {
+    border-radius: 10px;
+    background-color: #ffc69e;
+    border: 3px black solid;
+    justify-content: center;
+    vertical-align: middle;  
+}
+
+div#autor {
+    font-weight: bolder;
+    padding: 1rem 2rem;
+    margin: 1rem 2rem;
+    width: auto;
+    height: 8vh;
+    font-size: 2rem;    
+}
+
+div#descripcion{
+    text-align: justify;
+    padding: 1rem 1rem;
+    margin: 0rem 2rem;
+    width: 65vw;
+    margin-bottom: 1.5vh;
+    height:auto;
+    font-size: 1.75rem;   
+}
+
+
+div#fechaPublicacion{
+    margin:auto 2rem auto auto;
+    padding: 1.5rem 1rem;
+    height: 8vh;
+    font-size: 1.5rem;
+}
+
+@media (max-width:900px) and (min-width:500px) and (max-height:700px) {
+    div#autor {
+        width: 30vw;
+        font-size: 1.5rem;
+    }
+
+    div#descripcion {
+        font-size: 1.5rem;
+    }
+
+    div#fechaPublicacion {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width:700px) and (max-height:700px) {
+    div#autor {
+        font-size: 0.95rem;
+    }
+
+    div#descripcion {
+        font-size: 0.98rem;
+    }
+
+    div#fechaPublicacion {
+        font-size: 0.90rem;
+    }
+}
+   
+
+section.especialidadesMedica {
+    display: flex;
+    flex-wrap: wrap; 
+    margin: 5rem 0 0 0;
+    
+
+}
+
+img.imagenEspecialidad{
+    width: 7rem;
+    height: auto;
+    margin: 0rem 2rem 0rem 1rem;
+    padding: 1rem;
+}
+
+ .div-especialidades:hover img.imagenEspecialidad{
+ transition: 500ms;
+    width: 8rem;
+    height: auto;
+    margin: 0rem 2rem 0rem 1rem;
+    padding: 1rem;
+}
+
+
+.especialidadNombre{
+    transition: 500ms;
+    font-family: var(--bodyFont);
+    font-size: 2.5rem;
+    
+}
+
+.div-especialidades {
+    display: flex;
+    background-color: var(--aqua-bg-color);
+    margin: 1rem auto 1rem auto ;
+    width: 95vw;
+    height: 17.5vh;   
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 4px 4px 2px #000000;
+    transition: 500ms all;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.div-especialidades:hover {
+    transition: 500ms ease;
+    background-color:var(--aquaBright-bg-color);
+    transform: scale(1.02);
+}
+
+.div-especialidades:hover .especialidadNombre {
+    transition: 250ms ease-in;
+    font-size: 3.5rem;
+}
+
+.div-especialidades:active {
+    transition: 100ms all;
+    background-color:#5e6b65;
+    color: #FFFFFF;
+    transform: scale(1.03);
+}
+
+
+
+
+
+

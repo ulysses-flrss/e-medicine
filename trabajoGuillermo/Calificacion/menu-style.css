@@ -1,0 +1,64 @@
+aside.mainMenu {
+  display: flex;
+  position: fixed;
+  height: 720px;
+  width: 18.5%;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  
+  background-color: #b2dac6;
+
+}
+
+
+#profilePicture {
+  width: 7vw;
+  margin: 0vh 5vw;
+
+}
+
+.nombrePaciente {
+  text-align: center;
+  margin: -5vh 0 0 0;
+}
+
+li.fecha {
+  text-align: center;
+  margin: 0.1vh 0 0 0 ;
+  font-size: 1vw
+
+}
+
+ul {
+  margin: 0.5vh 1vw;
+  height: auto;
+  justify-content: center;
+  list-style: none;
+}
+
+ul li {
+  font-size: 1.5vw;
+  min-inline-size: 1.5vw;
+  margin:5vh 1vw;
+}
+
+ul a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.opPerfil{
+  background: #FFF;
+  margin-top: .5vh;
+  position: absolute;
+  display: none;
+  height: 15vh;
+  width: 15vw;
+}
+
+.opPerfil > ul{
+  margin: -2vh auto;
+}
+
+#perfil:hover .opPerfil{
+  display: flex;
+}

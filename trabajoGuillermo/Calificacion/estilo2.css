@@ -1,0 +1,174 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  min-width: 400px;
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #E4E4E4;
+}
+
+header{
+  width: 100%;
+  height:600px;
+  background: url('Skewed.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.modal{
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textos{
+  padding:300px;
+  color:#fff;
+  text-align: center;
+}
+
+h1{
+  font-size: 40px;
+  margin-bottom:20px;
+}
+
+a{
+  text-decoration: none;
+  font-size:20px;
+  display: inline-block;
+  padding: 7px;
+  width: 220px;
+  border:1px solid #fff;
+  border-radius: 10px;
+  color:#fff;
+}
+a:hover{background: #000; color:#fff; border:1px solid #000;}
+
+.miModal{
+  /*display: none;*/
+  position: fixed;
+  z-index:1;
+  overflow: auto;
+  left: 0;
+  top:0;
+  width: 100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.452);
+}
+
+.modalContainer{
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  width: 35vw;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4);
+  animation-name: modal;
+  animation-duration: 1s;
+}
+
+@keyframes modal{
+  from{top:-330px; opacity:0;}
+  to{top:0; opacity:1;}
+}
+
+.close{
+  color: #f2f2f2;
+  font-size:30px;
+  font-weight: bold;
+}
+
+.close:hover{
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalHeader, .modalFooter{
+  padding: 8px 16px;
+  background: #34495e;
+  color:#f2f2f2;
+}
+
+.modalHeader{
+  width: 35vw;
+  height:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p{
+  text-align: justify;
+}
+
+.containerRate{
+  width: 35vw;
+  background: #B4B4B4;
+  padding: 15px 20px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.containerRate input{
+  display: none;
+}
+
+.ventana-star{
+  width: 15vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.ventana-star label{
+  font-size: 40px;
+  cursor: pointer;
+  float: right;
+  margin: auto;
+  align-items: center;
+  align-self: center;
+}
+
+input:not(:checked) ~ label:hover, input:not(:checked) ~ label:hover ~ label{
+  color: gold;
+}
+
+#rateTexto, #comentText{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  display: flex;
+}
+
+#comentText{
+  margin: 3vh auto;
+}
+
+#coment{
+  min-width: 30vw;
+  height: 20vh;
+  display: flex;
+  margin: 10px auto auto auto;
+}
+
+#enviar{
+  width: 50px;
+  height: 30px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto auto auto;
+}
