@@ -47,8 +47,6 @@
                         <button type="submit" name="accion" value="enviar" id="enviar" onclick="login();">Iniciar Sesión</button>
                         <a href="controller/ctrlLogin.php?accion=crearCuenta" class="submit-text">No tengo Cuenta</a>
                     </div>
-
-                    <button onclick="prueba();">Alerta Prueba</button>
                 <!--</form>-->
             </section>
         </article>

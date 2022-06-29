@@ -84,12 +84,3 @@ function login() {
   });
   return false
 }
-
-function prueba(){
-  Swal.fire({
-    type: 'success',
-    title: '¡Éxito!',
-    text: 'Alerta de Prueba.',
-    footer: 'E-MEDICINE ©'
-  });
-}
