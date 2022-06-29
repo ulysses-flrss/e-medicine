@@ -55,7 +55,7 @@ function programarCita() {
 function login() {
   console.log("inicia funcnión");
   $.ajax({
-      url: 'controller/ctrlLogin.php',
+      url: '../controller/ctrlLogin.php',
       data: retornarDatos("iniciarSesion"),
       type: 'POST',
       dataType: 'json'
@@ -68,7 +68,7 @@ function login() {
         text: 'Ha iniciado sesión con éxito.',
         footer: 'E-MEDICINE ©'
       }).then((result)=>{
-        window.location.href="view/viewPaciente.php";
+        window.location.href="../view/viewPaciente.php";
       });
     } else {
       Swal.fire({

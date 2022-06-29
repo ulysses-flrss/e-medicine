@@ -12,7 +12,7 @@
   $_SESSION['codUsuario'] = $codUsuario;
 
   if ($accion == "" && $codUsuario == "") {
-    require_once 'view/viewLogin.php';
+    require_once 'view/viewWelcomePage.php';
   }
   if ($accion == "cambiarPass"){
     require_once '../view/viewCambiarPass.php';

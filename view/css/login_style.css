@@ -102,15 +102,15 @@ input:not(.enviar)  {
     margin: 2em 0;
 }
 
-.submit input {
+.submit button {
     cursor: pointer;
-    width: 35%;
+    width: 40%;
     background-color: #FFF;
     height: 3em;
     border-radius: 50px;
     border:2px solid var(--shadow-color);
     box-shadow: 3px 3px 0px var(--shadow-color);
-    font-size: 1.15em;
+    font-size: 1em;
     font-family: var(--menuFont);
 }
 
@@ -140,12 +140,12 @@ input:not(.enviar)  {
 }
 
 
-.submit input:hover, .no-account:hover, .password-change:hover {
+.submit button:hover, .no-account:hover, .password-change:hover {
     transition: 350ms ease-in;
     background-color: rgb(184, 184, 184);
 }
 
-.submit input:active, .no-account:active, .password-change:active{
+.submit button:active, .no-account:active, .password-change:active{
     transition: 150ms ease-out;
     transform: translateY(5px);
     box-shadow: none;
