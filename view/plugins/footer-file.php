@@ -18,8 +18,8 @@
         <div class="columna3">
             <strong class="titulo-footer" title="Siguenos En">Siguenos En:</strong>
         
-                    <a href="https://www.facebook.com/" class="footer-item" title="Facebook: E-Medicine"><i class="fab fa-facebook" id="facebook"></i><span class="red-social">Facebook</span></a>
-                    <a href="https://www.instagaram.com/" class="footer-item" title="Instagram: @e-medicine"><i class="fab fa-instagram" id="instagram"></i><span class="red-social">Instagram</span></a>
-                    <a href="https://www.twitter.com/" class="footer-item" title="Twiiter: @eMedicine"><i class="fab fa-twitter" id="twitter"></i><span class="red-social" >Twitter</span></a>
+                    <a href="https://www.facebook.com/" class="footer-item" title="Facebook: E-Medicine"><i class="fab fa-facebook" id="facebook"></i></a>
+                    <a href="https://www.instagaram.com/" class="footer-item" title="Instagram: @e-medicine"><i class="fab fa-instagram" id="instagram"></i></a>
+                    <a href="https://www.twitter.com/" class="footer-item" title="Twiiter: @eMedicine"><i class="fab fa-twitter" id="twitter"></i></a>
         </div>
     </footer>

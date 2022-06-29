@@ -13,21 +13,20 @@
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <title>Iniciar Sesión | E-Medicine</title>
-    <link rel="stylesheet" href="view/css/root-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&family=Anton&div=swap" rel="stylesheet">
-    <link rel="stylesheet" href="view/css/login_style.css">
+    <link rel="stylesheet" href="../view/css/root-style.css">
+    <link rel="stylesheet" href="../view/css/login_style.css">
 </head>
 
 <body>
     <main>
         <div class="inicio-register">
-            <img src="assets/imgs/logoEMedicine.png" alt="" class="logo" >
+            <img src="../assets/imgs/logoEMedicine.png" alt="" class="logo" >
             <h1 class="bienvenida-register">Bienvenido a E-Medicine</h1> 
         </div>
 
         <article>
             <section class="form-container">
-                <form action="controller/ctrlLogin.php" class="form-login" method="POST">
+                <form action="../controller/ctrlLogin.php" class="form-login" method="POST">
                     <div class="codUsuario">
                         <label for="idUsuario">Código de Usuario:</label>
                         <input type="text" name="idUsuario" id="idUsuario" placeholder="Ingrese su Código de Usuario">
@@ -39,9 +38,15 @@
                     </div>
 
                     <div class="submit">
-                        <a href="controller/ctrlLogin.php?accion=cambiarPass" class="submit-text">Olvidé mi contraseña</a>
-                        <input type="submit" name="accion" value="enviar">
-                        <a href="controller/ctrlLogin.php?accion=crearCuenta" class="submit-text">No tengo Cuenta</a>
+                        <div class="password-change">
+                            <a href="../controller/ctrlLogin.php?accion=cambiarPass" class="submit-text">Olvidé mi contraseña</a>
+                        </div>
+
+                        <input type="submit" name="accion" value="Enviar" class="enviar">
+
+                        <div class="no-account">
+                            <a href="../controller/ctrlLogin.php?accion=crearCuenta" class="submit-text">No tengo Cuenta</a>
+                        </div>
                     </div>
                 </form>
             </section>

@@ -50,7 +50,6 @@
             <li class="nav-item" id="li-logout" title="Cerrar Sesión">
                 <a href="#" class="nav-link">
                     <img src="../assets/sign-out.png" alt="" class="nav-picture" id="logout">
-                    <span class="link-text">Cerrar Sesión</span>
                 </a>
             </li>
         </ul>
