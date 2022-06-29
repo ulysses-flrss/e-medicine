@@ -1,7 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@300&family=Quicksand:wght@700&family=Rubik&family=Rubik+Mono+One&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&display=swap');
-
-
 :root {/* Aquí definimos las variables */
     --aquaMenu-body-color: #21d873;
     --aqua-body-color:#b2dac6;
@@ -10,18 +7,15 @@
     --darkRed-body-color: #bf003b;
     --skinBright-body-color: #fec08c;
     --skinDark-body-color: #da7f3d;
-    --icon-color: #135f35;
-
-    --shadow-color: #1c3b2d;
     
-    --font-size: 100%;
+    --font-size: 62.5%;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     font-family: var(--font-family);
     font-size: var(--font-size);
 
 
-    --menuFont: 'Quicksand', sans-serif;
+    --menuFont: 'Alegreya Sans SC', sans-serif;
     --bienvenidaFont: 'Rubik Mono One', sans-serif;
     --bodyFont: 'Nunito', sans-serif;
     --extraFont: 'Rubik', sans-serif;

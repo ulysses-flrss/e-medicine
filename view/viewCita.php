@@ -1,7 +1,7 @@
-<?php 
+<?php
     require_once 'plugins/funciones.php';
     require_once '../controller/ctrlUsuario.php';
-    /*if ($key) 
+    /*if ($key)
         $activador = true;
     else
         $activador = false;*/
@@ -14,7 +14,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,25 +47,24 @@
             <section class="form-container">
 
                     <?php echo "<input type='hidden' value='".$datos[0]."' name='idUsuario' id='idUsuario'>" ?>
-                        
+
                     <div class="second-line">
                         <div class="peso">
                             <label for="">Peso(lb): </label>
-                            <input type="text" name="pe" id="pe" placeholder="Peso en Libras">
-                        </div> 
-                        
+                            <?php echo "<input type='text' name='pe' id='pe' placeholder='Peso en Libras' value='".">"?>
+                        </div>
+
                         <div class="altura">
                             <label for="">Altura(cm): </label>
-                            <input type="text" name="al" id="al" placeholder="Altura en cm">    
-                        </div>  
+                            <input type="text" name="al" id="al" placeholder="Altura en cm">
+                        </div>
 
                         <div class="fecha">
                             <label for="">Fecha de Nacimiento:</label>
                             <input type="date" name="fn" id="fn">
                         </div>
                     </div>
-                        
-    
+
                     <div class="third-line">
                         <div class="especialidad-medica">
                             <label for="especialidad-medica">Especialidad Médica:</label>
@@ -85,7 +84,7 @@
                         <div class="fecha">
                             <label for="">Fecha de Cita:</label>
                             <input type="text" name="fc" id="fechaCita" placeholder="Ingrese la fecha de su Cita" autocomplete="off">
-                        </div>  
+                        </div>
 
                         <div class="doctor">
                             <label for="">Hora de Cita</label>
@@ -111,7 +110,7 @@
                             <option value="17:00:00">5:00pm</option>
                             <option value="17:30:00">5:30pm</option>
                             </select>
-                            
+
                         </div>
                     </div>
 
@@ -128,11 +127,10 @@
                             <textarea type="text" name="razon" id="razon"></textarea>
                         </div>
                     </div>
-    
-                
-                        <div class="submit">
-                            <button type="submit" name="accion" id="programarCita" class="btn btn-secondary" onclick="programarCita();"><span id='boton'>Programar Cita</span></button>
-                        </div>
+
+                    <div class="submit">
+                        <button type="submit" name="accion" id="programarCita" class="btn btn-secondary" onclick="programarCita();"><span id='boton'>Programar Cita</span></button>
+                    </div>
             </section>
         </article>
     </main>

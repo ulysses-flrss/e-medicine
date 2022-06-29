@@ -1,138 +1,196 @@
-.barNav { 
-    /* Estilos para etiqueta <nav> */
+nav.barNav {
     position: fixed;
-    width: 4em;
-    height: 95vh;
-    margin: 1em 0em;
+    width: 100vw;
+    height: 7rem;
     background-color: var(--aquaMenu-body-color);
-
-    border-radius:0 12px 12px 0;
-
-    transition: 500ms all;
-}
-
-.link-text {
-    /* Estilos para texto en <li> */
-    display: none;
-    transition: 500ms all;
-}
-
-#welcome-text {
-    font-family: var(--register-welcome-font); 
-    font-size: 1.65em;
-    font-weight: 500;
+    margin-bottom: 7.5rem;
+    font-family: var(--menuFont);  
+    z-index: 100;
 }
 
 .logo {
-    /* Estilos para el Logo E-Medicine */
-    margin: auto;
-    width: 50px;
+    transition: 100ms all;
+    width: 5rem;
+    height: auto;
+    
 }
 
-.icon {
-    color: var(--icon-color);
-    font-size: 2em;
+/* Menú desplegable */
+
+nav ul li .opcionesCita{
+  background-color: var(--aquaMenu-body-color);
+  margin-top: 7rem;
+  padding: 1rem;
+  /*padding: 1rem 1rem 1rem 0rem;*/
+  position: absolute;
+  display: none;
+  transition: 100ms all;
+}
+
+.opcionesCita ul{
+    list-style: none;
+}
+
+.opcionesCita ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+nav > ul > li > .opcionesCita li > a{
+  text-decoration: none;
 }
 
 
-#nav {
-    /* Estilos para etiqueta <ul> */
-    display: grid;
-    height: 100%;
-    grid-template-rows: repeat(7, 12.5%);
-    padding: 0 !important;
+nav ul li:hover .opcionesCita{
+  display: flex;
 }
- 
+
+nav ul li .opciones{
+  margin-right: 1.5rem;
+    font-family: var(--menuFont);
+}
+
+nav ul li .opcionesCita .opciones li{
+  padding-bottom: 1rem;
+}
+
+nav ul li .opcionesCita .opciones li a{
+  text-decoration: none;
+  color: black;
+}
+
+/* FIN Menú desplegable */
 
 
-.bar-item {
-    /* Estilos para cada <li> */
-    list-style: none; /* Elimina los puntos de lista*/
-    border-left: 0px solid #215f41;
+
+.barNavegacion{
+    display: flex;
+    width: 100vw;
+    height: 7rem;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;   
+    z-index: 100;
+    
+}
+
+
+/*.bar-header {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    margin-left: 0.1rem !important;
+
+}*/
+
+
+.bar-item:not(:first-child){
+    transition: 250ms all;
+    display: flex;
     width: 100%;
     height: 100%;
-
-    display: grid;
     justify-content: center;
-    margin: auto;
-    
-    transition: 300ms all;
 }
-
 
 .bar-item:first-child {
-    border-radius: 12px 12px 0 0;
-    transition: 250ms all;
+    border-radius: 50px;
+    margin: 2rem;
+    padding: 0.30rem;
+    
 }
 
-.bar-item:last-child {
-    border-radius: 0 0 12px 12px;
-    transition: 250ms all;
-    background-color: #1db964;
-}
 
-.bar-item .bar-link {
-    /* Estilos para <a> descendientes de .bar-item (<li>) */
-    text-decoration: none;
-    color: #000;
-
-    font-family: var(--menuFont);
-    font-size: 0.9em;
-
-    margin: auto;
-
+.bar-link, .bar-header-link, .bar-header-text {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    justify-items: start;
     align-items: center;
+    text-decoration: none;
+    color: #000000;
 }
 
-.mini-text {
-    font-size: 0.785em;
-    font-weight: 500;
-    color: var(--icon-color);
+.bar-link:hover, .bar-header-link:hover, .bar-header-text:hover {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
 }
 
 
-
-/* hover */
-
-.barNav:hover {
-    transition: 500ms all;
-    width: 11em;
+.link-text, .bar-header-text {
+    
+    padding: 0rem 0.5rem;
+    font-size: 1.2em;
+    
 }
 
-.barNav:hover .link-text {
-    display: grid;
-    transition: 500ms all;
+
+.bar-picture {
+    transition: 100ms ease;
+    width: 2.5rem;
+    margin: auto auto auto 1rem;
 }
 
-.barNav:hover .icon{
-    padding: 0.5em;
+@media (max-width: 950px) {
+    .link-text {
+        display: none;
+    }
+
+    .bar-picture {
+        width: 2.25rem;
+    }
+
+    .logo {
+        width: 3rem;
+        height: auto;
+    }
+
+    .barNavegacion {
+        justify-content: center;
+    }
+
+    .bar-item {
+        margin: auto;
+    }
+
+
+
 }
 
-.barNav:hover .logo{
-    padding: 0.5em;
-}
 
-.barNav:hover .bar-item{
-    display: grid;
-    justify-content: flex-start;
-    transition: 500ms all;
-}
+/* hovers */
 
-.bar-item:hover {
-    border-left: 7px solid #215f41;
-    background-color: #6ef0b1;
+.barNavegacion li:hover {
     transition: 250ms all;
+    transform: scale(1.15);
+    background-color: var(--aqua-body-color);
+    border-bottom: 7px solid #26975f;
+    opacity: 0.99;
+    
 }
 
-.bar-item:hover:last-child {
-    border-radius: 0 0 12px 12px;
+.barNavegacion :hover .bar-picture{
     transition: 250ms all;
-    background-color: #58c28f;
+    width: 3.5rem;
 }
+
+.barNavegacion:hover .bar{
+    transition: 250ms all;
+    width: 5rem;
+}
+
+
+
+.barNavegacion li:active {
+    transition: 150ms all;
+    transform: scale(0.98);
+    background-color: #26975f;
+    border-bottom: 5px solid black;
+}
+
+/*Cierre primeros hover*/
+
+
+
+
+
+
 
 

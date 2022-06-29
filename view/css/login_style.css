@@ -1,200 +1,140 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-style: var(--font-family);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-style: var(--font-family);
 }
 
 body {
-    background-color: #daffec;
-    color: black;
+  background-color: #daffec;
+  color: black;
 }
-
 
 .inicio-register {
-    display: grid;
-    grid-template-columns: 30vw 70vw;
-    width: 100%;
-    height: 100%;
-
-    align-items: center;
-    justify-content: center;
-    margin: 3em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-input:not(.enviar)  {
-    padding: 0.25em 1em;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: #eafff4;
-    outline: none;
-    font-family: var(--bodyFont);
+input:not(.submit input) {
+  padding: 0.25rem 1rem;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: #eafff4;
+  outline: none;
+  font-family: var(--bodyFont);
 }
 
 .logo {
-    width: 12em;
-    margin: auto;
+  width: 15rem;
+  margin: 1rem;
 }
 
 .bienvenida-register {
-    font-size: 5em;  
-    margin: auto;
-    font-family: var(--register-welcome-font)
+  font-size: 8rem;
+  margin: 8rem 0;
+  font-family: var(--register-welcome-font);
 }
 
 .form-container {
-    background-color: var(--aquaBright-body-color);
-    width: 88vw;
-    height: fit-content;
-    margin: auto auto 3em;
-    padding: 2em 0 3em 0;
-    border-radius: 15px;
+  background-color: var(--aquaBright-body-color);
+  width: 88vw;
+  margin: auto;
+  padding: 2rem 0;
+  border-radius: 15px;
 }
 
 .form-login {
-    width: 90%;
-    margin: auto;
-    display: grid;  
-    font-family: var(--menuFont);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--menuFont);
 }
 
 .codUsuario {
-    font-size: 1.5em;
-    margin: 0.25em 0;
+  display: flex;
+  font-size: 2rem;
+  justify-content: flex-start;
+  margin: 1rem;
 }
 
 .codUsuario > * {
-    margin: 0.25em 0;
+  margin: 1rem;
 }
 
-
-.codUsuario input, .password input {
-    width: 100%;
-    box-shadow: 3px 3px 0px;
-    font-size: 1em;
-    transition: 500ms all;
+.codUsuario input {
+  box-shadow: 3px 3px 0px;
+  width: 100%;
+  font-size: 2rem;
+  transition: 500ms all;
 }
 
-.codUsuario input:focus, .password input:focus {
-    transition: 500ms all;
-    background-color: black;
-    color: white;
-    box-shadow: none;
+.codUsuario input:focus,
+.password input:focus {
+  transition: 500ms all;
+  background-color: black;
+  color: white;
+  box-shadow: none;
 }
 
 .password {
-    font-size: 1.5em;
-    margin: 0.25em 0;
+  display: flex;
+  font-size: 2rem;
+  justify-content: flex-start;
+  margin: 1rem;
 }
 
 .password > * {
-    margin:  0.25em 0;
+  margin: 1rem;
 }
 
+.password input {
+  width: 100%;
+  box-shadow: 3px 3px 0px;
+  font-size: 2rem;
+  transition: 500ms all;
+}
 
 .submit {
-    display: grid;
-    grid-template-columns: 33.3% 33.3% 33.3%;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-items: center;
-    margin: 2em 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.submit input {
-    cursor: pointer;
-    width: 35%;
-    background-color: #FFF;
-    height: 3em;
-    border-radius: 50px;
-    border:2px solid var(--shadow-color);
-    box-shadow: 3px 3px 0px var(--shadow-color);
-    font-size: 1.15em;
-    font-family: var(--menuFont);
+.submit button {
+  width: 10rem;
+  height: 3.5rem;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0px;
+  font-size: 1.5rem;
+  font-family: var(--menuFont);
 }
 
+.submit button:hover,
+.submit-text:hover {
+  transition: 350ms ease-in;
+  background-color: rgb(184, 184, 184);
+}
 
-.no-account, .password-change {
-    width: 60%;
-    height: 3em;
-    border: 2px solid var(--shadow-color);
-    background-color: #FFFFFF;
-    border-radius: 50px;
-    box-shadow: 3px 3px 0px var(--shadow-color);
-
+.submit button:active,
+.submit-text:active {
+  transition: 150ms ease-out;
+  background-color: black;
+  color: white;
+  box-shadow: none;
 }
 
 .submit-text {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    text-align: center;
-    font-size: var(--menuFont);
-    font-size: 1em;
-    text-decoration: none;
-    color: black;
-}
-
-
-.submit input:hover, .no-account:hover, .password-change:hover {
-    transition: 350ms ease-in;
-    background-color: rgb(184, 184, 184);
-}
-
-.submit input:active, .no-account:active, .password-change:active{
-    transition: 150ms ease-out;
-    transform: translateY(5px);
-    box-shadow: none;
-}
-
-
-.no-account:active .submit-text, .password-change:active .submit-text{
-    transition: 150ms ease-out;
-}
-
-
-
-
-
-@media screen and (max-width: 480px) {
-    .inicio-register {
-        grid-template-columns: 50vw 50vw;
-        column-gap: 0.25em;
-    }
-    
-    .logo , .form-container, .submit {
-        font-size: 13px;
-    }
-
-    .bienvenida-register {
-        font-size: 35px;
-    }
-
-    .submit  {
-        grid-template-columns: 100%;
-        grid-template-rows: 33.3% 33.3% 33.3%;
-    }
-}
-
-
-/* Tablets en vertical / Celulares en Horizontal */
-
-@media screen and (max-width: 759px) and (min-width: 481px) {
-    
-    .logo , .form-container, .submit {
-        font-size: 13px;
-    }
-
-    .bienvenida-register {
-        font-size: 35px;
-    }
-
-    .submit  {
-        grid-template-columns: 100%;
-        grid-template-rows: 33.3% 33.3% 33.3%;
-    }
+  font-size: var(--menuFont);
+  font-size: 1.25rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
 }
