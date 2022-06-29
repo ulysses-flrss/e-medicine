@@ -8,9 +8,9 @@
 
       <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' crossorigin='anonymous'/>
       
-      <link rel='stylesheet' href='/view/css/root-style.css'>
-      <link rel='stylesheet' href='/view/css/menu-style.css'>
-      <link rel='stylesheet' href='/view/css/footer-style.css'>
+      <link rel='stylesheet' href='../view/css/root-style.css'>
+      <link rel='stylesheet' href='../view/css/menu-style.css'>
+      <link rel='stylesheet' href='../view/css/footer-style.css'>
 
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous'>
 
@@ -63,6 +63,6 @@
         </nav>    
 
 
-
+        
 </body>
 </html>
