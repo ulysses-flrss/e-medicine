@@ -45,7 +45,6 @@
 
 
                     <div class="submit">
-        
                         <div class="password-change">
                             <a href="../controller/ctrlLogin.php?accion=cambiarPass" class="submit-text">Olvidé mi contraseña</a>
                         </div>

@@ -6,7 +6,7 @@
             </li>
 
             <li class="nav-item" id="li-cita" title="Programar Cita">
-                <a href="cita.php" class="nav-link">
+                <a href="viewCita.php" class="nav-link">
                     <img src="../assets/document.png" alt="" class="nav-picture" id="cita">
                     <span class="link-text">Programar Cita</span>
                 </a>

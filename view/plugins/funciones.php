@@ -36,12 +36,12 @@
                 <li class='bar-item'>
                     <a href='../view/viewPaciente.php?idUsuario=".$datos[0]."' class='bar-link'>
                         <img src='../assets/imgs/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'>
-                        <span class='link-text' id ='welcome-text'>E-Medicine</span>    
+                        <span class='link-text' id ='welcome-text'>E-Medicine</span>
                     </a>
                 </li>
 
                 <li class='bar-item' id='li-cita' title='Programar Cita'>
-                    <a href='#' class='bar-link'>
+                    <a href='viewCita.php?idUsuario=".$datos[0]."' class='bar-link'>
                         <i class='fa-solid fa-book-medical icon'></i>
                         <span class='link-text'>Cita Médica</span>
                     </a>
@@ -49,13 +49,39 @@
 
                 <li class='bar-item' id='li-familiares' title='Familiares'>
                     <a href='../view/viewFamiliares.php?idUsuario=".$datos[0]."&sesion=true' class='bar-link' >
-                    
+
                     <i class='fa-solid fa-person-breastfeeding icon'></i>
-    
                         <span class='link-text'>Familiares</span>
                     </a>
                 </li>";
         break;
+
+        case 'invitado':
+            echo "  <nav class='barNav'>
+            <ul class='barNavegacion' id='nav'>
+
+                <li class='bar-item'>
+                    <a href='../view/viewInvitado.php?tipo=invitado class='bar-link'>
+                        <img src='../assets/imgs/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'>
+                        <span class='link-text' id ='welcome-text'>E-Medicine</span>
+                    </a>
+                </li>
+
+                <li class='bar-item' id='li-cita' title='Programar Cita'>
+                    <a href='viewCita.php?tipo=invitado class='bar-link'>
+                        <i class='fa-solid fa-book-medical icon'></i>
+                        <span class='link-text'>Cita Médica</span>
+                    </a>
+                </li>
+
+                <li class='bar-item' id='li-familiares' title='Familiares'>
+                    <a href='../view/viewFamiliares.php?tipo=invitado class='bar-link' >
+
+                    <i class='fa-solid fa-person-breastfeeding icon'></i>
+                        <span class='link-text'>Familiares</span>
+                    </a>
+                </li>";
+            break;
 
         case 'doctor':
             echo "<nav class='barNav'>
@@ -105,7 +131,7 @@
                 echo "<li class='bar-item' id='li-comentarios' title='Comentarios'>
                     <a href='../controller/ctrlComentarios.php?idUsuario=".$datos[0]."' class='bar-link'>
                     <i class='fa-solid fa-message icon'></i>
-                    
+
                         <span class='link-text'>Comentarios</span>
                     </a>
                 </li>
@@ -117,17 +143,51 @@
                     </li>
 
                     <li class='bar-item' id='li-profile'>
-                        <a href='#' class='bar-link'>
+                        "/*<a href='#' class='bar-link'>
                             <i class='fa-solid fa-user icon'></i>
-                            <span class='link-text'>Ulises Flores <br><span class='mini-text'>Entrar a Perfil</span></span>
-                            
-                        </a>
+                            <span class='link-text'>".$datos[1]." <br><span class='mini-text'>Entrar a Perfil</span></span>
+                        </a>*/
+                        .
+                        "<div class='submenuRaiz'><a href='#' class='bar-link'><i class='fa-solid fa-user icon'></i><span class='link-text'>".$datos[1]."</span></a></div>
+                        <div class='submenu'>
+                            <ul>
+                                <li class='bar-item'><a href='#' class='link-text'><span class='bar-link'>Ver Perfil</span></a></li>
+                                <li class='bar-item'><a href='#' class='bar-link'><span class='link-text'>Cerrar Sesión</span></a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>";
         break;
     //FINAL MENÚ";
-            
+
+            case 'invitado':
+                echo "<li class='bar-item' id='li-comentarios' title='Comentarios'>
+                    <a href='../controller/ctrlComentarios.php?idUsuario=".$datos[0]."&type=invitado' class='bar-link'>
+                    <i class='fa-solid fa-message icon'></i>
+
+                        <span class='link-text'>Comentarios</span>
+                    </a>
+                </li>
+                <li class='bar-item' id='li-about' title='Acerca de Nosotros'>
+                    <a href='../view/aboutUs.php' class='bar-link' id='li-info'>
+                    <i class='fa-solid fa-circle-info icon'></i>
+                    <span class='link-text'>Acerca de Nosotros</span>
+                    </a>
+                    </li>
+
+                    <li class='bar-item' id='li-profile'>
+                        "/*<a href='#' class='bar-link'>
+                            <i class='fa-solid fa-user icon'></i>
+                            <span class='link-text'>".$datos[1]." <br><span class='mini-text'>Entrar a Perfil</span></span>
+                        </a>*/
+                        .
+                        "<div class='submenuRaiz'><a href='../view/viewLogin.php' class='bar-link'><i class='fa-solid fa-user icon'></i><span class='link-text'>Iniciar Sesión</span></a></div>
+                    </li>
+                </ul>
+            </nav>";
+            break;
+
             case 'doctor':
                 echo "<li class='bar-item' id='li-about' title='Acerca de Nosotros'>
                     <a href='../view/aboutUs.php' class='bar-link' id='li-info'>
@@ -170,7 +230,6 @@
                 break;
         }
 
-                
   }
 
   function menuDoc(){
@@ -179,7 +238,7 @@
     $cod = "";
     $dataUser = username($cod);
     $datos = explode('/', $dataUser);
-      
+
         echo "<nav class='barNav'>
             <ul class='barNavegacion' id='nav'>
                 <li class='bar-item'>
@@ -255,7 +314,7 @@
     $cod = "";
     $dataUser = username($cod);
     $datos = explode('/', $dataUser);
-      
+
         echo "<nav class='barNav'>
             <ul class='barNavegacion' id='nav'>
                 <li class='bar-item'>
@@ -324,8 +383,6 @@
         </nav>";
     //FINAL MENÚ
   }
-
-  
 
   function footer(){
     echo "<footer class='footer'>

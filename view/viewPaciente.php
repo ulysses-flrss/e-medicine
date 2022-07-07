@@ -27,7 +27,7 @@
 <body>
 
     <?php menu();?>
-    
+
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
             <a href="#" class="imagen-texto">
@@ -36,7 +36,6 @@
             </a>
             <span id="bienvenida" title="Bienvenida">Bienvenido <b><?php echo $datos[1]; ?></b><span>
         </div>
-        
 
         <article class="mainArticle">
     <?php
