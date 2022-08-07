@@ -31,7 +31,7 @@
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
             <a href="#" class="imagen-texto">
-                <div class="img-layout"><img src="../view/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
+                <div class="img-layout"><img src="../assets/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
                 <span class="editar" title="Editar Perfil"> </span>
             </a>
             <span id="bienvenida" title="Bienvenida">Bienvenido <b><?php echo $datos[1]; ?></b><span>
@@ -50,10 +50,10 @@
             '
             <section class="tablonAnuncios">
             <div class="objetoTablon" id="autor">
-            <span title="Escritor del Anuncio">'.$anun['nombre'].'</span>
+                    <span class="autor-text" title="Escritor del Anuncio">'.$anun['nombre'].'</span>
             </div>
             <div class="objetoTablon" id="fechaPublicacion">
-                <span title="Fecha de Publicación del Anuncio">'.$anun['fechaPublicacion'].'</span>
+                <span class="fecha-text" title="Fecha de Publicación del Anuncio">'.$anun['fechaPublicacion'].'</span>
             </div>
 
             <div class="objetoTablon" id="descripcion">

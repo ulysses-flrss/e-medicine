@@ -56,12 +56,12 @@ require_once 'plugins/funciones.php'; ?>
                     <div class="genre">
                         <label for="">Género: *</label>
                         <div class="male">
-                            <label for="masculino">Masculino: </label>
+                            <label for="masculino" class="genero">Masculino: </label>
                             <input type="radio" name="gen" id="masculino" value="masculino" required>
                         </div>
                         
                         <div class="female">
-                            <label for="femenino">Femenino: </label>
+                            <label for="femenino" class="genero">Femenino: </label>
                             <input type="radio" name="gen" id="femenino" value="femenino" required>
                         </div>
 
