@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="view/css/root-style.css">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <style>
+
+
+
+        .contenedor {
+            position: absolute;
+            width: 9em;
+            height: 60px;
+            background-color: var(--aquaBright-body-color);
+            border-radius: 30px;
+            margin: 5px 8px;
+            border: 3px solid var(--icon-color);
+            z-index: 98;
+        }
+
+
+        .circulo {
+            transition: 500ms cubic-bezier(.72,.07,.15,1.25);
+            width: 50px;
+            height: 50px;
+            background-color: var(--aquaMenu-body-color);
+            border-radius: 50%;
+            margin: 5px 5px;
+            
+        }
+
+        .span {
+            font-family: var(--body-font);
+            color:#469971;
+            font-weight: bold;
+            z-index: -1;
+        }
+
+        .es {
+            position: absolute;
+            margin: -2.5em 1.25em;
+        }
+
+        .en {
+            position: absolute;
+            margin: -2.5em 6.5em;
+        }
+    </style>
+    
+
+    
+        <div class="contenedor">
+            <div class="circulo" id="circulo"></div>
+            <span class="span es">ES</span>
+            <span class="span en">EN</span>
+        </div>
+    
+
+    <script>
+        let circulo = document.getElementById("circulo");
+        let desplazado = false;
+
+        circulo.addEventListener("click", desplazar)
+        
+
+        function desplazar ()  {
+            if (desplazado == false) {
+                circulo.style.translate = "5.25em"
+                console.log("moviendo a la derecha")
+                desplazado = true;
+            } else if (desplazado == true) {
+                circulo.style.translate = "0"
+                console.log("moviendo a la izquierda")
+                desplazado = false;
+            }
+        }
+
+
+
+    
+        
+
+    </script>
+</body>
+</html>

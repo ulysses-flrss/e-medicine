@@ -21,6 +21,12 @@
 
 .form-register {
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    row-gap: 1.25em;
+    column-gap: 1em;
+    
 }
 
 #eye1, #eye2{
@@ -32,8 +38,8 @@
     font-family: var(--bodyFont);
 }
 
-.logo {
-    width: 10em;
+.logo-register {
+    width: 7em;
     margin: 1em;
 }
 
@@ -57,7 +63,7 @@ input:focus:not(.submit input) {
 }
 
 .bienvenida-register {
-    font-size: 6em;
+    font-size: 5em;
     font-family: var(--register-welcome-font);
     margin: 0rem;  
 }
@@ -72,69 +78,6 @@ input:focus:not(.submit input) {
     border-bottom-right-radius: 50px;
 }
 
-.second-line,.fifth-line, .sixth-line, .seventh-line {
-    display: flex;
-    font-size: 1em;
-    width: 100%;
-    justify-content: flex-start;
-    margin:1.5rem 0;
-}
-
-.first-line, .third-line {
-    display: flex;
-    font-size: 1em;
-    width: 100%;
-    justify-content: space-between;
-    margin: 1.5rem 0;
-}
-
-.fourth-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 1em 0;
-    font-size: 1em;
-}
-
-.first-line > *, .second-line > *, .third-line > *, .fourth-line  > *, .fifth-line > *, .sixth-line > *, .seventh-line > *{
-    margin: 0.10rem 0.5rem;
-}
-
-.first-line input {
-    width: 60%;
-} 
-
-
-.second-line input {
-    width: 80%;
-}
-
-
-.third-line input {
-    width: 48%;
-    text-align: center;
-}
-
-
-
-
-.fecha {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.fecha > * {
-    text-align: center;
-}
-
-.municipio {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-}
 
 .municipio select, option {
     font-size: 1em;
@@ -150,17 +93,6 @@ input:focus:not(.submit input) {
 }
 
 
-.fifth-line input {
-    width: 75%;
-}
-
-.sixth-line input {
-    width: 34%;
-}
-
-.seventh-line input{
-    width: 24.5%;
-}
 
 
 .submit {
@@ -177,7 +109,10 @@ input:focus:not(.submit input) {
     width: 7.5em;
     height: 2.5em;
     font-family: var(--menuFont);
-    box-shadow: 3px 3px 0px;
+    border-radius: 50px;
+    border: 2px solid #1c3b2d;
+    outline: none;
+    box-shadow: 3px 6px 0px #1c3b2d; 
     font-size: 1em;
     cursor: pointer;
     background-color: #FFF;
@@ -192,7 +127,10 @@ input:focus:not(.submit input) {
     border-radius: 5px;
     padding: 0.35em 0.85em;
     text-decoration: none;
-    border: 2px solid black;
+    border-radius: 50px;
+    border: 2px solid #1c3b2d;
+    outline: none;
+    box-shadow: 3px 6px 0px #1c3b2d; 
     color: black;
     font-size: 1em;
     box-shadow: 3px 3px 0px;
@@ -216,7 +154,7 @@ input:focus:not(.submit input) {
 }
 
 .show-hide {
-    width: 5rem;
+    width: 4rem;
     height: auto;
 }
 

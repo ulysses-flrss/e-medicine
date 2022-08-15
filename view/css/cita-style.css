@@ -9,21 +9,33 @@ body{
 }
 
 .all-container {
+    /* width: 100vw;
+    height: 100vh; */
+    background-color: #e0e6e3;
     display: flex;
     flex-direction: column;
-    padding-top: 10rem;
+    padding-top: 10em;
 }
 
 .form-container{
     margin: auto;
-    padding: 1rem 3rem 0.25rem 3rem;
+    /* padding: 1em 2em 0.25em 2em; */
     border-radius: 15px;
-    width: 80%;
+    width: 90%;
     height: fit-content;
-    margin: auto;
+    margin: auto auto 2em 6em;
     background-color: var(--aquaBright-body-color);
     font-family: var(--menuFont);
     
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    column-gap: 2em;
 }
 
 .form-register {
@@ -38,6 +50,7 @@ body{
 .motivo>textarea, .enfermedades>textarea{
     display: flex;
     margin: auto;
+    
     font-family: var(--bodyFont);
 }
 
@@ -47,17 +60,17 @@ body{
 
 textarea {
     font-family: var(--bodyFont);
-    padding: 1rem;
+    padding: 1em;
     display: flex;
     text-align: justify;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     border-radius: 15px;
     outline: none;
     border: 1.5px solid black;
     box-shadow: 3px 3px 0;
-    width: 30rem;
-    height: 6rem;
-    max-height: 20rem;
+    width: 20em;
+    height: 6em;
+    max-height: 10em;
 }
 
 textarea:focus {
@@ -69,8 +82,8 @@ textarea:focus {
 
 input:not(.submit input){
     transition: 350ms all;
-    padding: 0.5rem 1rem ;
-    font-size: 1.5rem;
+    padding: 0.5em 1em ;
+    font-size: 1.05em;
     font-family: var(--bodyFont);
     border: 1.5px solid black;
     outline: none;   
@@ -87,80 +100,28 @@ input:focus:not(.submit input) {
     box-shadow: none;
 }
 
-.first-line{
-    display: flex;
-    font-size: 1.75rem;
-    align-items: center;
-    width: 100%;
-    justify-content: flex-start;
-    margin:1.5rem 0;
-}
 
 .perfil {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.75rem;
+    font-size: 1.75em;
 }
 
 .perfil select {
     width: auto;
-}
-
-.first-line input {
-    width: 100%;
-}
-
-.second-line {
-    display: flex;  
-    font-size: 1.75rem;
-    width: 100%;    
-    margin:1.5rem 0;
-    justify-content: space-between;
-}
-
-.third-line {
-    display: flex;  
-    justify-content: space-between;
-    font-size: 1.75rem;
-    width: 100%;    
-    margin:1.5rem 0;
-}
-
-.fourth-line {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.75rem;
-    margin: 1.5rem 0;
-
-}
-
-.fourth-line input {
-    width: 100%;
-}
-
-.fifth-line {
-    display: flex;
-    flex-direction: column;
-    margin: 1.5rem 0;
-    font-size: 1.75rem;
-
-}
-
-.fifth-line input {
-    width: 100%;
-    height: 100%;
+    
 }
 
 
-.perfil > *, .first-line > *, .second-line > *, .third-line > *, .fourth-line > *, .fifth-line > *{
-    margin: 0.10rem 0.5rem;
-}
+
+
 
 .fecha, .peso, .altura {
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-size: 1.05em;
 }
 
 .fecha > * {
@@ -171,12 +132,11 @@ input:focus:not(.submit input) {
     display: flex;
     flex-direction: column;
     text-align: center;
-
 }
 
 .perfil select, option, .especialidad-medica select, option, .doctor select, option {
-    font-size: 1.5rem;
-    padding: 0.5rem;
+    font-size: 1.05em;
+    padding: 0.5em;
     border-radius: 15px;
     border: 1.5px solid black;
     outline: none;
@@ -188,21 +148,21 @@ input:focus:not(.submit input) {
 }
 
 .submit {
-    display: flex;
+    display: grid;
     width: 100%;
+    margin: 3em;
     justify-content: center;
-    margin: 3rem;
-    align-items: center;
+    grid-area: 4 / 2;
 }
 
 
 .submit button {
     border-radius: 5px;
-    width: 15rem;
-    height: 3.5rem;
+    width: 15em;
+    height: 3.5em;
     font-family: var(--menuFont);
     box-shadow: 3px 3px 0px black;
-    font-size: 1.5rem;
+    font-size: 1em;
     cursor: pointer;
 }
 
@@ -218,4 +178,3 @@ input:focus:not(.submit input) {
     color: white;
     box-shadow: none;   
 }
-

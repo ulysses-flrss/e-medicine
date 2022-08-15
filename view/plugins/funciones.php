@@ -137,10 +137,10 @@
                 </li>
                 <li class='bar-item' id='li-about' title='Acerca de Nosotros'>
                     <a href='../view/aboutUs.php' class='bar-link' id='li-info'>
-                    <i class='fa-solid fa-circle-info icon'></i>
-                    <span class='link-text'>Acerca de Nosotros</span>
+                        <i class='fa-solid fa-circle-info icon'></i>
+                        <span class='link-text'>Acerca de Nosotros</span>
                     </a>
-                    </li>
+                </li>
 
                     <li class='bar-item' id='li-profile'>
                         "/*<a href='#' class='bar-link'>
@@ -148,7 +148,8 @@
                             <span class='link-text'>".$datos[1]." <br><span class='mini-text'>Entrar a Perfil</span></span>
                         </a>*/
                         .
-                        "<div class='submenuRaiz'><a href='#' class='bar-link'><i class='fa-solid fa-user icon'></i><span class='link-text'>".$datos[1]."</span></a></div>
+                        "<div class='submenuRaiz'><a href='#' class='bar-link'>
+                        <i class='fa-solid fa-user icon'></i><span class='link-text'>".$datos[1]."</span></a></div>
                         <div class='submenu'>
                             <ul>
                                 <li class='bar-item'><a href='#' class='link-text'><span class='bar-link'>Ver Perfil</span></a></li>
@@ -386,27 +387,14 @@
 
   function footer(){
     echo "<footer class='footer'>
-        <div class='columna1'>
-            <strong class='titulo-footer' title='Nuestra Empresa'>Nuestra Empresa</strong>
-            <a href='../view/aboutUs.php' class='footer-item' title='¿Quiénes Somos?'>¿Quiénes Somos?</a>
-            <a href='../view/aboutUs.php#QUIENESSOMOS' class='footer-item' title='Misión'>Misión</a>
-            <a href='../view/aboutUs.php#MISION' class='footer-item' title='Visión'>Visión</a>
-        </div>
-        <div class='columna2'>
-            <strong class='titulo-footer' title='¿Te Ayudamos?'>¿Te Ayudamos?</strong>
-            <a href='../view/aboutUs.php#VISION' class='footer-item' title='Horarios de Atención'>Horarios de Atención</a>
-            <a href='../view/faq.php' class='footer-item' title='Preguntas Frecuentes'>Preguntas Frecuentes</a>
-            <a href='../view/aboutUs.php#creadores' class='footer-item' title='Creadores'>Creadores</a>
-        </div>
-            
-        <div class='columna3'>
-            <strong class='titulo-footer' title='Siguenos En'>Siguenos En:</strong>
-        
-                    <a href='https://www.facebook.com/' class='footer-item' title='Facebook: E-Medicine'><i class='fab fa-facebook' id='facebook'></i><span class='red-social'>Facebook</span></a>
-                    <a href='https://www.instagaram.com/' class='footer-item' title='Instagram: @e-medicine'><i class='fab fa-instagram' id='instagram'></i><span class='red-social'>Instagram</span></a>
-                    <a href='https://www.twitter.com/' class='footer-item' title='Twiiter: @eMedicine'><i class='fab fa-twitter' id='twitter'></i><span class='red-social' >Twitter</span></a>
-        </div>
-    </footer>";
+            <div class='social-networks-container'>
+                <a href='https://www.facebook.com/' class='footer-item' title='Facebook: E-Medicine'><i class='fab fa-facebook' id='facebook'></i><span class='red-social'></span></a>
+                <a href='https://www.instagaram.com/' class='footer-item' title='Instagram: @e-medicine'><i class='fab fa-instagram' id='instagram'></i><span class='red-social'></span></a>
+                <a href='https://www.twitter.com/' class='footer-item' title='Twiiter: @eMedicine'><i class='fab fa-twitter' id='twitter'></i><span class='red-social' ></span></a>       
+            </div>
+
+            <a href='#' class='info'>E-Medicine - 2022</a>
+        </footer>";
   }
 
   function modal($titulo, $mensaje){

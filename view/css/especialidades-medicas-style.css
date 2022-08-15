@@ -4,46 +4,53 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #e0e6e3;
+}
+
 .all-container {
-    padding-top: 5rem;
+    padding-top: 2em;
 }
 
 section.especialidadesMedica {
     display: flex;
     flex-wrap: wrap; 
-    margin: 5rem 0 0 0;
-    
-
+    margin: 1em 0 0 0;
 }
 
 img.imagenEspecialidad{
-    width: 7rem;
+    width: 7em;
     height: auto;
-    margin: 0rem 2rem 0rem 1rem;
-    padding: 1rem;
+    margin: 0rem 2em 0em 1em;
+    padding: 1em;
 }
 
  .div-especialidades:hover img.imagenEspecialidad{
- transition: 500ms;
-    width: 8rem;
+    transition: 250ms all;
+    transform: scale(1.05);
     height: auto;
-    margin: 0rem 2rem 0rem 1rem;
-    padding: 1rem;
+    margin: 0em 2em 0em 1em;
+    padding: 1em;
+}
+
+img.imagenEspecialidad:hover {
+    transition: 250ms all;
+    transform: rotate(35deg);
 }
 
 
 .especialidadNombre{
     transition: 500ms;
     font-family: var(--bodyFont);
-    font-size: 2.5rem;
+    font-size: 2em;
     
 }
 
 .div-especialidades {
     display: flex;
     background-color: var(--aqua-body-color);
-    margin: 1rem auto 1rem auto ;
-    width: 95vw;
+    margin: 1em auto 1em auto ;
+    width: 85vw;
     height: 17.5vh;   
     align-items: center;
     border-radius: 3px;
@@ -55,15 +62,15 @@ img.imagenEspecialidad{
 }
 
 .div-especialidades:hover {
-    transition: 500ms ease;
+    transition: 500ms all;
     color: black;
     background-color:var(--aquaBright-body-color);
     transform: scale(1.02);
 }
 
 .div-especialidades:hover .especialidadNombre {
-    transition: 250ms ease-in;
-    font-size: 3.5rem;
+    transition: 250ms all;
+    font-size: 2em;
 }
 
 .div-especialidades:active {
@@ -77,8 +84,8 @@ img.imagenEspecialidad{
     display: flex;
     text-align: justify;
     justify-content: end;
-    width: 50%;
-    margin: 0 2rem 0 auto;
-    font-size: 1.25rem;
+    width: 55%;
+    margin: 0 2em 0 auto;
+    font-size: 1em;
     
 }

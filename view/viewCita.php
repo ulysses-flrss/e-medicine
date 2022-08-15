@@ -48,7 +48,7 @@
 
                     <?php echo "<input type='hidden' value='".$datos[0]."' name='idUsuario' id='idUsuario'>" ?>
                         
-                    <div class="second-line">
+                    
                         <div class="peso">
                             <label for="">Peso(lb): </label>
                             <input type="text" name="pe" id="pe" placeholder="Peso en Libras">
@@ -63,10 +63,10 @@
                             <label for="">Fecha de Nacimiento:</label>
                             <input type="date" name="fn" id="fn">
                         </div>
-                    </div>
+                    
                         
     
-                    <div class="third-line">
+                    
                         <div class="especialidad-medica">
                             <label for="especialidad-medica">Especialidad Médica:</label>
                             <select name="em" id="em" class="selectDinamic">
@@ -113,21 +113,21 @@
                             </select>
                             
                         </div>
-                    </div>
+                    
 
-                    <div class="third-line">
+                    
                         <div class="enfermedades">
-                            <label for="">Enfermedades Crónicas y Alergias (sino tiene ninguna deje vació este campo)</label>
+                            <label for="">Enfermedades Crónicas y Alergias <br>(sino tiene ninguna deje vació este campo)</label>
                             <textarea id="enfermedades" name="enfermedades"></textarea>
-                        </div><!--
-                    </div>
+                        </div>
+                    
 
-                    <div class="fifth-line">-->
+                    
                         <div class="motivo">
-                            <label for="">¿Cuál es la razón de su cita? (escriba sus sintomas)</label>
+                            <label for="">¿Cuál es la razón de su cita? <br>(escriba sus sintomas)</label>
                             <textarea type="text" name="razon" id="razon"></textarea>
                         </div>
-                    </div>
+                    
     
                 
                         <div class="submit">

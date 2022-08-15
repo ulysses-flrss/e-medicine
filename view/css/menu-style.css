@@ -1,14 +1,16 @@
 .barNav {
   /* Estilos para etiqueta <nav> */
   position: fixed;
-  width: 4em !important;
+  width: 4em ;
   height: 95vh !important;
   margin: 1em 0em;
   background-color: var(--aquaMenu-body-color);
   border-radius: 0 12px 12px 0;
-  transition: 500ms all;
+  transition: 150ms all;
   z-index: 10;
 }
+
+
 
 .link-text {
   /* Estilos para texto en <li> */
@@ -50,7 +52,7 @@
   display: grid;
   justify-content: center;
   margin: auto;
-  transition: 300ms all;
+  transition: 150ms all;
 }
 
 .bar-item:first-child {
@@ -60,7 +62,7 @@
 
 .bar-item:last-child {
   border-radius: 0 0 12px 12px;
-  transition: 250ms all;
+  transition: 100ms all;
   background-color: #1db964;
 }
 
@@ -90,7 +92,7 @@
 
 .submenu {
   display: none;
-  transition: 500ms all;
+  transition: 100ms all;
   margin: -4.3em 10.5em;
   width: 11.5em;
   background-color: var(--aquaMenu-body-color);
@@ -105,7 +107,7 @@
   grid-template-rows: repeat(2, 50%);
   padding: 0 !important;
   list-style: none;
-  transition: 500ms all;
+  transition: 100ms all;
 }
 
 .submenu .bar-item:last-child {
@@ -135,13 +137,13 @@
 /* hover */
 
 .barNav:hover {
-  transition: 500ms all;
+  transition: 100ms all;
   width: 11.5em !important;
 }
 
 .barNav:hover .link-text {
   display: grid;
-  transition: 500ms all;
+  transition: 300ms all;
 }
 
 .barNav:hover .icon {
@@ -155,7 +157,7 @@
 .barNav:hover .bar-item {
   display: grid;
   justify-content: flex-start;
-  transition: 500ms all;
+  transition: 300ms all;
 }
 
 .barNav:hover .submenuRaiz {
@@ -163,40 +165,61 @@
 }
 
 .bar-item:hover {
-  border-left: 7px solid #215f41;
+  border-left: 9px solid #215f41;
   background-color: #6ef0b1;
-  transition: 500ms all;
+  transition: 300ms all;
 }
 
 .submenu .bar-item:hover {
   border-left: 0px solid #215f41;
   background-color: #6ef0b1;
-  transition: 500ms all;
+  transition: 100ms all;
 }
 
 .bar-item:hover:last-child {
   border-radius: 0 0 12px 12px;
-  transition: 500ms all;
+  transition: 100ms all;
   background-color: #58c28f;
 }
 
 .barNav:hover #li-profile {
   width: 11.5em !important;
-  transition: 500ms all;
+  transition: 100ms all;
 }
 
 #li-profile:hover .submenu {
   display: grid;
-  transition: 500ms all;
+  transition: 100ms all;
 }
 
 .bar-item:hover .submenu ul li {
   justify-content: center;
-  transition: 500ms all;
+  transition: 100ms all;
 }
 
 .submenu .bar-item:hover:last-child {
   border-radius: 0 0 12px 0px;
   background-color: #6ef0b1;
-  transition: 500ms all;
+  transition: 100ms all;
 }
+
+
+
+
+@media screen and (max-width: 480px) {
+  .barNav {
+    width: 100vw;
+  }
+
+  .link-text {
+    display: grid;
+  }
+}
+
+
+/* Tablets en vertical / Celulares en Horizontal */
+
+@media screen and (max-width: 759px) and (min-width: 481px) {
+  
+}
+
