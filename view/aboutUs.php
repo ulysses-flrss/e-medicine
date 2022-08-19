@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once("plugins/funciones.php") ?>
 
@@ -13,7 +13,7 @@ require_once("plugins/funciones.php") ?>
     <?php links() ?>
 </head>
 <body>
-    
+
     <?php menu() ?>
 
 <main class="all-container">
@@ -45,96 +45,116 @@ require_once("plugins/funciones.php") ?>
         <div class="card-container">
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="../assets/imgs/20090066.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/imgs/20090066.jpg" alt="" class="profile-picture">
                 </div>
-                
+
                 <h1>Jefferson Alexis Castro Castro</h1>
             <div class="social-networks">
                 <div>
-                    <a href="https://www.facebook.com/jefferson.castro.5264" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>    
-                </div>
-                
-                <div>
-                    <a href="https://www.instagram.com/alexis_castro50/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>    
+                    <a href="https://www.facebook.com/jefferson.castro.5264" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
                 </div>
 
                 <div>
-                    <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>    
-                </div> 
-                
-                
+                    <a href="https://www.instagram.com/alexis_castro50/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
+                </div>
+
+                <div>
+                    <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
+                </div>
+
+
             </div>
-               
-                
+
+
             </div>
-            
+
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="../assets/imgs/20170252.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/imgs/20170252.jpg" alt="" class="profile-picture">
                 </div>
-                
+
                 <h1>Ulises Adonay Flores Martínez</h1>
             <div class="social-networks">
                 <div>
-                    <a href="https://www.facebook.com/ulisesadonay.floresmartinez/" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>    
+                    <a href="https://www.facebook.com/ulisesadonay.floresmartinez/" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
                 </div>
-                
+
                 <div>
-                    <a href="https://www.instagram.com/ulysses_flrss/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>    
+                    <a href="https://www.instagram.com/ulysses_flrss/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
                 </div>
-                
+
                 <div>
-                    <a href="https://twitter.com/ulysses_flrss" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>    
-                </div> 
+                    <a href="https://twitter.com/ulysses_flrss" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
+                </div>
             </div>
-               
-                
+
+
             </div>
 
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="../assets/imgs/20200090.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/imgs/20200090.jpg" alt="" class="profile-picture">
                 </div>
-                
+
                 <h1>José Guillermo Granadino Rivas</h1>
             <div class="social-networks">
                 <div>
-                    <a href="https://www.facebook.com/Guillermo.granadino.11" target="_blank"><i  class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>    
+                    <a href="https://www.facebook.com/Guillermo.granadino.11" target="_blank"><i  class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
                 </div>
-                
+
                 <div>
-                    <a href="https://www.instagram.com/granadino11/" target="_blank"><i class="fab fa-instagram" id="social-network-logo" ></i></a><span class="social-network-about">Instagram</span>    
+                    <a href="https://www.instagram.com/granadino11/" target="_blank"><i class="fab fa-instagram" id="social-network-logo" ></i></a><span class="social-network-about">Instagram</span>
                 </div>
-                
+
                 <div>
-                    <a href="https://twitter.com/Guillermo17u" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>    
+                    <a href="https://twitter.com/Guillermo17u" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
                 </div>
             </div>
-               
-                
+
+
             </div>
 
             <div class="user-card">
                 <div class="img-layout">
-                    <img src="../assets/imgs/20150418.jpg" alt="" class="profile-picture">    
+                    <img src="../assets/imgs/20170001.jpg" alt="" class="profile-picture">
                 </div>
-                
-                <h1>José David López Pacas</h1>
+
+                <h1>Samuel Ernesto Bonilla Arias</h1>
                 <div class="social-networks">
                     <div>
-                        <a href="https://www.facebook.com/josedavid.pacas" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>    
+                        <a href="https://www.facebook.com/josedavid.pacas" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
                     </div>
-                    
+
                     <div>
-                        <a href="https://www.instagram.com/josedavidpacas/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>    
+                        <a href="https://www.instagram.com/josedavidpacas/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
                     </div>
-                    
+
                     <div>
-                        <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>    
+                        <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
                     </div>
                 </div>
-               
-                
+
+                <div class="user-card">
+                    <div class="img-layout">
+                        <img src="../assets/imgs/20200090.jpg" alt="" class="profile-picture">    
+                    </div>
+
+                    <h1>Carlos Leandro Garcia Mena</h1>
+                    <div class="social-networks">
+                        <div>
+                            <a href="https://www.facebook.com/josedavid.pacas" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
+                        </div>
+
+                        <div>
+                            <a href="https://www.instagram.com/josedavidpacas/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
+                        </div>
+
+                        <div>
+                            <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
+                        </div>
+                    </div>
+
+
             </div>
         </div>
 

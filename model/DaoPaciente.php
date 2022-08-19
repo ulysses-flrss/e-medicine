@@ -78,7 +78,7 @@ class DaoPaciente{
         //VERIFICANDO SI EL USERNAME Y PASSWORD ES DE UN PACIENTE YA REGISTRADO
         $conexion = new Conexion();
         $dbh = $conexion->getConexion();
-        $sql = "SELECT idPaciente, CONCAT(nombre, '', apellido) AS 'Nombre Completo', pass FROM pacientes WHERE idPaciente=:idUser";
+        $sql = "SELECT idPaciente, CONCAT(nombre, '', apellido) AS 'Nombre Completo', pass  FROM pacientes WHERE idPaciente=:idUser";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':idUser', $idUser);
         $stmt->execute();

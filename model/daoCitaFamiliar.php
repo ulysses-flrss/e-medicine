@@ -74,10 +74,28 @@
       return $resultado;
     }
 
-    public function listarFamiliar($idUsuario){
+    public function listarFamiliar($idUsuario, $idPerfil){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
-      $sql = "SELECT idPerfil, CONCAT(nombres, ' ', apellidos) FROM familiar WHERE idPaciente=:idUsuario";
+      if ($idUsuario == ""){
+        $sql = "SELECT idPerfil, CONCAT(nombres, ' ', apellidos), peso, altura, fechaNac, genero, municipio, enfermedades FROM familiar WHERE idPerfil=:idPerfil";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':idPerfil', $idPerfil);
+      }else{
+        $sql = "SELECT idPerfil, CONCAT(nombres, ' ', apellidos), peso, altura, fechaNac, genero, municipio, enfermedades FROM familiar WHERE idPaciente=:idUsuario";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(':idUsuario', $idUsuario);
+      }
+      $stmt->execute();
+      $resultado = $stmt->fetchAll();
+      $especialidades[] = $resultado;
+      return $resultado;
+    }
+
+    public function listarDatos($idPerfil){
+      $cn = new Conexion();
+      $dbh = $cn->getConexion();
+      $sql = "SELECT peso, altura, fechaNac, genero, municipio, enfermedades FROM familiar WHERE idPerfil=:idPerfil";
       $stmt = $dbh->prepare($sql);
       $stmt->bindParam(':idUsuario', $idUsuario);
       $stmt->execute();
@@ -85,7 +103,5 @@
       $especialidades[] = $resultado;
       return $resultado;
     }
-
-    
   }
 ?>

@@ -9,10 +9,33 @@ body {
 }
 
 .all-container {
-    display: flex;
+    display: grid;
     flex-direction: column;
-    padding-top: 10rem;
+    padding-top: 4rem;
     background-color: #e0e6e3;
+}
+.add-button {
+    width: 20em;
+    height: 20em;
+    display: grid;
+    justify-self: center;
+    justify-items: center;
+    align-self: center;
+    align-items: center;
+    transition: 500ms all;
+}
+
+.add-button:hover #add{
+    text-shadow: 0px 0px 0px var(--shadow-color);
+    transition: 500ms all;
+}
+
+#add {
+    font-size: 10em;
+    color: var(--aquaBright-body-color);
+    text-shadow: 2px 2px 0px var(--shadow-color);
+    width: 100%;
+    margin: auto;
 }
 
 .add-image {
@@ -21,30 +44,31 @@ body {
 }
 
 .familiar-profiles {
-    width: 100%;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 90%;
     height: 100%;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
 .familiar-card {
-    margin: 2rem 5rem;
+    margin: 2em 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--skinBright-body-color);
-    padding: 2rem;
+    padding: 2em;
     border-radius: 10px;
-    width: 25vw;
-    height: 50vh;
+    width: 20em;
+    height: 20em;
 }
 
 .profile-picture-container {
-    width: 10rem;
-    height: 10rem;
-    border: 5px solid black;
+    width: 5em;
+    height: 5em;
     border-radius: 100%;
 }
 
@@ -56,8 +80,8 @@ body {
 .familiares-profile-name {
     font-family: var(--footerFont);
     color: black;
-    margin: 1rem;
-    font-size: 3rem;
+    margin: 0.25em;
+    font-size: 2.5em;
     font-weight: bold;
     text-align:center;
 }
@@ -72,11 +96,11 @@ body {
 
 #eliminar, #modificar{
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1em;
 }
 
 #iconTrash, #iconEditar {
-    font-size: 2rem;
+    font-size: 1em;
     border-radius: 10px;
     text-shadow: 3px 2px 3px black;
 }

@@ -1,7 +1,7 @@
 .footer {
     display: grid;
-    margin: auto;
-    padding: 2em 0;
+    position: relative;
+    padding: 1em 0;
     width: 100vw;
     height: fit-content;
     background-color: rgb(43, 43, 43);
@@ -18,10 +18,10 @@
     justify-content: center;
     grid-template-columns: repeat(3, 7.5%);
     column-gap: 1em;
-    
+
 }
 
-.info { 
+.info {
     width: fit-content;
     transition: 500ms all;
     text-decoration: none;
@@ -30,13 +30,12 @@
     text-align: center;
     font-size: 1.5em;
     font-family: var(--footerFont);
-
 }
 
-i {
-    font-size: 1.75em;
-    color: white;
+.footer-item, .red-social {
     transition: 500ms all;
+    font-size: 1.75em !important;
+    color: white !important;
 }
 
 
@@ -63,6 +62,3 @@ i {
     transition: 500ms all;
     transform: scale(1.05);
 }
-
-
-

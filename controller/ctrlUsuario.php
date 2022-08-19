@@ -11,13 +11,13 @@
 
       $cn = new Conexion();
       $dbh = $cn->getConexion();
-      $sql = "SELECT idPaciente, CONCAT(nombre, ' ', apellido) FROM pacientes WHERE idPaciente=:idUsuario";
+      $sql = "SELECT idPaciente, CONCAT(nombre, ' ', apellido), peso, altura, fechaNacimiento, municipio  FROM pacientes WHERE idPaciente=:idUsuario";
       $stmt = $dbh->prepare($sql);
       $stmt->bindParam(':idUsuario', $idUsuario);
       $stmt->execute();
       $resultado = $stmt->fetch();
       if ($resultado == true) {
-        $dataUser = $resultado[0].'/'.$resultado[1].'/paciente';
+        $dataUser = $resultado[0].'/'.$resultado[1].'/paciente'.'/'.$resultado[2].'/'.$resultado[3].'/'.$resultado[4].'/'.$resultado[5];
         return $dataUser;
       }else{
         $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor) FROM doctores WHERE idDoctor=:idUsuario";
@@ -43,13 +43,13 @@
     }else{
       $cn = new Conexion();
       $dbh = $cn->getConexion();
-      $sql = "SELECT idPaciente, CONCAT(nombre, ' ', apellido) FROM pacientes WHERE idPaciente=:idUsuario";
+      $sql = "SELECT idPaciente, CONCAT(nombre, ' ', apellido) , peso, altura, fechaNacimiento, municipio FROM pacientes WHERE idPaciente=:idUsuario";
       $stmt = $dbh->prepare($sql);
       $stmt->bindParam(':idUsuario', $idUsuario);
       $stmt->execute();
       $resultado = $stmt->fetch();
       if ($resultado == true) {
-        $dataUser = $resultado[0].'/'.$resultado[1].'/paciente';
+        $dataUser = $resultado[0].'/'.$resultado[1].'/paciente'.'/'.$resultado[2].'/'.$resultado[3].'/'.$resultado[4].'/'.$resultado[5];
         return $dataUser;
       }else{
           $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor) FROM doctores WHERE idDoctor=:idUsuario";

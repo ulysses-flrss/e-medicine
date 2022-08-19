@@ -29,6 +29,7 @@
     <?php menu();?>
 
     <main class="allContainer">
+
         <div class="bienvenida" id="container-bienvenida">
             <a href="#" class="imagen-texto">
                 <div class="img-layout"><img src="../assets/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
@@ -65,9 +66,11 @@
         }
     ?>
         </article>
-    </main>
 
-    <?php footer(); ?>
+        
+
+        <?php footer(); ?>
+    </main>
 
     <script src="javascript.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

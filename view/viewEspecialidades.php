@@ -2,10 +2,10 @@
 require_once("plugins/funciones.php");
 ?>
 
-<!DOCTYPE html> 
-<html> 
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<title>Especialidades de medicos.</title>
     <?php links() ?>
     <link rel="stylesheet" href="css/especialidades-medicas-style.css">
@@ -13,17 +13,17 @@ require_once("plugins/funciones.php");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&family=Anton&div=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head> 
+</head>
 
 <!--INICIO DEL MENÚ-->
     <?php menu() ?>
     <!--FIN DEL MENÚ-->
 
- <body> 
+ <body>
  	<main class="all-container">
          <article>
          <section class="especialidadesMedica">
-         
+
             <a href="" class="div-especialidades" title="Cardiología">
                 <img src="../assets/imgs/corazon.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre">Cardiología</div>
@@ -47,8 +47,8 @@ require_once("plugins/funciones.php");
                 <div class="especialidadNombre" title="Pediatría">Pediatría</div>
                 <div class="especialidadDescripcion">La pediatría es la especialidad médica que estudia al niño y sus enfermedades. El término procede del griego paidos e iatrea,   pero su contenido es mucho mayor que la curación de las enfermedades de los niños, ya que la pediatría estudia tanto al niño sano como al enfermo.</div>
             </a>
-            
-            
+
+
             <a href="" class="div-especialidades" title="Nutriología">
                 <img src="../assets/imgs/hoja.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre">Nutriología</div>
@@ -76,7 +76,7 @@ require_once("plugins/funciones.php");
         </section>
          </article>
      </main>
- 		
+
 	  <?php footer() ?>
     <script src="javascript.js"></script>
 </body>

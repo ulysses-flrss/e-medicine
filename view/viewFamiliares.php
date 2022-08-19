@@ -30,11 +30,7 @@
 
 <main class="all-container">
     <article>
-        <div class = "add-button">
-            <a href="../view/perfilFamiliares-form.php">
-                <img class = "add-image" src="../assets/imgs/add.png" alt="">
-            </a>
-        </div>
+        
         <section class="familiar-profiles">
 
         <?php
@@ -56,10 +52,16 @@
                 <a href='../controller/ctrlFamiliar.php?accion=modificar&idPerfil=".$familia['idPerfil']."'><button class='btn btn-primary' id='modificar'><i class='fas fa-edit' id='iconEditar'></i> Editar</button></a>
                 <button class='btn btn-danger' id='eliminar' onclick='eliminarPerfil(\"".$familia['idPerfil']."\",\"".$datos[0]."\");'><i class='fas fa-trash' id='iconTrash'></i> Eliminar</button>
             </div>
-            </div>";
+            </div>";   
         }
-?>
+        ?>
+        
+            <div class = "add-button">
+                <a href="../view/perfilFamiliares-form.php">
+                <i class="fa-solid fa-plus" id="add"></i>
+                </a>
             </div>
+
         </section>
     </article>
     <?php footer() ?>
