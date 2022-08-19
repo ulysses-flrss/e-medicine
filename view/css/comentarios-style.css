@@ -6,16 +6,18 @@
 
 body{
     color: black;
+    background-color: #e0e6e3;
 }
 
 .all-container {
-    padding-top: 10rem;
+    padding-top: 4em;
 }
 
 h2 {
     font-family: 'Sacramento', cursive;
-    margin: 1rem;
-    font-size: 5rem;
+    text-align: center;
+    margin: 2em 0 0 0;
+    font-size: 5em;
 }
 
 .nombrePerfil {
@@ -23,7 +25,7 @@ h2 {
     width: 100vw;
     justify-content: center;
     font-family: var(--extraFont);
-    font-size: 3rem;
+    font-size: 3em;
 }
 
 
@@ -32,7 +34,7 @@ h2 {
 
 textarea {
     font-family: var(--bodyFont);
-    background-color: hsl(160, 80%, 50%);
+    background-color: #ffc69e;
     display: flex;
     width:70vw;
     margin: auto;
@@ -40,8 +42,8 @@ textarea {
     font-size: 1.5rem;
     border-radius: 15px;
     outline: none;
-    border: 1.5px solid black;
-    box-shadow: 3px 3px 0;
+    border: 3px black solid;
+ 
 }
 
 textarea:focus {
@@ -83,53 +85,80 @@ textarea:focus {
 }
 
 div.comentariosPublicados {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 1.5rem;
-    background-color: hsl(160, 100%, 46%);
-    padding: 2rem 2rem;
-    width: 70vw;
-    margin: 2rem auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1em;
+    background-color: hsl(27, 100%, 87%);
+    padding: 1em 1em;
+    width: 65vw;
+    margin: 1.5em auto;
     height: fit-content;
-    justify-content:center;        
+    justify-content:center;
     font-family: var(--bodyFont);
 
     border-radius: 15px;
     border: 3px solid black;
+    box-shadow: 10px 7px 3px #a1785a;
 }
 
-div.objetoComentarios {
+div.comentariosPublicados * {
+    cursor:default;
+}
+
+div.comentariosPublicados div.objetoComentarios {
     border-radius: 10px;
-    background-color: hsl(160, 100%, 97%) ;
+    background-color: #ffc69e;
     border: 3px black solid;
-    justify-content: center;
-    vertical-align: middle;  
 }
 
 div#autor {
+    display: grid;
     font-weight: bolder;
-    padding: 1rem 2rem;
-    margin: 1rem 2rem;
-    width: 35vw;
-    height: 8vh;
-    font-size: 2rem;    
+    width: 80%;
+    text-align: center;
+    height: 9vh;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
 }
 
-div#descripcion{
+
+#descripcion{
     text-align: justify;
-    padding: 1rem 1rem;
-    margin: 0rem 2rem;
-    width: 65vw;
+    padding: 0.75em 1em;
+    margin: 0em auto;
+    width: 90%;
     margin-bottom: 1.5vh;
     height:fit-content;
-    font-size: 1.75rem;   
+    font-size: 1.5em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+}
+
+div#fechaPublicacion{
+    display: grid;
+    width: 80%;
+    height: 9vh;
+    margin: auto;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.comentariosPublicar {
+    grid-template-columns: 1fr !important;
 }
 
 
-div#fechaPublicacion{
-    margin:auto 2rem auto auto;
-    padding: 1.5rem 1rem;
-    height: 8vh;
-    font-size: 1.5rem;
+
+.disenoBoton {
+    display: grid;
+    font-size: 1em;
+    justify-self: center;
+    text-align: center;
 }
 

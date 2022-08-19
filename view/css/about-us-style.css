@@ -5,7 +5,6 @@
 }
 
 body {
-    
     background-color: #e0e6e3;
 }
 
@@ -39,12 +38,12 @@ body {
 
 .info-about div:hover .title {
     transition: 500ms all;
-    font-size: 1.5rem;
+    font-size: 1.25em;
 }
 
 .info-about div:hover p {
     transition: 500ms all;
-    font-size: 1.8rem;
+    font-size: 1em;
 }
 
 
@@ -53,7 +52,7 @@ body {
 .title {
     padding-bottom: 0.5rem;
     font-family: var(--menuFont);
-    font-size: 3rem;
+    font-size: 2em;
     border-bottom: 2px solid black;
     transition: 500ms all;
 }
@@ -64,7 +63,7 @@ body {
     margin:2rem 0 0 0;
     transition: 500ms all;
     font-family: var(--bodyFont);
-    font-size: 1.5rem;
+    font-size: 1.25em;
 }   
 
 .all-container {
@@ -73,7 +72,7 @@ body {
 
 #creadores {
     font-family: var(--footerFont);
-    font-size: 7.5rem;
+    font-size: 5em;
     font-weight: bolder;
     text-align: center;
 }
@@ -84,16 +83,23 @@ body {
 }
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+
 }
 
 .user-card {
-    margin: 5rem 10rem 3rem 12rem ;
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
     background-color: var(--skinBright-body-color);
-    width: 40rem;
-    height: 40rem;
+    width: 45%;
+    height: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -117,8 +123,8 @@ body {
 
 
 .img-layout {
-    width: 14rem;
-    height: 14rem;
+    width: 8em;
+    height: 8em;
     border-radius: 50%;
     box-shadow: 0 0 10px black;
 }
@@ -130,7 +136,7 @@ body {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-family: var(--bodyFont);
     margin: 0.5rem;
 }
@@ -151,7 +157,7 @@ h1 {
 }
 
 .social-network-about {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-family: var(--footerFont);
     font-weight: bold;
 }

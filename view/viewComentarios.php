@@ -29,14 +29,21 @@
         <section class="publicarComentario">
         <h2>Comentarios</h2>
           <form id="formucom" action="../controller/ctrlComentarios.php" method="POST">
-            <div class="cajita">
-            <div class="nombrePerfil"><?php echo $datos[1].":";?></div>
             <?php echo "<input type='hidden' name='idUsuario' value='".$datos[0]."'>"  ?>
             <?php echo "<input type='hidden' name='nombre' value='".$datos[1]."'>"  ?>
-            <textarea type="text" placeholder="Escriba su opinión..." id="mensaje" name="mensaje" required></textarea>
-            <div class="submit">
-                <input type="submit" name="accion" id="accion" value="publicar" required></div>
+            <div class="comentariosPublicados comentariosPublicar">
+              <div class="nombrePerfil objetoComentarios publicarComen" id="autor">
+                <span class="">
+                  <?php echo $datos[1].":";?>
+                </span>
+              </div>
+              <textarea type="text" placeholder="Escriba su opinión..." id="descripcion"  class="objetoComentarios" required></textarea>
+              <div class="submit">
+                  <input type="submit" name="accion" id="accion" class="disenoBoton" value="Publicar">
+              </div>
+              </div>
             </div>
+              
             
           </form>
         </section>

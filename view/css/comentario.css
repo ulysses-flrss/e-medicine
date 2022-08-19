@@ -6,10 +6,12 @@
 
 body{
     color: black;
+    background-color: #e0e6e3;
 }
 
 .all-container {
     padding-top: 10rem;
+    background-color: #e0e6e3;
 }
 
 .card-container {

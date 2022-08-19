@@ -9,7 +9,7 @@ body{
 }
 
 .all-container {
-    padding-top: 10rem;
+    padding-top: 4em;
 }
 
 .question-container {
@@ -21,11 +21,10 @@ body{
 .question-card {
     display: flex;
     flex-wrap: wrap;
-    font-size: 1.5rem;
     background-color: var(--aquaBright-body-color) /*hsl(27, 100%, 87%)*/;
-    padding: 2rem 2rem;
-    width: 45vw;
-    margin: 3rem auto;
+    padding: 1em 1em;
+    width: 37.5vw;
+    margin: 3em auto;
     height: fit-content;
     justify-content:center;        
     font-family: var(--bodyFont);
@@ -50,7 +49,7 @@ body{
     width: 100%;
     height: fit-content;
     text-align: center;
-    font-size: 2rem;  
+    font-size: 2em;  
 }
 
 #respuesta {
@@ -59,6 +58,6 @@ body{
         margin: 0rem 2rem;
         width: 65vw;
         margin-bottom: 1.5vh;
-        height:30vh;
-        font-size: 1.75rem;   
+        height:fit-content;
+        font-size: 1.5em;   
 }

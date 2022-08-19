@@ -22,18 +22,25 @@ body {
     justify-items: center;
     align-self: center;
     align-items: center;
-    transition: 500ms all;
+    transition: 250ms all;
 }
 
 .add-button:hover #add{
-    text-shadow: 0px 0px 0px var(--shadow-color);
-    transition: 500ms all;
+    transition: 250ms all;
+    text-shadow: 0px 0px 5px var(--shadow-color);
+}
+
+.add-button:active #add{
+    transition: 100ms all;
+    text-shadow: 0px 0px 5px var(--shadow-color);
+    filter: brightness(0.5);
+    transform: scale(0.90);
 }
 
 #add {
     font-size: 10em;
+    text-shadow: 0px 0px 0px var(--shadow-color);
     color: var(--aquaBright-body-color);
-    text-shadow: 2px 2px 0px var(--shadow-color);
     width: 100%;
     margin: auto;
 }

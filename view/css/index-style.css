@@ -17,6 +17,8 @@ body {
 }
 
 
+
+
 #container-bienvenida {
     transition: 250ms all;
     display: flex;
@@ -71,7 +73,7 @@ body {
 }
 
 
- section.tablonAnuncios {
+section.tablonAnuncios {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
