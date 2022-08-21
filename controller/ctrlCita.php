@@ -80,7 +80,7 @@
         $r = "El doctor ya tiene ocupado ese horario.";
         echo json_encode($r);
       }else{
-        $cita = new Cita($perfil, $codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
+        $cita = new Cita(/*$perfil, */$codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
 
         $r = $dao->insertar($cita);
         echo json_encode($r);

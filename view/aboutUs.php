@@ -136,10 +136,30 @@ require_once("plugins/funciones.php") ?>
 
                 <div class="user-card">
                     <div class="img-layout">
-                        <img src="../assets/imgs/20200090.jpg" alt="" class="profile-picture">    
+                        <img src="../assets/imgs/20200216.jpg" alt="" class="profile-picture">    
                     </div>
 
                     <h1>Carlos Leandro Garcia Mena</h1>
+                    <div class="social-networks">
+                        <div>
+                            <a href="https://www.facebook.com/josedavid.pacas" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
+                        </div>
+
+                        <div>
+                            <a href="https://www.instagram.com/josedavidpacas/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
+                        </div>
+
+                        <div>
+                            <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
+                        </div>
+                    </div>
+
+                    <div class="user-card">
+                    <div class="img-layout">
+                        <img src="../assets/imgs/20200216.jpg" alt="" class="profile-picture">    
+                    </div>
+
+                    <h1>Ludwig Ernesto Estrada Parada</h1>
                     <div class="social-networks">
                         <div>
                             <a href="https://www.facebook.com/josedavid.pacas" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
