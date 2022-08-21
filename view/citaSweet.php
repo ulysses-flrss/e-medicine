@@ -68,7 +68,7 @@
                             <select name="doctor" id="doctor">
                                 <option value="">-- Seleccione el Doctor --</option>
                                 <option value="D-00001">Ulises Adonay Flores Martínez</option>
-                                <option value="D-00002">José David López Pacas</option>
+                                <option value="D-00002">Carlos Leandro García Mena</option>
                                 <option value="D-00003">José Guillermo Granadino Rivas</option>
                                 <option value="D-00004">Jefferson Alexis Castro Castro</option>
                             </select>
