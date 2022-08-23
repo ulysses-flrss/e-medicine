@@ -50,25 +50,25 @@ require_once("plugins/funciones.php");
             </a>
             
             
-            <a href="" class="div-especialidades" title="Nutriología">
+            <a href="nutriologia.php" class="div-especialidades" title="Nutriología">
                 <img src="../assets/imgs/hoja.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre">Nutriología</div>
                 <div class="especialidadDescripcion">La nutriología es la ciencia que estudia el proceso de alimentación y sus efectos en el metabolismo, en el estado de salud y en la composición corporal y su relación con los procesos químicos. </div>
             </a>
 
-            <a href="" class="div-especialidades" title="Otorrinolaringología">
+            <a href="otorrinolaringologia.php" class="div-especialidades" title="Otorrinolaringología">
                 <img src="../assets/imgs/garganta.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre">Otorrinolaringología</div>
                 <div class="especialidadDescripcion">Es la especialidad médico-quirúrgica que se encarga del estudio de las enfermedades del oído, tanto auditivas como del equilibrio, de las vías respiratorias superiores y parte de las inferiores</div>
             </a>
 
-            <a href="" class="div-especialidades" title="Ginecología">
+            <a href="ginecologia.php" class="div-especialidades" title="Ginecología">
                 <img src="../assets/imgs/ginecologia.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre">Ginecología</div>
                 <div class="especialidadDescripcion">La ginecología es una especialidad de la medicina que se centra en el estudio del sistema reproductor femenino.</div>
             </a>
 
-            <a href="" class="div-especialidades" title="Gastroenterología">
+            <a href="gastroenterologia.php" class="div-especialidades" title="Gastroenterología">
                 <img src="../assets/imgs/estomago.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre">Gastroenterología</div>
                 <div class="especialidadDescripcion">La gastroenterología es el estudio de la función normal y las enfermedades del esófago, estómago, intestino delgado, colon y recto, páncreas, vesícula biliar, conductos biliares e hígado.</div>

@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e0e6e3;
+}
+
+.titulo{
+    border: 2px solid black;
+    margin: 0.5em 4em 0 6em;
+    padding: 0 0 0 0;
+    background-color: wheat;
+}
+
+h1{
+    text-align: center;
+    font-family: var(--menuFont);
+}
+
+.rama{
+    margin: 1.5em 4em 0 6em;
+    text-align: justify;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-family: var(--bodyFont);
+}
+
+.Otorri{
+    width: 350px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Otorri1{
+    width: 350px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
