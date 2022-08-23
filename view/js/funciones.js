@@ -58,9 +58,12 @@ function login() {
       url: '../controller/ctrlLogin.php',
       data: retornarDatos("iniciarSesion"),
       type: 'POST',
-      dataType: 'json'
+      dataType: 'json',
+
   }).done(function(response) {
     console.log("entró a la parte true");
+    /*datos=response.split("-");
+    console.log(datos[0]);*/
     if (response == "OK") {
       Swal.fire({
         type: 'success',
@@ -68,13 +71,21 @@ function login() {
         text: 'Ha iniciado sesión con éxito.',
         footer: 'E-MEDICINE ©'
       }).then((result)=>{
-        window.location.href="../view/viewPaciente.php";
+        datos = retonarDatos("iniciarSesion");
+        id = datos[0].split();
+        if(id[0]=="P"){
+          window.location.href="../view/viewPaciente.php";
+        }else if (id[0]=="D"){
+          window.location.href="../view/viewDoctor.php";
+        } else if(id[0]=="A") {
+          window.location.href="../view/viewAdmin.php";
+        }
       });
     } else {
       Swal.fire({
         type: 'error',
         title: '¡ERROR!',
-        text: response,
+        text: datos[0],
         footer: 'E-MEDICINE ©'
       });
     }
