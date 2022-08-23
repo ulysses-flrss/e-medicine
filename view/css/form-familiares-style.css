@@ -12,7 +12,7 @@
 
 .form-container{
     margin: auto;
-    padding: 1rem 3rem 0.25rem 3rem;
+    padding: 1em 3em 0.25em 3em;
     border-radius: 15px;
     width: 80%;
     margin: auto;
@@ -25,21 +25,21 @@
 
 #modificar{
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1em;
 }
 
 .logo {
-    width: 12.5rem;
-    margin: 1rem;
+    width: 12.5em;
+    margin: 1em;
 }
 
 input:not(.submit input, .male input.male, .female input.female){
     transition: 350ms all;
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    padding: 0.5em;
+    font-size: 1em;
     font-family: var(--bodyFont);
     border: 1.5px solid black;
-    outline: none;   
+    outline: none;
     border-radius: 15px;
     background-color: #eafff4;
     box-shadow: 3px 3px 0px;
@@ -53,9 +53,9 @@ input:focus:not(.submit input) {
 }
 
 .bienvenida-registro {
-    font-size: 6.5rem;
+    font-size: 5em;
     font-family: var(--register-welcome-font);
-    margin: 0rem;
+    margin: 0em;
     font-weight: bold;
 }
 
@@ -71,26 +71,26 @@ input:focus:not(.submit input) {
 
 .first-line, .third-line, .fourth-line {
     display: flex;
-    font-size: 1.75rem;
+    font-size: 1.75em;
     width: 100%;
     justify-content: flex-start;
-    margin:1.5rem 0;
+    margin:1.5em 0;
 }
 
 .second-line {
     display: flex;
     justify-content: space-between;
-    font-size: 1.75rem;
+    font-size: 1.75em;
     width: 100%;
-    margin:1.5rem 0;
+    margin:1.5em 0;
 }
 
 .third-line {
     display: flex;
-    font-size: 1.75rem;
+    font-size: 1.75em;
     width: 100%;
     justify-content: space-between;
-    margin:1.5rem 0;
+    margin:1.5em 0;
 }
 
 .fourth-line {
@@ -99,12 +99,12 @@ input:focus:not(.submit input) {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 1.5rem 0;
-    font-size: 1.75rem;
+    margin: 1.5em 0;
+    font-size: 1.75em;
 }
 
 .first-line > *, .second-line > *, .third-line > *, .fourth-line  > *, .fifth-line{
-    margin: 0.10rem 0.5rem;
+    margin: 0.10em 0.5em;
 }
 
 
@@ -138,8 +138,8 @@ input:focus:not(.submit input) {
 }
 
 .municipio select, option {
-    font-size: 1.5rem;
-    padding: 0.5rem;
+    font-size: 1.5em;
+    padding: 0.5em;
     border-radius: 15px;
     border: 1.5px solid black;
     outline: none;
@@ -164,7 +164,7 @@ input:focus:not(.submit input) {
     font-family: var(--bodyFont);
     display: flex;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     border-radius: 15px;
     outline: none;
     border: 1.5px solid black;
@@ -184,18 +184,18 @@ input:focus:not(.submit input) {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top: 7rem;
+    margin-top: 7em;
     align-items: center;
 }
 
 
 .submit input {
     border-radius: 5px;
-    width: 12rem;
-    height: 4.5rem;
+    width: 12em;
+    height: 4.5em;
     font-family: var(--menuFont);
     box-shadow: 3px 3px 0px;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     cursor: pointer;
 }
 
@@ -213,6 +213,3 @@ input:focus:not(.submit input) {
     color: white;
     box-shadow: none;
 }
-
-
-

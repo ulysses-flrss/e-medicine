@@ -13,6 +13,7 @@ require_once("plugins/funciones.php");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Nunito:wght@300&family=Rubik&family=Rubik+Mono+One&display&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&family=Anton&div=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../css/root-style.css">
 </head> 
 
 <!--INICIO DEL MENÚ-->
@@ -24,25 +25,25 @@ require_once("plugins/funciones.php");
          <article>
          <section class="especialidadesMedica">
          
-            <a href="" class="div-especialidades" title="Cardiología">
+            <a href="cardiologia.php" class="div-especialidades" title="Cardiología">
                 <img src="../assets/imgs/corazon.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre">Cardiología</div>
                 <div class="especialidadDescripcion">La cardiología es la rama de la medicina que se encarga del estudio, diagnóstico y tratamiento de las enfermedades del corazón y del sistema circulatorio. Es médica, pero no quirúrgica; los especialistas en el abordaje quirúrgico del corazón son el cirujano cardiaco o el cirujano cardiovascular.</div>
             </a>
 
-            <a href="" class="div-especialidades" title="Medicina General">
+            <a href="medicinageneral.php" class="div-especialidades" title="Medicina General">
                 <img src="../assets/imgs/medicina.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre" title="Medicina General">Medicina General</div>
                 <div class="especialidadDescripcion">La medicina general constituye el primer nivel de atención médica y es imprescindible para la prevención, detección, tratamiento y seguimiento de las enfermedades crónicas estabilizadas, responsabilizándose del paciente en su conjunto, para decidir su derivación a los especialistas cuando alguna patología se descompense.</div>
             </a>
 
-            <a href="" class="div-especialidades" title="Neurología">
+            <a href="neurologia.php" class="div-especialidades" title="Neurología">
                 <img src="../assets/imgs/idea-genial.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre" title="Neurología">Neurología</div>
                 <div class="especialidadDescripcion">La neurología es la especialidad médica que trata los trastornos del sistema nervioso.​ Específicamente se ocupa de la prevención, diagnóstico, tratamiento y rehabilitación de todas las enfermedades que involucran al sistema nervioso central, sistema nervioso periférico y el sistema nervioso autónomo.</div>
             </a>
 
-            <a href="" class="div-especialidades" title="Pediatría">
+            <a href="pediatria.php" class="div-especialidades" title="Pediatría">
                 <img src="../assets/imgs/chico.png" alt="" class="imagenEspecialidad">
                 <div class="especialidadNombre" title="Pediatría">Pediatría</div>
                 <div class="especialidadDescripcion">La pediatría es la especialidad médica que estudia al niño y sus enfermedades. El término procede del griego paidos e iatrea,   pero su contenido es mucho mayor que la curación de las enfermedades de los niños, ya que la pediatría estudia tanto al niño sano como al enfermo.</div>
