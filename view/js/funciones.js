@@ -71,15 +71,7 @@ function login() {
         text: 'Ha iniciado sesión con éxito.',
         footer: 'E-MEDICINE ©'
       }).then((result)=>{
-        datos = retonarDatos("iniciarSesion");
-        id = datos[0].split();
-        if(id[0]=="P"){
-          window.location.href="../view/viewPaciente.php";
-        }else if (id[0]=="D"){
-          window.location.href="../view/viewDoctor.php";
-        } else if(id[0]=="A") {
-          window.location.href="../view/viewAdmin.php";
-        }
+        window.location.href="../view/viewPaciente.php";
       });
     } else {
       Swal.fire({
