@@ -1,4 +1,4 @@
-function retornarDatos(accion) {
+  function retornarDatos(accion) {
   if (accion == "programarCita"){
     return {
       "idUsuario": document.getElementById('idUsuario').value,
@@ -77,7 +77,7 @@ function login() {
       Swal.fire({
         type: 'error',
         title: '¡ERROR!',
-        text: datos[0],
+        text: response,
         footer: 'E-MEDICINE ©'
       });
     }
