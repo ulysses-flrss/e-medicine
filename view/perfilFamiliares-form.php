@@ -121,10 +121,10 @@ $datos = explode('/', $dataUser);
                 <div class="fifth-line">
                     <textarea name="enfermedades" id="enfermedades" cols="50" rows="1" maxlength="255"></textarea>
                 </div>
-
-                    <div class="submit">
-                        <input type="submit" name="accion" value="Crear Perfil" id="crearPerfil" onclick="crearPerfil();">
-                    </div>
+                    
+                    
+                        <input type="submit" class="disenoBoton" name="accion" value="Crear Perfil"  onclick="crearPerfil();">
+                    
                 <!--</form>-->
             </section>
         </article>

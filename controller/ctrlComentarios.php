@@ -9,12 +9,11 @@
   $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
 
   $_SESSION['codUsuario'] = $idPaciente;
-
   if ($accion == "") {
     require_once '../view/viewComentarios.php';
   }
 
-  if ($accion == "publicar") {
+  if ($accion == "Publicar") {
     $comentario = new Comentario();
     $comentario->publicar($idPaciente,$mensaje);
     $mensaje = "Querido Usuario, su comentario a sido publicado con éxito.";

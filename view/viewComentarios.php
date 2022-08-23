@@ -37,7 +37,7 @@
                   <?php echo $datos[1].":";?>
                 </span>
               </div>
-              <textarea type="text" placeholder="Escriba su opinión..." id="descripcion"  class="objetoComentarios" required></textarea>
+              <textarea type="text" placeholder="Escriba su opinión..." id="descripcion" name="mensaje" class="objetoComentarios" required></textarea>
               <div class="submit">
                   <input type="submit" name="accion" id="accion" class="disenoBoton" value="Publicar">
               </div>
