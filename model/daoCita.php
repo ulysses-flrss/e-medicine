@@ -6,6 +6,11 @@
       $dbh = $cn->getConexion();
       $sql = "INSERT INTO citas (paciente, peso, altura, fechaNacimiento, fechaCreacion, especialidadM, doctor, fechaCita, horaCita, enfermedades, razonCita) VALUES (:idPaciente, :peso, :altura, :fechaNac, :fechaCreacion, :especialidadM, :doctor, :fechaCita, :horaCita, :enfermedades, :razonCita)";
       try{
+        // $msgsql = "";
+        // foreach ($cita as $citas) {
+        //   $msgsql += $citas . ", ";
+        // }
+        //return $sql;
         $stmt = $dbh->prepare($sql);
         if ($stmt->execute((array) $cita)) {
           return "OK";

@@ -11,7 +11,7 @@ body {
 }
 
 .allContainer {
-    padding-top: 12em;
+    padding-top: 0em;
     display: flex;
     flex-direction: column;
 }
