@@ -7,11 +7,11 @@ $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
         
 
 if ($accion == "invitado") {
-    require_once "../view/viewPaciente.php";
+    require_once "../view/viewInvitado.php";
 } elseif ($accion == "inicioSesion") {
     require_once "../view/viewLogin.php";
 } else {
-    require_once "../view/viewWelcomePage.php";
+    require_once "../view/viewInvitado.php";
 }
 
 

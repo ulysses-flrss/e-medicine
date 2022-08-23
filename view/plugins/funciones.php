@@ -17,7 +17,6 @@
   <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
   <link rel='stylesheet' href='../assets/SweetAlert/dist/sweetalert2.min.css'>
   <link rel='stylesheet' href='../view/css/menu-style.css'>";
-  
   }
 
   function menu(){
@@ -155,7 +154,7 @@
                         <div class='submenu'>
                             <ul>
                                 <li class='bar-item'><a href='#' class='link-text'><span class='bar-link'>Ver Perfil</span></a></li>
-                                <li class='bar-item'><a href='#' class='bar-link'><span class='link-text'>Cerrar Sesión</span></a></li>
+                                <li class='bar-item'><a href='../controller/ctrlPaciente.php?accion=cerrarSesion' class='bar-link'><span class='link-text'>Cerrar Sesión</span></a></li>
                             </ul>
                         </div>
                     </li>
@@ -180,10 +179,10 @@
                     </li>
 
                     <li class='bar-item' id='li-profile'>
-                        "/*<a href='#' class='bar-link'>
+                        <a href='../view/viewLogin.php' class='bar-link'>
                             <i class='fa-solid fa-user icon'></i>
-                            <span class='link-text'>".$datos[1]." <br><span class='mini-text'>Entrar a Perfil</span></span>
-                        </a>*/
+                            <span class='link-text'>".$datos[1]."<br><span class='mini-text'>Iniciar Sesión</span></span>
+                        </a>"
                         .
                         "<div class='submenuRaiz'><a href='../view/viewLogin.php' class='bar-link'><i class='fa-solid fa-user icon'></i><span class='link-text'>Iniciar Sesión</span></a></div>
                     </li>
