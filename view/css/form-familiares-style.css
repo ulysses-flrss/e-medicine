@@ -29,14 +29,13 @@
 }
 
 .logo {
-    width: 12.5em;
-    margin: 1em;
+    width: 7em !important;
+    margin: 1.5em !important;
 }
 
 input:not(.submit input, .male input.male, .female input.female){
     transition: 350ms all;
     padding: 0.5em;
-    font-size: 1em;
     font-family: var(--bodyFont);
     border: 1.5px solid black;
     outline: none;
@@ -53,9 +52,9 @@ input:focus:not(.submit input) {
 }
 
 .bienvenida-registro {
-    font-size: 5em;
+    font-size: 3.75em;
     font-family: var(--register-welcome-font);
-    margin: 0em;
+    /* margin: 0.25em 5em 0.25em 0; */
     font-weight: bold;
 }
 
@@ -71,7 +70,7 @@ input:focus:not(.submit input) {
 
 .first-line, .third-line, .fourth-line {
     display: flex;
-    font-size: 1.75em;
+    font-size: 1.25em;
     width: 100%;
     justify-content: flex-start;
     margin:1.5em 0;
@@ -80,14 +79,13 @@ input:focus:not(.submit input) {
 .second-line {
     display: flex;
     justify-content: space-between;
-    font-size: 1.75em;
     width: 100%;
+    font-size: 1.25em;
     margin:1.5em 0;
 }
 
 .third-line {
     display: flex;
-    font-size: 1.75em;
     width: 100%;
     justify-content: space-between;
     margin:1.5em 0;
@@ -100,7 +98,6 @@ input:focus:not(.submit input) {
     justify-content: center;
     width: 100%;
     margin: 1.5em 0;
-    font-size: 1.75em;
 }
 
 .first-line > *, .second-line > *, .third-line > *, .fourth-line  > *, .fifth-line{
@@ -138,7 +135,7 @@ input:focus:not(.submit input) {
 }
 
 .municipio select, option {
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 0.5em;
     border-radius: 15px;
     border: 1.5px solid black;
@@ -164,7 +161,7 @@ input:focus:not(.submit input) {
     font-family: var(--bodyFont);
     display: flex;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.25em;
     border-radius: 15px;
     outline: none;
     border: 1.5px solid black;
@@ -188,18 +185,13 @@ input:focus:not(.submit input) {
     align-items: center;
 }
 
-
-.submit input {
-    border-radius: 5px;
-    width: 12em;
-    height: 4.5em;
-    font-family: var(--menuFont);
-    box-shadow: 3px 3px 0px;
-    font-size: 1.5em;
-    cursor: pointer;
+.disenoBoton  {
+    display: grid;
+    justify-content: center;
+    font-size: 1.5em !important;
+    margin: 2em auto !important;
 }
-
-
+ 
 
 #modificar button:hover{
     transition: 350ms ease-in;
