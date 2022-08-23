@@ -87,6 +87,9 @@ class DaoPaciente{
             $datos = "si;";
             if ($resultado[2] == $passUser) {
                 $datos .= "si";
+                $datos .=";paciente";
+                
+
                 return $datos;
             }else{
                 $datos .= "no";
@@ -102,6 +105,8 @@ class DaoPaciente{
                 $datos = "si;";
                 if ($resultado1[2] == $passUser) {
                     $datos .= "si";
+                    $datos .=";doctor";
+                    
                     return $datos;
                 }else{
                     $datos .= "no";
@@ -117,6 +122,7 @@ class DaoPaciente{
                     $datos = "si;";
                     if ($resultado2[2] == $passUser) {
                         $datos .= "si";
+                        $datos .=";admin";
                         return $datos;
                     }else{
                         $datos .= "no";
