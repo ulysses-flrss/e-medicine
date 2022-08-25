@@ -1,16 +1,19 @@
 RewriteEngine On
 
-#Options All -Indexes
+ErrorDocument 404 http://localhost/e-medicine/404.php
+
+Options All -Indexes
 #RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1
 
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
 
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME}.php -f
-#RewriteRule ^(.*)$ $1.php
-#RewriteRule îndex.php$ index.php
-#RewriteRule îndex.php/(\w+)/?$ index.php?accion=$1
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+RewriteRule ^home?
+#RewriteRule index.php$ index.php
+#RewriteRule index.php/(\w+)/?$ index.php?accion=$1
 
 #redirecciona todas las peticiones a index.php
-#RewriteRule ^ index.php [QSA, L]#
+#RewriteRule ^ index.php [QSA, L]
