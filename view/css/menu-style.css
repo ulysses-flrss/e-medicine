@@ -71,7 +71,7 @@
   text-decoration: none;
   color: #000;
 
-  font-family: var(--menuFont);
+  font-family: var(--menuFont) !important;
   font-size: 0.9em;
 
   margin: auto;
@@ -176,10 +176,14 @@
   transition: 100ms all;
 }
 
-.bar-item:hover:last-child {
-  border-radius: 0 0 12px 12px;
+#li-profile {
+  border-radius: 0 0 12px 0 !important;
   transition: 100ms all;
   background-color: #58c28f;
+}
+
+.barNav:hover {
+  border-radius: 12px !important;
 }
 
 .barNav:hover #li-profile {

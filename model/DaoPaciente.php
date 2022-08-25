@@ -74,6 +74,38 @@ class DaoPaciente{
         }
     }
 
+    public function listadoPacientes() {
+        $cn = new Conexion;
+        $dbh = $cn->getConexion();
+        $sql = "SELECT idPaciente, nombre, apellido FROM pacientes ORDER BY idPaciente ";
+
+        try {
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            $paciente = $stmt->fetchAll();
+            return $paciente;
+        } catch (Exception $e) {
+            $e->getMessage();
+        }
+
+    }
+
+    public function listadoDoctores() {
+        $cn = new Conexion;
+        $dbh = $cn->getConexion();
+        $sql = "SELECT idDoctor, nombreDoctor, apellidoDoctor FROM doctores ORDER BY idDoctor";
+
+        try {
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            $doctores = $stmt->fetchAll();
+            return $doctores;
+        } catch (Exception $e) {
+            $e->getMessage();
+        }
+
+    }
+
     public function identificarUsuario($idUser, $passUser){
         //VERIFICANDO SI EL USERNAME Y PASSWORD ES DE UN PACIENTE YA REGISTRADO
         $conexion = new Conexion();

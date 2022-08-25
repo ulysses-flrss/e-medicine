@@ -100,11 +100,11 @@ require_once 'plugins/funciones.php'; ?>
                     <div>
                         <label for="pass">Contraseña: *</label>
                         <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" required>
-                        <img src="../assets/imgs/eye_close.png" alt="" class="show-hide" id="eye1">
+                        <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
                     
                         <label for="pass">Confirmar Contraseña: *</label>
                         <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" required>
-                        <img src="../assets/imgs/eye_close.png" alt="" class="show-hide" id="eye2">
+                        <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i>
                     </div>
 
                     <div>

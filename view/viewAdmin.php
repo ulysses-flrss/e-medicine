@@ -69,7 +69,7 @@
 
     <?php footer(); ?>
 
-    <script src="javascript.js"></script>
+    <!-- <script src="javascript.js"></script> -->
 </body>
 
 </html>

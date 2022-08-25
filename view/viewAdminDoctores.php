@@ -21,7 +21,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Usuarios | E-Medicine </title>
+    <title>Ver Doctores | E-Medicine </title>
     <link rel="stylesheet" href="css/viewAdmin-style.css">
     <?php links() ?>
 </head>
@@ -36,14 +36,12 @@
                 <img class = "add-image" src="../assets/imgs/add.png" alt="">
                 <span class="add-text">Agregar Usuario</span>
             </a>
-
-
             
 
                 <table>
                     
                 <tr>
-                    <th>ID de Paciente</th>
+                    <th>ID de Doctor</th>
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Acciones</th>
@@ -51,19 +49,19 @@
                 </tr>
 
                 <?php 
-                if (!isset($pacientes)) {
+                if (!isset($doctores)) {
                     require_once("../model/DaoPaciente.php");
                 } else {
                     require_once("../model/DaoPaciente.php");
                 }
                     $dao = new DaoPaciente();
-                    $pacientes = $dao->listadoPacientes();
+                    $doctores = $dao->listadoDoctores();
                     
-                    foreach ($pacientes as $pacient) {
+                    foreach ($doctores as $doc) {
                         echo "<tr>
-                                <td>".$pacient['idPaciente']."</td>
-                                <td>".$pacient['nombre']."</td>
-                                <td>".$pacient['apellido']."</td>
+                                <td>".$doc['idDoctor']."</td>
+                                <td>".$doc['nombreDoctor']."</td>
+                                <td>".$doc['apellidoDoctor']."</td>
                                 <td>
                                     <ul>
                                         <li><button><i class='fas fa-edit'></i></button></li>
@@ -75,51 +73,6 @@
                  ?>
                 </table>
 
-<table>
-                    
-                <tr>
-                    <th>ID de Familiar</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>ID de Paciente</th>
-                    <th>Acciones</th>
-
-                </tr>
-
-
-<?php 
-                if (!isset($familiar)) {
-                    require_once("../model/DaoFamiliar.php");
-                } else {
-                    require_once("../model/DaoFamiliar.php");
-                }
-                    $dao = new DaoFamiliar();
-                    $familiar = $dao->listadoFamiliarCompleto();
-                    
-                    foreach ($familiar as $familia) {
-                        echo "<tr>
-                                <td>".$familia['idPerfil']."</td>
-                                <td>".$familia['nombres']."</td>
-                                <td>".$familia['apellidos']."</td>
-                                <td>".$familia['idPaciente']."</td>
-                                <td>
-                                    <ul>
-                                        <li><button><i class='fas fa-edit'></i></button></li>
-                                        <li><button><i class='fas fa-trash-alt'></i></button></li>
-                                    </ul>
-                                </td>
-                                </tr>";
-                    }
-                 ?>
-
-
-
-
-
-
-
-
-            </table>
             </section>
         </article>
     </main>

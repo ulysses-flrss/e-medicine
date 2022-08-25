@@ -33,9 +33,8 @@
 }
 
 span.add-text {
-    font-size: 4rem;
+    font-size: 4em;
     margin-left: auto;
-    font-family: var(--extraFont);
 }
 
 table {
@@ -86,10 +85,6 @@ button {
     cursor: pointer;
 }
 
-span {
-    font-family: var(--bodyFont);
-    font-size: 1rem;
-}
 
 button:hover i{
     transition: all 250ms;

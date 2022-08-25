@@ -114,6 +114,24 @@ require_once("../model/classConexion.php");
             return $familiar;
         }
 
+        public function listadoFamiliarCompleto() {
+            $cn = new Conexion;
+            $dbh = $cn->getConexion();
+            $sql = "SELECT idPerfil, nombres, apellidos, idPaciente FROM familiar ORDER BY idPerfil";
+
+            try {
+                $stmt = $dbh->prepare($sql);
+                $stmt->execute();
+                $paciente = $stmt->fetchAll();
+                return $paciente;
+            } catch (Exception $e) {
+                $e->getMessage();
+            }
+
+        }
+
+
+
         public function mostrarFamiliar($idPerfil) {
             $sql = "SELECT idPerfil, idPaciente, nombres, apellidos, peso, altura, fechaNac, genero, municipio, enfermedades FROM familiar WHERE idPerfil=:idPerfil";
             $cn = new Conexion;
