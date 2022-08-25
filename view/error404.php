@@ -15,7 +15,7 @@ require_once("plugins/funciones.php") ?>
 <body>
     <div class="container">
         <h1 class="tittle">Error 404</h1>
-        <p>Disculpa las molestias pero en estos momentos estammos trabajando para una mejor experiencia
+        <p>Disculpa las molestias, pero en estos momentos estamos trabajando para una mejor experiencia
         </p>
         <img src="../assets/imgs/Error 404.png"><br>
         <a href="../index.php" class="regresar">Regresar a la pagina de inicio</a>
