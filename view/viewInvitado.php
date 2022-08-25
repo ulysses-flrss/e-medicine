@@ -1,6 +1,6 @@
 <?php
   // Notificar todos los errores excepto E_NOTICE
-  error_reporting(E_ALL ^ E_NOTICE);
+    error_reporting(E_ALL ^ E_NOTICE);
     session_start();
     require_once 'plugins/funciones.php';
 ?>
@@ -13,8 +13,7 @@
     <title>Invitado | E-Medicine</title>
     <?php links(); ?>
     <link rel='stylesheet' href='../view/css/invitado-style.css'>
-
-  <link rel="stylesheet" href="../view/css/index-style.css">
+    <link rel="stylesheet" href="../view/css/index-style.css">
 </head>
 
 <body>
@@ -22,7 +21,7 @@
 <nav class='barNav'>
     <ul class='barNavegacion' id='nav'>
 
-        <li class='bar-item'>
+        <li class='bar-item' id="li-title">
             <a href='../view/viewPaciente.php?idUsuario=P-00001' class='bar-link'>
                 <img src='../assets/imgs/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'>
                 <span class='link-text' id ='welcome-text'>E-Medicine</span>
@@ -70,7 +69,8 @@
 
             <li class='bar-item' id='li-profile' title=''>
                 <a href='../view/viewLogin.php' class='bar-link' id='li-perfil'>
-                    <span>Iniciar Sesión</span>
+                <i class="fa-solid fa-user-lock icon"></i>
+                    <span class="link-text">Iniciar Sesión</span>
                 </a>
             </li>
         </ul>
@@ -94,6 +94,7 @@
        <div class="slider">
        	<ul>
        		<li><img src="../assets/imgs/family.png" alt=""></li>
+            <li><img src="../assets/imgs/" alt=""></li>
        		<li><img src="../assets/imgs/add.png" alt=""></li>
        		<li><img src="../assets/imgs/corazon.png" alt=""></li>
        		<li><img src="../assets/imgs/listado(1).png" alt=""></li>       		
