@@ -10,7 +10,7 @@ require_once("plugins/funciones.php"); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index-style.css">
-    <title>Inicio - eMedicine</title>
+    <title>Inicio | E-Medicine</title>
     <?php links() ?>
 </head>
 
