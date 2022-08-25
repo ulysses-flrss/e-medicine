@@ -101,6 +101,13 @@
        	</ul>
        	
        </div>
+          <center>
+            <h3>Comentarios</h3>
+          <INPUT TYPE=“text” Name="Comentarios" Size="90"></INPUT>
+          <br></br>
+          <input type="submit" name="submit" value="Enviar">
+         </center>
+            
 
         <footer class='footer'>
             <div class='social-networks-container'>
