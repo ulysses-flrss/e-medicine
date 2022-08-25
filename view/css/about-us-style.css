@@ -15,12 +15,11 @@ body {
     margin-bottom: 3rem;
     width: 75%;
     cursor: default;
-    
+
 }
 
 .info-about div {
     border: 3px solid black;
-    
     border-radius: 10px;
     padding: 2rem;
     background-color: var(--skinBright-body-color);
@@ -64,7 +63,7 @@ body {
     transition: 500ms all;
     font-family: var(--bodyFont);
     font-size: 1.25em;
-}   
+}
 
 .all-container {
     padding-top: 10rem;
@@ -85,7 +84,7 @@ body {
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 10fr 10fr 10fr;
     justify-items: center;
 
 }
