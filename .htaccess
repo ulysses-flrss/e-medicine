@@ -1,15 +1,16 @@
-
-
-
-Options All -Indexes
-
-
 RewriteEngine On
-RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
+#Options All -Indexes
+#RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}.html -f
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}.php -f
+#RewriteRule ^(.*)$ $1.php
+#RewriteRule îndex.php$ index.php
+#RewriteRule îndex.php/(\w+)/?$ index.php?accion=$1
+
+#redirecciona todas las peticiones a index.php
+#RewriteRule ^ index.php [QSA, L]#
