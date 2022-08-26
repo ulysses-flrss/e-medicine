@@ -14,67 +14,15 @@
     <?php links(); ?>
     <link rel='stylesheet' href='../view/css/invitado-style.css'>
     <link rel="stylesheet" href="../view/css/index-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<nav class='barNav'>
-    <ul class='barNavegacion' id='nav'>
+<?php menu() ?> 
 
-        <li class='bar-item' id="li-title">
-            <a href='../view/viewPaciente.php?idUsuario=P-00001' class='bar-link'>
-                <img src='../assets/imgs/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'>
-                <span class='link-text' id ='welcome-text'>E-Medicine</span>
-            </a>
-        </li>
 
-        <li class='bar-item' id='li-cita' title='Programar Cita'>
-            <a  class='bar-link'>
-                <i class='fa-solid fa-book-medical icon'></i>
-                <span class='link-text'>Cita Médica</span>
-            </a>
-        </li>
-
-        <li class='bar-item' id='li-familiares' title='Familiares'>
-            <a href='../view/viewFamiliares.php?idUsuario=P-00001&sesion=true' class='bar-link' >
-
-            <i class='fa-solid fa-person-breastfeeding icon'></i>
-                <span class='link-text'>Familiares</span>
-            </a>
-        </li><li class='bar-item' id='li-doctor' title='Especialidades Médicas'>
-            <a href='../view/especialidadesMedicas.php' class='bar-link'>
-                <i class='fa-solid fa-user-doctor icon'></i>
-                <span class='link-text'>Especialidades Medicas</span>
-            </a>
-        </li>
-
-        <li class='bar-item' id='li-faq' title='Preguntas Frecuentes'>
-            <a href='../view/faq.php' class='bar-link'>
-            <i class='fa-solid fa-clipboard-question icon'></i>
-            <span class='link-text'>Preguntas Frecuentes</span>
-            </a>
-        </li><li class='bar-item' id='li-comentarios' title='Comentarios'>
-            <a href='../controller/ctrlComentarios.php?idUsuario=P-00001' class='bar-link'>
-            <i class='fa-solid fa-message icon'></i>
-
-                <span class='link-text'>Comentarios</span>
-            </a>
-        </li>
-        <li class='bar-item' id='li-about' title='Acerca de Nosotros'>
-            <a href='../view/aboutUs.php' class='bar-link' id='li-info'>
-                <i class='fa-solid fa-circle-info icon'></i>
-                <span class='link-text'>Acerca de Nosotros</span>
-            </a>
-        </li>
-
-            <li class='bar-item' id='li-profile' title=''>
-                <a href='../view/viewLogin.php' class='bar-link' id='li-perfil'>
-                <i class="fa-solid fa-user-lock icon"></i>
-                    <span class="link-text">Iniciar Sesión</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
 
     <main class="allContainer">
 
@@ -86,19 +34,31 @@
             <span id="bienvenida" title="Bienvenida">Bienvenido Invitado <span>
         </div>
 
-        <article class="mainArticle">
-            </article>
+       
 
-            <br></br>
+            <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br>
 
-       <div class="slider">
-       	<ul>
-       		<li><img src="../assets/imgs/family.png" alt=""></li>
-            <li><img src="../assets/imgs/" alt=""></li>
-       		<li><img src="../assets/imgs/add.png" alt=""></li>
-       		<li><img src="../assets/imgs/corazon.png" alt=""></li>
-       		<li><img src="../assets/imgs/listado(1).png" alt=""></li>       		
-       	</ul>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                <center><img  src="../assets/imgs/family.png" alt="First slide"></center>
+           </div>
+            <div class="carousel-item">
+                 <img " src="..." alt="Second slide">
+             </div>
+            <div class="carousel-item">
+            <img  src="..." alt="Third slide">
+           </div>
+        </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+             <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+             <span class="carousel-control-next-icon" aria-hidden="true"></span>
+             <span class="sr-only">Next</span>
+              </a>
+        </div>
        	
        </div>
           <center>
