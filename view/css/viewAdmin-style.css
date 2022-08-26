@@ -8,15 +8,9 @@
     padding-top: 10rem;
 }
 
-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 7.5em;
-}
-
 .agregarUser {
     display: flex;
-    background-color: var(--aquaBright-color);
+    background-color: var(--aquaBright-bg-color);
     margin: auto auto 5rem auto;
     border-radius: 10px;
     width: 80vw;
@@ -44,26 +38,20 @@ span.add-text {
 }
 
 table {
-    margin: 1em;
+    margin: auto;
     border-collapse: collapse;
+    border:3px solid black;
     border-radius: 10px;
     text-align: center;
     vertical-align:middle;
-    background-color: hsl(151, 60%, 60%);
-}
-
-.tablaUsuarios {
-    width: 30%;
-}
-
-.tablaFamiliares {
-    width: 10%;
+    background-color: hsl(135, 30%, 50%);
 }
 
 .users {
     display: flex;
     flex-wrap: nowrap;
     justify-items: center;
+    width: 30%;
     margin: auto auto 0.25rem auto
 }
 
@@ -72,7 +60,7 @@ ul {
 }
 
 li {
-    margin: 0.25em;
+    margin: 1rem;
 }
 
 
@@ -81,46 +69,34 @@ li {
     padding: 2rem;
     margin:auto 0.25rem;
     width: 15rem;
-    font-size: 1em;
+    font-size: 1.5rem;
 }
 
 i.fas {
-    color: hsl(147, 60%, 29%)   ;
-    font-size: 1em;
-    transition: all 500ms;
-
+    color: black;
+    font-size: 2.5rem;
 }
 
 button {
     color: black;
     outline: none;
-    background-color:hsl(151, 60%, 60%) ;
+    background-color: hsl(135, 30%, 50%);
     border: none;
     cursor: pointer;
 }
 
 
 button:hover i{
-    transition: all 500ms;
-    font-size: 1.25em;
-    text-shadow: 0 0 5px hsl(151, 60%, 35%);
+    transition: all 250ms;
+    font-size: 2rem;
 }
 
 th {
-    background-color: hsl(147, 60%, 49%);
+    background-color: hsl(135, 50%, 35%);
 }
 
 th,  tr, td {
     border: 2px solid black;
     padding: 1rem;
-    font-size: 1.1em;
-    font-family: var(--menuFont);
-}
-
-th:first-child {
-    border-radius:  15px 0 0 0 ;
-}
-
-th:last-child {
-    border-radius:  0 15px 0 0 ;
+    font-size: 1.5rem;
 }

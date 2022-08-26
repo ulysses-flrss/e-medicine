@@ -70,8 +70,8 @@
     <script src="javascript.js"></script>
     <script src="js/perfil.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>

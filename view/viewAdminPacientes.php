@@ -30,18 +30,17 @@
     <main class="all-container">
         
         <article>
-        <a href="" class="agregarUser">
+            <section>
+
+            <a href="" class="agregarUser">
                 <img class = "add-image" src="../assets/imgs/add.png" alt="">
                 <span class="add-text">Agregar Usuario</span>
             </a>
-            <section>
-
-            
 
 
             
 
-                <table class="tablaUsuarios">
+                <table>
                     
                 <tr>
                     <th>ID de Paciente</th>
@@ -67,8 +66,8 @@
                                 <td>".$pacient['apellido']."</td>
                                 <td>
                                     <ul>
-                                        <li><button><i class='fas accountfa-solid fa-user-pen'></i></button></li>
-                                        <li><button><i class='fas fa-solid fa-circle-minus'></i></button></li>
+                                        <li><button><i class='fas fa-edit'></i></button></li>
+                                        <li><button><i class='fas fa-trash-alt'></i></button></li>
                                     </ul>
                                 </td>
                                 </tr>";
@@ -76,17 +75,19 @@
                  ?>
                 </table>
 
-            <table class="tablaFamiliares">
+<table>
+                    
                 <tr>
                     <th>ID de Familiar</th>
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>ID de Paciente</th>
                     <th>Acciones</th>
+
                 </tr>
 
 
-            <?php 
+<?php 
                 if (!isset($familiar)) {
                     require_once("../model/DaoFamiliar.php");
                 } else {
@@ -103,24 +104,26 @@
                                 <td>".$familia['idPaciente']."</td>
                                 <td>
                                     <ul>
-                                        <li><button><i class='fas fa-solid fa-user-pen'></i></button></li>
-                                        <li><button><i class='fas fa-solid fa-circle-minus' onclick='deleteFamiliar();' ></i></button></li>
+                                        <li><button><i class='fas fa-edit'></i></button></li>
+                                        <li><button><i class='fas fa-trash-alt'></i></button></li>
                                     </ul>
                                 </td>
                                 </tr>";
                     }
                  ?>
+
+
+
+
+
+
+
+
             </table>
             </section>
         </article>
-
-        
     </main>
 
     <?php footer() ?>
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
-
 </body>
 </html>
