@@ -74,6 +74,7 @@ input:not(.enviar)  {
     font-size: 1em;
     transition: 500ms all;
 }
+    
 
 .codUsuario input:focus, .password input:focus {
     transition: 500ms all;

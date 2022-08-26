@@ -175,5 +175,35 @@ class DaoPaciente{
         session_unset();
         return header("location:../index.php");
     }
+    
+    public function reasignarId($idPaciente){
+        $cn = new Conexion;
+        $dbh = $cn->getConexion();
+        $sql = "SELECT idPaciente FROM pacientes WHERE idPaciente>:idPaciente ORDER BY idPaciente";
+        try{
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':idPaciente',$idPaciente);
+            $stmt->execute();
+            $codigos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $codigos;
+        }catch(PDOException $e){
+            echo "ERROR: ".$e->getMessage();
+        }        
+    }
+
+    public function actualizarId($newIdPaciente, $idPaciente){
+        $cn = new Conexion;
+        $dbh = $cn->getConexion();
+        $sql = "UPDATE pacientes SET idPaciente=:newIdPaciente WHERE idPaciente=:idPaciente";
+        try{
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':newIdPaciente',$newIdPaciente);
+            $stmt->bindParam(':idPaciente',$idPaciente);
+            $stmt->execute();
+        }catch(PDOException $e){
+            echo "ERROR: ".$e->getMessage();
+        }
+    }
 }
+
 ?>

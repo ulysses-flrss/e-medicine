@@ -46,11 +46,19 @@
         //header("location:../index.php");
     }
     //Eliminar paciente
-    /*if($id != "" && $accion=="eliminar"){
-        require_once '../model/daoPaciente.php';
+
+
+    if($accion=="eliminar"){
         $dao = new DaoPaciente();
-        $dao->eliminar($id);
-        echo "<p>Registro Eliminado exitosamente...</p>";
-        echo "<a href='../index.php'>Regresar</a>";
-    }*/
+        $r = $dao->eliminar($cod);
+        $codigos = $dao->reasignarId($cod);
+        foreach ($codigos as $codigo) {
+            $datos = explode('-', $codigo['idPaciente']);
+            $num = $datos[2];
+            $c = ($num-1);
+            $newId = $idUsuario . '-' . $c;
+            $dao->actualizarId($newId,$codigo['idPaciente']);
+        }
+        echo json_encode($r);
+    }
 ?>

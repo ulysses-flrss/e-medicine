@@ -75,6 +75,42 @@ function eliminarPerfil(idPerfil,idPaciente){
   return false
 }
 
+function eliminarPaciente(idPaciente){
+  Swal.fire({
+    title: '¿Desea eliminar este Paciente?',
+    showCancelButton: true,
+    showConfirmButton: true,
+    confirmButtonText: "Sí, eliminar",
+    cancelButtonText: "Cancelar",
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    type: 'question'
+  }).then(resultado => {
+        if (resultado.value) {
+            // Hicieron click en "Sí"
+            console.log("*se elimina la venta*");
+          $.ajax({
+            url: '../controller/CtrlPaciente.php',
+            data: {"cod": idPaciente, "accion":"eliminar"},
+            type: 'POST',
+            dataType: 'json'
+          }).done(function(response) {
+            if (response == "OK") {
+              alerta('success','¡Éxito!','Se ha eliminado el perfil familiar con éxito. (Actualice la página para ver los cambios)','E-MEDICINE ©'
+              )
+            } else {
+              alerta('error','¡ERROR!',response,'E-MEDICINE ©');
+            }
+          }).fail(function(response) {
+            console.log(response);
+          });
+        } else {
+            // Dijeron que no
+        }
+  })
+  return false
+}
+
 function modificar(idPerfil){
   $.ajax({
     url: '../controller/ctrlFamiliar.php',

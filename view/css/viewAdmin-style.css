@@ -57,7 +57,7 @@ table {
 }
 
 .tablaFamiliares {
-    width: 10%;
+    width: 30%;
 }
 
 .users {
@@ -115,6 +115,10 @@ th,  tr, td {
     padding: 1rem;
     font-size: 1.1em;
     font-family: var(--menuFont);
+}
+
+.tablaFamiliares #fst-tr {
+    height: 3.625em !important;
 }
 
 th:first-child {
