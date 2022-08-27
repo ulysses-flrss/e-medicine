@@ -61,7 +61,6 @@
     $fecha = explode('/', $fechaCita);
 
     $fechaCita = $fecha[2] . '-' . $fecha[1] . '-' . $fecha[0];
-    
 
     $citas = $dao->validarCita($doctor, $fechaCita, $horaCita);
 
@@ -85,6 +84,6 @@
         $r = $dao->insertar($cita);
         echo json_encode($r);
       }
-    }    
+    }
   }
 ?>
