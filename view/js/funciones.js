@@ -1,4 +1,4 @@
-  function retornarDatos(accion) {
+function retornarDatos(accion) {
   if (accion == "programarCita"){
     return {
       "idUsuario": document.getElementById('idUsuario').value,
@@ -53,6 +53,10 @@ function programarCita() {
 }
 
 function login() {
+  form = document.getElementById("formularioE");
+  form.addEventListener("submit", e =>{
+    e.preventDefault();
+  });
   console.log("inicia funcnión");
   $.ajax({
       url: '../controller/ctrlLogin.php',

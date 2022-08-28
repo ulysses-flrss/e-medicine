@@ -23,11 +23,11 @@
     require_once '../model/classCita.php';
     require_once '../model/daoCita.php';
 
-    if ($peso == "") {
+    if (($peso == "") || !(is_numeric($peso))) {
       echo json_encode("Error. Debe ingresar su peso en libras.");
       return;
     }
-    if ($altura == "") {
+    if (($altura == "") || !(is_numeric($altura))) {
       echo json_encode("Error. Debe ingresar su altura en cm.");
       return;
     }

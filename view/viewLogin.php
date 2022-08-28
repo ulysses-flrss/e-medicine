@@ -30,32 +30,34 @@
 
         <article>
             <section class="form-container">
-                <div class="form-login">
-                    <div class="codUsuario">
-                        <label for="idUsuario">Código de Usuario:</label>
-                        <input type="text" name="idUsuario" id="idUsuario" placeholder="Ingrese su Código de Usuario">
-                    </div>
-
-                    <div class="password">
-                        <label for="password">Contraseña:</label>
-                        <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
-                    </div>
-
-
-
-
-                    <div class="submit">
-                        <div class="password-change">
-                            <a href="../controller/ctrlLogin.php?accion=cambiarPass" class="submit-text">Olvidé mi contraseña</a>
+                <form action="" id="formularioE">
+                    <div class="form-login">
+                        <div class="codUsuario">
+                            <label for="idUsuario">Código de Usuario:</label>
+                            <input type="text" name="idUsuario" id="idUsuario" placeholder="Ingrese su Código de Usuario">
                         </div>
 
-                        <button type="submit" name="accion" value="enviar" class="enviar" id="enviar" onclick="login();">Iniciar Sesión</button>
+                        <div class="password">
+                            <label for="password">Contraseña:</label>
+                            <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
+                        </div>
 
-                        <div class="no-account">
-                            <a href="../controller/ctrlLogin.php?accion=crearCuenta" class="submit-text">No tengo Cuenta</a>
+
+
+
+                        <div class="submit">
+                            <div class="password-change">
+                                <a href="../controller/ctrlLogin.php?accion=cambiarPass" class="submit-text">Olvidé mi contraseña</a>
+                            </div>
+
+                            <button type="submit" name="accion" value="enviar" class="enviar" id="enviar" onclick="login();">Iniciar Sesión</button>
+
+                            <div class="no-account">
+                                <a href="../controller/ctrlLogin.php?accion=crearCuenta" class="submit-text">No tengo Cuenta</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </section>
         </article>
     </main>
