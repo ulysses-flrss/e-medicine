@@ -1,28 +1,24 @@
 <?php
-  // Notificar todos los errores excepto E_NOTICE
-    error_reporting(E_ALL ^ E_NOTICE);
-    session_start();
-    require_once 'plugins/funciones.php';
+session_start();
+require_once 'plugins/funciones.php';
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	 <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitado | E-Medicine</title>
-    <?php links(); ?>
-    <link rel='stylesheet' href='../view/css/invitado-style.css'>
+    <link rel='stylesheet' href='../view/css/invitado.css'>
     <link rel="stylesheet" href="../view/css/index-style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <?php links() ?>
 </head>
 
 <body>
 
-<?php menu() ?> 
-
-
+    <?php menu() ?>
 
     <main class="allContainer">
 
@@ -32,55 +28,47 @@
                 <span class="editar" title="Editar Perfil"> </span>
             </a>
             <span id="bienvenida" title="Bienvenida">Bienvenido Invitado <span>
+
         </div>
 
-       
+        <div class="container">
 
-            <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br>
+            <!-- BUTTONS (input/labels) -->
+            <input type="radio" name="slider" id="slide-1-trigger" class="trigger" checked>
+            <label class="btn" for="slide-1-trigger"></label>
+            <input type="radio" name="slider" id="slide-2-trigger" class="trigger">
+            <label class="btn" for="slide-2-trigger"></label>
+            <input type="radio" name="slider" id="slide-3-trigger" class="trigger">
+            <label class="btn" for="slide-3-trigger"></label>
+            <input type="radio" name="slider" id="slide-4-trigger" class="trigger">
+            <label class="btn" for="slide-4-trigger"></label>
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                <div class="carousel-item active">
-                <center><img  src="../assets/imgs/family.png" alt="First slide"></center>
-           </div>
-            <div class="carousel-item">
-                 <img " src="..." alt="Second slide">
-             </div>
-            <div class="carousel-item">
-            <img  src="..." alt="Third slide">
-           </div>
-        </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-             <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-             <span class="sr-only">Next</span>
-              </a>
-        </div>
-       	
-       </div>
-          <center>
-            <h3>Comentarios</h3>
-          <INPUT TYPE=“text” Name="Comentarios" Size="90"></INPUT>
-          <br></br>
-          <input type="submit" name="submit" value="Enviar">
-         </center>
-            
-
-        <footer class='footer'>
-            <div class='social-networks-container'>
-                <a href='https://www.facebook.com/' class='footer-item' title='Facebook: E-Medicine'><i class='fab fa-facebook' id='facebook'></i><span class='red-social'></span></a>
-                <a href='https://www.instagaram.com/' class='footer-item' title='Instagram: @e-medicine'><i class='fab fa-instagram' id='instagram'></i><span class='red-social'></span></a>
-                <a href='https://www.twitter.com/' class='footer-item' title='Twiiter: @eMedicine'><i class='fab fa-twitter' id='twitter'></i><span class='red-social' ></span></a>       
+            <!-- SLIDES -->
+            <div class="slide-wrapper">
+                <div id="slide-role">
+                    <div class="slide slide-1"></div>
+                    <div class="slide slide-2"></div>
+                    <div class="slide slide-3"></div>
+                    <div class="slide slide-4"></div>
+                </div>
             </div>
+        </div>
+        </div>
 
-            <a href='#' class='info'>E-Medicine - 2022</a>
-        </footer>
+
+        <center>
+            <h3>Comentarios</h3>
+            <INPUT TYPE=“text” Name="Comentarios" Size="90"></INPUT>
+            <br></br>
+            <input type="submit" name="submit" value="Enviar">
+        </center>
+
+
+        <?php footer() ?>
+
     </main>
-
-
+   
 
 </body>
+
 </html>
