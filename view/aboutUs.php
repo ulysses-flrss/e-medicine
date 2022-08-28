@@ -39,16 +39,20 @@ require_once("plugins/funciones.php") ?>
                 <p class="content">La clínica a la que le brindamos nuestro servicio tiene sus puertas abiertas de <b>Lunes a Viernes</b> en los horarios desde las <b>7:00am</b> hasta las <b>6:00pm</b>.</p>
             </div>
         </section>
-
-        <section>
+        
         <div id="creadores">Creadores</div>
-        <div class="card-container">
-            <div class="user-card">
-                <div class="img-layout">
-                    <img src="../assets/imgs/20090066.jpg" alt="" class="profile-picture">
-                </div>
-
-                <h1>Jefferson Alexis Castro Castro</h1>
+        <section class="cards">
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="../assets/imgs/20090066.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+               Jefferson Alexis Castro Castro
+            </p>
+            <div class="card__info">
             <div class="social-networks">
                 <div>
                     <a href="https://www.facebook.com/jefferson.castro.5264" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
@@ -61,19 +65,21 @@ require_once("plugins/funciones.php") ?>
                 <div>
                     <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
                 </div>
-
-
             </div>
-
-
             </div>
-
-            <div class="user-card">
-                <div class="img-layout">
-                    <img src="../assets/imgs/20170252.jpg" alt="" class="profile-picture">
-                </div>
-
-                <h1>Ulises Adonay Flores Martínez</h1>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="../assets/imgs/20170252.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+              Ulises Adonay Flores Martínez
+            </p>
+            <div class="card__info">
             <div class="social-networks">
                 <div>
                     <a href="https://www.facebook.com/ulisesadonay.floresmartinez/" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
@@ -87,16 +93,20 @@ require_once("plugins/funciones.php") ?>
                     <a href="https://twitter.com/ulysses_flrss" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
                 </div>
             </div>
-
-
             </div>
-
-            <div class="user-card">
-                <div class="img-layout">
-                    <img src="../assets/imgs/20200090.jpg" alt="" class="profile-picture">
-                </div>
-
-                <h1>José Guillermo Granadino Rivas</h1>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="../assets/imgs/20200090.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+             José Guillermo Granadino Rivas
+            </p>
+            <div class="card__info">
             <div class="social-networks">
                 <div>
                     <a href="https://www.facebook.com/Guillermo.granadino.11" target="_blank"><i  class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
@@ -110,73 +120,92 @@ require_once("plugins/funciones.php") ?>
                     <a href="https://twitter.com/Guillermo17u" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
                 </div>
             </div>
-
-
             </div>
-
-            <div class="user-card">
-                <div class="img-layout">
-                    <img src="../assets/imgs/20170001.jpg" alt="" class="profile-picture">
-                </div>
-
-                <h1>Samuel Ernesto Bonilla Arias</h1>
-                <div class="social-networks">
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="../assets/imgs/20170001.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+             Samuel Ernesto Bonilla Arias
+            </p>
+            <div class="card__info">
+            <div class="social-networks">
                     <div>
-                        <a href="https://www.facebook.com/josedavid.pacas" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
+                        <a href="" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
                     </div>
 
                     <div>
-                        <a href="https://www.instagram.com/josedavidpacas/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
+                        <a href="" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
                     </div>
 
                     <div>
                         <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
                     </div>
                 </div>
-
-                <div class="user-card">
-                    <div class="img-layout">
-                        <img src="../assets/imgs/20200216.jpg" alt="" class="profile-picture">    
-                    </div>
-
-                    <h1>Carlos Leandro Garcia Mena</h1>
-                    <div class="social-networks">
-                        <div>
-                            <a href="https://www.facebook.com/josedavid.pacas" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
-                        </div>
-
-                        <div>
-                            <a href="https://www.instagram.com/josedavidpacas/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
-                        </div>
-
-                        <div>
-                            <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
-                        </div>
-                    </div>
-
-                    <div class="user-card">
-                    <div class="img-layout">
-                        <img src="../assets/imgs/20200216.jpg" alt="" class="profile-picture">    
-                    </div>
-
-                    <h1>Ludwig Ernesto Estrada Parada</h1>
-                    <div class="social-networks">
-                        <div>
-                            <a href="https://www.facebook.com/josedavid.pacas" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
-                        </div>
-
-                        <div>
-                            <a href="https://www.instagram.com/josedavidpacas/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
-                        </div>
-
-                        <div>
-                            <a href="" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
-                        </div>
-                    </div>
-
-
             </div>
+          </div>
         </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="../assets/imgs/20200216.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+              Carlos Leandro García Mena
+            </p>
+            <div class="card__info">
+            <div class="social-networks">
+                    <div>
+                        <a href="" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
+                    </div>
+
+                    <div>
+                        <a href="https://www.instagram.com/leandro_mena11/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
+                    </div>
+
+                    <div>
+                        <a href="https://twitter.com/auronplay" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
+                    </div>
+                </div>
+        
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              src="../assets/imgs/ludwig.jpg"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__title text--medium">
+                ludwig Ernesto Estrada Parada
+
+            </p>
+            <div class="card__info">
+            <div class="social-networks">
+                <div>
+                        <a href="https://www.facebook.com/profile.php?id=100013734334106" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
+                    </div>
+
+                    <div>
+                        <a href="https://www.instagram.com/estrada_3010/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
+                    </div>
+
+                    <div>
+                        <a href="https://twitter.com/auronplay" target="_blank"><i class="fab fa-twitter" id="social-network-logo"></i></a><span class="social-network-about">Twitter</span>
+                    </div>
+            </div>
+          </div>
+        </div>
+       
 
         </section>
     </article>
