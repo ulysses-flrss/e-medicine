@@ -6,8 +6,9 @@ input[type="radio"] {
     background: #0000;
     position: relative;
     height: 600px;
-    width: 100%;
-    padding: 2em;
+    width: 100px;
+    padding: 0.5em;
+    
 }
 
 .slide-wrapper {
@@ -19,6 +20,7 @@ input[type="radio"] {
     border-radius: 20px;
     box-shadow: 0px 1px 2px 0px rgb(53, 53, 53);
     overflow: hidden;
+    
 }
 
 /*==================
@@ -109,7 +111,7 @@ input[type="radio"] {
     content: "";
     display: inline-block;
     border: 1px solid white;
-    background: rgb(11, 185, 238);
+    background: var(--darkRed-body-color);
     width: 20px;
     height: 20px;
     margin: 3px 3px;
@@ -144,7 +146,7 @@ input[type="radio"]:checked+label.btn {
 
 input[type="radio"]:checked+label.btn::after {
     transform: scale(1.1, 1.1);
-    background: lightskyblue;
+    background: var(--aquaBright-body-color);
 }
 
 /*=====================================================================================
