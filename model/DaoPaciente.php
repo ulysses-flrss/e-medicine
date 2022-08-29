@@ -93,7 +93,7 @@ class DaoPaciente{
     public function listadoDoctores() {
         $cn = new Conexion;
         $dbh = $cn->getConexion();
-        $sql = "SELECT idDoctor, nombreDoctor, apellidoDoctor FROM doctores ORDER BY idDoctor";
+        $sql = "SELECT idDoctor, nombreDoctor, apellidoDoctor, especialidadM FROM doctores ORDER BY idDoctor";
 
         try {
             $stmt = $dbh->prepare($sql);
