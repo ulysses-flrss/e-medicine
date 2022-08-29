@@ -30,12 +30,12 @@
     <main class="all-container">
         
         <article>
+            <a href="../controller/ctrlAdmin.php?accion=addDoctor" class="agregarUser">
+                <img class = "add-image" src="../assets/imgs/add.png" alt="">
+                <span class="add-text">Agregar Doctor</span>
+            </a>
             <section>
 
-            <a href="" class="agregarUser">
-                <img class = "add-image" src="../assets/imgs/add.png" alt="">
-                <span class="add-text">Agregar Usuario</span>
-            </a>
             
 
                 <table>
@@ -44,6 +44,7 @@
                     <th>ID de Doctor</th>
                     <th>Nombres</th>
                     <th>Apellidos</th>
+                    <th>Especialidad</th>
                     <th>Acciones</th>
 
                 </tr>
@@ -62,6 +63,7 @@
                                 <td>".$doc['idDoctor']."</td>
                                 <td>".$doc['nombreDoctor']."</td>
                                 <td>".$doc['apellidoDoctor']."</td>
+                                <td>".$doc['especialidadM']."</td>
                                 <td>
                                     <ul>
                                         <li><button><i class='fas fa-edit'></i></button></li>

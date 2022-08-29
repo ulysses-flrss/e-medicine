@@ -30,12 +30,12 @@
     <main class="all-container">
         
         <article>
+            <a href="../controller/ctrlAdmin.php?accion=addPaciente" class="agregarUser">
+                <img class = "add-image" src="../assets/imgs/add.png" alt="">
+                <span class="add-text">Agregar Paciente</span>
+            </a>
             <section>
 
-            <a href="" class="agregarUser">
-                <img class = "add-image" src="../assets/imgs/add.png" alt="">
-                <span class="add-text">Agregar Usuario</span>
-            </a>
 
 
             
@@ -59,6 +59,7 @@
                     $dao = new DaoPaciente();
                     $pacientes = $dao->listadoPacientes();
                     
+                    
                     foreach ($pacientes as $pacient) {
                         echo "<tr>
                                 <td>".$pacient['idPaciente']."</td>
@@ -75,16 +76,7 @@
                  ?>
                 </table>
 
-<table>
-                    
-                <tr>
-                    <th>ID de Familiar</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>ID de Paciente</th>
-                    <th>Acciones</th>
 
-                </tr>
 
 
 <?php 
@@ -95,20 +87,38 @@
                 }
                     $dao = new DaoFamiliar();
                     $familiar = $dao->listadoFamiliarCompleto();
+
+                    if (count($familiar) < 1 ) {
+
+                    } else {
+                        echo "<table>
                     
-                    foreach ($familiar as $familia) {
-                        echo "<tr>
-                                <td>".$familia['idPerfil']."</td>
-                                <td>".$familia['nombres']."</td>
-                                <td>".$familia['apellidos']."</td>
-                                <td>".$familia['idPaciente']."</td>
-                                <td>
-                                    <ul>
-                                        <li><button><i class='fas fa-edit'></i></button></li>
-                                        <li><button><i class='fas fa-trash-alt'></i></button></li>
-                                    </ul>
-                                </td>
-                                </tr>";
+                        <tr>
+                            <th>ID de Familiar</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>ID de Paciente</th>
+                            <th>Acciones</th>
+        
+                        </tr>";
+
+                        foreach ($familiar as $familia) {
+                            echo "<tr>
+                                    <td>".$familia['idPerfil']."</td>
+                                    <td>".$familia['nombres']."</td>
+                                    <td>".$familia['apellidos']."</td>
+                                    <td>".$familia['idPaciente']."</td>
+                                    <td>
+                                        <ul>
+                                            <li><button><i class='fas fa-edit'></i></button></li>
+                                            <li><button><i class='fas fa-trash-alt'></i></button></li>
+                                        </ul>
+                                    </td>
+                                    </tr>";
+                    }
+                    
+                    
+                    
                     }
                  ?>
 
