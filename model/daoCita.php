@@ -78,5 +78,21 @@
       $especialidades[] = $resultado;
       return $resultado;
     }
+
+    public function listadoCitas() {
+      $cn = new Conexion;
+      $dbh = $cn->getConexion();
+      $sql = "SELECT paciente,  Concat(nombre, ' ', apellido) AS nombre, fechaCita, horaCita, enfermedades, razonCita  FROM citas INNER JOIN pacientes ON pacientes.idPaciente=citas.paciente ORDER BY fechaCita DESC";
+  
+      try {
+          $stmt = $dbh->prepare($sql);
+          $stmt->execute();
+          $cita = $stmt->fetchAll();
+          return $cita;
+      } catch (Exception $e) {
+          $e->getMessage();
+      }
+  }
+
   }
 ?>

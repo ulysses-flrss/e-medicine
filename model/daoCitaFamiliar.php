@@ -1,6 +1,6 @@
 <?php
   require_once 'classConexion.php';
-  class daoCita{
+  class daoCitaFamiliar{
     public function insertar($cita){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
@@ -102,6 +102,22 @@
       $resultado = $stmt->fetchAll();
       $especialidades[] = $resultado;
       return $resultado;
+    }
+
+    public function listadoCitasFamiliar() {
+      $cn = new Conexion;
+      $dbh = $cn->getConexion();
+      $sql = "SELECT idPerfil,  Concat(nombre, ' ', apellido) AS nombre, fechaCita, horaCita, enfermedades, razonCita  FROM citasfamiliares INNER JOIN familiar ON familiar.idPerfil=citasfamiliares.idPerfil ORDER BY fechaCita DESC";
+
+      try {
+          $stmt = $dbh->prepare($sql);
+          $stmt->execute();
+          $citaFamiliar = $stmt->fetchAll();
+          return $citaFamiliar;
+      } catch (Exception $e) {
+          $e->getMessage();
+      }
+
     }
   }
 ?>

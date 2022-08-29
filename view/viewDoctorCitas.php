@@ -14,24 +14,17 @@ require_once("plugins/funciones.php");
     <?php links() ?>
 </head>
 <body>
-    <?php menuDoc() ?>
+    <?php menu() ?>
 
     <main class="all-container">
-
-    
-    <div class="users">
-            <button class="focus">Pacientes</button>
-            <button class="focus">Familiares</button>
-            
-        </div>
     <table>
             <tr>
                 <th>ID Paciente</th>
                 <th>Nombre Completo</th>
                 <th>Fecha de la Cita</th>
                 <th>Hora de la Cita</th>
-                <th>Enfermedades/Alergias</th>
-                <th>Razon de Cita/Sintomas</th>
+                <th>Enfermedades/ <br> Alergias</th>
+                <th>Razon de Cita/ <br> Sintomas</th>
             </tr>
 
         <?php
