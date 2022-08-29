@@ -11,8 +11,11 @@ $contenidoAnuncio = isset($_POST['contenidoAnuncio'])?$_POST['contenidoAnuncio']
     require_once("../model/daoAnuncios.php");
     require_once("../model/classAnuncios.php");
 
-if($contenidoAnuncio == "" || $contenidoAnuncio == " ") {
-    header("location:../view/viewDoctor.php");
+if (substr($idUsuario, 0,3) == "P-0") {
+    header("location:../view/viewAnuncios.php");
+} else if($contenidoAnuncio == "" || $contenidoAnuncio == " ") {
+        header("location:../view/viewDoctor.php");
+    
 } else {
     
     $anuncio = new Anuncio($idUsuario, $nombre, $contenidoAnuncio);

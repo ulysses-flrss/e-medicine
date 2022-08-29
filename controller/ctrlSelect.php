@@ -6,7 +6,7 @@
   $familiarDatos = isset($_POST['idPerfil'])?$_POST['idPerfil']:"";
 
   if ($listar == "especialidad") {
-    $dao = new daoCita();
+    $dao = new daoCitaFamiliar();
     $consulta = $dao->listarEspecialidad();
     echo json_encode($consulta);
   }
@@ -18,14 +18,14 @@
   }
 
   if ($listar == "familiar"){
-    $dao = new daoCita();
+    $dao = new daoCitaFamiliar();
     $idFamiliar = "";
     $consulta = $dao->listarFamiliar($idUsuario, $idFamiliar);
     echo json_encode($consulta);
   }
 
   if ($listar == "familiarDatos"){
-    $dao = new daoCita();
+    $dao = new daoCitaFamiliar();
     $idUsuario = "";
     $consulta = $dao->listarFamiliar($idUsuario, $familiarDatos);
     echo json_encode($consulta);

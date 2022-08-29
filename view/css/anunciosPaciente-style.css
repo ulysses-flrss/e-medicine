@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: black;
+    background-color: #e0e6e3;
+}
+
+.all-container {
+    padding-top: 1em;
+}
+
+h2 {
+    font-family: 'Sacramento', cursive;
+    text-align: center;
+    margin: 0.5em 0;
+    font-size: 5em;
+}
+
+.mainArticle {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 2em;
+    margin-bottom: 1em;
+    justify-items: center;
+}
+
+
+section.tablonAnuncios {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1em;
+    background-color: hsl(27, 100%, 87%);
+    padding: 1em 1em;
+    width: 65vw;
+    height: fit-content;
+    justify-content:center;
+    font-family: var(--bodyFont);
+
+    border-radius: 15px;
+    border: 3px solid black;
+    box-shadow: 10px 7px 3px #a1785a;
+}
+
+section.tablonAnuncios * {
+    cursor:default;
+}
+
+section.tablonAnuncios div.objetoTablon {
+    border-radius: 10px;
+    background-color: #ffc69e;
+    border: 3px black solid;
+}
+
+div#autor {
+    display: grid;
+    font-weight: bolder;
+    width: 80%;
+    text-align: center;
+    height: 9vh;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+
+div#descripcion{
+    text-align: justify;
+    padding: 0.75em 1em;
+    margin: 0em auto;
+    width: 90%;
+    margin-bottom: 1.5vh;
+    height:fit-content;
+    font-size: 1.5em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+}
+
+
+div#fechaPublicacion{
+    display: grid;
+    width: 80%;
+    height: 9vh;
+    margin: auto;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+
+
+div#autor {
+    display: grid;
+    font-weight: bolder;
+    width: 80%;
+    text-align: center;
+    height: 9vh;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+}
+
+
+#descripcion{
+    text-align: justify;
+    padding: 0.75em 1em;
+    margin: 0em auto;
+    width: 90%;
+    margin-bottom: 1.5vh;
+    height:fit-content;
+    font-size: 1.5em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+}
+
+div#fechaPublicacion{
+    display: grid;
+    width: 80%;
+    height: 9vh;
+    margin: auto;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.comentariosPublicar {
+    grid-template-columns: 1fr !important;
+}
+
+
+
+.disenoBoton {
+    display: grid;
+    font-size: 1em;
+    justify-self: center;
+    text-align: center;
+}
+
