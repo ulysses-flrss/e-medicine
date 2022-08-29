@@ -12,7 +12,7 @@
   }
 
   if ($listar == "doctor") {
-    $dao = new daoCita();
+    $dao = new daoCitaFamiliar();
     $consulta = $dao->listarDoctor($idEspecialidad);
     echo json_encode($consulta);
   }
