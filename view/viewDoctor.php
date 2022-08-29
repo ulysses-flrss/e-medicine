@@ -31,14 +31,14 @@
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
             <a href="#" class="imagen-texto">
-                <div class="img-layout"><img src="../view/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
+                <div class="img-layout"><img src="../assets/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
                 <span class="editar" title="Editar Perfil"> </span>
             </a>
                 <span id="bienvenida" title="Bienvenida">Bienvenido/a <b><?php echo "Dr. ".$datos[1]; ?></b><span>
         </div>
         
 
-        <article class="mainArticle">
+        
         <section>
             <div class="anuncio-container">
                 <div class="head-anuncio-container">
@@ -53,41 +53,14 @@
                     <?php echo "<input type='hidden' name='nombre' value='".$datos[1]."'>" ?>
                         <textarea required name="contenidoAnuncio" class="message-area" id="" cols="30" rows="10" minlength="10" maxlength="255"></textarea>
                     <div class="submit">
-                        <input type="submit"  value="Publicar Anuncio">
+                        <input type="submit" class="disenoBoton" value="Publicar Anuncio">
                     </div>
                         
                     </form>
                 </div>
             </div>
-
-    <?php
-        if(!isset($anuncio)){
-            require_once "../model/daoAnuncios.php";
-        }else
-            require_once "../controller/ctrlAnuncios.php";
-        $dao = new DaoAnuncio();
-        $anuncio=$dao->listadoAnuncios();
-        foreach($anuncio as $anun){
-            echo
-            '
-            <section class="tablonAnuncios">
-            <div class="objetoTablon" id="autor">
-            <span title="Escritor del Anuncio" id="autor">'.$anun['nombre'].'</span>
-            </div>
-            <div class="objetoTablon" id="fechaPublicacion">
-                <span title="Fecha de Publicación del Anuncio">'.$anun['fechaPublicacion'].'</span>
-            </div>
-
-            <div class="objetoTablon" id="descripcion">
-                <p title="Contenido del Anuncio" id="contenido">
-                    '.$anun['contenidoAnuncio'].'
-                </p>
-            </div>
-            </section>';
-        }
-    ?>
         </section>
-        </article>
+        
 
     <?php footer(); ?>
 
