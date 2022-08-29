@@ -8,11 +8,14 @@ body {
     background-color: #e0e6e3;
 }
 
+.all-container {
+  padding-top: 1em !important;
+}
+
 .info-about {
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-bottom: 3rem;
     width: 75%;
     cursor: default;
 
@@ -21,9 +24,9 @@ body {
 .info-about div {
     border: 3px solid black;
     border-radius: 10px;
-    padding: 2rem;
+    padding: 2em;
     background-color: var(--skinBright-body-color);
-    margin: 3rem 0 5rem 0;
+    margin: 2em 0 ;
     transition: 500ms all;
 }
 
@@ -128,7 +131,8 @@ body {
   
   .card__title {
     margin-bottom: 20px;
-    font-family: var(--bodyFont);
+    font-family: var(--extraFont);
+    text-align: center;
   }
   
   .card__info {
@@ -183,7 +187,7 @@ h1 {
 
 #social-network-logo {
     transition: 1s ease-in-out;
-    color: var(--skinDark-body-color);
+    color: var(--aquaBright-body-color);
 }
 
 #social-network-logo:hover {
@@ -203,14 +207,16 @@ h1 {
 }
 
 .social-networks {
-    display: flex;
+    display: grid;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    margin: auto;
 }
 
 .social-networks * {
     display: flex;
     text-decoration: none;
+
     padding: 0.35rem;
     align-items: center;
 }
@@ -222,5 +228,5 @@ h1 {
 .social-networks #social-network-logo:hover{
     transition: 250ms ease-in;
     color: white;
-    background-color: var(--skinDark-body-color);
+    background-color: var(--aquaBright-body-color);
 }

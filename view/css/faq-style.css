@@ -13,8 +13,13 @@ body{
 }
 
 .question-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    row-gap: 3em;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+    margin-bottom: 2em;
+    margin-left: 3em;
 }
 
 
@@ -24,7 +29,6 @@ body{
     background-color: var(--aquaBright-body-color) /*hsl(27, 100%, 87%)*/;
     padding: 1em 1em;
     width: 37.5vw;
-    margin: 3em auto;
     height: fit-content;
     justify-content:center;        
     font-family: var(--bodyFont);
@@ -44,12 +48,12 @@ body{
 
 #pregunta {
     font-weight: bolder;
-    padding: 1rem 2rem;
-    margin: 1rem 2rem;
+    padding: 0.5em;
+    margin: 1em;
     width: 100%;
     height: fit-content;
     text-align: center;
-    font-size: 2em;  
+    font-size: 1.65em;  
 }
 
 #respuesta {
@@ -59,5 +63,5 @@ body{
         width: 65vw;
         margin-bottom: 1.5vh;
         height:fit-content;
-        font-size: 1.5em;   
+        font-size: 1.25em;   
 }

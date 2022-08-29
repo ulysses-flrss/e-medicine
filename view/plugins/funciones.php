@@ -88,7 +88,7 @@
             echo "<nav class='barNav'>
             <ul class='barNavegacion' id='nav'>
             <li class='bar-item'>
-            <a href='../view/viewPaciente.php?idUsuario=".$datos[0]."' class='bar-link'>
+            <a href='../view/viewDoctor.php?idUsuario=".$datos[0]."' class='bar-link'>
                 <img src='../assets/imgs/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'>
                 <span class='link-text' id ='welcome-text'>E-Medicine</span>
             </a>
@@ -102,7 +102,7 @@
                 </li>
                 
                 <li class='bar-item' id='li-cita' title='Programar Cita'>
-                  <a href='../view/viewDoctorCitas.php?idUsuario=".$datos[0]."' class='bar-link'>
+                  <a href='../view/viewCrearAnuncios.php?idUsuario=".$datos[0]."' class='bar-link'>
                     <i class='fa-solid fa-bullhorn icon'></i>
                     <span class='link-text'>Agregar <br>   Anuncios</span>
                   </a>
@@ -113,7 +113,7 @@
             echo "<nav class='barNav'>
             <ul class='barNavegacion' id='nav'>
             <li class='bar-item'>
-            <a href='../view/viewPaciente.php?idUsuario=".$datos[0]."' class='bar-link'>
+            <a href='../view/viewAdmin.php?idUsuario=".$datos[0]."' class='bar-link'>
                 <img src='../assets/imgs/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'>
                 <span class='link-text' id ='welcome-text'>E-Medicine</span>
             </a>
@@ -156,11 +156,11 @@
                 </li>";
         switch ($tipoUsuario) {
             case 'paciente':
-                echo "<li class='bar-item' id='li-comentarios' title='Comentarios'>
-                    <a href='../controller/ctrlComentarios.php?idUsuario=".$datos[0]."' class='bar-link'>
+                echo "<li class='bar-item' id='li-comentarios' title='Anuncios'>
+                    <a href='../controller/ctrlAnuncios.php?idUsuario=".$datos[0]."' class='bar-link'>
                     <i class='fa-solid fa-message icon'></i>
 
-                        <span class='link-text'>Comentarios</span>
+                        <span class='link-text'>Anuncios</span>
                     </a>
                 </li>
                 <li class='bar-item' id='li-about' title='Acerca de Nosotros'>
@@ -180,8 +180,8 @@
                         <i class='fa-solid fa-user icon'></i><span class='link-text'>".$datos[1]."</span></a></div>
                         <div class='submenu'>
                             <ul>
-                                <li class='bar-item'><a href='#' class='link-text'><span class='bar-link'>Ver Perfil</span></a></li>
-                                <li class='bar-item'><a href='../controller/ctrlPaciente.php?accion=cerrarSesion' class='bar-link'><span class='link-text'>Cerrar Sesión</span></a></li>
+                                <li class='bar-item'><a href='../controller/CtrlPaciente.php?accion=verPerfil' class='link-text'><span class='bar-link'>Ver Perfil</span></a></li>
+                                <li class='bar-item'><a href='../controller/CtrlPaciente.php?accion=cerrarSesion' class='bar-link'><span class='link-text'>Cerrar Sesión</span></a></li>
                             </ul>
                         </div>
                     </li>
@@ -191,11 +191,11 @@
     //FINAL MENÚ";
 
             case 'invitado':
-                echo "<li class='bar-item' id='li-comentarios' title='Comentarios'>
-                    <a href='../controller/ctrlComentarios.php?idUsuario=".$datos[0]."&type=invitado' class='bar-link'>
+                echo "<li class='bar-item' id='li-comentarios' title='Anuncios'>
+                    <a href='../controller/ctrlAnuncios.php?idUsuario=".$datos[0]."&type=invitado' class='bar-link'>
                     <i class='fa-solid fa-message icon'></i>
 
-                        <span class='link-text'>Comentarios</span>
+                        <span class='link-text'>Anuncios</span>
                     </a>
                 </li>
                 <li class='bar-item' id='li-about' title='Acerca de Nosotros'>
@@ -226,7 +226,7 @@
                 </li>
 
                 <li class='bar-item' id='li-about' title='Editar Perfil'>
-                    <a href='../view/aboutUs.php' class='bar-link' id='li-info'>
+                    <a href='../view/viewDoctoresEdit.php' class='bar-link' id='li-info'>
                     <i class='fa-solid fa-user-pen icon'></i>
                         <span class='link-text'>Editar Perfil</span>
                     </a>

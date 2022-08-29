@@ -6,14 +6,13 @@
 
 
 body {
-    background-color: #e0e6e3;
+    background-color: #e0e6e3 !important;
     color: black;
 }
 
 .allContainer {
-    padding-top: 0em;
-    display: flex;
-    flex-direction: column;
+    padding-top: 2em;
+    
 }
 
 
@@ -22,10 +21,11 @@ body {
 #container-bienvenida {
     transition: 250ms all;
     display: flex;
-    margin: auto;
+    margin: 1em auto;
     width: 50vw;
     height: 37.5vh;
     padding: 1em;
+
     background-color: #f14d60;
     box-shadow: 8px 8px 0px #6d1923;
     border-radius: 10px;
@@ -72,6 +72,13 @@ body {
     cursor: default;
 }
 
+.mainArticle {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 2em;
+    justify-items: center;
+}
+
 
 section.tablonAnuncios {
     display: grid;
@@ -81,7 +88,6 @@ section.tablonAnuncios {
     background-color: hsl(27, 100%, 87%);
     padding: 1em 1em;
     width: 65vw;
-    margin: 5em auto;
     height: fit-content;
     justify-content:center;
     font-family: var(--bodyFont);

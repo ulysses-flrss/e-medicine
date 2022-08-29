@@ -6,7 +6,7 @@
 }
 
 .body {
-    background-color: var(--aquaBright-body-color);
+    background-color: var(--aquaBright-body-color) !important;
     color: black;
 }
 
@@ -16,7 +16,7 @@
     border-radius: 15px;
     width: 80%;
     margin: auto;
-    background-color: var(--aquaBright-body-color);
+    background-color: var(--aquaBright-body-color) ;
 }
 
 .form-register {
