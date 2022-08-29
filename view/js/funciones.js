@@ -1,5 +1,5 @@
 function retornarDatos(accion) {
-  if (accion == "programarCita"){
+  if (accion == "programarCita"){  
     return {
       "idUsuario": document.getElementById('idUsuario').value,
       "pe": document.getElementById('pe').value,
@@ -23,6 +23,7 @@ function retornarDatos(accion) {
 }
 
 function programarCita() {
+  validacionDatos();
   $.ajax({
       url: '../controller/ctrlCita.php',
       data: retornarDatos("programarCita"),
@@ -97,4 +98,14 @@ function login() {
     console.log(response);
   });
   return false
+}
+
+function validacionDatos() {
+  let datosPaciente = retornarDatos("programarCita");
+
+  if (/([5-500])/g.test(datosPaciente.pe)) {
+    console.log("CORRECTO");
+  }
+
+
 }
