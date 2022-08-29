@@ -137,7 +137,7 @@ require_once("plugins/funciones.php")
             <div class="card__info">
             <div class="social-networks">
                     <div>
-                        <a href="" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
+                        <a href="https://facebook.com/samuelernesto.bonillaarias.9" target="_blank"><i class="fab fa-facebook-f" id="social-network-logo"></i></a><span class="social-network-about">Facebook</span>
                     </div>
 
                     <div>
