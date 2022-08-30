@@ -25,46 +25,46 @@ require_once 'plugins/funciones.php'; ?>
 
         <article>
             <section class="form-container">
-                <!--<form action="../controller/ctrlPaciente.php" class="form-register" method="POST">-->
-                    <div class="nombre">
+                <form id = "form" class="form-register" method="POST">
+                    <div class="nombre div-section">
                         <label for="nom">Nombre: *</label>
-                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre" required value="Cristiano">
+                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre" required value="">
                     </div>
 
-                    <div class="apellido">
+                    <div class="apellido div-section">
                         <label for="ape">Apellido: *</label>
-                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido" required value="Ronaldo">
+                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido" required value="">
                     </div>
 
-                    <div class="peso">
+                    <div class="peso div-section">
                         <label for="pe">Peso(lb): *</label>
-                        <input type="text" name="pe" id="pe" placeholder="Peso en Libras"  required value="180">
+                        <input type="text" name="pe" id="pe" placeholder="Peso en Libras"  required value="">
                     </div>
 
-                    <div class="altura">
+                    <div class="altura div-section">
                         <label for="al">Altura(cm): *</label>
-                        <input type="text" name="al" id="al" placeholder="Altura en cm" required value="190">
+                        <input type="text" name="al" id="al" placeholder="Altura en cm" required value="">
                     </div>
 
-                    <div class="fecha">
+                    <div class="fecha div-section">
                         <label for="fn">Fecha de Nacimiento: *</label>
                         <input type="date" name="fn" id="fn" required>
                     </div>
 
-                    <div class="genre">
+                    <div class="genre div-section">
                         <label for="">Género: *</label>
                         <div class="male">
                             <label for="masculino" class="genero">Masculino: </label>
-                            <input type="radio" name="gen" id="masculino" value="masculino" required checked>
+                            <input type="radio" name="gen" id="masculino" value="masculino" required>
                         </div>
 
-                        <div class="female">
+                        <div class="female div-section">
                             <label for="femenino" class="genero">Femenino: </label>
                             <input type="radio" name="gen" id="femenino" value="femenino" required>
                         </div>
                     </div>
 
-                    <div class="municipio">
+                    <div class="municipio div-section">
                         <label for="municipio">Municipio: *</label>
                         <select name="muni" id="muni" required>
                             <option value="">-- Seleccione un Municipio --</option>
@@ -90,36 +90,36 @@ require_once 'plugins/funciones.php'; ?>
                         </select>
                     </div>
 
-                    <div>
+                    <div class = "div-section">
                         <label for="">Correo Electrónico:</label>
-                        <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value="elbicho@crgol.com">
+                        <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value="">
                     </div>
 
-                    <div>
+                    <div class = "div-section">
                         <label for="pass">Contraseña: *</label>
-                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" required value="Aymimadreelbicho">
+                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" required value="">
                         <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
 
                         <label for="pass">Confirmar Contraseña: *</label>
-                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" required value="Aymimadreelbicho">
+                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" required value="">
                         <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i>
                     </div>
 
-                    <div>
+                    <div class = "div-section">
                         <label for="tel">Número de Teléfono: *</label>
-                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678." required value="7777-7777">
+                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" required value="">
+
+                        <label for="dui">Ingrese su DUI: *</label>
+                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." required value="">    
                     </div>
 
-                    <div>
-                        <label for="tel">Ingrese su DUI: *</label>
-                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." required value="07777777-7">
-                    </div>
+
 
                     <div class="submit">
                         <a href="../index.php" class="account">Ya tengo Cuenta</a>
-                        <button type="submit" name="accion" value="registrarUser" onclick="registrarUser();">Registrarse</button>
+                        <button type="submit" class="disenoBoton" name="accion" value="registrarUser" onclick="registrarUser();">Registrarse</button>
                     </div>
-                <!--</form>-->
+                </form>
             </section>
         </article>
     </main>

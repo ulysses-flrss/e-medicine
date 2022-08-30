@@ -123,6 +123,9 @@ function login() {
 
 function registrarUser() {
   //validacionDatos();
+  document.getElementById("form").addEventListener("submit",e=> {
+    e.preventDefault();
+  })
   $.ajax({
       url: '../controller/CtrlPaciente.php',
       data: retornarDatos("registrarUser"),

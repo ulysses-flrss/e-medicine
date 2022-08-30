@@ -6,8 +6,9 @@
 }
 
 .body {
-    background-color: var(--aquaBright-body-color);
+    background-color: var(--aquaBright-body-color) !important;
     color: black;
+
 }
 
 .form-container{
@@ -23,7 +24,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    grid-auto-flow: row;
     row-gap: 1.25em;
     column-gap: 1em;
     
@@ -45,8 +46,15 @@
     margin: 1em;
 }
 
+label {
+    display: grid;
+    align-content: center;
+    margin: auto;
+}
+
 input:not(.submit input, .male input, .female input){
     transition: 350ms all;
+    width: 75%;
     padding: 0.5em;
     font-size: 1em;
     font-family: var(--bodyFont);
@@ -70,6 +78,11 @@ input:focus:not(.submit input) {
     margin: 0rem;  
 }
 
+.disenoBoton {
+    font-size: 1em !important;
+    padding: 0.5em;
+}
+
 .inicio-register {
     display: flex;
     align-items: center;
@@ -87,6 +100,7 @@ input:focus:not(.submit input) {
     border-radius: 15px;
     border: 1.5px solid black;
     outline: none;
+    width: 75% !important;
     text-align: center;
     font-family: var(--bodyFont);
     background-color: #eafff4;
@@ -100,20 +114,23 @@ input:focus:not(.submit input) {
 .submit {
     display: flex;
     width: 100%;
-    justify-content: space-between;
-    margin: 2em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 3.5em 10em;
     align-items: center;
+
 }
 
 
 .submit input {
     border-radius: 5px;
-    width: 7.5em;
+    width: 100% !important;
     height: 2.5em;
     font-family: var(--menuFont);
     border-radius: 50px;
     border: 2px solid #1c3b2d;
     outline: none;
+    margin: 0em;
     box-shadow: 3px 6px 0px #1c3b2d; 
     font-size: 1em;
     cursor: pointer;
@@ -156,9 +173,15 @@ input:focus:not(.submit input) {
 }
 
 .show-hide {
-    width: 4rem;
+    width: 4em;
     height: auto;
 }
+
+.div-section {
+    display: grid; 
+    grid-template-rows: 1fr 1fr !important;
+}
+
 
 
 
