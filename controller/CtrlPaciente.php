@@ -18,19 +18,22 @@
         //require "view/viewPaciente.php";
     }
 
-    if($accion == "Registrarse"){
+    if($accion == "registrarUser"){
         require_once '../model/classPaciente.php';
         require_once '../model/daoPaciente.php';
         $dao = new DaoPaciente();
         $cod = $dao->getCodigo();
         $paciente = new Paciente($cod,$nombre,$apellido,$peso,$altura,$fechaNac,$genero,$municipio,$eMail,$password,$telefono,$duiP);
-        $dao->insertar($paciente);
+        $r = $dao->insertar($paciente);
+        $r = $paciente->idPaciente;
+        echo json_encode($r);
+        /*
         //Este alert se podría pasar a modal
         $mensaje = "Querido Usuario, su registro a sido guardado con éxito. Su código para iniciar sesión es: ".$cod;
         $_SESSION['codUsuario'] = $cod; //Se guarda el código del usuario que inicio sesión
         //Este session solo funciona en la carpeta "controller"
         echo "<script>alert('".$mensaje."')</script>"; //MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
-        echo "<body style='background-color:#daffec;'><a href='../index.php' style='text-decoration:none;color:black;font-size:1.5rem;font-weight:bold;'>Iniciar Sesión</a></body>";
+        echo "<body style='background-color:#daffec;'><a href='../index.php' style='text-decoration:none;color:black;font-size:1.5rem;font-weight:bold;'>Iniciar Sesión</a></body>";*/
         //header("location:../index.php");//MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
     }elseif ($accion = "cerrarSesion") {
         require_once "../model/classPaciente.php";

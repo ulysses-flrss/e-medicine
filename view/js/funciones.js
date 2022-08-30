@@ -1,5 +1,5 @@
 function retornarDatos(accion) {
-  if (accion == "programarCita"){  
+  if (accion == "programarCita"){
     return {
       "idUsuario": document.getElementById('idUsuario').value,
       "pe": document.getElementById('pe').value,
@@ -17,6 +17,27 @@ function retornarDatos(accion) {
     return {
       "idUsuario": document.getElementById('idUsuario').value,
       "password": document.getElementById('password').value,
+      "accion": accion
+    };
+  }else if (accion == "registrarUser"){
+    let genre = "";
+    if (document.getElementById('masculino').checked){
+      genre = "masculino";
+    }else{
+      genre = "femenino";
+    }
+    return {
+      "nom": document.getElementById('nom').value,
+      "ape": document.getElementById('ape').value,
+      "pe": document.getElementById('pe').value,
+      "al": document.getElementById('al').value,
+      "fn": document.getElementById('fn').value,
+      "gen": genre,
+      "muni": document.getElementById('muni').value,
+      "email": document.getElementById('email').value,
+      "pass": document.getElementById('password').value,
+      "tel": document.getElementById('tel').value,
+      "dui": document.getElementById('dui').value,
       "accion": accion
     };
   }
@@ -67,7 +88,7 @@ function login() {
 
   }).done(function(response) {
     console.log("entró a la parte true");
-    if (response == "OK") {
+    if (response == "P" || response == "D" || response == "A") {
       let code = document.getElementById('idUsuario').value;
       inicial = code.split("-");
       console.log(inicial[0]);
@@ -77,11 +98,11 @@ function login() {
         text: 'Ha iniciado sesión con éxito.',
         footer: 'E-MEDICINE ©'
       }).then((result)=>{
-        if (inicial[0] === "P") {
+        if (response === "P") {
           window.location.href="../view/viewPaciente.php";
-        }else if(inicial[0] === "D"){
+        }else if(response === "D"){
           window.location.href="../view/viewDoctor.php";
-        }else if (inicial[0] === "A") {
+        }else if (response === "A") {
           window.location.href="../view/viewAdmin.php";
         }
       });
@@ -95,6 +116,42 @@ function login() {
     }
   }).fail(function(response) {
     console.log("falló");
+    console.log(response);
+  });
+  return false
+}
+
+function registrarUser() {
+  //validacionDatos();
+  $.ajax({
+      url: '../controller/CtrlPaciente.php',
+      data: retornarDatos("registrarUser"),
+      type: 'POST',
+      dataType: 'json'
+  }).done(function(response) {
+    console.log("ajax completado");
+    let respuesta = response.split('-');
+    if (respuesta[0] == "P") {
+      console.log("ingresa al OK");
+      Swal.fire({
+        type: 'success',
+        title: '¡Éxito!',
+        text: 'Su cuenta ha sido creada con éxito.\n\nInicie Sesión ingresando su DUI como usuario o ingresando este código: '+response+'.',
+        footer: 'E-MEDICINE ©'
+      }).then((result)=>{
+        window.location.href="../view/viewLogin.php";
+      });
+    } else {
+      console.log("No ingresa al OK");
+      Swal.fire({
+        type: 'error',
+        title: '¡ERROR!',
+        text: response,
+        footer: 'E-MEDICINE ©'
+      });
+    }
+  }).fail(function(response) {
+    console.log("Error del ajax");
     console.log(response);
   });
   return false

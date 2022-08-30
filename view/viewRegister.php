@@ -11,6 +11,10 @@ require_once 'plugins/funciones.php'; ?>
     <?php $location = "dentro";  links($location);?>
     <link rel="stylesheet" href="../view/css/register-style.css">
     <?php links() ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css">
 </head>
 <body class='body'>
     <main>
@@ -21,37 +25,37 @@ require_once 'plugins/funciones.php'; ?>
 
         <article>
             <section class="form-container">
-                <form action="../controller/ctrlPaciente.php" class="form-register" method="POST">
+                <!--<form action="../controller/ctrlPaciente.php" class="form-register" method="POST">-->
                     <div class="nombre">
                         <label for="nom">Nombre: *</label>
-                        <input type="text" name="nom" id="" placeholder="Ingrese su Nombre" required>
+                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre" required value="Cristiano">
                     </div>
 
                     <div class="apellido">
                         <label for="ape">Apellido: *</label>
-                        <input type="text" name="ape" id="" placeholder="Ingrese su Apellido" required>
+                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido" required value="Ronaldo">
                     </div>
 
                     <div class="peso">
                         <label for="pe">Peso(lb): *</label>
-                        <input type="text" name="pe" id="" placeholder="Peso en Libras"  required>
+                        <input type="text" name="pe" id="pe" placeholder="Peso en Libras"  required value="180">
                     </div>
 
                     <div class="altura">
                         <label for="al">Altura(cm): *</label>
-                        <input type="text" name="al" id="" placeholder="Altura en cm" required>
+                        <input type="text" name="al" id="al" placeholder="Altura en cm" required value="190">
                     </div>
 
                     <div class="fecha">
                         <label for="fn">Fecha de Nacimiento: *</label>
-                        <input type="date" name="fn" id="" required>
+                        <input type="date" name="fn" id="fn" required>
                     </div>
 
                     <div class="genre">
                         <label for="">Género: *</label>
                         <div class="male">
                             <label for="masculino" class="genero">Masculino: </label>
-                            <input type="radio" name="gen" id="masculino" value="masculino" required>
+                            <input type="radio" name="gen" id="masculino" value="masculino" required checked>
                         </div>
 
                         <div class="female">
@@ -62,7 +66,7 @@ require_once 'plugins/funciones.php'; ?>
 
                     <div class="municipio">
                         <label for="municipio">Municipio: *</label>
-                        <select name="muni" id="" required>
+                        <select name="muni" id="muni" required>
                             <option value="">-- Seleccione un Municipio --</option>
                             <option value="San Salvador">San Salvador</option>
                             <option value="Aguilares">Aguilares</option>
@@ -88,37 +92,44 @@ require_once 'plugins/funciones.php'; ?>
 
                     <div>
                         <label for="">Correo Electrónico:</label>
-                        <input type="email" name="email" id="" placeholder="Ingrese su Correo">
+                        <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value="elbicho@crgol.com">
                     </div>
 
                     <div>
                         <label for="pass">Contraseña: *</label>
-                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" required>
+                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" required value="Aymimadreelbicho">
                         <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
 
                         <label for="pass">Confirmar Contraseña: *</label>
-                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" required>
+                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" required value="Aymimadreelbicho">
                         <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i>
                     </div>
 
                     <div>
                         <label for="tel">Número de Teléfono: *</label>
-                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678." required>
+                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678." required value="7777-7777">
                     </div>
 
                     <div>
                         <label for="tel">Ingrese su DUI: *</label>
-                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." required>
+                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." required value="07777777-7">
                     </div>
 
                     <div class="submit">
                         <a href="../index.php" class="account">Ya tengo Cuenta</a>
-                        <input type="submit" name="accion" value="Registrarse">
+                        <button type="submit" name="accion" value="registrarUser" onclick="registrarUser();">Registrarse</button>
                     </div>
-                </form>
+                <!--</form>-->
             </section>
         </article>
     </main>
     <script src="../view/js/password.js"></script>
+    <script src="../view/js/funciones.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../view/js/all.min.js"></script>
+    <script src="../view/js/bootstrap.min.js"></script>
+    <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
+    <script src="../view/js/selectCita.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>

@@ -53,7 +53,7 @@
                             <button type="submit" name="accion" value="enviar" class="enviar" id="enviar" onclick="login();">Iniciar Sesión</button>
 
                             <div class="no-account">
-                                <a href="../controller/ctrlLogin.php?accion=crearCuenta" class="submit-text">No tengo Cuenta</a>
+                                <a href="../view/viewRegister.php" class="submit-text">No tengo Cuenta</a>
                             </div>
                         </div>
                     </div>

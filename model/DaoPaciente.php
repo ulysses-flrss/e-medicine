@@ -9,9 +9,15 @@ class DaoPaciente{
         $sql = "INSERT INTO pacientes (idPaciente, nombre, apellido, peso, altura, fechaNacimiento, fechaIngreso, genero, municipio, correo, pass, telefono, DUI) VALUES (:idPaciente, :nombre, :apellido, :peso, :altura, :fechaNac, :fechaIng, :genero, :municipio, :eMail, :pass, :telefono, :dui)";
         try{
             $stmt = $dbh->prepare($sql);
-            $stmt->execute((array) $paciente);
-            echo "<script>console.log('Entro al try')</script>";
-            sleep(10);
+            if ($stmt->execute((array) $paciente)){
+                /*echo "<script>console.log('Entro al try')</script>";
+                sleep(10);*/
+                return "OK";
+            }else{
+                echo "<script>console.log('Entro al try')</script>";
+                sleep(10);
+                return "ERROR: Se ha generado un error inesperado al crear su cuenta.";
+            }
         }catch (PDOException $e) {
             echo "<script>console.log('Entro al error')</script>";
             sleep(10);
@@ -114,7 +120,7 @@ class DaoPaciente{
         //VERIFICANDO SI EL USERNAME Y PASSWORD ES DE UN PACIENTE YA REGISTRADO
         $conexion = new Conexion();
         $dbh = $conexion->getConexion();
-        $sql = "SELECT idPaciente, CONCAT(nombre, '', apellido) AS 'Nombre Completo', pass  FROM pacientes WHERE idPaciente=:idUser";
+        $sql = "SELECT idPaciente, CONCAT(nombre, '', apellido) AS 'Nombre Completo', pass  FROM pacientes WHERE idPaciente=:idUser OR DUI=:idUser";
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':idUser', $idUser);
         $stmt->execute();
@@ -124,8 +130,7 @@ class DaoPaciente{
             if ($resultado[2] == $passUser) {
                 $datos .= "si";
                 $datos .=";paciente";
-                
-
+                $datos .= ";".$resultado[0];
                 return $datos;
             }else{
                 $datos .= "no";
@@ -142,7 +147,7 @@ class DaoPaciente{
                 if ($resultado1[2] == $passUser) {
                     $datos .= "si";
                     $datos .=";doctor";
-                    
+                    $datos .= ";".$resultado1[0];
                     return $datos;
                 }else{
                     $datos .= "no";
@@ -159,6 +164,7 @@ class DaoPaciente{
                     if ($resultado2[2] == $passUser) {
                         $datos .= "si";
                         $datos .=";admin";
+                        $datos .= ";".$resultado2[0];
                         return $datos;
                     }else{
                         $datos .= "no";

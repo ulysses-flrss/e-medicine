@@ -132,7 +132,7 @@
                     <span class='link-text'>Gestionar Doctores</span>
                   </a>
                 </li>
-                
+
                 <li class='bar-item' id='li-cita' title='Gestionar Anuncios'>
                   <a href='../view/.php?idUsuario=".$datos[0]."' class='bar-link'>
                   <i class='fa-solid fa-bullhorn icon'></i>

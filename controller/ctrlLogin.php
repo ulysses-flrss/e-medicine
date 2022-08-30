@@ -35,7 +35,16 @@
         echo json_encode("ERROR. La contraseña ingresada es incorrecta.");
         return;
       }else{
-        echo json_encode("OK");
+        if ($datos[2] == "paciente"){
+          $_SESSION['codUsuario'] = $datos[3];
+          echo json_encode("P");
+        }else if ($datos[2] == "doctor"){
+          $_SESSION['codUsuario'] = $datos[3];
+          echo json_encode("D");
+        }else if ($datos[2] == "admin"){
+          $_SESSION['codUsuario'] = $datos[3];
+          echo json_encode("A");
+        }
       }
     }else{
       echo json_encode("ERROR. El usuario ingresado es incorrecto.");
