@@ -14,7 +14,7 @@ require_once("plugins/funciones.php");
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/root-style.css">
     <link rel="stylesheet" href="css/especialidades-medicas-style.css">
-    <link rel="stylesheet" href="css/cardiologia.css">
+    <link rel="stylesheet" href="css/cardiologiaa.css">
 </head> 
 
 <?php menu() ?>
