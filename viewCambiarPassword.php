@@ -12,7 +12,7 @@
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
-    <title>Cambiar Contraseña | E-Medicine</title>
+    <title>Iniciar Sesión | E-Medicine</title>
     <link rel="stylesheet" href="../view/css/root-style.css">
     <link rel="stylesheet" href="../view/css/login_style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -25,7 +25,7 @@
     <main>
         <div class="inicio-register">
             <img src="../assets/imgs/logoEMedicine.png" alt="" class="logo" >
-            <h1 class="bienvenida-register">Cambiar Contraseña</h1>
+            <h1 class="bienvenida-register">Bienvenido a E-Medicine</h1>
         </div>
 
         <article>
@@ -34,18 +34,16 @@
                     <div class="form-login">
                         <div class="codUsuario">
                             <label for="idUsuario">Código de Usuario:</label>
-                            <input type="text" name="idUsuario" id="idUsuario" placeholder="También puede iniciar sesión con su DUI">
+                            <input type="text" name="idUsuario" id="idUsuario" placeholder="Ingrese su Código de Usuario">
                         </div>
 
                         <div class="password">
-                            <label for="password">Ingrese su Nueva Contraseña:</label>
+                            <label for="password">Contraseña:</label>
                             <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
                         </div>
 
-                        <div class="password">
-                            <label for="password">Repita la Contraseña:</label>
-                            <input type="password" name="password" id="password2" placeholder="Ingrese Nuevamente su contraseña">
-                        </div>
+
+
 
                         <div class="submit">
                             <div class="password-change">
