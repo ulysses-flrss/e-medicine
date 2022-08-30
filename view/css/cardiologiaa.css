@@ -10,7 +10,7 @@ body {
 
 .titulo{
     border: 2px solid black;
-    margin: 0.5em 4em 0 6em;
+    margin: 1em 4em 0 6em;
     padding: 0 0 0 0;
     background-color: wheat;
 }
@@ -21,7 +21,7 @@ h1{
 }
 
 .rama{
-    margin: 1.5em 4em 0 6em;
+    margin: 1em 4em 0 6em;
     text-align: justify;
     font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

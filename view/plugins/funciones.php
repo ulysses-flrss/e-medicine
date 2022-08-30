@@ -4,7 +4,6 @@
 
   function links(){
     echo " <script src='https://kit.fontawesome.com/b5142e7f7e.js' crossorigin='anonymous'></script>
-      
       <link rel='stylesheet' href='../view/css/root-style.css'>
       <link rel='stylesheet' href='../view/css/menu-style.css'>
       <link rel='stylesheet' href='../view/css/footer-style.css'>
