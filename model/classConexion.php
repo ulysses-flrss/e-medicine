@@ -6,7 +6,7 @@ class Conexion{
         $user = "root";
         $pass = "";
         try{
-            $dsn = "mysql:host=$host;dbname=$bdd";
+            $dsn = "mysql:host=$host;dbname=$bdd;charset=utf8";
             $dbh = new PDO($dsn,$user,$pass);
             return $dbh;
         }catch(PDOException  $e){

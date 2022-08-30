@@ -21,6 +21,9 @@
     if($accion == "registrarUser"){
         require_once '../model/classPaciente.php';
         require_once '../model/daoPaciente.php';
+        if ($nom == ""){
+            
+        }
         $dao = new DaoPaciente();
         $cod = $dao->getCodigo();
         $paciente = new Paciente($cod,$nombre,$apellido,$peso,$altura,$fechaNac,$genero,$municipio,$eMail,$password,$telefono,$duiP);

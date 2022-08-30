@@ -163,6 +163,4 @@ function validacionDatos() {
   if (/([5-500])/g.test(datosPaciente.pe)) {
     console.log("CORRECTO");
   }
-
-
 }
