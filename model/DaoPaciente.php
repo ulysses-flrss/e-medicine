@@ -6,11 +6,15 @@ class DaoPaciente{
     public function insertar($paciente){
         $cn = new Conexion();
         $dbh = $cn->getConexion();
-        $sql = "INSERT INTO pacientes (idPaciente, nombre, apellido, peso, altura, fechaNacimiento, fechaIngreso, genero, municipio, correo, password, telefono) VALUES (:idPaciente, :nombre, :apellido, :peso, :altura, :fechaNac, :fechaIng, :genero, :municipio, :eMail, :password, :telefono)";
+        $sql = "INSERT INTO pacientes (idPaciente, nombre, apellido, peso, altura, fechaNacimiento, fechaIngreso, genero, municipio, correo, pass, telefono, DUI) VALUES (:idPaciente, :nombre, :apellido, :peso, :altura, :fechaNac, :fechaIng, :genero, :municipio, :eMail, :pass, :telefono, :dui)";
         try{
             $stmt = $dbh->prepare($sql);
             $stmt->execute((array) $paciente);
+            echo "<script>console.log('Entro al try')</script>";
+            sleep(10);
         }catch (PDOException $e) {
+            echo "<script>console.log('Entro al error')</script>";
+            sleep(10);
             echo "Error: " . $e->getMessage();
         }
     }

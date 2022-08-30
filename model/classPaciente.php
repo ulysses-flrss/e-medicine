@@ -2,7 +2,7 @@
     class Paciente{
         //Propiedades
         public $idPaciente;
-        public $nombre;   
+        public $nombre;
         public $apellido;
         public $peso;
         public $altura;
@@ -11,10 +11,11 @@
         public $genero;
         public $municipio;
         public $eMail;
-        public $password;
+        public $pass;
         public $telefono;
+        public $dui;
         //Método constructor
-        public function __construct($cod,$nom,$ape,$pe,$al,$fn,$gen,$muni,$email,$pass,$tel){
+        public function __construct($cod,$nom,$ape,$pe,$al,$fn,$gen,$muni,$email,$password,$tel, $duiP){
             if(!empty($cod))
                 $this->idPaciente= $cod;
             else
@@ -36,7 +37,7 @@
             else
                 throw new Exception('Error. Peso vacío');
             if(!empty($fn)){
-                $fecha = explode('-',$fn);       
+                $fecha = explode('-',$fn);
                 $this->fechaNac = $fn;
             }
             else
@@ -49,12 +50,16 @@
                 $this->municipio = $muni;
             else
                 throw new Exception('Error. Municipio vacío');
-            if(!empty($pass))
-                $this->password = $pass;
+            if(!empty($password))
+                $this->pass = $password;
             else
                 throw new Exception('Error. Contraseña vacío');
             if(!empty($tel))
                 $this->telefono = $tel;
+            else
+                throw new Exception('Error. Contraseña vacío');
+            if(!empty($duiP))
+                $this->dui = $duiP;
             else
                 throw new Exception('Error. Contraseña vacío');
             $this->valEmail($email);

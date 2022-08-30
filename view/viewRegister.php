@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once 'plugins/funciones.php'; ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ require_once 'plugins/funciones.php'; ?>
     <main>
         <div class="inicio-register">
             <img src="../assets/imgs/logoEMedicine.png" alt="" class="logo-register" id="logo">
-            <h1 class="bienvenida-register">Bienvenido a E-Medicine</h1>                
+            <h1 class="bienvenida-register">Bienvenido a E-Medicine</h1>
         </div>
 
         <article>
@@ -36,34 +36,30 @@ require_once 'plugins/funciones.php'; ?>
                         <label for="pe">Peso(lb): *</label>
                         <input type="text" name="pe" id="" placeholder="Peso en Libras"  required>
                     </div>
-                    
+
                     <div class="altura">
                         <label for="al">Altura(cm): *</label>
                         <input type="text" name="al" id="" placeholder="Altura en cm" required>
-                    </div>  
-                
-                    
+                    </div>
 
-                
                     <div class="fecha">
                         <label for="fn">Fecha de Nacimiento: *</label>
                         <input type="date" name="fn" id="" required>
                     </div>
-                
-                    
+
                     <div class="genre">
                         <label for="">Género: *</label>
                         <div class="male">
                             <label for="masculino" class="genero">Masculino: </label>
                             <input type="radio" name="gen" id="masculino" value="masculino" required>
                         </div>
-                        
+
                         <div class="female">
                             <label for="femenino" class="genero">Femenino: </label>
                             <input type="radio" name="gen" id="femenino" value="femenino" required>
-                        </div>                        
+                        </div>
                     </div>
-                    
+
                     <div class="municipio">
                         <label for="municipio">Municipio: *</label>
                         <select name="muni" id="" required>
@@ -89,19 +85,17 @@ require_once 'plugins/funciones.php'; ?>
                             <option value="Tonacatepeque">Tonacatepeque</option>
                         </select>
                     </div>
-                
 
                     <div>
                         <label for="">Correo Electrónico:</label>
                         <input type="email" name="email" id="" placeholder="Ingrese su Correo">
                     </div>
-                
 
                     <div>
                         <label for="pass">Contraseña: *</label>
                         <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" required>
                         <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
-                    
+
                         <label for="pass">Confirmar Contraseña: *</label>
                         <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" required>
                         <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i>
@@ -110,6 +104,11 @@ require_once 'plugins/funciones.php'; ?>
                     <div>
                         <label for="tel">Número de Teléfono: *</label>
                         <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678." required>
+                    </div>
+
+                    <div>
+                        <label for="tel">Ingrese su DUI: *</label>
+                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." required>
                     </div>
 
                     <div class="submit">
