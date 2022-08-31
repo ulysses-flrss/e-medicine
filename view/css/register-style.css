@@ -8,6 +8,7 @@
 .body {
     background-color: var(--aquaBright-body-color) !important;
     color: black;
+    display: block !important;
 
 }
 

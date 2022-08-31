@@ -8,6 +8,7 @@
 body {
     background-color: #daffec;
     color: black;
+    display: block !important;
 }
 
 

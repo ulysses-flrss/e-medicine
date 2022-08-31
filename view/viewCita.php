@@ -56,7 +56,13 @@ $datos = explode('/', $dataUser);
                     <select name="idPerfil" id="idPerfil" class="selectDinamic">
                         
                     </select>
+                        <div class="citaFamiliar">
+                            <label for="masculino" class="genero">Cita Familiar: </label>
+                            <input type="checkbox" name="citaFamiliar" id="citaFamiliar" value="masculino" required>
+                        </div>
                 </div>
+
+                
 
                 <div class="peso">
                     <label for="">Peso(lb): </label>
@@ -148,7 +154,7 @@ $datos = explode('/', $dataUser);
     <!--FIN DEL MENÚ-->
 
     <?php footer(); ?>
-
+    <script src="../view/js/comprobarCita.js"></script>
     <script src="../view/js/funciones.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../view/js/all.min.js"></script>

@@ -12,7 +12,7 @@ body{
 .all-container {
     /* width: 100vw;
     height: 100vh; */
-    background-color: #e0e6e3;
+    background-color: var(--aquaBright-body-color);
     display: flex;
     flex-direction: column;
     padding-top: 1em;
@@ -40,6 +40,14 @@ body{
 .perfil {
     grid-column-start: 1;
     grid-column-end: 4;
+}
+
+.citaFamiliar {
+    margin: 1em;
+}
+
+.citaFamiliar input{
+    box-shadow: none !important;
 }
 
 
