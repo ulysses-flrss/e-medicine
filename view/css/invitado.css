@@ -2,6 +2,10 @@ input[type="radio"] {
   display: none;
 }
 
+label {
+  outline: none;
+}
+
 .container {
   background: #0000;
   position: relative;
@@ -73,7 +77,6 @@ input[type="radio"] {
 .btn {
   border: 1px solid rgba(0, 0, 0, 0.281);
   background: rgb(255, 255, 255);
-  box-shadow: 0px 2px 2px rgba(56, 56, 56, 0.822);
   position: absolute;
   bottom: 12%;
   width: 30px;
@@ -145,7 +148,6 @@ input[type="radio"]:checked#slide-4-trigger
 
 input[type="radio"]:checked + label.btn {
   transform: scale(1.2);
-  border: 1px solid rgba(53, 53, 53, 0.308);
 }
 
 input[type="radio"]:checked + label.btn::after {

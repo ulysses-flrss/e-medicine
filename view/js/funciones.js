@@ -44,34 +44,45 @@ function retornarDatos(accion) {
 }
 
 function programarCita() {
-  validacionDatos();
-  $.ajax({
-      url: '../controller/ctrlCita.php',
-      data: retornarDatos("programarCita"),
-      type: 'POST',
-      dataType: 'json'
-  }).done(function(response) {
-    if (response == "OK") {
-      Swal.fire({
-        type: 'success',
-        title: '¡Éxito!',
-        text: 'Su cita ha sido guardada con éxito.',
-        footer: 'E-MEDICINE ©'
-      }).then((result)=>{
-        window.location.href="../view/viewPaciente.php";
-      });
-    } else {
-      Swal.fire({
-        type: 'error',
-        title: '¡ERROR!',
-        text: response,
-        footer: 'E-MEDICINE ©'
-      });
-    }
-  }).fail(function(response) {
-    console.log(response);
-  });
-  return false
+  if (validacionDatos()) {
+    $.ajax({
+        url: '../controller/ctrlCita.php',
+        data: retornarDatos("programarCita"),
+        type: 'POST',
+        dataType: 'json'
+    }).done(function(response) {
+      console.log("entra función response " + response);
+      if (response == "OK") {
+        Swal.fire({
+          type: 'success',
+          title: '¡Éxito!',
+          text: 'Su cita ha sido guardada con éxito.',
+          footer: 'E-MEDICINE ©'
+        }).then((result)=>{
+          window.location.href="../view/viewPaciente.php";
+        });
+      } else {
+        console.log("no entra función response");
+        console.log(response);
+        Swal.fire({
+          type: 'error',
+          title: '¡ERROR!',
+          text: response,
+          footer: 'E-MEDICINE ©'
+        });
+      }
+    }).fail(function(response) {
+      console.log(response);
+    });
+    return false;
+  } else {
+    Swal.fire({
+      type: 'error',
+      title: '¡ERROR!',
+      text: 'Está malo....',
+      footer: 'E-MEDICINE ©'
+    });
+  }
 }
 
 function login() {
@@ -161,10 +172,19 @@ function registrarUser() {
 }
 
 function validacionDatos() {
-  let datosPaciente = retornarDatos("programarCita");
 
-  if (/([5-500])/g.test(datosPaciente.pe)) {
-    console.log("CORRECTO");
+  let datosUsuario = retornarDatos("programarCita");
+  //Definicion de RegExp
+  let expAltura = /^([0-1][0-9][0-9])|([2][0-2][0-9])$/;
+  let expPeso = /^([0-4][0-9][0-9])$/;
+  let expFechaNac = /^([1][9][2-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0-2])[-]([0][1-9]|[1][0-2])[-]([0-2][0-9]|[3][0-1])$/;
+  let expEnf = /^([a-zA-Z]*)$/;
+  let expRazCita = /^([a-zA-Z0-9]{4,})$/;
+
+  if (expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades) && expRazCita.test(datosUsuario.razon)) {
+    return true
+  } else {
+    return false
   }
 }
 

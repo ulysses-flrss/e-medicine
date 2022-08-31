@@ -27,7 +27,7 @@ require_once 'plugins/funciones.php';
                 <div class="img-layout"><img src="../assets/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
                 <span class="editar" title="Editar Perfil"> </span>
             </a>
-            <span id="bienvenida" title="Bienvenida">Bienvenido Invitado <span>
+            <span id="bienvenida" title="Bienvenida">Bienvenido <b>Invitado</b><span>
 
         </div>
 
