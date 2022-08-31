@@ -34,13 +34,11 @@ $datos = explode('/', $dataUser);
 
         <article>
             <section class="form-container">
-                <!-- <form action="../controller/ctrlFamiliar.php" class="form-register" method="POST"> -->
+                <!-- <form action="../controller/ctrlDoctores.php?accion=editar" class="form-register" method="POST"> -->
 
                 <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>"; 
 
-                    echo "<input type='hidden' id='idPerfil' name='idPerfil' value=''>";
-
-                ?>
+                    echo "<input type='hidden' id='idPerfil' name='idPerfil' value=''>"; ?>
                     
                 <div class="third-line">    
                     <div class="nombres">
@@ -64,8 +62,8 @@ $datos = explode('/', $dataUser);
                     
                     
                     
-                        <a href="../controller/ctrlDoctores.php?accion=editar&idUsuario="<?php $datos[0]; ?> class="disenoBoton" name="accion" value="Editar Datos">Editar Datos</a>
-                    
+                        <a href="../controller/ctrlDoctores.php?accion=editar&idUsuario=<? $datos[0] ?>" class="disenoBoton" name="accion" value="Editar Datos"> Editar Datos </a>
+                <!-- </form> -->
 
             </section>
         </article>

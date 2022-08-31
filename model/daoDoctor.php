@@ -1,30 +1,29 @@
 <?php 
+    require_once "../model/classConexion.php";
 
     class daoDoctor {
-        public function editarPerfil ($doctor) {
+        public function editarPerfil ($idDoctor, $nombreCompleto, $telefono, $correo) {
 
             $cn = new Conexion;
             $dbh = $cn->getConexion();
+            explode(" ", $nombreCompleto);
 
-            
+            $nombre = $nombreCompleto[0];
+            $apellido = $nombreCompleto[1];
 
-            $sql = "UPDATE doctores SET nombre=:nombre, apellido=:apellido, peso=:peso, altura=:altura, fechaNacimiento=:fechaNac, genero=:genero, municipio=:municipio, email=:email, password=:password WHERE iddoctor=:iddoctor";
+            $sql = "UPDATE doctores SET nombreDoctor=:nombreDoctor, apellidoDoctor=:apellidoDoctor, telefono=:telefono, correo=:correo WHERE idDoctor=:idDoctor";
 
             try{
                 $stmt = $dbh->prepare($sql);
-                $stmt->bindParam(':nombre',$doctor->nombre);
-                $stmt->bindParam(':apellido',$doctor->apellido);
-                $stmt->bindParam(':peso',$doctor->peso);
-                $stmt->bindParam(':altura',$doctor->altura);
-                $stmt->bindParam(':fechaNac',$doctor->fechaNac);
-                $stmt->bindParam(':genero',$doctor->genero);
-                $stmt->bindParam(':municipio',$doctor->municipio);
-                $stmt->bindParam(':email',$doctor->eMail);
-                $stmt->bindParam(':password',$doctor->password);
-                $stmt->bindParam(':iddoctor',$doctor->iddoctor);
+                $stmt->bindParam(':nombreDoctor',$nombre);
+                $stmt->bindParam(':apellidoDoctor',$apellido);
+                $stmt->bindParam(':telefono', $telefono);
+                $stmt->bindParam(':correo',$correo);
+                $stmt->bindParam(':idDoctor',$idDoctor);
                 $stmt->execute();
+                echo "<script>alert('Correcto')</script>";
             }catch(PDOException $e){
-                echo "Error: " . $e->getMessage();
+                echo "<script>alert(". $e->getMessage() .")</script>";
             }
         }
     }
