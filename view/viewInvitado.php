@@ -55,20 +55,11 @@ require_once 'plugins/funciones.php';
         </div>
         </div>
 
-
-        <center>
-            <h3>Comentarios</h3>
-            <INPUT TYPE=“text” Name="Comentarios" Size="90"></INPUT>
-            <br></br>
-            <input type="submit" name="submit" value="Enviar">
-        </center>
-
-
         <?php footer() ?>
 
     </main>
-   
 
+    <script src="../view/js/funciones.js"></script>
 </body>
 
 </html>

@@ -24,7 +24,7 @@
             </p>
 
             <hr>
-            
+
             <p class="welcome-info">
                 A continuación podrá elegir "Entrar como invitado", lo cual le permitirá entrar a la página pero no Programar Citas ni Registrar Familiares, por otro lado, puede Iniciar Sesión si previamente fue a la clinica y le brindaron los datos de su cuenta
             </p>

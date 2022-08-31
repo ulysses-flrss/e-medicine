@@ -61,21 +61,21 @@
             <ul class='barNavegacion' id='nav'>
 
                 <li class='bar-item'>
-                    <a href='../view/viewInvitado.php?tipo=invitado class='bar-link'>
+                    <a href='../view/viewInvitado.php' class='bar-link'>
                         <img src='../assets/imgs/logoEMedicine.png' alt='Logo de E-Medicine' class='logo' title='Inicio'>
                         <span class='link-text' id ='welcome-text'>E-Medicine</span>
                     </a>
                 </li>
 
                 <li class='bar-item' id='li-cita' title='Programar Cita'>
-                    <a href='viewCita.php?tipo=invitado class='bar-link'>
+                    <a href='#' class='bar-link ' onclick='invitado();'>
                         <i class='fa-solid fa-book-medical icon'></i>
                         <span class='link-text'>Cita Médica</span>
                     </a>
                 </li>
 
                 <li class='bar-item' id='li-familiares' title='Familiares'>
-                    <a href='../view/viewFamiliares.php?tipo=invitado class='bar-link' >
+                    <a href='#' class='bar-link' onclick='invitado();'>
 
                     <i class='fa-solid fa-person-breastfeeding icon'></i>
                         <span class='link-text'>Familiares</span>
@@ -99,7 +99,7 @@
                     <span class='link-text'>Ver Citas Programadas</span>
                   </a>
                 </li>
-                
+
                 <li class='bar-item' id='li-cita' title='Programar Cita'>
                   <a href='../view/viewCrearAnuncios.php?idUsuario=".$datos[0]."' class='bar-link'>
                     <i class='fa-solid fa-bullhorn icon'></i>
@@ -156,7 +156,7 @@
         switch ($tipoUsuario) {
             case 'paciente':
                 echo "<li class='bar-item' id='li-comentarios' title='Anuncios'>
-                    <a href='../controller/ctrlAnuncios.php?idUsuario=".$datos[0]."' class='bar-link'>
+                    <a href='../view/viewAnuncios.php' class='bar-link'>
                     <i class='fa-solid fa-message icon'></i>
 
                         <span class='link-text'>Anuncios</span>
@@ -191,7 +191,7 @@
 
             case 'invitado':
                 echo "<li class='bar-item' id='li-comentarios' title='Anuncios'>
-                    <a href='../controller/ctrlAnuncios.php?idUsuario=".$datos[0]."&type=invitado' class='bar-link'>
+                    <a href='../view/viewAnuncios.php' class='bar-link'>
                     <i class='fa-solid fa-message icon'></i>
 
                         <span class='link-text'>Anuncios</span>
@@ -205,12 +205,7 @@
                     </li>
 
                     <li class='bar-item' id='li-profile'>
-                        <a href='../view/viewLogin.php' class='bar-link'>
-                            <i class='fa-solid fa-user icon'></i>
-                            <span class='link-text'>".$datos[1]."<br><span class='mini-text'>Iniciar Sesión</span></span>
-                        </a>"
-                        .
-                        "<div class='submenuRaiz'><a href='../view/viewLogin.php' class='bar-link'><i class='fa-solid fa-user icon'></i><span class='link-text'>Iniciar Sesión</span></a></div>
+                        <div class='submenuRaiz'><a href='../view/viewLogin.php' class='bar-link'><i class='fa-solid fa-user icon'></i><span class='link-text'>Iniciar Sesión</span></a></div>
                     </li>
                 </ul>
             </nav>";
@@ -264,17 +259,15 @@
                 // code...
                 break;
         }
-
   }
 
-  
 
   function footer(){
     echo "<footer class='footer'>
             <div class='social-networks-container'>
                 <a href='https://www.facebook.com/' class='footer-item' title='Facebook: E-Medicine'><i class='fab fa-facebook' id='facebook'></i><span class='red-social'></span></a>
                 <a href='https://www.instagaram.com/' class='footer-item' title='Instagram: @e-medicine'><i class='fab fa-instagram' id='instagram'></i><span class='red-social'></span></a>
-                <a href='https://www.twitter.com/' class='footer-item' title='Twiiter: @eMedicine'><i class='fab fa-twitter' id='twitter'></i><span class='red-social' ></span></a>       
+                <a href='https://www.twitter.com/' class='footer-item' title='Twiiter: @eMedicine'><i class='fab fa-twitter' id='twitter'></i><span class='red-social' ></span></a>
             </div>
 
             <a href='#' class='info'>E-Medicine - 2022</a>

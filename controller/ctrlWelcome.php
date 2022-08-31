@@ -5,8 +5,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 
 
-$accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:""; 
-        
+$accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
 
 if ($accion == "invitado") {
     require_once "../view/viewInvitado.php";

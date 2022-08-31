@@ -22,7 +22,7 @@
         require_once '../model/classPaciente.php';
         require_once '../model/daoPaciente.php';
         if ($nom == ""){
-            echo json
+            echo json;
         }
         $dao = new DaoPaciente();
         $cod = $dao->getCodigo();

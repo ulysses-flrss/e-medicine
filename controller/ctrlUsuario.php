@@ -37,9 +37,8 @@
             $dataUser = $resultado[0].'/'.$resultado[1].'/admin';
             return $dataUser;
           }else{
-            $dataUser = 'admin';
-            return $dataUser;
-          }
+            $dataUser = 'noRegistrado/es/invitado';
+            return $dataUser;          }
         }//FIN IF RESULTADO DOCTOR
       }
     }else{
@@ -70,6 +69,9 @@
           $resultado = $stmt->fetch();
           if ($resultado == true) {
             $dataUser = $resultado[0].'/'.$resultado[1].'/admin';
+            return $dataUser;
+          }else{
+            $dataUser = 'noRegistrado/es/invitado';
             return $dataUser;
           }
         }//FIN IF RESULTADO DOCTOR
