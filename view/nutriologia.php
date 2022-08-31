@@ -14,23 +14,26 @@ require_once("plugins/funciones.php");
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/root-style.css">
     <link rel="stylesheet" href="css/especialidades-medicas-style.css">
-    <link rel="stylesheet" href="css/nutriologia.css">
+    <link rel="stylesheet" href="css/D-especialidades.css">
+    <script src="js/scroll.js"></script>
 </head> 
 
 <?php menu() ?>
     
  <body>
-    <section>
+    <section class="content ">
     <article class="titulo"> 
         <h1>Campo de la Nutriología</h1>
     </article>
-    <article class="rama">
+    <div class="parrafo">
+        <span>
         <p>La nutriología es la ciencia que se encarga del estudio del proceso de alimentación, así como sus efectos en el metabolismo, en la composición corporal y en el estado de salud. Una vez que los alimentos son consumidos, deben ser procesados por el tubo digestivo para separarlos en sus nutrientes y se absorbidos posteriormente. Tras su ingreso al organismo muchos de ellos pasan al hígado en donde son procesados por distintas reacciones con la finalidad de elaborar distintas proteínas necesarias para el buen funcionamiento de los diversos órganos y sistemas. La nutriología también estudia la forma en la que estas sustancias son eliminadas una vez utilizadas.</p>
         <img src="../assets/imgs/Nutri.jpg" alt="" class="Nutri">
         <p>Una buena alimentación es parte importante una vida saludable. De hecho existe una gran cantidad de trastornos de la salud cuyo origen se relaciona directamente con la forma en la que se alimenta quien la padece, tal es el caso de la Gota, Diabetes mellitus tipo II, Arterioesclerosis, Cálculos renales y biliares, así como algunos tipos de cáncer entre muchas otras. El consumo de alimentos saludables en las cantidades y distribución adecuada es parte importante del tratamiento de afecciones cardiometabólicas como la resistencia a la insulina, diabetes e hipertensión arterial.<p>
         <img src="../assets/imgs/Nutri1.jpg" alt="" class="Nutri1">
         <p>A pesar de la disponibilidad de una amplia variedad de fármacos diseñados para el tratamiento de diversos trastornos de la salud, la alimentación siempre será parte importante del tratamiento de las diversas enfermedades. La mayoría de las guías de práctica clínica de diversas asociaciones médicas a nivel mundial incluyen los cambios en la alimentación en el tratamiento de los trastornos de tipo cardiovascular y metabólico.<p>
-    </article>
+        </span>
+    </div>
     </section>
     <?php footer() ?>
     <script src="javascript.js"></script>

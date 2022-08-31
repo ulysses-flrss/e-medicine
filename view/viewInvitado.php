@@ -11,7 +11,7 @@ require_once 'plugins/funciones.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitado | E-Medicine</title>
     <link rel='stylesheet' href='../view/css/invitado.css'>
-    <link rel="stylesheet" href="../view/css/index-style.css">
+    <link rel="stylesheet" href="../view/css/index-styles.css">
 
     <?php links() ?>
 </head>
