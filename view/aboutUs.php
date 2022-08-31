@@ -213,6 +213,7 @@ require_once("plugins/funciones.php")
 </main>
 
 <?php footer() ?>
+<script src="../view/js/funciones.js"></script>
 
 </body>
 </html>

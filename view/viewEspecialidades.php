@@ -78,6 +78,25 @@ require_once("plugins/funciones.php");
      </main>
 
 	  <?php footer() ?>
-    <script src="javascript.js"></script>
+    <script src="../view/js/funciones.js"></script>
+    <script>
+        document.getElementById('citaInv').addEventListener("click", e =>{
+            Swal.fire({
+                type: 'info',
+                title: 'OPS...',
+                text: 'Querido Usuario, para acceder a esta función debe iniciar sesión.',
+                footer: 'E-MEDICINE ©'
+            });
+        });
+
+        document.getElementById('famiInvi').addEventListener("click", e =>{
+            Swal.fire({
+                type: 'info',
+                title: 'OPS...',
+                text: 'Querido Usuario, para acceder a esta función debe iniciar sesión.',
+                footer: 'E-MEDICINE ©'
+            });
+        });
+    </script>
 </body>
 </html>

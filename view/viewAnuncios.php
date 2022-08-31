@@ -64,5 +64,6 @@
 
         </main>
   <?php footer() ?>
+  <script src="../view/js/funciones.js"></script>
 </body>
 </html>

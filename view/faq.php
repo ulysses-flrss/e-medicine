@@ -88,6 +88,6 @@ $idUsuario = $_SESSION['codUsuario'];?>
 
 <?php footer() ?>
 
-<script src="javascript.js"></script>
+<script src="../view/js/funciones.js"></script>
 </body>
 </html>

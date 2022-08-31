@@ -68,14 +68,14 @@
                 </li>
 
                 <li class='bar-item' id='li-cita' title='Programar Cita'>
-                    <a href='#' class='bar-link ' onclick='invitado();'>
+                    <a href='#' class='bar-link ' id='citaInv'>
                         <i class='fa-solid fa-book-medical icon'></i>
                         <span class='link-text'>Cita Médica</span>
                     </a>
                 </li>
 
                 <li class='bar-item' id='li-familiares' title='Familiares'>
-                    <a href='#' class='bar-link' onclick='invitado();'>
+                    <a href='#' class='bar-link' id='famiInvi'>
 
                     <i class='fa-solid fa-person-breastfeeding icon'></i>
                         <span class='link-text'>Familiares</span>

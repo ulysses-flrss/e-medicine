@@ -122,66 +122,72 @@ function login() {
 }
 
 function registrarUser() {
-  //validacionDatos();
-  document.getElementById("form").addEventListener("submit",e=> {
+  /*document.getElementById("form").addEventListener("submit",e=> {
     e.preventDefault();
-  })
-  $.ajax({
-      url: '../controller/CtrlPaciente.php',
-      data: retornarDatos("registrarUser"),
-      type: 'POST',
-      dataType: 'json'
-  }).done(function(response) {
-    console.log("ajax completado");
-    let respuesta = response.split('-');
-    if (respuesta[0] == "P") {
-      console.log("ingresa al OK");
-      Swal.fire({
-        type: 'success',
-        title: '¡Éxito!',
-        text: 'Su cuenta ha sido creada con éxito.\n\nInicie Sesión ingresando su DUI como usuario o ingresando este código: '+response+'.',
-        footer: 'E-MEDICINE ©'
-      }).then((result)=>{
-        window.location.href="../view/viewLogin.php";
-      });
-    } else {
-      console.log("No ingresa al OK");
-      Swal.fire({
-        type: 'error',
-        title: '¡ERROR!',
-        text: response,
-        footer: 'E-MEDICINE ©'
-      });
-    }
-  }).fail(function(response) {
-    console.log("Error del ajax");
-    console.log(response);
-  });
-  return false
-}
-
-function validacionDatos() {
-  let datosPaciente = retornarDatos("programarCita");
-
-  if (/([5-500])/g.test(datosPaciente.pe)) {
-    console.log("CORRECTO");
+  });*/
+  let resultado = /*validacionDatos("registrar")*/ false;
+  if (resultado){
+    $.ajax({
+        url: '../controller/CtrlPaciente.php',
+        data: retornarDatos("registrarUser"),
+        type: 'POST',
+        dataType: 'json'
+    }).done(function(response) {
+      console.log("ajax completado");
+      let respuesta = response.split('-');
+      if (respuesta[0] == "P") {
+        console.log("ingresa al OK");
+        Swal.fire({
+          type: 'success',
+          title: '¡Éxito!',
+          text: 'Su cuenta ha sido creada con éxito.\n\nInicie Sesión ingresando su DUI como usuario o ingresando este código: '+response+'.',
+          footer: 'E-MEDICINE ©'
+        }).then((result)=>{
+          window.location.href="../view/viewLogin.php";
+        });
+      } else {
+        console.log("No ingresa al OK");
+        Swal.fire({
+          type: 'error',
+          title: '¡ERROR!',
+          text: response,
+          footer: 'E-MEDICINE ©'
+        });
+      }
+    }).fail(function(response) {
+      console.log("Error del ajax");
+      console.log(response);
+    });
+    return false
   }
 }
 
-document.getElementById('citaInv').addEventListener("click", e =>{
-  Swal.fire({
-    type: 'info',
-    title: 'OPS...',
-    text: 'Querido Usuario, para acceder a esta función debe iniciar sesión.',
-    footer: 'E-MEDICINE ©'
-  });
-});
+function validacionDatos(accion) {
+  if (accion == "programarCita"){
+    let datosPaciente = retornarDatos("programarCita");
 
-document.getElementById('famiInvi').addEventListener("click", e =>{
+    if (/([5-500])/g.test(datosPaciente.pe)) {
+      console.log("CORRECTO");
+    }
+  }else if (accion == "registrar"){
+    let expresion = new Array(); let datos = retornarDatos("registrarUser");
+
+    expresion[0] = /^[A-Z]{1}[a-z]+\s[A-Z]{1}[a-z]+$/; //nombre & apellido;
+    expresion[1] = /^[5-240]$/; //altura
+    expresion[2] = /^[45-208]$/; //peso
+    expresion[3] = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/; //CORREO
+    expresion[4] = /^\d{4}-\d{4}$/; //TEL
+    expresion[5] = /^\d{8}-\d{1}$/; //DUI
+    console.log(datos.fn);
+    return false;
+  }
+}
+
+function invitado(){
   Swal.fire({
-    type: 'info',
-    title: 'OPS...',
-    text: 'Querido Usuario, para acceder a esta función debe iniciar sesión.',
+    icon: 'error',
+    title: 'Ops...',
+    text: 'Querido usuario, para acceder a esta función tiene que iniciar sesión.',
     footer: 'E-MEDICINE ©'
   });
-});
+}

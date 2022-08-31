@@ -55,6 +55,7 @@ require_once 'plugins/funciones.php';
         </div>
         </div>
 
+
         <?php footer() ?>
 
     </main>
