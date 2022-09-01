@@ -177,18 +177,12 @@ input:focus:not(.submit input) {
 
 
 
-.submit {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-top: 7em;
-    align-items: center;
-}
 
 .disenoBoton  {
     display: grid;
     justify-content: center;
-    font-size: 1.5em !important;
+    font-size: 2em !important;
+    font-family: var(--menuFont) !important;
     margin: 2em auto !important;
 }
  

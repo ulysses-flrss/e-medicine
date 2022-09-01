@@ -222,7 +222,7 @@ echo "</head>
 </div>
 
     <div class='submit'>
-        <button type='submit' name = 'accion' id='modificar' class='btn btn-secondary' value='Modificar Perfil' onclick='modificar(\"".$familiar['idPerfil']."\")'>Modificar</button>
+        <button type='submit' class='disenoBoton' name = 'accion' id='modificar' class='btn btn-secondary' value='Modificar Perfil' onclick='modificar(\"".$familiar['idPerfil']."\")'>Modificar</button>
     </div>
 
         <script src='../view/js/perfil.js'></script>

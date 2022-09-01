@@ -47,7 +47,7 @@ function retornarDatos(accion) {
 }
 
 function programarCita() {
-  if (validacionDatos()) {
+  if (validacionDatos("programarCita")) {
     $.ajax({
         url: '../controller/ctrlCita.php',
         data: retornarDatos("programarCita"),
@@ -184,7 +184,7 @@ function validacionDatos(accion) {
   let expPeso = /^([0-4][0-9][0-9])$/;
   let expFechaNac = /^([1][9][2-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0-2])[-]([0][1-9]|[1][0-2])[-]([0-2][0-9]|[3][0-1])$/;
   if (accion == "programarCita"){
-    //Definicion de RegExp
+    console.log("Programar Cita");
     let datosUsuario = retornarDatos("programarCita");
     let expEnf = /^([a-zA-Z]*)$/;
     let expRazCita = /^([a-zA-Z0-9]{4,})$/;
@@ -195,6 +195,7 @@ function validacionDatos(accion) {
       return false
     }
   }else if (accion == "registrarUser"){
+    console.log("Registrar User");
     let datosUsuario = retornarDatos("registrarUser");
     let expCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     let expTel =  /^\d{4}-\d{4}/;
