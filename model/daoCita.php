@@ -82,16 +82,17 @@
     public function listadoCitas($idDoctor) {
       $cn = new Conexion;
       $dbh = $cn->getConexion();
-      $sql = "SELECT idPaciente,  Concat(nombre, ' ', apellido) AS nombre, fechaCita, horaCita, enfermedades, razonCita  FROM citas INNER JOIN pacientes ON pacientes.idPaciente=citas.codPaciente WHERE idDoctor=:idDoctor ORDER BY fechaCita DESC";
+      $sql = "SELECT idPaciente as codPaciente,  CONCAT(nombre, ' ', apellido) AS nombre, fechaCita, horaCita, enfermedades, razonCita FROM citas INNER JOIN pacientes ON pacientes.idPaciente = codPaciente ORDER BY fechaCita DESC";
   
       try {
           $stmt = $dbh->prepare($sql);
-          $stmt->bindParam(':idDoctor', $idDoctor);
+          // WHERE idDoctor=:idDoctor
+          // $stmt->bindParam(':idDoctor', $idDoctor);
           $stmt->execute();
           $cita = $stmt->fetchAll();
           return $cita;
       } catch (Exception $e) {
-          echo "<script> console.log(".$e->getMessage().")</script>";
+          echo $e->getMessage();
       }
   }
 
