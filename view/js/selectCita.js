@@ -68,7 +68,6 @@ function listarDatosFamiliar(idPerfil, idUsuario){
 }
 
 function listarDatosPaciente(idUsuario){
-  console.log
   $.ajax({
     url: '../controller/ctrlSelect.php',
     type: 'POST',
