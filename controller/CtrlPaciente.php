@@ -20,11 +20,11 @@
 
     if($accion == "registrarUser"){
         require_once '../model/classPaciente.php';
-        require_once '../model/daoPaciente.php';
-        if ($nom == ""){
-            echo json;
-        }
+        require_once '../model/DaoPaciente.php';
+
         $dao = new DaoPaciente();
+        $duiVal = $dao->validarDui($duiP);
+
         $cod = $dao->getCodigo();
         $paciente = new Paciente($cod,$nombre,$apellido,$peso,$altura,$fechaNac,$genero,$municipio,$eMail,$password,$telefono,$duiP);
         $r = $dao->insertar($paciente);
@@ -50,6 +50,22 @@
         //require_once '../index.php';
 
         //header("location:../index.php");
+    }elseif ($accion == "validarDui") {
+        require_once "../model/classConexion.php";
+        $conexion = new Conexion;
+        $dbh = $conexion->getConexion();
+        $sql = "SELECT * DUI FROM pacientes";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+        $listDui = $stmt->fetchAll();
+        foreach ($listDui as $listDuis) {
+            if ($listDuis['DUI'] == $dui){
+                $validacion = "copia";
+                echo json_encode($validacion);
+            }
+        }
+        $r = "OK";
+        echo json_encode($r);
     }
     //Eliminar paciente
     /*if($id != "" && $accion=="eliminar"){

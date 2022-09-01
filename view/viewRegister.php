@@ -25,48 +25,48 @@ require_once 'plugins/funciones.php'; ?>
 
         <article>
             <section class="form-container">
-                <form id = "form" class="form-register" method="POST">
+                <form id = "form" class="form-register" method="POST" onsubmit="submitForm(event)">
                     <div class="nombre div-section">
                         <label for="nom">Nombre: *</label>
-                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre" required value="">
+                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre">
                     </div>
 
                     <div class="apellido div-section">
                         <label for="ape">Apellido: *</label>
-                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido" required value="">
+                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido">
                     </div>
 
                     <div class="peso div-section">
                         <label for="pe">Peso(lb): *</label>
-                        <input type="text" name="pe" id="pe" placeholder="Peso en Libras"  required value="">
+                        <input type="text" name="pe" id="pe" placeholder="Peso en Libras">
                     </div>
 
                     <div class="altura div-section">
                         <label for="al">Altura(cm): *</label>
-                        <input type="text" name="al" id="al" placeholder="Altura en cm" required value="">
+                        <input type="text" name="al" id="al" placeholder="Altura en cm">
                     </div>
 
                     <div class="fecha div-section">
                         <label for="fn">Fecha de Nacimiento: *</label>
-                        <input type="date" name="fn" id="fn" required>
+                        <input type="date" name="fn" id="fn">
                     </div>
 
                     <div class="genre div-section">
                         <label for="">Género: *</label>
                         <div class="male">
-                            <label for="masculino" class="genero">Masculino: </label>
-                            <input type="radio" name="gen" id="masculino" value="masculino" required>
+                            <label for="masculino" class="genero" checked>Masculino: </label>
+                            <input type="radio" name="gen" id="masculino" value="masculino">
                         </div>
 
                         <div class="female div-section">
                             <label for="femenino" class="genero">Femenino: </label>
-                            <input type="radio" name="gen" id="femenino" value="femenino" required>
+                            <input type="radio" name="gen" id="femenino" value="femenino">
                         </div>
                     </div>
 
                     <div class="municipio div-section">
                         <label for="municipio">Municipio: *</label>
-                        <select name="muni" id="muni" required>
+                        <select name="muni" id="muni">
                             <option value="">-- Seleccione un Municipio --</option>
                             <option value="San Salvador">San Salvador</option>
                             <option value="Aguilares">Aguilares</option>
@@ -97,20 +97,20 @@ require_once 'plugins/funciones.php'; ?>
 
                     <div class = "div-section">
                         <label for="pass">Contraseña: *</label>
-                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" required value="">
+                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" value="">
                         <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
 
                         <label for="pass">Confirmar Contraseña: *</label>
-                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" required value="">
+                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" value="">
                         <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i>
                     </div>
 
                     <div class = "div-section">
                         <label for="tel">Número de Teléfono: *</label>
-                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" required value="">
+                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" value="">
 
                         <label for="dui">Ingrese su DUI: *</label>
-                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." required value="">    
+                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." value="">
                     </div>
 
 

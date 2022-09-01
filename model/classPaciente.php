@@ -67,10 +67,7 @@
         }
 
     private function valEmail($email){
-        if(!empty($email) && preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/',$email))
-            $this->eMail = $email;
-        else
-            throw new Exception('Error. email vacío');
+        $this->eMail = $email;
     }
     //Setters
     public function setEmail($email){
