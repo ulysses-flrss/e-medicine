@@ -54,15 +54,13 @@ $datos = explode('/', $dataUser);
                 <div class="perfil">
                     <label for="">Perfil:</label>
                     <select name="idPerfil" id="idPerfil" class="selectDinamic">
-                        
+
                     </select>
                         <div class="citaFamiliar">
                             <label for="masculino" class="genero">Cita Familiar: </label>
                             <input type="checkbox" name="citaFamiliar" id="citaFamiliar" value="masculino" required>
                         </div>
                 </div>
-
-                
 
                 <div class="peso">
                     <label for="">Peso(lb): </label>
@@ -78,9 +76,6 @@ $datos = explode('/', $dataUser);
                     <label for="">Fecha de Nacimiento:</label>
                     <input type="date" name="fn" id="fn" value="<?php echo $datos[5] ?>">
                 </div>
-
-
-
 
                 <div class="especialidad-medica">
                     <label for="especialidad-medica">Especialidad Médica:</label>
@@ -129,21 +124,15 @@ $datos = explode('/', $dataUser);
 
                 </div>
 
-
-
                 <div class="enfermedades">
                     <label for="">Enfermedades Crónicas y Alergias <br>(sino tiene ninguna deje vació este campo)</label>
                     <textarea id="enfermedades" name="enfermedades"></textarea>
                 </div>
 
-
-
                 <div class="motivo">
                     <label for="">¿Cuál es la razón de su cita? <br>(escriba sus sintomas)</label>
                     <textarea type="text" name="razon" id="razon"></textarea>
                 </div>
-
-
 
                 <div class="submit">
                     <button type="submit" name="accion" id="programarCita" class="disenoBoton" onclick="programarCita();"><span id='boton'>Programar Cita</span></button>
