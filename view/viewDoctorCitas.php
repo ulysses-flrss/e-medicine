@@ -74,11 +74,11 @@ $datos = explode('/', $dataUser);
                     require_once("../model/daoCitaFamiliar.php");
                 }
                     $dao = new daoCitaFamiliar();
-                    $citaFamiliar = $dao->listadoCitasFamiliar();
+                    $citaFamiliar = $dao->listadoCitasFamiliar($datos[0]);
                     
                     foreach ($citaFamiliar as $cita) {
                         echo "<tr>
-                                
+                                <td>".$cita['idPerfil']."</td>
                                 <td>".$cita['nombre']."</td>
                                 <td>".$cita['fechaCita']."</td>
                                 <td>".$cita['horaCita']."</td>

@@ -104,13 +104,14 @@
       return $resultado;
     }
 
-    public function listadoCitasFamiliar() {
+    public function listadoCitasFamiliar($idDoctor) {
       $cn = new Conexion;
       $dbh = $cn->getConexion();
-      $sql = "SELECT idPerfil,  Concat(nombre, ' ', apellido) AS nombre, fechaCita, horaCita, enfermedades, razonCita  FROM citasfamiliares INNER JOIN familiar ON familiar.idPerfil=citasfamiliares.idPerfil ORDER BY fechaCita DESC";
+      $sql = "SELECT citasfamiliares.idPaciente, citasfamiliares.idPerfil, CONCAT(nombres, ' ', apellidos) AS nombre, fechaCita, horaCita, citasfamiliares.enfermedades, razonCita FROM citasfamiliares INNER JOIN familiar ON familiar.idPerfil = citasfamiliares.idPerfil WHERE doctor=:idDoctor ORDER BY fechaCita DESC";
 
       try {
           $stmt = $dbh->prepare($sql);
+          $stmt->bindParam(':idDoctor', $idDoctor);
           $stmt->execute();
           $citaFamiliar = $stmt->fetchAll();
           return $citaFamiliar;
