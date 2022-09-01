@@ -1,7 +1,7 @@
 <?php
 require_once 'plugins/funciones.php';
 require_once '../controller/ctrlUsuario.php';
-/*if ($key) 
+/*if ($key)
         $activador = true;
     else
         $activador = false;*/
@@ -56,10 +56,10 @@ $datos = explode('/', $dataUser);
                     <select name="idPerfil" id="idPerfil" class="selectDinamic">
 
                     </select>
-                        <div class="citaFamiliar">
-                            <label for="masculino" class="genero">Cita Familiar: </label>
-                            <input type="checkbox" name="citaFamiliar" id="citaFamiliar" value="masculino" required>
-                        </div>
+                    <div class="citaFamiliar">
+                        <label for="citaFamiliar" class="genero">Cita Familiar: </label>
+                        <input type="checkbox" name="citaFamiliar" id="citaFamiliar" value="familiar" required>
+                    </div>
                 </div>
 
                 <div class="peso">
@@ -160,18 +160,23 @@ $datos = explode('/', $dataUser);
         $("#em").change(function() {
             let idEspecialidad = $("#em").val();
             listarDoctor(idEspecialidad);
-        })
+        });
 
         $(document).ready(function() {
             let idUsuario = $("#idUsuario").val();
             let nameUsuario = $("#nameUsuario").val();
             listarFamiliar(idUsuario, nameUsuario);
-        })
+        });
 
         $("#idPerfil").change(function() {
             let idPerfil = $("#idPerfil").val();
             let idUsuario = $("#idUsuario").val();
             listarDatosFamiliar(idPerfil, idUsuario);
+        });
+
+        $("#citaFamiliar").change(function(){
+            let idUsuario = $("#idUsuario").val();
+            listarDatosPaciente(idUsuario);
         })
     </script>
 </body>

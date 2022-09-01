@@ -8,7 +8,7 @@ checkBox.addEventListener("change", function () {
   if (checkBox.checked == true) {
     console.log("deshabilitando");
     select.disabled = false;
-} else {
-      select.disabled = true;
+  } else {
+    select.disabled = true;
   }
 });

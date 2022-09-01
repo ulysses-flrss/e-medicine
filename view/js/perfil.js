@@ -1,4 +1,10 @@
 function retornarDatos(accion) {
+  let genre = '';
+  if (document.getElementById('masculino').checked){
+    genre = 'masculino';
+  }else if (document.getElementById('femenino').checked){
+    genre = 'femenino';
+  }
   return {
     "idUsuario": document.getElementById('idUsuario').value,
     "peso": document.getElementById('pe').value,
@@ -6,7 +12,7 @@ function retornarDatos(accion) {
     "fechaNac": document.getElementById('fn').value,
     "enfermedades": document.getElementById('enfermedades').value,
     "municipio": document.getElementById('municipio').value,
-    "genero": document.getElementById('genero').value,
+    "genero": genre,
     "nombre": document.getElementById('nom').value,
     "apellido": document.getElementById('ape').value,
     "idPerfil": document.getElementById('idPerfil').value,
@@ -36,7 +42,7 @@ function crearPerfil(){
   }).fail(function(response) {
     console.log(response);
   });
-  return false 
+  return false
 }
 
 function eliminarPerfil(idPerfil,idPaciente){
