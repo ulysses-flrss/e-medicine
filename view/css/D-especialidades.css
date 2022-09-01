@@ -28,15 +28,6 @@ h1{
 }
 
 
-
-
-
-
-.visible {
-    opacity: 1;
-    transform: translate(0, 0);
-}
-
 .parrafo span {
     margin: 1em 4em 0 6em;
     text-align: justify;
@@ -53,7 +44,7 @@ h1{
   }
   
   span:nth-child(1) {
-    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+    animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
   @keyframes fade-in {
     100% {
