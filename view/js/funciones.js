@@ -248,10 +248,11 @@ function validacionDatos(accion) {
     let expEnf = /^([a-zA-Z]*)$/;
     let expRazCita = /^([a-zA-Z0-9]{4,})$/;
 
-    if (expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades) && expRazCita.test(datosUsuario.razon)) {
-      return true
+    if (expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades) && expRazCita.test(datosUsuario.razon)) {      
+      console.log(retornarDatos('programarCita'));
+      return true;
     } else {
-      return false
+      return false;
     }
   }else if (accion == "registrarUser"){
     console.log("Registrar User");
