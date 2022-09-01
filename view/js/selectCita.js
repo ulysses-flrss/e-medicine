@@ -64,11 +64,21 @@ function listarDatosFamiliar(idPerfil, idUsuario){
     document.getElementById("al").value = data[0][3];
     document.getElementById("fn").value = data[0][4];
     document.getElementById("enfermedades").value = data[0][7];
+  })
+}
 
-
-    
-    
-    
+function listarDatosPaciente(idUsuario){
+  $.ajax({
+    url: '../controller/ctrlSelect.php',
+    type: 'POST',
+    data: {listar: 'pacienteDatos', idPaciente:idUsuario}
+  }).done(function (resp){
+    console.log('Listar Datos Originales');
+    console.log(resp);
+    let data = JSON.parse(resp);
+    document.getElementById("pe").value = data[0][0];
+    document.getElementById("al").value = data[0][1];
+    document.getElementById("fn").value = data[0][2];
   })
 }
 

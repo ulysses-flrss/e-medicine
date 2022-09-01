@@ -27,20 +27,18 @@ $datos = explode('/', $dataUser);
     <main>
         <div class="inicio-registro">
             <img src="../assets/imgs/logoEMedicine.png" alt="" class="logo">
-            <h1 class="bienvenida-registro">Crea Un Perfil Familiar</h1>                
+            <h1 class="bienvenida-registro">Crea Un Perfil Familiar</h1>
         </div>
-        
 
         <article>
             <section class="form-container">
                 <!--<form action="../controller/ctrlFamiliar.php" class="form-register" method="POST">-->
 
-                <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>"; 
+                <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>";
 
                     echo "<input type='hidden' id='idPerfil' name='idPerfil' value=''>";
 
                 ?>
-                    
                 <div class="third-line">
                     <div class="nombres">
                         <label for="">Nombres: *</label>
@@ -52,41 +50,39 @@ $datos = explode('/', $dataUser);
                         <input type="text" name="ape" id="ape" placeholder="Ingrese sus Apellidos">
                     </div>
                 </div>
-                    
+
                 <div class="second-line">
                     <div class="peso">
                         <label for="">Peso(lb): *</label>
                         <input type="text" name="pe" id="pe" placeholder="Peso en Libras" >
                     </div>
-                    
+
                     <div class="altura">
                         <label for="">Altura(cm): *</label>
                         <input type="text" name="al" id="al" placeholder="Altura en cm">
-                    </div>  
+                    </div>
                 </div>
-                    
+
 
                 <div class="third-line">
                     <div class="fecha">
                         <label for="">Fecha de Nacimiento: *</label>
                         <input type="date" name="fn" id="fn">
                     </div>
-                    
+
                     <div class="genre">
                         <div class="masculino">
                             <label for="masculino">Masculino</label>
-                            <input type="radio" class="male" name="genero" id="genero" value="Masculino" >
-                        </div>
-                    
-                        
-                        <div class="female">
-                            <label for="femenino">Femenino</label>
-                            <input type="radio" name="genero" id="genero" value="Femenino">
+                            <input type="radio" class="male" name="genero" id="masculino" value="Masculino" >
                         </div>
 
-                        
+                        <div class="female">
+                            <label for="femenino">Femenino</label>
+                            <input type="radio" name="genero" id="femenino" value="Femenino">
+                        </div>
+
                     </div>
-                    
+
                     <div class="municipio">
                         <label for="municipio">Municipio *</label>
                         <select name="municipio" id="municipio">
@@ -121,10 +117,9 @@ $datos = explode('/', $dataUser);
                 <div class="fifth-line">
                     <textarea name="enfermedades" id="enfermedades" cols="50" rows="1" maxlength="255"></textarea>
                 </div>
-                    
-                    
+
                         <input type="submit" class="disenoBoton" name="accion" value="Crear Perfil"  onclick="crearPerfil();">
-                    
+
                 <!--</form>-->
             </section>
         </article>

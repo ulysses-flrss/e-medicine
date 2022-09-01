@@ -22,6 +22,7 @@
   if ($accion == "programarCita") {
     require_once '../model/classCitaFamiliar.php';
     require_once '../model/daoCitaFamiliar.php';
+    require_once '../model/daoCita.php';
 
     if ($perfil == "") {
       echo json_encode("Debe elegir el perfil familiar para la cita.");
@@ -63,10 +64,11 @@
 
     $dao = new daoCita();
 
+    $daoFam = new daoCitaFamiliar();
+
     $fecha = explode('/', $fechaCita);
 
     $fechaCita = $fecha[2] . '-' . $fecha[1] . '-' . $fecha[0];
-    
 
     $citas = $dao->validarCita($doctor, $fechaCita, $horaCita);
 
@@ -87,7 +89,7 @@
       }else{
         $cita = new Cita($perfil, $codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
 
-        $r = $dao->insertar($cita);
+        $r = $daoFam->insertar($cita);
         echo json_encode($r);
       }
     }

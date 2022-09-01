@@ -83,7 +83,7 @@
       $cn = new Conexion;
       $dbh = $cn->getConexion();
       $sql = "SELECT paciente,  Concat(nombre, ' ', apellido) AS nombre, fechaCita, horaCita, enfermedades, razonCita  FROM citas INNER JOIN pacientes ON pacientes.idPaciente=citas.paciente ORDER BY fechaCita DESC";
-  
+
       try {
           $stmt = $dbh->prepare($sql);
           $stmt->execute();
@@ -92,7 +92,19 @@
       } catch (Exception $e) {
           $e->getMessage();
       }
-  }
+    }
+
+    public function listarPaciente($idPaciente){
+      $cn = new Conexion;
+      $dbh = $cn->getConexion();
+      $sql = "SELECT peso, altura, fechaNacimiento FROM pacientes WHERE idPaciente=:idPaciente";
+      $stmt = $dbh->prepare($sql);
+      $stmt->bindParam(':idPaciente', $idPaciente);
+      $stmt->execute();
+      $resultado = $stmt->fetchAll();
+      $especialidades[] = $resultado;
+      return $resultado;
+    }
 
   }
 ?>
