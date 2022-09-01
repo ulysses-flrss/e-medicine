@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 29-08-2022 a las 06:33:12
--- Versión del servidor: 8.0.27
--- Versión de PHP: 7.4.26
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 01-09-2022 a las 09:19:42
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,16 +27,14 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `admins`
 --
 
-DROP TABLE IF EXISTS `admins`;
-CREATE TABLE IF NOT EXISTS `admins` (
-  `idAdmin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nombreAdmin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `apellidoAdmin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `correoAdmin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `pass` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `telefonoAdmin` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`idAdmin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `admins` (
+  `idAdmin` varchar(255) NOT NULL,
+  `nombreAdmin` varchar(255) NOT NULL,
+  `apellidoAdmin` varchar(255) NOT NULL,
+  `correoAdmin` varchar(255) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `telefonoAdmin` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `admins`
@@ -53,15 +51,21 @@ INSERT INTO `admins` (`idAdmin`, `nombreAdmin`, `apellidoAdmin`, `correoAdmin`, 
 -- Estructura de tabla para la tabla `anuncios`
 --
 
-DROP TABLE IF EXISTS `anuncios`;
-CREATE TABLE IF NOT EXISTS `anuncios` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `idUsuario` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nombre` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `contenidoAnuncio` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `fechaPublicacion` timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `anuncios` (
+  `id` int(11) NOT NULL,
+  `idUsuario` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `contenidoAnuncio` varchar(255) NOT NULL,
+  `fechaPublicacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `anuncios`
+--
+
+INSERT INTO `anuncios` (`id`, `idUsuario`, `nombre`, `contenidoAnuncio`, `fechaPublicacion`) VALUES
+(1, 'D-00001', 'Alexandra Sandoval', 'adasdasdasdasda', '0000-00-00 00:00:00'),
+(2, 'D-00001', 'Alexandra Sandoval', 'sadasdasdasdasd', '2022-09-01 05:00:31');
 
 -- --------------------------------------------------------
 
@@ -69,25 +73,31 @@ CREATE TABLE IF NOT EXISTS `anuncios` (
 -- Estructura de tabla para la tabla `citas`
 --
 
-DROP TABLE IF EXISTS `citas`;
-CREATE TABLE IF NOT EXISTS `citas` (
-  `idCita` int NOT NULL AUTO_INCREMENT,
-  `idPaciente` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `peso` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `altura` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+CREATE TABLE `citas` (
+  `idCita` int(11) NOT NULL,
+  `idPaciente` varchar(255) NOT NULL,
+  `peso` varchar(255) NOT NULL,
+  `altura` varchar(255) NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `fechaCreacion` date NOT NULL,
-  `especialidadM` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `doctor` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `especialidadM` varchar(255) NOT NULL,
+  `doctor` varchar(255) NOT NULL,
   `fechaCita` date NOT NULL,
   `horaCita` time NOT NULL,
-  `enfermedades` text CHARACTER SET utf8 COLLATE utf8_general_ci,
-  `razonCita` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`idCita`),
-  KEY `idEspecialidad` (`especialidadM`),
-  KEY `idDoctor` (`doctor`),
-  KEY `idPaciente` (`idPaciente`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+  `enfermedades` text DEFAULT NULL,
+  `razonCita` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `citas`
+--
+
+INSERT INTO `citas` (`idCita`, `idPaciente`, `peso`, `altura`, `fechaNacimiento`, `fechaCreacion`, `especialidadM`, `doctor`, `fechaCita`, `horaCita`, `enfermedades`, `razonCita`) VALUES
+(1, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'N-003', 'D-00011', '2022-08-31', '10:30:00', '', 'dasdasdasdasd'),
+(2, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'MG-002', 'D-00006', '2022-09-15', '10:30:00', '', 'asdasdasd'),
+(3, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'C-001', 'D-00001', '2022-08-31', '10:30:00', '', 'asdasdadasd'),
+(4, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'N-003', 'D-00011', '2022-09-20', '08:30:00', '', 'sadsad'),
+(5, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'N-003', 'D-00011', '2022-09-14', '11:00:00', '', 'asdsada');
 
 -- --------------------------------------------------------
 
@@ -95,27 +105,29 @@ CREATE TABLE IF NOT EXISTS `citas` (
 -- Estructura de tabla para la tabla `citasfamiliares`
 --
 
-DROP TABLE IF EXISTS `citasfamiliares`;
-CREATE TABLE IF NOT EXISTS `citasfamiliares` (
-  `idCitaFamiliar` int NOT NULL AUTO_INCREMENT,
-  `idPerfil` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `idPaciente` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `peso` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `altura` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+CREATE TABLE `citasfamiliares` (
+  `idCitaFamiliar` int(11) NOT NULL,
+  `idPerfil` varchar(255) NOT NULL,
+  `idPaciente` varchar(255) NOT NULL,
+  `peso` varchar(255) NOT NULL,
+  `altura` varchar(255) NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `fechaCreacion` date NOT NULL,
-  `especialidadM` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `doctor` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `especialidadM` varchar(255) NOT NULL,
+  `doctor` varchar(255) NOT NULL,
   `fechaCita` date NOT NULL,
   `horaCita` time NOT NULL,
-  `enfermedades` text CHARACTER SET utf8 COLLATE utf8_general_ci,
-  `razonCita` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`idCitaFamiliar`),
-  KEY `idPerfil` (`idPerfil`),
-  KEY `idPaciente` (`idPaciente`),
-  KEY `idEspecialidad` (`especialidadM`),
-  KEY `idDoctor` (`doctor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `enfermedades` text DEFAULT NULL,
+  `razonCita` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `citasfamiliares`
+--
+
+INSERT INTO `citasfamiliares` (`idCitaFamiliar`, `idPerfil`, `idPaciente`, `peso`, `altura`, `fechaNacimiento`, `fechaCreacion`, `especialidadM`, `doctor`, `fechaCita`, `horaCita`, `enfermedades`, `razonCita`) VALUES
+(1, 'P-00001-2', 'P-00001', '123', '123', '2001-04-21', '2022-09-01', 'P-004', 'D-00016', '2022-09-21', '11:00:00', 'asdas', 'dasdasda'),
+(2, 'P-00001-1', 'P-00001', '123', '123', '2004-10-10', '2022-09-01', 'MG-002', 'D-00007', '2022-09-14', '13:30:00', '', 'asdasda');
 
 -- --------------------------------------------------------
 
@@ -123,23 +135,20 @@ CREATE TABLE IF NOT EXISTS `citasfamiliares` (
 -- Estructura de tabla para la tabla `doctores`
 --
 
-DROP TABLE IF EXISTS `doctores`;
-CREATE TABLE IF NOT EXISTS `doctores` (
-  `idDoctor` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nombreDoctor` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `apellidoDoctor` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `genero` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `especialidadM` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `diasLaborales` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `horario` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `correo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `pass` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `telefono` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `DUI` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `vacaciones` tinyint NOT NULL,
-  PRIMARY KEY (`idDoctor`),
-  KEY `idEspecialidad` (`especialidadM`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `doctores` (
+  `idDoctor` varchar(255) NOT NULL,
+  `nombreDoctor` varchar(255) NOT NULL,
+  `apellidoDoctor` varchar(255) NOT NULL,
+  `genero` varchar(255) NOT NULL,
+  `especialidadM` varchar(255) NOT NULL,
+  `diasLaborales` varchar(255) NOT NULL,
+  `horario` varchar(255) NOT NULL,
+  `correo` varchar(255) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `telefono` varchar(255) NOT NULL,
+  `DUI` varchar(255) NOT NULL,
+  `vacaciones` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `doctores`
@@ -169,13 +178,11 @@ INSERT INTO `doctores` (`idDoctor`, `nombreDoctor`, `apellidoDoctor`, `genero`, 
 -- Estructura de tabla para la tabla `especialidades`
 --
 
-DROP TABLE IF EXISTS `especialidades`;
-CREATE TABLE IF NOT EXISTS `especialidades` (
-  `idEspecialidad` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nombreEsp` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `descripcionEsp` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`idEspecialidad`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `especialidades` (
+  `idEspecialidad` varchar(255) NOT NULL,
+  `nombreEsp` varchar(255) NOT NULL,
+  `descripcionEsp` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `especialidades`
@@ -193,21 +200,26 @@ INSERT INTO `especialidades` (`idEspecialidad`, `nombreEsp`, `descripcionEsp`) V
 -- Estructura de tabla para la tabla `familiar`
 --
 
-DROP TABLE IF EXISTS `familiar`;
-CREATE TABLE IF NOT EXISTS `familiar` (
-  `idPerfil` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `idPaciente` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nombres` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `apellidos` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `peso` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `altura` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+CREATE TABLE `familiar` (
+  `idPerfil` varchar(255) NOT NULL,
+  `idPaciente` varchar(255) NOT NULL,
+  `nombres` varchar(255) NOT NULL,
+  `apellidos` varchar(255) NOT NULL,
+  `peso` varchar(255) NOT NULL,
+  `altura` varchar(255) NOT NULL,
   `fechaNac` date NOT NULL,
-  `genero` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `municipio` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `enfermedades` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`idPerfil`),
-  KEY `idPaciente` (`idPaciente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `genero` varchar(255) NOT NULL,
+  `municipio` varchar(255) NOT NULL,
+  `enfermedades` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `familiar`
+--
+
+INSERT INTO `familiar` (`idPerfil`, `idPaciente`, `nombres`, `apellidos`, `peso`, `altura`, `fechaNac`, `genero`, `municipio`, `enfermedades`) VALUES
+('P-00001-1', 'P-00001', 'asdasa', 'asdas', '123', '123', '2004-10-10', 'Masculino', 'El Paisnal', ''),
+('P-00001-2', 'P-00001', 'Clara', 'Diaz', '123', '123', '2001-04-21', 'Masculino', 'Guazapa', 'asdas');
 
 -- --------------------------------------------------------
 
@@ -215,23 +227,21 @@ CREATE TABLE IF NOT EXISTS `familiar` (
 -- Estructura de tabla para la tabla `pacientes`
 --
 
-DROP TABLE IF EXISTS `pacientes`;
-CREATE TABLE IF NOT EXISTS `pacientes` (
-  `idPaciente` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nombre` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `apellido` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `peso` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `altura` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+CREATE TABLE `pacientes` (
+  `idPaciente` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(255) NOT NULL,
+  `peso` varchar(255) NOT NULL,
+  `altura` varchar(255) NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `fechaIngreso` date NOT NULL,
-  `genero` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `municipio` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `correo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `pass` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `telefono` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `DUI` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`idPaciente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `genero` varchar(255) NOT NULL,
+  `municipio` varchar(255) NOT NULL,
+  `correo` varchar(255) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `telefono` varchar(255) NOT NULL,
+  `DUI` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `pacientes`
@@ -243,6 +253,89 @@ INSERT INTO `pacientes` (`idPaciente`, `nombre`, `apellido`, `peso`, `altura`, `
 ('P-00003', 'Ulises Adonay', 'Flores Martínez', '130', '168', '2004-03-10', '2021-09-08', 'masculino', 'San Salvador', 'ulisesflow@gmail.com', '123Uli', '7865-3412', '54434621-1');
 
 --
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`idAdmin`);
+
+--
+-- Indices de la tabla `anuncios`
+--
+ALTER TABLE `anuncios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `citas`
+--
+ALTER TABLE `citas`
+  ADD PRIMARY KEY (`idCita`),
+  ADD KEY `idEspecialidad` (`especialidadM`),
+  ADD KEY `idDoctor` (`doctor`),
+  ADD KEY `idPaciente` (`idPaciente`);
+
+--
+-- Indices de la tabla `citasfamiliares`
+--
+ALTER TABLE `citasfamiliares`
+  ADD PRIMARY KEY (`idCitaFamiliar`),
+  ADD KEY `idPerfil` (`idPerfil`),
+  ADD KEY `idPaciente` (`idPaciente`),
+  ADD KEY `idEspecialidad` (`especialidadM`),
+  ADD KEY `idDoctor` (`doctor`);
+
+--
+-- Indices de la tabla `doctores`
+--
+ALTER TABLE `doctores`
+  ADD PRIMARY KEY (`idDoctor`),
+  ADD KEY `idEspecialidad` (`especialidadM`);
+
+--
+-- Indices de la tabla `especialidades`
+--
+ALTER TABLE `especialidades`
+  ADD PRIMARY KEY (`idEspecialidad`);
+
+--
+-- Indices de la tabla `familiar`
+--
+ALTER TABLE `familiar`
+  ADD PRIMARY KEY (`idPerfil`),
+  ADD KEY `idPaciente` (`idPaciente`);
+
+--
+-- Indices de la tabla `pacientes`
+--
+ALTER TABLE `pacientes`
+  ADD PRIMARY KEY (`idPaciente`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `anuncios`
+--
+ALTER TABLE `anuncios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `citas`
+--
+ALTER TABLE `citas`
+  MODIFY `idCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `citasfamiliares`
+--
+ALTER TABLE `citasfamiliares`
+  MODIFY `idCitaFamiliar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -250,30 +343,30 @@ INSERT INTO `pacientes` (`idPaciente`, `nombre`, `apellido`, `peso`, `altura`, `
 -- Filtros para la tabla `citas`
 --
 ALTER TABLE `citas`
-  ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`especialidadM`) REFERENCES `especialidades` (`idEspecialidad`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`idPaciente`) REFERENCES `pacientes` (`idPaciente`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  ADD CONSTRAINT `citas_ibfk_3` FOREIGN KEY (`doctor`) REFERENCES `doctores` (`idDoctor`) ON DELETE RESTRICT ON UPDATE CASCADE;
+  ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`especialidadM`) REFERENCES `especialidades` (`idEspecialidad`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`idPaciente`) REFERENCES `pacientes` (`idPaciente`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `citas_ibfk_3` FOREIGN KEY (`doctor`) REFERENCES `doctores` (`idDoctor`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `citasfamiliares`
 --
 ALTER TABLE `citasfamiliares`
-  ADD CONSTRAINT `citasfamiliares_ibfk_1` FOREIGN KEY (`idPaciente`) REFERENCES `pacientes` (`idPaciente`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  ADD CONSTRAINT `citasfamiliares_ibfk_2` FOREIGN KEY (`doctor`) REFERENCES `doctores` (`idDoctor`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  ADD CONSTRAINT `citasfamiliares_ibfk_3` FOREIGN KEY (`especialidadM`) REFERENCES `especialidades` (`idEspecialidad`) ON DELETE RESTRICT ON UPDATE CASCADE,
-  ADD CONSTRAINT `citasfamiliares_ibfk_4` FOREIGN KEY (`idPerfil`) REFERENCES `familiar` (`idPerfil`) ON DELETE RESTRICT ON UPDATE CASCADE;
+  ADD CONSTRAINT `citasfamiliares_ibfk_1` FOREIGN KEY (`idPaciente`) REFERENCES `pacientes` (`idPaciente`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `citasfamiliares_ibfk_2` FOREIGN KEY (`doctor`) REFERENCES `doctores` (`idDoctor`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `citasfamiliares_ibfk_3` FOREIGN KEY (`especialidadM`) REFERENCES `especialidades` (`idEspecialidad`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `citasfamiliares_ibfk_4` FOREIGN KEY (`idPerfil`) REFERENCES `familiar` (`idPerfil`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `doctores`
 --
 ALTER TABLE `doctores`
-  ADD CONSTRAINT `doctores_ibfk_1` FOREIGN KEY (`especialidadM`) REFERENCES `especialidades` (`idEspecialidad`) ON DELETE RESTRICT ON UPDATE CASCADE;
+  ADD CONSTRAINT `doctores_ibfk_1` FOREIGN KEY (`especialidadM`) REFERENCES `especialidades` (`idEspecialidad`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `familiar`
 --
 ALTER TABLE `familiar`
-  ADD CONSTRAINT `familiar_ibfk_1` FOREIGN KEY (`idPaciente`) REFERENCES `pacientes` (`idPaciente`) ON DELETE RESTRICT ON UPDATE CASCADE;
+  ADD CONSTRAINT `familiar_ibfk_1` FOREIGN KEY (`idPaciente`) REFERENCES `pacientes` (`idPaciente`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
