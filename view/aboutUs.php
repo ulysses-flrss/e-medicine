@@ -141,7 +141,7 @@ require_once("plugins/funciones.php")
                     </div>
 
                     <div>
-                        <a href="" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
+                        <a href="https://www.instagram.com/samuel_the_phoenix/" target="_blank"><i class="fab fa-instagram" id="social-network-logo"></i></a><span class="social-network-about">Instagram</span>
                     </div>
 
                     <div>
