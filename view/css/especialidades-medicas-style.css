@@ -90,3 +90,13 @@ img.imagenEspecialidad:hover {
     
 }
 
+@media screen and (max-width: 759px) and (min-width: 481px) {
+    .especialidadNombre{
+        font-size: 0.9em;
+    }
+
+    .especialidadDescripcion{
+        font-size: 0.4em;
+    }
+  }
+  
