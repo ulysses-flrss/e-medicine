@@ -19,7 +19,7 @@
     require_once '../view/viewCitaFamiliar.php';
   }
 
-  if ($accion == "programarCita") {
+  if ($accion == "citaFamiliar") {
     require_once '../model/classCitaFamiliar.php';
     require_once '../model/daoCitaFamiliar.php';
     require_once '../model/daoCita.php';
@@ -87,7 +87,7 @@
         $r = "El doctor ya tiene ocupado ese horario.";
         echo json_encode($r);
       }else{
-        $cita = new Cita($perfil, $codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
+        $cita = new CitaFamiliar($perfil, $codUsuario,$peso,$altura,$fechaNac,$especialidadM,$doctor,$fechaCita,$horaCita,$enfermedades,$razonCita);
 
         $r = $daoFam->insertar($cita);
         echo json_encode($r);

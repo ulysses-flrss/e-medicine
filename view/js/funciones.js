@@ -43,48 +43,117 @@ function retornarDatos(accion) {
       "dui": document.getElementById('dui').value,
       "accion": accion
     };
+  }else if (accion == "citaFamiliar"){
+    return {
+      "idUsuario": document.getElementById('idUsuario').value,
+      "idPerfil": document.getElementById('idPerfil'),
+      "pe": document.getElementById('pe').value,
+      "al": document.getElementById('al').value,
+      "fn": document.getElementById('fn').value,
+      "em": document.getElementById('em').value,
+      "doctor": document.getElementById('doctores').value,
+      "fc": document.getElementById('fechaCita').value,
+      "hc": document.getElementById('hc').value,
+      "enfermedades": document.getElementById('enfermedades').value,
+      "razon": document.getElementById('razon').value,
+      "accion": accion
+    };
   }
 }
 
 function programarCita() {
-  if (validacionDatos("programarCita")) {
-    $.ajax({
-        url: '../controller/ctrlCita.php',
-        data: retornarDatos("programarCita"),
-        type: 'POST',
-        dataType: 'json'
-    }).done(function(response) {
-      console.log("entra función response " + response);
-      if (response == "OK") {
-        Swal.fire({
-          type: 'success',
-          title: '¡Éxito!',
-          text: 'Su cita ha sido guardada con éxito.',
-          footer: 'E-MEDICINE ©'
-        }).then((result)=>{
-          window.location.href="../view/viewPaciente.php";
-        });
-      } else {
-        console.log("no entra función response");
+  if (document.getElementById('citaFamiliar').checked){
+    console.log('cita para familiar');
+    //if (validacionDatos("programarCita")){
+      $.ajax({
+          url: '../controller/ctrlCitaFamiliar.php',
+          data: retornarDatos("citaFamiliar"),
+          type: 'POST',
+          dataType: 'json'
+      }).done(function(response) {
+        console.log("entra función response " + response);
+        if (response == "OK") {
+          Swal.fire({
+            type: 'success',
+            title: '¡Éxito!',
+            text: 'Su cita ha sido guardada con éxito.',
+            footer: 'E-MEDICINE ©'
+          }).then((result)=>{
+            window.location.href="../view/viewPaciente.php";
+          });
+        } else {
+          console.log("no entra función response");
+          console.log(response);
+          Swal.fire({
+            type: 'error',
+            title: '¡ERROR!',
+            text: response,
+            footer: 'E-MEDICINE ©'
+          });
+        }
+      }).fail(function(response) {
         console.log(response);
-        Swal.fire({
-          type: 'error',
-          title: '¡ERROR!',
-          text: response,
-          footer: 'E-MEDICINE ©'
-        });
-      }
-    }).fail(function(response) {
-      console.log(response);
-    });
-    return false;
-  } else {
-    Swal.fire({
-      type: 'error',
-      title: '¡ERROR!',
-      text: 'Está malo....',
-      footer: 'E-MEDICINE ©'
-    });
+      });
+      return false;
+    //}else{
+    /*  Swal.fire({
+        type: 'error',
+        title: '¡ERROR!',
+        text: 'Está malo....',
+        footer: 'E-MEDICINE ©'
+      });
+    }*/
+  }else{
+    if (validacionDatos("programarCita")) {
+      $.ajax({
+          url: '../controller/ctrlCita.php',
+          data: {"idUsuario": document.getElementById('idUsuario').value,
+      "idPerfil": document.getElementById('idPerfil'),
+      "pe": document.getElementById('pe').value,
+      "al": document.getElementById('al').value,
+      "fn": document.getElementById('fn').value,
+      "em": document.getElementById('em').value,
+      "doctor": document.getElementById('doctores').value,
+      "fc": document.getElementById('fechaCita').value,
+      "hc": document.getElementById('hc').value,
+      "enfermedades": document.getElementById('enfermedades').value,
+      "razon": document.getElementById('razon').value,
+      "accion": 'citaFamiliar'},
+          type: 'POST',
+          dataType: 'json'
+      }).done(function(response) {
+        console.log("entra función response " + response);
+        if (response == "OK") {
+          Swal.fire({
+            type: 'success',
+            title: '¡Éxito!',
+            text: 'Su cita ha sido guardada con éxito.',
+            footer: 'E-MEDICINE ©'
+          }).then((result)=>{
+            window.location.href="../view/viewPaciente.php";
+          });
+        } else {
+          console.log("no entra función response");
+          console.log(response);
+          Swal.fire({
+            type: 'error',
+            title: '¡ERROR!',
+            text: response,
+            footer: 'E-MEDICINE ©'
+          });
+        }
+      }).fail(function(response) {
+        console.log(response);
+      });
+      return false;
+    } else {
+      Swal.fire({
+        type: 'error',
+        title: '¡ERROR!',
+        text: 'Está malo....',
+        footer: 'E-MEDICINE ©'
+      });
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 <?php
-  class Cita{
+  class CitaFamiliar{
     //Propiedades
     public $idPerfil;
     public $idPaciente;
@@ -20,15 +20,15 @@
       $this->idPerfil = $idPerfil;
 
       $this->idPaciente = $codUsuario;
-      
+
       $this->peso = $pe;
-      
+
       $this->altura = $al;
-      
+
       $this->fechaNac = $fn;
 
       $this->fechaCreacion = date('Y/m/d');
-      
+
       $this->especialidadM = $em;
       
       $this->doctor = $doctor;

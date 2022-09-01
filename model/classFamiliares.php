@@ -16,17 +16,17 @@ class Familiar {
     public $enfermedades;
 
     public function __construct($idPerfil, $idPaciente, $nombre, $apellido, $peso, $altura, $fechaNac, $genero, $municipio, $enfermedades) {
-        
+
         $this->idPerfil = $idPerfil;
-        
+
         $this->idPaciente = $idPaciente;
-      
+
         $this->nombre = $nombre;
-      
+
         $this->apellido = $apellido;
-        
+
         $this->peso = $peso;
-        
+
         $this->altura = $altura;
 
         $this->genero = $genero;
