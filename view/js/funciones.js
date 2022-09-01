@@ -46,7 +46,7 @@ function retornarDatos(accion) {
   }else if (accion == "citaFamiliar"){
     return {
       "idUsuario": document.getElementById('idUsuario').value,
-      "idPerfil": document.getElementById('idPerfil'),
+      "idPerfil": document.getElementById('idPerfil').value,
       "pe": document.getElementById('pe').value,
       "al": document.getElementById('al').value,
       "fn": document.getElementById('fn').value,
@@ -64,22 +64,11 @@ function retornarDatos(accion) {
 function programarCita() {
   if (document.getElementById('citaFamiliar').checked){
     console.log('cita para familiar');
-    //if (validacionDatos("programarCita")){
+    if (validacionDatos("programarCita")){
       console.log(document.getElementById('idPerfil').value);
       $.ajax({
           url: '../controller/ctrlCitaFamiliar.php',
-          data: {"idUsuario": document.getElementById('idUsuario').value,
-      "idPerfil": document.getElementById('idPerfil'),
-      "pe": document.getElementById('pe').value,
-      "al": document.getElementById('al').value,
-      "fn": document.getElementById('fn').value,
-      "em": document.getElementById('em').value,
-      "doctor": document.getElementById('doctores').value,
-      "fc": document.getElementById('fechaCita').value,
-      "hc": document.getElementById('hc').value,
-      "enfermedades": document.getElementById('enfermedades').value,
-      "razon": document.getElementById('razon').value,
-      "accion": 'citaFamiliar'},
+          data: retornarDatos('citaFamiliar'),
           type: 'POST',
           dataType: 'json'
       }).done(function(response) {
@@ -107,14 +96,14 @@ function programarCita() {
         console.log(response);
       });
       return false;
-    //}else{
-    /*  Swal.fire({
+    }else{
+      Swal.fire({
         type: 'error',
         title: '¡ERROR!',
         text: 'Está malo....',
         footer: 'E-MEDICINE ©'
       });
-    }*/
+    }
   }else{
     if (validacionDatos("programarCita")) {
       $.ajax({
