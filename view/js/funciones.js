@@ -70,7 +70,7 @@ function programarCitaFamiliar () {
         dataType: 'json'
     }).done(function(response) {
       console.log("entra función response " + response);
-      if (response == "OK") {
+      if (response == "OK"){
         Swal.fire({
           type: 'success',
           title: '¡Éxito!',
