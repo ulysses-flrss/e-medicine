@@ -3,7 +3,7 @@
   class daoCita{
     public function insertar($cita){
       $cn = new Conexion();
-      $dbh = $cn->getConexion(); 
+      $dbh = $cn->getConexion();
       $sql = "INSERT INTO citas (idPaciente, peso, altura, fechaNacimiento, fechaCreacion, especialidadM, doctor, fechaCita, horaCita, enfermedades, razonCita) VALUES (:idPaciente, :peso, :altura, :fechaNac, :fechaCreacion, :especialidadM, :doctor, :fechaCita, :horaCita, :enfermedades, :razonCita)";
       try{
         // $msgsql = "";

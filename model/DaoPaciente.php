@@ -185,5 +185,20 @@ class DaoPaciente{
         session_unset();
         return header("location:../index.php");
     }
+
+    public function validarDui($dui){
+        $conexion = new Conexion;
+        $dbh = $conexion->getConexion();
+        $sql = "SELECT * DUI FROM pacientes";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+        $listDui = $stmt->fetchAll();
+        foreach ($listDui as $listDuis) {
+            if ($listDuis['DUI'] == $dui){
+                $validacion = "copia";
+                return $validacion;
+            }
+        }
+    }
 }
 ?>
