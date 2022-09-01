@@ -21,7 +21,7 @@ $datos = explode('/', $dataUser);
     <?php
     links();
     ?>
-    <link rel="stylesheet" href="../view/css/index-styles.css">
+    <link rel="stylesheet" href="../view/css/index-style.css">
     <link rel="stylesheet" href="../view/css/especialidades-medicas-style.css">
 </head>
 
