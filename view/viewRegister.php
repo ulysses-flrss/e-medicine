@@ -58,7 +58,7 @@ require_once 'plugins/funciones.php'; ?>
                             <input type="radio" name="gen" id="masculino" value="masculino">
                         </div>
 
-                        <div class="female div-section">
+                        <div class="female">
                             <label for="femenino" class="genero">Femenino: </label>
                             <input type="radio" name="gen" id="femenino" value="femenino">
                         </div>
@@ -95,7 +95,7 @@ require_once 'plugins/funciones.php'; ?>
                         <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value="">
                     </div>
 
-                    <div class = "div-section">
+                    <div class = "div-sectio password-section">
                         <label for="pass">Contraseña: *</label>
                         <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" value="">
                         <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
