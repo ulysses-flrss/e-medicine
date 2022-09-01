@@ -65,9 +65,21 @@ function programarCita() {
   if (document.getElementById('citaFamiliar').checked){
     console.log('cita para familiar');
     //if (validacionDatos("programarCita")){
+      console.log(document.getElementById('idPerfil').value);
       $.ajax({
           url: '../controller/ctrlCitaFamiliar.php',
-          data: retornarDatos("citaFamiliar"),
+          data: {"idUsuario": document.getElementById('idUsuario').value,
+      "idPerfil": document.getElementById('idPerfil'),
+      "pe": document.getElementById('pe').value,
+      "al": document.getElementById('al').value,
+      "fn": document.getElementById('fn').value,
+      "em": document.getElementById('em').value,
+      "doctor": document.getElementById('doctores').value,
+      "fc": document.getElementById('fechaCita').value,
+      "hc": document.getElementById('hc').value,
+      "enfermedades": document.getElementById('enfermedades').value,
+      "razon": document.getElementById('razon').value,
+      "accion": 'citaFamiliar'},
           type: 'POST',
           dataType: 'json'
       }).done(function(response) {
@@ -107,18 +119,7 @@ function programarCita() {
     if (validacionDatos("programarCita")) {
       $.ajax({
           url: '../controller/ctrlCita.php',
-          data: {"idUsuario": document.getElementById('idUsuario').value,
-      "idPerfil": document.getElementById('idPerfil'),
-      "pe": document.getElementById('pe').value,
-      "al": document.getElementById('al').value,
-      "fn": document.getElementById('fn').value,
-      "em": document.getElementById('em').value,
-      "doctor": document.getElementById('doctores').value,
-      "fc": document.getElementById('fechaCita').value,
-      "hc": document.getElementById('hc').value,
-      "enfermedades": document.getElementById('enfermedades').value,
-      "razon": document.getElementById('razon').value,
-      "accion": 'citaFamiliar'},
+          data: retornarDatos('programarCita'),
           type: 'POST',
           dataType: 'json'
       }).done(function(response) {
