@@ -1,5 +1,12 @@
 <?php session_start();
-require_once("plugins/funciones.php");
+error_reporting(E_ALL ^ E_NOTICE);
+session_start();
+require_once 'plugins/funciones.php';
+require_once '../controller/ctrlUsuario.php';
+$cod = "";
+$dataUser = username($cod);
+
+$datos = explode('/', $dataUser);
 ?>
 
 <!DOCTYPE html>
@@ -34,11 +41,11 @@ require_once("plugins/funciones.php");
                     require_once("../model/daoCita.php");
                 }
                     $dao = new daoCita();
-                    $cita = $dao->listadoCitas();
+                    $cita = $dao->listadoCitas($datos[0]);
                     
                     foreach ($cita as $cit) {
                         echo "<tr>
-                                <td>".$cit['paciente']."</td>
+                                <td>".$cit['idPaciente']."</td>
                                 <td>".$cit['nombre']."</td>
                                 <td>".$cit['fechaCita']."</td>
                                 <td>".$cit['horaCita']."</td>
@@ -56,8 +63,8 @@ require_once("plugins/funciones.php");
                 <th>Nombre Completo</th>
                 <th>Fecha de la Cita</th>
                 <th>Hora de la Cita</th>
-                <th>Enfermedades/Alergias</th>
-                <th>Razon de Cita/Sintomas</th>
+                <th>Enfermedades/ <br> Alergias</th>
+                <th>Razon de Cita/ <br> Sintomas</th>
             </tr>
 
         <?php
