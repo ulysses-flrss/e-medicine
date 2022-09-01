@@ -32,11 +32,20 @@
 }
 
 #eye1, #eye2{
-    display: none;
     padding: 0.75em 0.25em;
     cursor: pointer;
 
     font-size: 2em;
+}
+
+#eye1 {
+    display: grid;
+    align-items: flex-start;
+    grid-area: 2 / 2;
+}
+
+#eye2 {
+    grid-area: 4 / 2;
 }
 
 .genero {
@@ -48,13 +57,10 @@
     margin: 1em;
 }
 
-label {
-    display: grid;
-    align-content: center;
-}
-
 input:not(.submit input, .male input, .female input){
     transition: 350ms all;
+    justify-content: center;
+    height: 2.5em;
     width: 75%;
     padding: 0.5em;
     font-size: 1em;
@@ -123,8 +129,29 @@ input:focus:not(.submit input) {
 
 .password-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(4, 1fr);
+}
+
+#password {
+    grid-area: 2 / 1;
+    width: 100% !important;
+    align-self: center;
+}
+
+#pass1 {
+    display: grid;
+    align-content: flex-end;
+}
+
+#pass2 {
+    grid-area: 3 / 1;
+}
+
+#password2 {
+    grid-area: 4 / 1;
+    width: 100% !important;
+    align-self: center;
 }
 
 
@@ -188,6 +215,20 @@ input:focus:not(.submit input) {
 .div-section {
     display: grid; 
     grid-template-rows: 1fr 1fr !important;
+}
+
+#telLabel {
+    display: grid;
+    align-content: flex-end;
+}
+
+#duiLabel {
+    display: grid;
+    align-content: flex-end;
+}
+
+.last-section {
+    grid-template-rows: repeat(4, 1fr) !important;
 }
 
 

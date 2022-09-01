@@ -49,7 +49,7 @@ $datos = explode('/', $dataUser);
             $dao = new DaoAnuncio();
             $anuncio = $dao->listadoAnuncios();
             foreach ($anuncio as $anun) {
-                if ($numAnuncios < 5) {
+                if ($numAnuncios < 4) {
                     echo
                     '
                 <section class="tablonAnuncios">
@@ -78,8 +78,8 @@ $datos = explode('/', $dataUser);
             <a href="../controller/ctrlComentarios.php?idUsuario=" <?php $datos[0]; ?>></a>
         </article>
         <main class="tittleE">
-        <p>Principales Especialidades:</p>
-        </main>
+            <p>Principales Especialidades:</p>
+            </main>
 
 
 
@@ -145,7 +145,7 @@ $datos = explode('/', $dataUser);
             </div>
         </main>
         <main class="booton">
-       <button class="btn first">
+       <button class="botonVerMas">
         <a href="especialidadesMedicas.php">Ver mas+</a>
        </button>
        </main>

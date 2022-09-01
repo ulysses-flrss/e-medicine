@@ -95,21 +95,21 @@ require_once 'plugins/funciones.php'; ?>
                         <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value="">
                     </div>
 
-                    <div class = "div-sectio password-section">
-                        <label for="pass">Contraseña: *</label>
+                    <div class = "div-section password-section">
+                        <label id="pass1" for="pass">Contraseña: *</label>
                         <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" value="">
                         <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
 
-                        <label for="pass">Confirmar Contraseña: *</label>
+                        <label id="pass2" for="pass">Confirmar Contraseña: *</label>
                         <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" value="">
                         <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i>
                     </div>
 
-                    <div class = "div-section">
-                        <label for="tel">Número de Teléfono: *</label>
+                    <div class = "div-section last-section">
+                        <label for="tel" id="telLabel">Número de Teléfono: *</label>
                         <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" value="">
 
-                        <label for="dui">Ingrese su DUI: *</label>
+                        <label for="dui" id="duiLabel">Ingrese su DUI: *</label>
                         <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." value="">
                     </div>
 

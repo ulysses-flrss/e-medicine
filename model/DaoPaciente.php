@@ -189,7 +189,7 @@ class DaoPaciente{
     public function validarDui($dui){
         $conexion = new Conexion;
         $dbh = $conexion->getConexion();
-        $sql = "SELECT * DUI FROM pacientes";
+        $sql = "SELECT DUI FROM pacientes";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
         $listDui = $stmt->fetchAll();

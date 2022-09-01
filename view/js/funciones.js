@@ -198,7 +198,7 @@ function registrarUser() {
   if (validacionDatos("registrarUser")){
     document.getElementById("form").addEventListener("submit",e=> {
       e.preventDefault();
-    })
+    });
     $.ajax({
         url: '../controller/CtrlPaciente.php',
         data: retornarDatos("registrarUser"),
@@ -308,6 +308,8 @@ function validacionDatos(accion) {
         sweetAl("Ha ingresado contraseñas diferentes.");
         return false;
       }
+      console.log(datosUsuario.dui);
+      console.log(expDui.test(datosUsuario.dui));
       if (!expDui.test(datosUsuario.dui) || datosUsuario.dui == ""){
         sweetAl("El DUI ingresado es inválido. Recuerde que debe incluir el guion. Ejemplo: 12345678-9");
         return false;
