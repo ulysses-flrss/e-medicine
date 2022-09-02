@@ -1,4 +1,4 @@
-<?php 
+<?php
    error_reporting(E_ALL ^ E_NOTICE);
     session_start();
     require_once 'plugins/funciones.php';
@@ -27,7 +27,7 @@
 <body>
 
     <?php menu(); ?>
-    
+
     <main class="allContainer">
         <div class="bienvenida" id="container-bienvenida">
             <a href="#" class="imagen-texto">
@@ -36,17 +36,13 @@
             </a>
                 <span id="bienvenida" title="Bienvenida">Bienvenido/a <b><?php echo "Dr. ".$datos[1]; ?></b><span>
         </div>
-        
 
-        
         <section>
             <div class="anuncio-container">
                 <div class="head-anuncio-container">
                     <span class="head-anuncio">Redactar Anuncio</span>
                 </div>
 
-                    
-                    
                 <div class="contenido-anuncio">
                     <form action="../controller/ctrlAnuncios.php" method="post">
                     <?php echo "<input type='hidden' name='idUsuario' value='".$datos[0]."'>" ?>

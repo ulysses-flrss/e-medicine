@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once("classConexion.php");
 
@@ -13,7 +13,11 @@ class DaoAnuncio {
             $stmt->bindParam(':idUsuario', $anuncio->idUsuario);
             $stmt->bindParam(':nombre', $anuncio->nombre);
             $stmt->bindParam(':contenidoAnuncio', $anuncio->contenidoAnuncio);
-            $stmt->execute();
+            if ($stmt->execute()){
+                return "OK";
+            }elser{
+                return "ERROR: Se ha generado un error al guardar la información";
+            }
             $rowAf = $stmt->rowCount();
         } catch(PDOException $e) {
             echo "ERROR: ". $e->getMessage();

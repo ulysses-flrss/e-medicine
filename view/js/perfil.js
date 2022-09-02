@@ -91,7 +91,7 @@ function modificar(idPerfil){
     if (response == "OK") {
       Swal.fire({
         title: 'Éxito!',
-        text: 'Datos actualizados con éxito', 
+        text: 'Datos actualizados con éxito',
         type: 'success',
         footer: 'E-MEDICINE ©'
       }).then((result)=>{

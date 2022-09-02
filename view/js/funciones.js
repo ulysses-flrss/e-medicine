@@ -58,6 +58,13 @@ function retornarDatos(accion) {
       "razon": document.getElementById('razon').value,
       "accion": accion
     };
+  }else if (accion == "publicarAnuncio"){
+    return{
+      "idUsuario": document.getElementById('idUsuario').value,
+      "nombre": document.getElementById('nombre').value,
+      "contenidoAnuncio": document.getElementById('contenidoAnuncio').value,
+      "accion": accion
+    };
   }
 }
 
@@ -234,6 +241,39 @@ function registrarUser() {
   return false
 }
 
+function publicarAnuncio(){
+  $.ajax({
+    url: '../controller/ctrlAnuncios.php',
+    data: retornarDatos('publicarAnuncio'),
+    type: 'POST',
+    dataType: 'json'
+  }).done(function(response) {
+    console.log("entra función response " + response);
+    if (response == "OK") {
+      Swal.fire({
+        type: 'success',
+        title: '¡Éxito!',
+        text: 'Su cita ha sido guardada con éxito.',
+        footer: 'E-MEDICINE ©'
+      }).then((result)=>{
+        window.location.href="../view/viewPaciente.php";
+      });
+    } else {
+      console.log("no entra función response");
+      console.log(response);
+      Swal.fire({
+        type: 'error',
+        title: '¡ERROR!',
+        text: response,
+        footer: 'E-MEDICINE ©'
+      });
+    }
+  }).fail(function(response) {
+    console.log(response);
+  });
+  return false;
+}
+
 function validacionDatos(accion) {
   let hoy = new Date();
   let dia = hoy.getDate();
@@ -248,7 +288,7 @@ function validacionDatos(accion) {
     let expEnf = /^([a-zA-Z]*)$/;
     let expRazCita = /^([a-zA-Z0-9]{4,})$/;
 
-    if (expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades) && expRazCita.test(datosUsuario.razon)) {      
+    if (expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades) && expRazCita.test(datosUsuario.razon)) {
       console.log(retornarDatos('programarCita'));
       return true;
     } else {

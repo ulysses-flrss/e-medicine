@@ -1,11 +1,13 @@
-<?php 
-session_start();
-require_once("plugins/funciones.php");
-
+<?php
+    session_start();
+    require_once("plugins/funciones.php");
+    require_once '../controller/ctrlUsuario.php';
+    $cod = "";
+    $dataUser = username($cod);
 ?>
 
 <!DOCTYPE html>
-<html=lang="en">
+<html=lang="es">
 <head>
 <meta charset="UTF-8">
    <meta charset="UTF-8">
@@ -19,12 +21,12 @@ require_once("plugins/funciones.php");
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="jquery-3.6.0.js"></script>
     <?php links() ?>
-   
+
 </head>
 <body>
  <!--INICIO DEL MENÚ-->
 
-    <?php menu() ?> 
+    <?php menu() ?>
 
     <!--FIN DEL MENÚ-->
 <main class="all-container">
@@ -34,18 +36,21 @@ require_once("plugins/funciones.php");
             <div class="anuncio-container">
                 <div class="imagen-texto">
                     <img src="../imagenPrueba.png" class= "imagen-anuncio" alt="">
-                    <h1>Dr. Ulises Flores</h1>
+                    <h1> <?php echo "Dr. ".$datos[1];?></h1>
                 </div>
 
                 <div class="contenido-anuncio">
-                    <form action="../controller/ctrlAnuncios.php" method="post">
-                        <textarea name="contenidoAnuncio" class="message-area" id="" cols="30" rows="10">
+                    <form action="" method="post" id="formularioE">
+                        <?php echo "<input type='hidden' id='idUsuario' value='".$datos[0]."'>";
+                        echo "<input type='hidden' id='nom' value='".$datos[1]."'>";
+                        ?>
+                        <textarea name="contenidoAnuncio" class="message-area" id="contenidoAnuncio" cols="30" rows="10">
 
                         </textarea>
                     <div class="submit">
-                        <input type="submit"  value="Publicar Anuncio">
+                        <button type="submit"  value="Publicar Anuncio" onclick="publicarAnuncio();">Publicar Anuncio</button>
                     </div>
-                        
+
                     </form>
                 </div>
             </div>
@@ -54,10 +59,6 @@ require_once("plugins/funciones.php");
 
 </main>
 
-    
-
-
     <?php footer() ?>
     <script src="javascript.js"></script>
-          
    </body>
