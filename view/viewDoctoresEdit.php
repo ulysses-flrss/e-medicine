@@ -2,6 +2,7 @@
 session_start();
 require_once("plugins/funciones.php");
 require_once '../controller/ctrlUsuario.php';
+require_once "../model/daoDoctor.php";
 
 $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
 
@@ -38,31 +39,42 @@ $datos = explode('/', $dataUser);
 
                 <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>"; 
 
-                    echo "<input type='hidden' id='idPerfil' name='idPerfil' value=''>"; ?>
+                
+                    $dao = new daoDoctor();
+                    $datosDoc = $dao->extraerDatos($datos[0]);
+
+
+                    echo "<input type='hidden' id='idPerfil' name='idPerfil' value=''>"; 
+                    ?>
                     
                 <div class="third-line">    
                     <div class="nombres">
-                        <label for="">Nombre (primer nombre y primer apellido):</label>
-                        <input type="text" name="nom" id="nom" class="name" placeholder="Ingrese sus Nombres" value="<?php echo $datos[1] ?>">
+                        <label for="">Nombres:</label>
+                        <input type="text" name="nom" id="nom" class="name" placeholder="Ingrese sus Nombres" value="<?php echo $datosDoc[0] ?>">
+                    </div>
+
+                    <div class="apellido">
+                        <label for="">Apellidos:</label>
+                        <input type="text" name="ape" id="ape" class="name" placeholder="Ingrese sus Nombres" value="<?php echo $datosDoc[1] ?>">
                     </div>
                 </div>
                     
                 <div class="second-line">
                     <div class="telefono">
                         <label for="">Teléfono: *</label>
-                        <input type="tel" name="tel" id="tel" placeholder="1234-5678" value="<?php echo $datos[4] ?>">
-                    </div>
+                        <input type="tel" name="tel" id="tel" placeholder="1234-5678" value="<?php echo $datosDoc[2] ?>">
+                    </div>      
                     
                     <div class="correo">
                         <label for="">Correo: *</label>
-                        <input type="email" name="mail" id="mail" placeholder="user@dominio.com" value="<?php echo $datos[3] ?>">
+                        <input type="email" name="mail" id="mail" placeholder="user@dominio.com" value="<?php echo $datosDoc[3] ?>">
                     </div>  
                 </div>
                     
                     
                     
                     
-                        <a href="../controller/ctrlDoctores.php?accion=editar&idUsuario=<? $datos[0] ?>" class="disenoBoton" name="accion" value="Editar Datos"> Editar Datos </a>
+                        <button type="submit" class="disenoBoton" name="accion" value="Editar Datos"> Editar Datos </button>
                 <!-- </form> -->
 
             </section>

@@ -2,28 +2,42 @@
     require_once "../model/classConexion.php";
 
     class daoDoctor {
-        public function editarPerfil ($idDoctor, $nombreCompleto, $telefono, $correo) {
+        public function editarPerfil($idDoctor, $nombreDoctor, $apellidoDoctor, $telefono, $correo) {
 
-            $cn = new Conexion;
+            $cn = new Conexion();
             $dbh = $cn->getConexion();
-            explode(" ", $nombreCompleto);
-
-            $nombre = $nombreCompleto[0];
-            $apellido = $nombreCompleto[1];
-
             $sql = "UPDATE doctores SET nombreDoctor=:nombreDoctor, apellidoDoctor=:apellidoDoctor, telefono=:telefono, correo=:correo WHERE idDoctor=:idDoctor";
 
             try{
                 $stmt = $dbh->prepare($sql);
-                $stmt->bindParam(':nombreDoctor',$nombre);
-                $stmt->bindParam(':apellidoDoctor',$apellido);
+                $stmt->bindParam(':nombreDoctor',$nombreDoctor);
+                $stmt->bindParam(':apellidoDoctor',$apellidoDoctor);
                 $stmt->bindParam(':telefono', $telefono);
                 $stmt->bindParam(':correo',$correo);
                 $stmt->bindParam(':idDoctor',$idDoctor);
-                $stmt->execute();
-                echo "<script>alert('Correcto')</script>";
+                if ($stmt->execute()) {
+                    echo "<script>console.log('jsjdasjd'".$idDoctor.$nombreDoctor.$apellidoDoctor.$telefono.$correo.")</script>";
+                } else {
+                    echo "<script>console.log('ERROR')</script>";
+                }
             }catch(PDOException $e){
-                echo "<script>alert(". $e->getMessage() .")</script>";
+                echo  $e->getMessage() . $idDoctor.$nombreDoctor.$apellidoDoctor.$telefono.$correo;
+            }
+        }
+
+        public function extraerDatos($idDoctor){
+            $cn = new Conexion();
+            $dbh = $cn->getConexion();
+            $sql = "SELECT nombreDoctor, apellidoDoctor, telefono, correo FROM doctores WHERE idDoctor=:idDoctor";
+
+            try {
+                $stmt = $dbh->prepare($sql);
+                $stmt->bindParam(':idDoctor',$idDoctor);
+                $stmt->execute();
+                $datosDoc = $stmt->fetch();
+                return $datosDoc;       
+            } catch (PDOException $e) {
+                echo "ERROR: " . $e->getMessage();
             }
         }
     }
