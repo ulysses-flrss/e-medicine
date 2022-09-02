@@ -220,7 +220,7 @@
                 </li>
 
                 <li class='bar-item' id='li-about' title='Editar Perfil'>
-                    <a href='../view/viewDoctoresEdit.php' class='bar-link' id='li-info'>
+                    <a href='../controller/ctrlDoctores.php?accion=editar' class='bar-link' id='li-info'>
                     <i class='fa-solid fa-user-pen icon'></i>
                         <span class='link-text'>Editar Perfil</span>
                     </a>
