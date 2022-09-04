@@ -19,15 +19,16 @@ if (substr($idUsuario, 0,3) == "P-0") {
     if ($contenidoAnuncio == "" || $contenidoAnuncio == " "){
         $r = "ERROR: No puede subir un anuncio vacío";
         echo json_encode($r);
+        return
+    }else{
+        $anuncio = new Anuncio($idUsuario, $nombre, $contenidoAnuncio);
+
+        $dao = new DaoAnuncio;
+
+        $r = $dao->publicarAnuncio($idUsuario, $nombre, $contenidoAnuncio);
+
+        echo json_encode($r);
     }
-    $anuncio = new Anuncio($idUsuario, $nombre, $contenidoAnuncio);
-
-    $dao = new DaoAnuncio;
-
-    $r = $dao->publicarAnuncio($anuncio);
-
-    echo json_encode($r);
-
     /*$mensaje = 'PUBLICADO EXITOSAMENTE!.';
     echo "<script>alert('".$mensaje."')</script>"; //MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
     echo "<body style='background-color:#daffec;'><a href='../view/viewDoctor.php' style='text-decoration:none;color:black;font-size:1.5rem;font-weight:bold;'>REGRESAR</a></body>";*/

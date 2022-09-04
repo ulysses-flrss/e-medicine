@@ -3,19 +3,19 @@
 require_once("classConexion.php");
 
 class DaoAnuncio {
-    public function publicarAnuncio ($anuncio) {
+    public function publicarAnuncio ($idUsuario, $nombre, $contenidoAnuncio) {
         $cn = new Conexion;
         $dbh = $cn->getConexion();
         $sql = "INSERT INTO anuncios (idUsuario, nombre, contenidoAnuncio) VALUES (:idUsuario, :nombre, :contenidoAnuncio)";
 
         try {
             $stmt = $dbh->prepare($sql);
-            $stmt->bindParam(':idUsuario', $anuncio->idUsuario);
-            $stmt->bindParam(':nombre', $anuncio->nombre);
-            $stmt->bindParam(':contenidoAnuncio', $anuncio->contenidoAnuncio);
+            $stmt->bindParam(':idUsuario', $idUsuario);
+            $stmt->bindParam(':nombre', $nombre);
+            $stmt->bindParam(':contenidoAnuncio', $contenidoAnuncio);
             if ($stmt->execute()){
                 return "OK";
-            }elser{
+            }else{
                 return "ERROR: Se ha generado un error al guardar la información";
             }
             $rowAf = $stmt->rowCount();

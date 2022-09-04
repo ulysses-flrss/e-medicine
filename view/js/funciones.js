@@ -242,36 +242,44 @@ function registrarUser() {
 }
 
 function publicarAnuncio(){
-  $.ajax({
-    url: '../controller/ctrlAnuncios.php',
-    data: retornarDatos('publicarAnuncio'),
-    type: 'POST',
-    dataType: 'json'
-  }).done(function(response) {
-    console.log("entra función response " + response);
-    if (response == "OK") {
-      Swal.fire({
-        type: 'success',
-        title: '¡Éxito!',
-        text: 'Su cita ha sido guardada con éxito.',
-        footer: 'E-MEDICINE ©'
-      }).then((result)=>{
-        window.location.href="../view/viewPaciente.php";
-      });
-    } else {
-      console.log("no entra función response");
+  console.log("función abierta");
+  //*let anuncioData = retornarDatos('publicarAnuncio');
+  console.log(document.getElementById('accion').value);
+  if (/^([a-zA-Z\u00C0-\u017F]+\s*[0-9]*)*$/.test(document.getElementById('contenidoAnuncio').value)){
+    $.ajax({
+      url: '../controller/ctrlCita.php',
+      data: retornarDatos("publicarAnuncio"),
+      type: 'POST',
+      dataType: 'json'
+    }).done(function(response) {
+      console.log("entra función response " + response);
+      if (response == "OK") {
+        Swal.fire({
+          type: 'success',
+          title: '¡Éxito!',
+          text: 'Su cita ha sido guardada con éxito.',
+          footer: 'E-MEDICINE ©'
+        }).then((result)=>{
+          window.location.href="../view/viewCrearAnuncios.php";
+        });
+      } else {
+        console.log("no entra función response");
+        console.log(response);
+        Swal.fire({
+          type: 'error',
+          title: '¡ERROR!',
+          text: response,
+          footer: 'E-MEDICINE ©'
+        });
+      }
+    }).fail(function(response) {
+      console.log('falló');
       console.log(response);
-      Swal.fire({
-        type: 'error',
-        title: '¡ERROR!',
-        text: response,
-        footer: 'E-MEDICINE ©'
-      });
-    }
-  }).fail(function(response) {
-    console.log(response);
-  });
-  return false;
+    });
+    return false;
+  }else{
+    sweetAl("No puede publicar un anuncio vacío");
+  }
 }
 
 function validacionDatos(accion) {
@@ -282,11 +290,19 @@ function validacionDatos(accion) {
   let expAltura = /^([0-1][0-9][0-9])|([2][0-2][0-9])$/;
   let expPeso = /^([0-4][0-9][0-9])$/;
   let expFechaNac = /^([1][9][2-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0-2])[-]([0][1-9]|[1][0-2])[-]([0-2][0-9]|[3][0-1])$/;
+  let expRazCita = /^([a-zA-Z0-9]{4,})$/;
+  if (accion == "publicarAnuncio"){
+    if (!expRazCita.test(document.getElementById('contenidoAnuncio'))){
+      sweetAl("No puede publicar un anuncio vacío");
+      return false;
+    }else{
+      return true;
+    }
+  }
   if (accion == "programarCita"){
     console.log("Programar Cita");
     let datosUsuario = retornarDatos("programarCita");
     let expEnf = /^([a-zA-Z]*)$/;
-    let expRazCita = /^([a-zA-Z0-9]{4,})$/;
 
     if (expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades) && expRazCita.test(datosUsuario.razon)) {
       console.log(retornarDatos('programarCita'));

@@ -13,10 +13,29 @@
   $razonCita = isset($_POST['razon'])?$_POST['razon']:"";
   $accion = isset($_POST['accion'])?$_POST['accion']:"";
   $activador = isset($_POST['activador'])?$_POST['activador']:"";
+  $nombre = isset($_POST['nombre'])?$_POST['nombre']:"";
+  $contenidoAnuncio = isset($_POST['contenidoAnuncio'])?$_POST['contenidoAnuncio']:"";
   $_SESSION['codUsuario'] = $codUsuario;
 
   if ($accion == "") {
     require_once '../view/viewCita.php';
+  }
+
+  if ($accion == "publicarAnuncio"){
+    require_once("../model/daoAnuncios.php");
+    require_once("../model/classAnuncios.php");
+
+    if ($contenidoAnuncio == "" || $contenidoAnuncio == " "){
+        $r = "ERROR: No puede subir un anuncio vacío";
+        echo json_encode($r);
+    }
+    $anuncio = new Anuncio($codUsuario, $nombre, $contenidoAnuncio);
+
+    $dao = new DaoAnuncio;
+
+    $r = $dao->publicarAnuncio($codUsuario, $nombre, $contenidoAnuncio);
+
+    echo json_encode($r);
   }
 
   if ($accion == "programarCita") {
