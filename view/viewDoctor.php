@@ -34,7 +34,21 @@
                 <div class="img-layout"><img src="../assets/imgs/imagenPrueba.png" alt="Imagen de Perfil" class="profile-picture" title="Imagen de Perfil"></div>
                 <span class="editar" title="Editar Perfil"> </span>
             </a>
-                <span id="bienvenida" title="Bienvenida">Bienvenido/a <b><?php echo "Dr. ".$datos[1]; ?></b><span>
+                <span id="bienvenida" title="Bienvenida">Bienvenido/a <b><?php
+                    if ($datos[3] == "femenino" || $datos[3] == "masculino"){
+                        if ($datos[3] == "femenino")
+                            echo "Dra. " . $datos[1];
+                        else if ($datos[3] == "masculino")
+                            echo "Dr. " . $datos[1];
+                    }else if ($datos[5] == "masculino" || $datos[5] == "femenino") {
+                        if ($datos[5] == "femenino")
+                            echo "Dra. " . $datos[1];
+                        else
+                            echo "Dr. ".$datos[1];
+                    }else{
+                        echo "Error";
+                    }
+                ?></b><span>
         </div>
 
         <section>
@@ -51,7 +65,6 @@
                     <div class="submit">
                         <input type="submit" class="disenoBoton" value="Publicar Anuncio">
                     </div>
-                        
                     </form>
                 </div>
             </div>
