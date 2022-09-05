@@ -16,9 +16,9 @@
                 $stmt->bindParam(':correo',$correo);
                 $stmt->bindParam(':idDoctor',$idDoctor);
                 if ($stmt->execute()) {
-                    echo "<script>console.log('jsjdasjd'".$idDoctor.$nombreDoctor.$apellidoDoctor.$telefono.$correo.")</script>";
+                    return "OK";
                 } else {
-                    echo "<script>console.log('ERROR')</script>";
+                    return "ERROR";
                 }
             }catch(PDOException $e){
                 echo  $e->getMessage() . $idDoctor.$nombreDoctor.$apellidoDoctor.$telefono.$correo;

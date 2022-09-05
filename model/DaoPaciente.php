@@ -24,23 +24,26 @@ class DaoPaciente{
             echo "Error: " . $e->getMessage();
         }
     }
-    public function modificar($paciente){
+    public function editarPaciente($idPaciente, $nombre, $apellido, $peso, $altura, $fechaNacimiento, $municipio, $correo, $telefono, $DUI, $pass){
         $cn = new Conexion();
         $dbh = $cn->getConexion();
-        $sql = "UPDATE pacientes SET nombre=:nombre, apellido=:apellido, peso=:peso, altura=:altura, fechaNacimiento=:fechaNac, genero=:genero, municipio=:municipio, email=:email, password=:password WHERE idPaciente=:idPaciente";
+        $sql = "UPDATE pacientes SET nombre=:nombre, apellido=:apellido, peso=:peso, altura=:altura, fechaNacimiento=:fechaNacimiento, genero=:genero, municipio=:municipio, correo=:correo, pass=:pass WHERE idPaciente=:idPaciente";
         try{
             $stmt = $dbh->prepare($sql);
-            $stmt->bindParam(':nombre',$paciente->nombre);
-            $stmt->bindParam(':apellido',$paciente->apellido);
-            $stmt->bindParam(':peso',$paciente->peso);
-            $stmt->bindParam(':altura',$paciente->altura);
-            $stmt->bindParam(':fechaNac',$paciente->fechaNac);
-            $stmt->bindParam(':genero',$paciente->genero);
-            $stmt->bindParam(':municipio',$paciente->municipio);
-            $stmt->bindParam(':email',$paciente->eMail);
-            $stmt->bindParam(':password',$paciente->password);
-            $stmt->bindParam(':idPaciente',$paciente->idPaciente);
-            $stmt->execute();
+            $stmt->bindParam(':nombre',$nombre);
+            $stmt->bindParam(':apellido',$apellido);
+            $stmt->bindParam(':peso',$peso);
+            $stmt->bindParam(':altura',$altura);
+            $stmt->bindParam(':fechaNacimiento',$fechaNacimiento);
+            $stmt->bindParam(':municipio',$municipio);
+            $stmt->bindParam(':correo',$correo);
+            $stmt->bindParam(':pass ',$pass);
+            $stmt->bindParam(':idPaciente',$idPaciente);
+            if ($stmt->execute()) {
+                return "OK";
+            } else {
+                return "ERROR";
+            }
         }catch(PDOException $e){
             echo "Error: " . $e->getMessage();
         }
@@ -198,6 +201,22 @@ class DaoPaciente{
                 $validacion = "copia";
                 return $validacion;
             }
+        }
+    }
+
+    public function extraerDatos($idPaciente){
+        $cn = new Conexion();
+        $dbh = $cn->getConexion();
+        $sql = "SELECT nombre, apellido, peso, altura, fechaNacimiento, municipio, correo, telefono, DUI, pass FROM pacientes WHERE idPaciente=:idPaciente";
+
+        try {
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':idPaciente',$idPaciente);
+            $stmt->execute();
+            $datosDoc = $stmt->fetch();
+            return $datosDoc;       
+        } catch (PDOException $e) {
+            echo "ERROR: " . $e->getMessage();
         }
     }
 }

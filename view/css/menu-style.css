@@ -206,10 +206,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .barNav {
-    width: 100vw;
-  }
-
   .link-text {
     display: grid;
   }

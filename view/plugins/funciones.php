@@ -179,7 +179,7 @@
                         <i class='fa-solid fa-user icon'></i><span class='link-text'>".$datos[1]."</span></a></div>
                         <div class='submenu'>
                             <ul>
-                                <li class='bar-item'><a href='../controller/CtrlPaciente.php?accion=verPerfil' class='link-text'><span class='bar-link'>Ver Perfil</span></a></li>
+                                <li class='bar-item'><a href='../view/viewPacienteEdit.php' class='link-text'><span class='bar-link'>Ver Perfil</span></a></li>
                                 <li class='bar-item'><a href='../controller/CtrlPaciente.php?accion=cerrarSesion' class='bar-link'><span class='link-text'>Cerrar Sesión</span></a></li>
                             </ul>
                         </div>
@@ -220,7 +220,7 @@
                 </li>
 
                 <li class='bar-item' id='li-about' title='Editar Perfil'>
-                    <a href='../controller/ctrlDoctores.php?accion=editar' class='bar-link' id='li-info'>
+                    <a href='../view/viewDoctoresEdit.php' class='bar-link' id='li-info'>
                     <i class='fa-solid fa-user-pen icon'></i>
                         <span class='link-text'>Editar Perfil</span>
                     </a>

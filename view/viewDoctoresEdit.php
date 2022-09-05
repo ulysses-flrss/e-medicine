@@ -42,10 +42,7 @@ $datos = explode('/', $dataUser);
                 
                     $dao = new daoDoctor();
                     $datosDoc = $dao->extraerDatos($datos[0]);
-
-
-                    echo "<input type='hidden' id='idPerfil' name='idPerfil' value=''>"; 
-                    ?>
+    ?>
                     
                 <div class="third-line">    
                     <div class="nombres">
@@ -74,7 +71,7 @@ $datos = explode('/', $dataUser);
                     
                     
                     
-                        <button type="submit" class="disenoBoton" name="accion" value="Editar Datos"> Editar Datos </button>
+                        <button type="submit" class="disenoBoton" name="accion" onclick = "editarDoctor();" value="Editar Datos"> Editar Datos </button>
                 <!-- </form> -->
 
             </section>
@@ -82,7 +79,8 @@ $datos = explode('/', $dataUser);
     </main>
 
     <?php footer();?>
-    <script src="../view/js/perfil.js"></script>
+    <script src="../view/js/funciones.js"></script>
+    <!-- <script src="../view/js/perfil.js"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../view/js/all.min.js"></script>
     <script src="../view/js/bootstrap.min.js"></script>

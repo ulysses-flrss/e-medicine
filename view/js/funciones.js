@@ -65,7 +65,28 @@ function retornarDatos(accion) {
       "contenidoAnuncio": document.getElementById('contenidoAnuncio').value,
       "accion": accion
     };
-  }
+  } else if (accion == "editarDoctor") {
+    return {
+      "idUsuario":document.getElementById('idUsuario').value,
+      "nom":document.getElementById('nom').value,
+      "ape":document.getElementById('ape').value,
+      "tel":document.getElementById('tel').value,
+      "mail":document.getElementById('mail').value,
+      "accion": accion
+    };
+  } else if (accion == "editarPaciente")  {
+    return {
+      "idUsuario": document.getElementById("idUsuario").value,
+      "nom": document.getElementById("nom").value,
+      "ape": document.getElementById("ape").value,
+      "pe": document.getElementById("pe").value,
+      "al": document.getElementById("al").value,
+      "fn": document.getElementById("fn").value,
+      "muni": document.getElementById("muni").value,
+      "tel": document.getElementById("tel").value,
+      "dui": document.getElementById("dui").value,
+    }
+  } 
 }
 
 function programarCita() {
@@ -294,6 +315,77 @@ function publicarAnuncio(ubi){
   }
 }
 
+function editarDoctor () {
+  console.log("entrando a funcion editarDoctor");
+  // if (accion == "editarDoctor") {
+    // let datos = retornarDatos("editarDoctor");
+    // console.log(datos[]);
+    $.ajax({
+      url: '../controller/ctrlDoctores.php',
+      data: retornarDatos("editarDoctor"),
+      type: 'POST',
+      dataType: 'json'
+    }).done(function (response) {
+      console.log("ENTRANDO AL DONE");
+      if (response == "OK" ) {
+        Swal.fire({
+          type: 'success',
+          title: '¡Éxito!',
+          text: 'Los datos han sido actualizados correctamente.',
+          footer: 'E-MEDICINE ©'
+        }).then((result)=> window.location.href = "../view/viewDoctor.php")
+      } else {
+        console.log(response);
+        Swal.fire({
+          type: 'error',
+          title: 'Error!',
+          text: response,
+          footer: 'E-MEDICINE ©'
+        })
+      }
+    }).fail (function (response) {
+       console.log(response);
+       sweetAl("Función no disponible por el momento, intente más tarde"); 
+    });
+    return false;
+  }
+
+  function editarPaciente () {
+    console.log("entrando a funcion editarPaciente");
+    // if (accion == "editarDoctor") {
+      // let datos = retornarDatos("editarDoctor");
+      // console.log(datos[]);
+      $.ajax({
+        url: '../controller/ctrlPaciente.php',
+        data: retornarDatos("editarPaciente"),
+        type: 'POST',
+        dataType: 'json'
+      }).done(function (response) {
+        console.log("ENTRANDO AL DONE");
+        if (response == "OK" ) {
+          Swal.fire({
+            type: 'success',
+            title: '¡Éxito!',
+            text: 'Los datos han sido actualizados correctamente.',
+            footer: 'E-MEDICINE ©'
+          }).then((result)=> window.location.href = "../view/viewDoctor.php")
+        } else {
+          console.log(response);
+          Swal.fire({
+            type: 'error',
+            title: 'Error!',
+            text: response,
+            footer: 'E-MEDICINE ©'
+          })
+        }
+      }).fail (function (response) {
+         console.log(response);
+         sweetAl("Función no disponible por el momento, intente más tarde"); 
+      });
+      return false;
+    }
+// }
+ 
 function validacionDatos(accion) {
   let hoy = new Date();
   let dia = hoy.getDate();
@@ -413,7 +505,11 @@ function validacionDatos(accion) {
       }*/
       return true;
     }
-  }
+  } 
+  
+  // else if(accion == "editarDoctor") {
+    
+  // }
 }
 
 document.getElementById('citaInv').addEventListener("click", e =>{
