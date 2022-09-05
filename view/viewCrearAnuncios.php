@@ -45,12 +45,12 @@
 
                 <div class="contenido-anuncio">
                     <form action="" method="post" onsubmit="submitForm(event)">
-                    <?php echo "<input type='hidden' name='idUsuario' value='".$datos[0]."' id='idUsuario'>" ?>
-                    <?php echo "<input type='hidden' name='nombre' value='".$datos[1]."' id='nombre'>" ?>
+                        <?php echo "<input type='hidden' name='idUsuario' value='".$datos[0]."' id='idUsuario'>" ?>
+                        <?php echo "<input type='hidden' name='nombre' value='".$datos[1]."' id='nombre'>" ?>
                         <textarea name="contenidoAnuncio" class="message-area" id="contenidoAnuncio" cols="30" rows="10" minlength="10" maxlength="255"></textarea>
-                    <div class="submit">
-                        <button type="submit" class="disenoBoton" id="accion" value="publicarAnuncio" onclick="publicarAnuncio();">Publicar Anuncio</button>
-                    </div>
+                        <div class="submit">
+                            <button type="submit" class="disenoBoton" id="accion" value="publicarAnuncio" onclick="publicarAnuncio('view');">Publicar Anuncio</button>
+                        </div>
                     </form>
                 </div>
             </div>

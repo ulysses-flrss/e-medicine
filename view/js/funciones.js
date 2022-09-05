@@ -241,11 +241,19 @@ function registrarUser() {
   return false
 }
 
-function publicarAnuncio(){
+function publicarAnuncio(ubi){
   console.log("función abierta");
   //*let anuncioData = retornarDatos('publicarAnuncio');
   console.log(document.getElementById('accion').value);
-  if (/^([a-zA-Z\u00C0-\u017F]+\s*[0-9]*)*$/.test(document.getElementById('contenidoAnuncio').value)){
+  if (/^\s*$/.test(document.getElementById('contenidoAnuncio').value)){
+    Swal.fire({
+      type: 'error',
+      title: '¡ERROR!',
+      text: 'No puede publicar un anuncio vacío',
+      footer: 'E-MEDICINE ©'
+    });
+    return false;
+  }else if (/^([\w\u00C0-\u017F]+\s*[0-9]*)*.*\w*$/m.test(document.getElementById('contenidoAnuncio').value)){
     $.ajax({
       url: '../controller/ctrlCita.php',
       data: retornarDatos("publicarAnuncio"),
@@ -257,10 +265,16 @@ function publicarAnuncio(){
         Swal.fire({
           type: 'success',
           title: '¡Éxito!',
-          text: 'Su cita ha sido guardada con éxito.',
+          text: 'Su anuncio ha sido guardada con éxito.',
           footer: 'E-MEDICINE ©'
         }).then((result)=>{
-          window.location.href="../view/viewCrearAnuncios.php";
+          console.log('then');
+          console.log(ubi);
+          /*window.setTimeout(2000);*/
+          if (ubi == "main")
+            window.location.href="../view/viewDoctor.php";
+          else if (ubi == "view")
+            window.location.href="../view/viewCrearAnuncios.php";
         });
       } else {
         console.log("no entra función response");
@@ -277,8 +291,6 @@ function publicarAnuncio(){
       console.log(response);
     });
     return false;
-  }else{
-    sweetAl("No puede publicar un anuncio vacío");
   }
 }
 
