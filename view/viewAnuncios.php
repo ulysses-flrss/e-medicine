@@ -30,28 +30,28 @@
         <?php
           if(!isset($anuncio)){
             require_once "../model/daoAnuncios.php";
-          }else{
+          }else
             require_once "../controller/ctrlAnuncios.php";
-            $dao = new DaoAnuncio();
-            $anuncio=$dao->listadoAnuncios();
-            foreach ($anuncio as $anun) {
-              echo
-              '
-              <section class="tablonAnuncios">
-              <div class="objetoTablon" id="autor">
-                <span class="autor-text" title="Escritor del Anuncio">'.$anun['nombre'].'</span>
-              </div>
-              <div class="objetoTablon" id="fechaPublicacion">
-                <span class="fecha-text" title="Fecha de Publicación del Anuncio">'.$anun['fechaPublicacion'].'</span>
-              </div>
 
-              <div class="objetoTablon" id="descripcion">
-                <p title="Contenido del Anuncio">
-                  '.$anun['contenidoAnuncio'].'
-                </p>
-              </div>
-              </section>';
-            }
+          $dao = new DaoAnuncio();
+          $anuncio=$dao->listadoAnuncios();
+          foreach ($anuncio as $anun) {
+            echo
+            '
+            <section class="tablonAnuncios">
+            <div class="objetoTablon" id="autor">
+              <span class="autor-text" title="Escritor del Anuncio">'.$anun['nombre'].'</span>
+            </div>
+            <div class="objetoTablon" id="fechaPublicacion">
+              <span class="fecha-text" title="Fecha de Publicación del Anuncio">'.$anun['fechaPublicacion'].'</span>
+            </div>
+
+            <div class="objetoTablon" id="descripcion">
+              <p title="Contenido del Anuncio">
+                '.$anun['contenidoAnuncio'].'
+              </p>
+            </div>
+            </section>';
           }
         ?>
         </article>

@@ -25,7 +25,7 @@ class DaoAnuncio {
     }
 
     public function listadoAnuncios(){
-        $sql = "SELECT id, idUsuario, nombre, contenidoAnuncio, fechaPublicacion FROM anuncios ORDER BY id DESC";
+        $sql = "SELECT id, idUsuario, nombre, contenidoAnuncio, fechaPublicacion FROM anuncios ORDER BY fechaPublicacion DESC";
         $cn = new Conexion();
         $dbh = $cn->getConexion();
         $stmt = $dbh->prepare($sql);

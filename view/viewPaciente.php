@@ -49,7 +49,7 @@ $datos = explode('/', $dataUser);
             $dao = new DaoAnuncio();
             $anuncio = $dao->listadoAnuncios();
             foreach ($anuncio as $anun) {
-                if ($numAnuncios < 4) {
+                if ($numAnuncios < 3) {
                     echo
                     '
                 <section class="tablonAnuncios">
@@ -59,7 +59,7 @@ $datos = explode('/', $dataUser);
                 <div class="objetoTablon" id="fechaPublicacion">
                     <span class="fecha-text" title="Fecha de Publicación del Anuncio">' . $anun['fechaPublicacion'] . '</span>
                 </div>
-    
+
                 <div class="objetoTablon" id="descripcion">
                     <p title="Contenido del Anuncio">
                         ' . $anun['contenidoAnuncio'] . '
@@ -71,11 +71,11 @@ $datos = explode('/', $dataUser);
 
                 $numAnuncios++;
             }
-
-
             ?>
 
-            <a href="../controller/ctrlComentarios.php?idUsuario=" <?php $datos[0]; ?>></a>
+            <button class="botonVerMas">
+                <a href="../view/viewAnuncios.php">Ver más+</a>
+            </button>
         </article>
         <main class="tittleE">
             <p>Principales Especialidades:</p>
@@ -85,7 +85,6 @@ $datos = explode('/', $dataUser);
 
 
         <main class="cards">
-            
             <div class="card">
                 <div class="face front">
                     <img src="../assets/imgs/corazon.png" alt="" class="imagenEspecialidad">
@@ -146,13 +145,12 @@ $datos = explode('/', $dataUser);
         </main>
         <main class="booton">
        <button class="botonVerMas">
-        <a href="especialidadesMedicas.php">Ver mas+</a>
+        <a href="../view/especialidadesMedicas.php">Ver más+</a>
        </button>
        </main>
 
         <?php footer(); ?>
     </main>
-   
 
     <script src="javascript.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
