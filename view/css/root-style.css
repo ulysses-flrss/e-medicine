@@ -1,34 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@300&family=Quicksand:wght@700&family=Rubik&family=Rubik+Mono+One&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@300&family=Quicksand:wght@700&family=Rubik&family=Rubik+Mono+One&family=Sacramento&family=Yanone+Kaffeesatz:wght@200&display=swap');
+:root {
+  /* Aquí definimos las variables */
+  --aquaMenu-body-color: #21d873;
+  --aqua-body-color: #b2dac6;
+  --aquaBright-body-color: #6ef0b1;
+  --red-body-color: #f14d60;
+  --darkRed-body-color: #bf003b;
+  --skinBright-body-color: #fec08c;
+  --skinDark-body-color: #da7f3d;
+  --icon-color: #135f35;
+  --background-color: #e0e6e3;
 
+  --shadow-color: #1c3b2d;
 
-:root {/* Aquí definimos las variables */
-    --aquaMenu-body-color: #21d873;
-    --aqua-body-color:#b2dac6;
-    --aquaBright-body-color: #6ef0b1;
-    --red-body-color: #f14d60;
-    --darkRed-body-color: #bf003b;
-    --skinBright-body-color: #fec08c;
-    --skinDark-body-color: #da7f3d;
-    --icon-color: #135f35;
-    --background-color: #e0e6e3;
+  --font-size: 100%;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-    --shadow-color: #1c3b2d;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
 
-    --font-size: 100%;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    font-family: var(--font-family);
-    font-size: var(--font-size);
-
-
-    --menuFont: 'Quicksand', sans-serif;
-    --bienvenidaFont: 'Rubik Mono One', sans-serif;
-    --bodyFont: 'Nunito', sans-serif;
-    --extraFont: 'Rubik', sans-serif;
-    --footerFont: 'Yanone Kaffeesatz', sans-serif;
-    --register-welcome-font: 'Sacramento', cursive;
-
+  --menuFont: "Quicksand", sans-serif;
+  --bienvenidaFont: "Rubik Mono One", sans-serif;
+  --bodyFont: "Nunito", sans-serif;
+  --extraFont: "Rubik", sans-serif;
+  --footerFont: "Yanone Kaffeesatz", sans-serif;
+  --register-welcome-font: "Sacramento", cursive;
 }
 
 body {
@@ -38,8 +35,7 @@ body {
   grid-template-rows: 1fr auto;
 }
 
-
-.allContainer{
+.allContainer {
   height: 100vh !important;
   display: grid;
   justify-content: center;
@@ -57,15 +53,14 @@ body {
   outline: none;
   padding: 0.5em;
   font-size: var(--menuFont) !important;
-  box-shadow: 3px 6px 0px #1c3b2d;    
+  box-shadow: 3px 6px 0px #1c3b2d;
   transition: 250ms all;
-  background-color: #FFF;
+  background-color: #fff;
 }
-
 
 .disenoBoton:hover {
   transition: 150ms all;
-  background-color: #DDD;
+  background-color: #ddd;
 }
 
 .disenoBoton:active {
@@ -74,7 +69,5 @@ body {
   transition: 50ms all ease-in-out;
   box-shadow: 0px 0px 0px;
   outline: none;
-  
   background-color: #b6b6b6;
-  
 }

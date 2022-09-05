@@ -40,6 +40,9 @@ $datos = explode('/', $dataUser);
         </div>
 
         <article class="mainArticle">
+            <main class="tittleE">
+                <p>Últimos Anuncios:</p>
+            </main>
             <?php
             $numAnuncios = 0;
             if (!isset($anuncio)) {
@@ -73,16 +76,15 @@ $datos = explode('/', $dataUser);
             }
             ?>
 
-            <button class="botonVerMas">
-                <a href="../view/viewAnuncios.php">Ver más+</a>
-            </button>
+            <a href="../view/viewAnuncios.php" class="links">
+                <button class="botonVerMas">
+                    <span>Ver más+</span>
+                </button>
+            </a>
         </article>
         <main class="tittleE">
             <p>Principales Especialidades:</p>
-            </main>
-
-
-
+        </main>
 
         <main class="cards">
             <div class="card">
@@ -144,9 +146,11 @@ $datos = explode('/', $dataUser);
             </div>
         </main>
         <main class="booton">
-       <button class="botonVerMas">
-        <a href="../view/especialidadesMedicas.php">Ver más+</a>
-       </button>
+        <a href="../view/especialidadesMedicas.php" class="links">
+            <button class="botonVerMas">
+                <span>Ver mas+</span>
+            </button>
+        </a>
        </main>
 
         <?php footer(); ?>

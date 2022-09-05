@@ -9,7 +9,7 @@ require_once 'plugins/funciones.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitado | E-Medicine</title>
+    <title>Inicio | E-Medicine</title>
     <link rel='stylesheet' href='../view/css/invitado.css'>
     <link rel="stylesheet" href="../view/css/index-style.css">
 
@@ -55,7 +55,10 @@ require_once 'plugins/funciones.php';
         </div>
         </div>
 
-        <article class="mainArticle">
+        <article class="mainArticle" id="dSlider">
+            <main class="tittleE">
+                <p>Últimos Anuncios:</p>
+            </main>
             <?php
             $numAnuncios = 0;
             if (!isset($anuncio)) {
@@ -65,7 +68,7 @@ require_once 'plugins/funciones.php';
             $dao = new DaoAnuncio();
             $anuncio = $dao->listadoAnuncios();
             foreach ($anuncio as $anun) {
-                if ($numAnuncios < 4) {
+                if ($numAnuncios < 3) {
                     echo
                     '
                 <section class="tablonAnuncios">
@@ -75,7 +78,7 @@ require_once 'plugins/funciones.php';
                 <div class="objetoTablon" id="fechaPublicacion">
                     <span class="fecha-text" title="Fecha de Publicación del Anuncio">' . $anun['fechaPublicacion'] . '</span>
                 </div>
-    
+
                 <div class="objetoTablon" id="descripcion">
                     <p title="Contenido del Anuncio">
                         ' . $anun['contenidoAnuncio'] . '
@@ -91,11 +94,18 @@ require_once 'plugins/funciones.php';
 
             ?>
 
-            
+            <a href="../view/viewAnuncios.php" class="links">
+                <button class="botonVerMas">
+                    <span>Ver más+</span>
+                </button>
+            </a>
         </article>
 
+        <main class="tittleE">
+            <p>Principales Especialidades:</p>
+        </main>
+
         <main class="cards">
-            
             <div class="card">
                 <div class="face front">
                     <img src="../assets/imgs/corazon.png" alt="" class="imagenEspecialidad">
@@ -155,9 +165,11 @@ require_once 'plugins/funciones.php';
             </div>
         </main>
         <main class="booton">
-       <button class="botonVerMas">
-        <a href="especialidadesMedicas.php">Ver mas+</a>
-       </button>
+        <a href="../view/especialidadesMedicas.php" class="links">
+            <button class="botonVerMas">
+                <span>Ver mas+</span>
+            </button>
+        </a>
         </main>
 
 
