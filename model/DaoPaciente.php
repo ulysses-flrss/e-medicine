@@ -55,7 +55,11 @@ class DaoPaciente{
         try{
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':idPaciente',$id);
-            $stmt->execute();
+            if ($stmt->execute()){
+                return "OK";
+            }else{
+                return "Ha ocurrido un error inesperado al eliminar la cuenta.";
+            }
         }catch(PDOException $e){
             echo "Error: " . $e->getMessage();
         }
@@ -63,22 +67,23 @@ class DaoPaciente{
     public function getCodigo(){
         $cn = new Conexion();
         $dbh = $cn->getConexion();
-        $sql = "SELECT count(*) AS correlativo FROM pacientes WHERE idPaciente LIKE 'P-%'";
+        $sql = "SELECT idPaciente FROM pacientes WHERE idPaciente LIKE 'P-%' ORDER BY idPaciente DESC";
         $stmt=$dbh->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetch();
         if(isset($row[0])){
-            if ($row[0] < 9){
-                $c = "P-0000" . ($row[0]+1);
+            $division = explode('-', $row[0]);
+            if ($division[1] > 0 && $division[1] < 9){
+                $c = "P-0000" . ($division[1]+1);
                 return $c;
-            }elseif ($row[0] < 99){
-                $c = "P-000" . ($row[0]+1);
+            }elseif ($division[1] < 99){
+                $c = "P-000" . ($division[1]+1);
                 return $c;
-            }elseif ($row[0] <   999) {
-                $c = "P-00" . ($row[0]+1);
+            }elseif ($division[1] < 999) {
+                $c = "P-00" . ($division[1]+1);
                 return $c;
             }else{
-                $c = "P-0" . ($row[0]+1);
+                $c = "P-0" . ($division[1]+1);
                 return $c;
             }
         }else{

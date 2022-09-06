@@ -9,7 +9,6 @@
         $datos = explode('/', $dataUser);
 
         $codPaciente = $datos[0];
-    
 ?>
 
 
@@ -24,11 +23,14 @@
     <title>Ver Usuarios | E-Medicine </title>
     <link rel="stylesheet" href="css/viewAdmin-style.css">
     <?php links() ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css">
 </head>
 <body>
     <?php menu() ?>
     <main class="all-container">
-        
         <article>
             <a href="../controller/ctrlAdmin.php?accion=addPaciente" class="agregarUser">
                 <img class = "add-image" src="../assets/imgs/add.png" alt="">
@@ -36,12 +38,7 @@
             </a>
             <section>
 
-
-
-            
-
                 <table>
-                    
                 <tr>
                     <th>ID de Paciente</th>
                     <th>Nombres</th>
@@ -50,7 +47,7 @@
 
                 </tr>
 
-                <?php 
+                <?php
                 if (!isset($pacientes)) {
                     require_once("../model/DaoPaciente.php");
                 } else {
@@ -58,8 +55,8 @@
                 }
                     $dao = new DaoPaciente();
                     $pacientes = $dao->listadoPacientes();
-                    
-                    
+                    $tipo = "paciente";
+
                     foreach ($pacientes as $pacient) {
                         echo "<tr>
                                 <td>".$pacient['idPaciente']."</td>
@@ -68,7 +65,7 @@
                                 <td>
                                     <ul>
                                         <li><button><i class='fas fa-edit'></i></button></li>
-                                        <li><button><i class='fas fa-trash-alt'></i></button></li>
+                                        <li><button onclick='eliminarUser(\"".$tipo."\",\"".$pacient['idPaciente']."\");'><i class='fas fa-trash-alt'></i></button></li>
                                     </ul>
                                 </td>
                                 </tr>";
@@ -76,10 +73,7 @@
                  ?>
                 </table>
 
-
-
-
-<?php 
+<?php
                 if (!isset($familiar)) {
                     require_once("../model/DaoFamiliar.php");
                 } else {
@@ -92,14 +86,14 @@
 
                     } else {
                         echo "<table>
-                    
+
                         <tr>
                             <th>ID de Familiar</th>
                             <th>Nombres</th>
                             <th>Apellidos</th>
                             <th>ID de Paciente</th>
                             <th>Acciones</th>
-        
+
                         </tr>";
 
                         foreach ($familiar as $familia) {
@@ -110,30 +104,27 @@
                                     <td>".$familia['idPaciente']."</td>
                                     <td>
                                         <ul>
-                                            <li><button><i class='fas fa-edit'></i></button></li>
+                                            <li><button onclick='eliminarUser(\'familiar\', ".$familiar['idPerfil'].");'><i class='fas fa-edit'></i></button></li>
                                             <li><button><i class='fas fa-trash-alt'></i></button></li>
                                         </ul>
                                     </td>
                                     </tr>";
                     }
-                    
-                    
-                    
                     }
-                 ?>
-
-
-
-
-
-
-
-
+                ?>
             </table>
             </section>
         </article>
     </main>
 
     <?php footer() ?>
+    <script src="../view/js/password.js"></script>
+    <script src="../view/js/funciones.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../view/js/all.min.js"></script>
+    <script src="../view/js/bootstrap.min.js"></script>
+    <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
+    <script src="../view/js/selectCita.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>

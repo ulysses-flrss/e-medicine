@@ -86,7 +86,7 @@ function retornarDatos(accion) {
       "tel": document.getElementById("tel").value,
       "dui": document.getElementById("dui").value,
     }
-  } 
+  }
 }
 
 function programarCita() {
@@ -260,6 +260,46 @@ function registrarUser() {
     });
   }
   return false
+}
+
+function eliminarUser(tipoUser, idUsuario){
+  let urlC = '';
+  if (tipoUser == "paciente")
+    urlC = '../controller/CtrlPaciente.php';
+  else if (tipoUser == "doctor")
+    urlC = '../controller/ctrlDoctor.php';
+
+  $.ajax({
+    url: urlC,
+    data: {idUsuario: idUsuario},
+    type: 'POST',
+    dataType: 'json'
+  }).done(function(response) {
+    console.log("ajax completado");
+    if (response == "OK") {
+      console.log("ingresa al OK");
+      Swal.fire({
+        type: 'success',
+        title: '¡Éxito!',
+        text: 'Se ha eliminado el usuario con éxito.',
+        footer: 'E-MEDICINE ©'
+      }).then((result)=>{
+        window.location.href="../view/viewAdminPacientes.php";
+      });
+    } else {
+      console.log("No ingresa al OK");
+      Swal.fire({
+        type: 'error',
+        title: '¡ERROR!',
+        text: response,
+        footer: 'E-MEDICINE ©'
+      });
+    }
+  }).fail(function(response) {
+    console.log("Error del ajax");
+    console.log(response);
+  });
+    return false;
 }
 
 function publicarAnuncio(ubi){

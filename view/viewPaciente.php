@@ -151,7 +151,7 @@ $datos = explode('/', $dataUser);
                 <span>Ver mas+</span>
             </button>
         </a>
-       </main>
+      </main>
 
         <?php footer(); ?>
     </main>

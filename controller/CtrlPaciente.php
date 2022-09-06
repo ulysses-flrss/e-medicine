@@ -1,4 +1,4 @@
-https://github.com/login/oauth/authorize?client_id=de0e3c7e9973e1c4dd77&scope=repo%20user%20workflow&state=7fb2b2ef-f194-4319-8e63-ec0e785de5b9<?php
+<!-- https://github.com/login/oauth/authorize?client_id=de0e3c7e9973e1c4dd77&scope=repo%20user%20workflow&state=7fb2b2ef-f194-4319-8e63-ec0e785de5b9--><?php
     session_start();
     $nombre = isset($_POST['nom'])?$_POST['nom']:"";
     $apellido = isset($_POST['ape'])?$_POST['ape']:"";
@@ -11,6 +11,7 @@ https://github.com/login/oauth/authorize?client_id=de0e3c7e9973e1c4dd77&scope=re
     $password = isset($_POST['pass'])?$_POST['pass']:"";
     $telefono = isset($_POST['tel'])?$_POST['tel']:"";
     $duiP = isset($_POST['dui'])?$_POST['dui']:"";
+    // $tipoUser = isset($_POST['tipoUser'])?$_POST['tipoUser']:"";
     $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
     $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
 
@@ -72,18 +73,16 @@ https://github.com/login/oauth/authorize?client_id=de0e3c7e9973e1c4dd77&scope=re
 
         $dao = new DaoPaciente();
         $datosDoc = $dao->extraerDatos($datos[0]);
-        
         $r = $dao->editarPaciente($idPaciente, $nombre, $apellido, $peso, $altura, $fechaNacimiento, $municipio, $correo, $telefono, $DUI, $pass);
 
         echo json_encode($r);
 
     }
     //Eliminar paciente
-    /*if($id != "" && $accion=="eliminar"){
+    if($cod != "" && $accion=="eliminar"){
         require_once '../model/daoPaciente.php';
         $dao = new DaoPaciente();
-        $dao->eliminar($id);
-        echo "<p>Registro Eliminado exitosamente...</p>";
-        echo "<a href='../index.php'>Regresar</a>";
-    }*/
+        $r = $dao->eliminar($cod);
+        echo json_encode($r);
+    }
 ?>
