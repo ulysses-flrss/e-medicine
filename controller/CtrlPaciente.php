@@ -1,4 +1,4 @@
-<!-- https://github.com/login/oauth/authorize?client_id=de0e3c7e9973e1c4dd77&scope=repo%20user%20workflow&state=7fb2b2ef-f194-4319-8e63-ec0e785de5b9--><?php
+<?php
     session_start();
     $nombre = isset($_POST['nom'])?$_POST['nom']:"";
     $apellido = isset($_POST['ape'])?$_POST['ape']:"";
