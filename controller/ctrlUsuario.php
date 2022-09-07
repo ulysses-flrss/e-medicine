@@ -1,7 +1,17 @@
 <?php
   // Notificar todos los errores excepto E_NOTICE
   error_reporting(E_ALL ^ E_NOTICE);
-    session_start();
+  session_start();
+
+  $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
+  $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+
+  if($accion=="eliminar"){
+      require_once '../model/daoPaciente.php';
+      $dao = new DaoPaciente();
+      $r = $dao->eliminar($cod);
+      echo json_encode($r);
+  }
 
   function username($idUsuario){
     require_once '../model/classConexion.php';

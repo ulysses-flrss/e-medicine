@@ -77,8 +77,13 @@ require_once("plugins/funciones.php");
         </section>
          </article>
      </main>
- 		
-	  <?php footer() ?>
-    <script src="javascript.js"></script>
+      <?php footer() ?>
+    <script src="../view/js/funciones.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../view/js/all.min.js"></script>
+    <script src="../view/js/bootstrap.min.js"></script>
+    <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
+    <script src="../view/js/selectCita.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>

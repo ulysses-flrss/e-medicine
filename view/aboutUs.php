@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("plugins/funciones.php") 
+require_once("plugins/funciones.php")
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +12,10 @@ require_once("plugins/funciones.php")
     <title>Acerca de Nosotros - E-Medicine</title>
     <link rel="stylesheet" href="css/about-us-style.css">
     <?php links() ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css">
 </head>
 <body>
 
@@ -40,7 +44,7 @@ require_once("plugins/funciones.php")
                 <p class="content">La clínica a la que le brindamos nuestro servicio tiene sus puertas abiertas de <b>Lunes a Viernes</b> en los horarios desde las <b>7:00am</b> hasta las <b>6:00pm</b>.</p>
             </div>
         </section>
-        
+
         <div id="creadores">Creadores</div>
         <section class="cards">
         <div class="card">
@@ -206,14 +210,18 @@ require_once("plugins/funciones.php")
             </div>
           </div>
         </div>
-       
 
         </section>
     </article>
 </main>
 
 <?php footer() ?>
-<script src="../view/js/funciones.js"></script>
-
+  <script src="../view/js/funciones.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../view/js/all.min.js"></script>
+  <script src="../view/js/bootstrap.min.js"></script>
+  <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
+  <script src="../view/js/selectCita.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>

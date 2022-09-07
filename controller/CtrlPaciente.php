@@ -79,7 +79,7 @@
 
     }
     //Eliminar paciente
-    if($cod != "" && $accion=="eliminar"){
+    if($accion=="eliminar"){
         require_once '../model/daoPaciente.php';
         $dao = new DaoPaciente();
         $r = $dao->eliminar($cod);

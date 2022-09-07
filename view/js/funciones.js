@@ -86,6 +86,11 @@ function retornarDatos(accion) {
       "tel": document.getElementById("tel").value,
       "dui": document.getElementById("dui").value,
     }
+  } else if (accion == "eliminar") {
+    return {
+      "idUsuario": document.getElementById ("idUsuario").value,
+      "accion": accion
+    }
   }
 }
 
@@ -264,14 +269,18 @@ function registrarUser() {
 
 function eliminarUser(tipoUser, idUsuario){
   let urlC = '';
-  if (tipoUser == "paciente")
+  /*if (tipoUser == "paciente")
     urlC = '../controller/CtrlPaciente.php';
   else if (tipoUser == "doctor")
     urlC = '../controller/ctrlDoctor.php';
 
+  console.log(urlC);*/
+
+  console.log(idUsuario);
+
   $.ajax({
-    url: urlC,
-    data: {idUsuario: idUsuario},
+    url: '../controller/ctrlUsuario.php',
+    data: {"idUsuario": idUsuario, "accion": 'eliminar'},
     type: 'POST',
     dataType: 'json'
   }).done(function(response) {

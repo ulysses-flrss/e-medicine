@@ -32,7 +32,7 @@
     <?php menu() ?>
     <main class="all-container">
         <article>
-            <a href="../controller/ctrlAdmin.php?accion=addPaciente" class="agregarUser">
+            <a href="../view/viewRegister.php" class="agregarUser">
                 <img class = "add-image" src="../assets/imgs/add.png" alt="">
                 <span class="add-text">Agregar Paciente</span>
             </a>
@@ -104,7 +104,7 @@
                                     <td>".$familia['idPaciente']."</td>
                                     <td>
                                         <ul>
-                                            <li><button onclick='eliminarUser(\'familiar\', ".$familiar['idPerfil'].");'><i class='fas fa-edit'></i></button></li>
+                                            <li><button onclick='eliminarUser(\"familiar\", \"".$familiar['idPerfil']."\", \"".$familiar['idPaciente']."\");'><i class='fas fa-edit'></i></button></li>
                                             <li><button><i class='fas fa-trash-alt'></i></button></li>
                                         </ul>
                                     </td>
