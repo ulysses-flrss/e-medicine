@@ -44,7 +44,7 @@ require_once("../model/classConexion.php");
                 $stmt->bindParam(':municipio',$municipio);
                 $stmt->bindParam(':enfermedades',$enfermedades);
                 $stmt->bindParam(':idPerfil', $idPerfil);
-    
+
                 if ($stmt->execute()) {
                     return "OK";
                 }else{
@@ -53,11 +53,28 @@ require_once("../model/classConexion.php");
             }catch(PDOException $e){
                 echo "Error: " . $e->getMessage();
             }
-        } 
+        }
 
- 
-        public function eliminar($idPerfil){
-            $cn = new Conexion;        
+        public function eliminarCitas($idPerfil){
+            $cn = new Conexion;
+            $dbh = $cn->getConexion();
+            $sql = "DELETE FROM citasfamiliares WHERE idPerfil=:idPerfil";
+
+            try{
+                $stmt = $dbh->prepare($sql);
+                $stmt->bindParam(':idPerfil',$idPerfil);
+                if ($stmt->execute()) {
+                    return "OK";
+                }else{
+                    return "ERROR: el perfil ya ha sido borrado.";
+                }
+            }catch(PDOException $e){
+                echo "Error: " . $e->getMessage();
+            }
+        }
+
+        public function eliminar($idPerfil, $idPaciente){
+            $cn = new Conexion;
             $dbh = $cn->getConexion();
             $sql = "DELETE FROM familiar WHERE idPerfil=:idPerfil";
 
@@ -130,8 +147,6 @@ require_once("../model/classConexion.php");
 
         }
 
-
-
         public function mostrarFamiliar($idPerfil) {
             $sql = "SELECT idPerfil, idPaciente, nombres, apellidos, peso, altura, fechaNac, genero, municipio, enfermedades FROM familiar WHERE idPerfil=:idPerfil";
             $cn = new Conexion;
@@ -144,7 +159,7 @@ require_once("../model/classConexion.php");
         }
 
         public function obtenerIdPerfil($idPaciente){
-            $cn = new Conexion();        
+            $cn = new Conexion();
             $dbh = $cn->getConexion();
             $sql = "SELECT count(*) AS correlativo FROM familiar WHERE idPaciente=:idPaciente";
             $stmt=$dbh->prepare($sql);

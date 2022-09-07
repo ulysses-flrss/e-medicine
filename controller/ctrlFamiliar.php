@@ -18,7 +18,6 @@
     require_once("../model/classFamiliares.php");
     require_once("../model/DaoFamiliar.php");
     require_once("../model/classConexion.php");
-    
 
 if($accion == "crearPerfil") {
     if ($nombre == "") {
@@ -59,7 +58,8 @@ if($accion == "crearPerfil") {
 
 if($accion=="eliminar"){
     $dao = new DaoFamiliar();
-    $r = $dao->eliminar($idPerfil);
+    $dao->eliminarCitas($idPerfil);
+    $r = $dao->eliminar($idPerfil, $idPaciente);
     $codigos = $dao->reasignarId($idPerfil);
     foreach ($codigos as $codigo) {
         $datos = explode('-', $codigo['idPerfil']);

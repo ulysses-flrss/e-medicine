@@ -267,48 +267,109 @@ function registrarUser() {
   return false
 }
 
-function eliminarUser(tipoUser, idUsuario){
-  let urlC = '';
-  /*if (tipoUser == "paciente")
-    urlC = '../controller/CtrlPaciente.php';
-  else if (tipoUser == "doctor")
-    urlC = '../controller/ctrlDoctor.php';
-
-  console.log(urlC);*/
+function eliminarUser(tipoUser, idUsuario, idPerfil){
+  if (tipoUser == "paciente"){
+    $.ajax({
+      url: '../controller/ctrlUsuario.php',
+      data: {"idUsuario": idUsuario, "accion": 'eliminar'},
+      type: 'POST',
+      dataType: 'json'
+    }).done(function(response) {
+      console.log("ajax completado");
+      if (response == "OK") {
+        console.log("ingresa al OK");
+        Swal.fire({
+          type: 'success',
+          title: '¡Éxito!',
+          text: 'Se ha eliminado el usuario con éxito.',
+          footer: 'E-MEDICINE ©'
+        }).then((result)=>{
+          window.location.href="../view/viewAdminPacientes.php";
+        });
+      } else {
+        console.log("No ingresa al OK");
+        Swal.fire({
+          type: 'error',
+          title: '¡ERROR!',
+          text: response,
+          footer: 'E-MEDICINE ©'
+        });
+      }
+    }).fail(function(response) {
+      console.log("Error del ajax");
+      console.log(response);
+    });
+    return false;
+  }else if (tipoUser == "doctor"){
+    $.ajax({
+      url: '../controller/ctrlDoctor.php',
+      data: {"idUsuario": idUsuario, "accion": 'eliminar'},
+      type: 'POST',
+      dataType: 'json'
+    }).done(function(response) {
+      console.log("ajax completado");
+      if (response == "OK") {
+        console.log("ingresa al OK");
+        Swal.fire({
+          type: 'success',
+          title: '¡Éxito!',
+          text: 'Se ha eliminado el usuario con éxito.',
+          footer: 'E-MEDICINE ©'
+        }).then((result)=>{
+          window.location.href="../view/viewAdminPacientes.php";
+        });
+      } else {
+        console.log("No ingresa al OK");
+        Swal.fire({
+          type: 'error',
+          title: '¡ERROR!',
+          text: response,
+          footer: 'E-MEDICINE ©'
+        });
+      }
+    }).fail(function(response) {
+      console.log("Error del ajax");
+      console.log(response);
+    });
+    return false;
+  }else{
+    console.log(idPerfil);
+    console.log(idUsuario);
+    $.ajax({
+      url: '../controller/ctrlFamiliar.php',
+      data: {"idUsuario": idUsuario, "idPerfil": idPerfil, "accion": 'eliminar'},
+      type: 'POST',
+      dataType: 'json'
+    }).done(function(response) {
+      console.log("ajax completado");
+      if (response == "OK") {
+        console.log("ingresa al OK");
+        Swal.fire({
+          type: 'success',
+          title: '¡Éxito!',
+          text: 'Se ha eliminado el usuario con éxito.',
+          footer: 'E-MEDICINE ©'
+        }).then((result)=>{
+          window.location.href="../view/viewAdminPacientes.php";
+        });
+      } else {
+        console.log("No ingresa al OK");
+        Swal.fire({
+          type: 'error',
+          title: '¡ERROR!',
+          text: response,
+          footer: 'E-MEDICINE ©'
+        });
+      }
+    }).fail(function(response) {
+      console.log("Error del ajax");
+      console.log(response);
+    });
+    return false;
+  }
 
   console.log(idUsuario);
 
-  $.ajax({
-    url: '../controller/ctrlUsuario.php',
-    data: {"idUsuario": idUsuario, "accion": 'eliminar'},
-    type: 'POST',
-    dataType: 'json'
-  }).done(function(response) {
-    console.log("ajax completado");
-    if (response == "OK") {
-      console.log("ingresa al OK");
-      Swal.fire({
-        type: 'success',
-        title: '¡Éxito!',
-        text: 'Se ha eliminado el usuario con éxito.',
-        footer: 'E-MEDICINE ©'
-      }).then((result)=>{
-        window.location.href="../view/viewAdminPacientes.php";
-      });
-    } else {
-      console.log("No ingresa al OK");
-      Swal.fire({
-        type: 'error',
-        title: '¡ERROR!',
-        text: response,
-        footer: 'E-MEDICINE ©'
-      });
-    }
-  }).fail(function(response) {
-    console.log("Error del ajax");
-    console.log(response);
-  });
-    return false;
 }
 
 function publicarAnuncio(ubi){

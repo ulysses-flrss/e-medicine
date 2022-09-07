@@ -65,7 +65,7 @@
                                 <td>
                                     <ul>
                                         <li><button><i class='fas fa-edit'></i></button></li>
-                                        <li><button onclick='eliminarUser(\"".$tipo."\",\"".$pacient['idPaciente']."\");'><i class='fas fa-trash-alt'></i></button></li>
+                                        <li><button onclick='eliminarUser(\"".$tipo."\",\"".$pacient['idPaciente']."\", \"\");'><i class='fas fa-trash-alt'></i></button></li>
                                     </ul>
                                 </td>
                                 </tr>";
@@ -104,8 +104,8 @@
                                     <td>".$familia['idPaciente']."</td>
                                     <td>
                                         <ul>
-                                            <li><button onclick='eliminarUser(\"familiar\", \"".$familiar['idPerfil']."\", \"".$familiar['idPaciente']."\");'><i class='fas fa-edit'></i></button></li>
-                                            <li><button><i class='fas fa-trash-alt'></i></button></li>
+                                            <li><button><i class='fas fa-edit'></i></button></li>
+                                            <li><button onclick='eliminarUser(\"familiar\", \"".$familia['idPaciente']."\", \"".$familia['idPerfil']."\");'><i class='fas fa-trash-alt'></i></button></li>
                                         </ul>
                                     </td>
                                     </tr>";
