@@ -24,25 +24,18 @@ class DaoPaciente{
             echo "Error: " . $e->getMessage();
         }
     }
-    public function editarPaciente($idPaciente, $nombre, $apellido, $peso, $altura, $fechaNacimiento, $municipio, $correo, $telefono, $DUI, $pass){
+    
+    public function editarPaciente($idPaciente, $nombre, $apellido, $peso, $altura, $fechaNacimiento, $fechaIngreso,  $genero, $municipio, $correo, $telefono, $DUI, $pass){
         $cn = new Conexion();
         $dbh = $cn->getConexion();
-        $sql = "UPDATE pacientes SET nombre=:nombre, apellido=:apellido, peso=:peso, altura=:altura, fechaNacimiento=:fechaNacimiento, genero=:genero, municipio=:municipio, correo=:correo, pass=:pass WHERE idPaciente=:idPaciente";
+        $sql = "UPDATE pacientes SET nombre='$nombre', apellido='$apellido', peso='$peso', altura='$altura', fechaNacimiento='$fechaNacimiento', fechaIngreso='$fechaIngreso', genero='$genero', municipio='$municipio', correo='$correo', pass='$pass', telefono='$telefono', DUI='$DUI' WHERE idPaciente='$idPaciente'";
+        
         try{
             $stmt = $dbh->prepare($sql);
-            $stmt->bindParam(':nombre',$nombre);
-            $stmt->bindParam(':apellido',$apellido);
-            $stmt->bindParam(':peso',$peso);
-            $stmt->bindParam(':altura',$altura);
-            $stmt->bindParam(':fechaNacimiento',$fechaNacimiento);
-            $stmt->bindParam(':municipio',$municipio);
-            $stmt->bindParam(':correo',$correo);
-            $stmt->bindParam(':pass ',$pass);
-            $stmt->bindParam(':idPaciente',$idPaciente);
             if ($stmt->execute()) {
                 return "OK";
             } else {
-                return "ERROR";
+                return $stmt;
             }
         }catch(PDOException $e){
             echo "Error: " . $e->getMessage();
@@ -212,7 +205,7 @@ class DaoPaciente{
     public function extraerDatos($idPaciente){
         $cn = new Conexion();
         $dbh = $cn->getConexion();
-        $sql = "SELECT nombre, apellido, peso, altura, fechaNacimiento, municipio, correo, telefono, DUI, pass FROM pacientes WHERE idPaciente=:idPaciente";
+        $sql = "SELECT nombre, apellido, peso, altura, fechaNacimiento, fechaIngreso, genero, municipio, correo, pass, telefono, DUI FROM pacientes WHERE idPaciente=:idPaciente";
 
         try {
             $stmt = $dbh->prepare($sql);

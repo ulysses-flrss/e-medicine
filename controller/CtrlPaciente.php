@@ -4,22 +4,28 @@
     $apellido = isset($_POST['ape'])?$_POST['ape']:"";
     $peso = isset($_POST['pe'])?$_POST['pe']:"";
     $altura = isset($_POST['al'])?$_POST['al']:"";
+    $fechaNac = isset($_POST['fn'])?$_POST['fn']:"";
+    $fechaIng = isset($_POST['fi'])?$_POST['fi']:"";
     $genero = isset($_POST['gen'])?$_POST['gen']:"";
     $municipio = isset($_POST['muni'])?$_POST['muni']:"";
     $eMail = isset($_POST['email'])?$_POST['email']:"";
-    $fechaNac = isset($_POST['fn'])?$_POST['fn']:"";
     $password = isset($_POST['pass'])?$_POST['pass']:"";
     $telefono = isset($_POST['tel'])?$_POST['tel']:"";
     $duiP = isset($_POST['dui'])?$_POST['dui']:"";
-    // $tipoUser = isset($_POST['tipoUser'])?$_POST['tipoUser']:"";
     $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
-    $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+    $idPaciente = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+    // $tipoUser = isset($_POST['tipoUser'])?$_POST['tipoUser']:"";
 
-    if($accion == ""){
-        //require "view/viewPaciente.php";
-    }
+    if($accion == "editarPaciente") {
+        require_once "../model/classPaciente.php";
+        require_once "../model/DaoPaciente.php";
 
-    if($accion == "registrarUser"){
+        $dao = new DaoPaciente();
+        $r = $dao->editarPaciente($idPaciente, $nombre, $apellido, $peso, $altura, $fechaNac, $fechaIng, $genero, $municipio, $eMail, $telefono, $duiP, $password);
+
+        echo json_encode($r);
+
+    } else if($accion == "registrarUser"){
         require_once '../model/classPaciente.php';
         require_once '../model/DaoPaciente.php';
 
@@ -39,7 +45,7 @@
         echo "<script>alert('".$mensaje."')</script>"; //MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
         echo "<body style='background-color:#daffec;'><a href='../index.php' style='text-decoration:none;color:black;font-size:1.5rem;font-weight:bold;'>Iniciar Sesión</a></body>";*/
         //header("location:../index.php");//MISION: SUSTITUIR EL ALERT POR UNA VENTANA MODAL.
-    }elseif ($accion = "cerrarSesion") {
+    }else if ($accion = "cerrarSesion") {
         require_once "../model/classPaciente.php";
         require_once "../model/daoPaciente.php";
 
@@ -47,11 +53,7 @@
         $cod = $dao->getCodigo();
 
         $dao->cerrarSesion($cod);
-
-        //require_once '../index.php';
-
-        //header("location:../index.php");
-    }elseif ($accion == "validarDui") {
+    }else if ($accion == "validarDui") {
         require_once "../model/classConexion.php";
         $conexion = new Conexion;
         $dbh = $conexion->getConexion();
@@ -67,17 +69,7 @@
         }
         $r = "OK";
         echo json_encode($r);
-    } else if($accion == "editarPaciente") {
-        require_once "../model/classPaciente.php";
-        require_once "../model/DaoPaciente.php";
-
-        $dao = new DaoPaciente();
-        $datosDoc = $dao->extraerDatos($datos[0]);
-        $r = $dao->editarPaciente($idPaciente, $nombre, $apellido, $peso, $altura, $fechaNacimiento, $municipio, $correo, $telefono, $DUI, $pass);
-
-        echo json_encode($r);
-
-    }
+    } 
     //Eliminar paciente
     if($accion=="eliminar"){
         require_once '../model/daoPaciente.php';

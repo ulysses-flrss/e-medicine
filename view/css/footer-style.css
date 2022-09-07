@@ -1,13 +1,14 @@
 .footer {
   display: grid;
   position: relative;
-  padding: 1em 0;
-  width: 98.5vw;
+  padding: 1em 0em;
   height: fit-content;
   background-color: rgb(43, 43, 43);
   bottom: 0;
+  width: 100vw;
   transition: 500ms all;
   margin-top: 1em;
+  
 }
 
 .social-networks-container {
@@ -63,3 +64,5 @@
   transition: 500ms all;
   transform: scale(1.05);
 }
+
+

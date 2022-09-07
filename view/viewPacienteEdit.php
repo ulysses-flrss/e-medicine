@@ -1,12 +1,11 @@
 <?php
 // Notificar todos los errores excepto E_NOTICE
-error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 require_once 'plugins/funciones.php';
 require_once '../controller/ctrlUsuario.php';
-require_once '../model/DaoPaciente.php';
+require_once "../model/DaoPaciente.php";
 
-$cod = "";
+$cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
 $dataUser = username($cod);
 
 $datos = explode('/', $dataUser);
@@ -18,8 +17,7 @@ $datos = explode('/', $dataUser);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - E-Medicine</title>
-    <?php $location = "dentro";  links($location);?>
-    <link rel="stylesheet" href="../view/css/register-style.css">
+    <link rel="stylesheet" href="css/register-style.css">
     <?php links() ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -37,7 +35,8 @@ $datos = explode('/', $dataUser);
             <section class="form-container">
                 <!-- <form id = "form" class="form-register" method="POST" onsubmit="submitForm(event)"> -->
 
-                <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>"; 
+                <?php echo
+                "<input type='hidden' id='idUsuario' name='idUsuario' value='". $datos[0]."'>"; 
 
                 
                     $dao = new DaoPaciente();
@@ -70,11 +69,15 @@ $datos = explode('/', $dataUser);
                         <input type="date" name="fn" id="fn" value="<?php echo $datosPac[4] ?>" disabled>
                     </div>
 
+                    <?php echo "<input type='hidden' id='fi' name='fi' value='".$datosPac[5]."'>" ?>
+
+                    <?php echo "<input type='hidden' id='gen' name='gen' value='".$datosPac[6]."'>" ?>
+
 
                     <div class="municipio div-section">
                         <label for="municipio">Municipio: *</label>
                         <select name="muni" id="muni">
-                            <option value="<?php echo $datosPac[5] ?>">-- Actual: <?php echo $datosPac[5] ?> --</option>
+                            <option value="<?php echo $datosPac[7] ?>">-- Actual: <?php echo $datosPac[7] ?> --</option>
                             <option value="San Salvador">San Salvador</option>
                             <option value="Aguilares">Aguilares</option>
                             <option value="Apopa">Apopa</option>
@@ -99,17 +102,17 @@ $datos = explode('/', $dataUser);
 
                     <div class = "div-section">
                         <label for="">Correo Electrónico:</label>
-                        <input type="email" name="mail" id="email" placeholder="Ingrese su Correo" value=" <?php echo $datosPac[6] ?> " >
+                        <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value=" <?php echo $datosPac[8] ?> " >
                     </div>
 
                     
 
                     <div class = "div-section last-section">
                         <label for="tel" id="telLabel">Número de Teléfono: *</label>
-                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" value="<?php echo $datosPac[7] ?>">
+                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" value="<?php echo $datosPac[10] ?>">
 
                         <label for="dui" id="duiLabel">Ingrese su DUI: *</label>
-                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." value="<?php echo $datosPac[8] ?>" disabled>
+                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." value="<?php echo $datosPac[11] ?>" disabled>
                     </div>
 
 
@@ -125,9 +128,9 @@ $datos = explode('/', $dataUser);
 
 
 
-                    <div class="submit">
-                        <button type="submit" class="disenoBoton" name="accion" value="registrarUser" onclick="editarPaciente();">Editar</button>
-                    </div>
+                    
+                        <button type="submit" class="disenoBoton" name="accion" value="Editar Datos" onclick="editarPaciente();">Editar Datos</button>
+                    
                 <!-- </form> -->
             </section>
         </article>
@@ -138,7 +141,7 @@ $datos = explode('/', $dataUser);
     <script src="../view/js/all.min.js"></script>
     <script src="../view/js/bootstrap.min.js"></script>
     <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
-    <script src="../view/js/selectCita.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>

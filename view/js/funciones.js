@@ -82,9 +82,14 @@ function retornarDatos(accion) {
       "pe": document.getElementById("pe").value,
       "al": document.getElementById("al").value,
       "fn": document.getElementById("fn").value,
+      "fi": document.getElementById("fi").value,
+      "gen": document.getElementById("gen").value,
       "muni": document.getElementById("muni").value,
+      "email": document.getElementById("email").value,
+      "pass": document.getElementById("password").value,
       "tel": document.getElementById("tel").value,
       "dui": document.getElementById("dui").value,
+      "accion": accion
     }
   } else if (accion == "eliminar") {
     return {
@@ -233,7 +238,7 @@ function registrarUser() {
       e.preventDefault();
     });
     $.ajax({
-        url: '../controller/CtrlPaciente.php',
+        url: '../controller/ctrlPaciente.php',
         data: retornarDatos("registrarUser"),
         type: 'POST',
         dataType: 'json'
@@ -460,7 +465,7 @@ function editarDoctor () {
     return false;
   }
 
-  function editarPaciente () {
+  function editarPaciente() {
     console.log("entrando a funcion editarPaciente");
     // if (accion == "editarDoctor") {
       // let datos = retornarDatos("editarDoctor");
@@ -472,13 +477,14 @@ function editarDoctor () {
         dataType: 'json'
       }).done(function (response) {
         console.log("ENTRANDO AL DONE");
+        console.log(response)
         if (response == "OK" ) {
           Swal.fire({
             type: 'success',
             title: '¡Éxito!',
             text: 'Los datos han sido actualizados correctamente.',
             footer: 'E-MEDICINE ©'
-          }).then((result)=> window.location.href = "../view/viewDoctor.php")
+          }).then((result)=> window.location.href = "../view/viewPaciente.php")
         } else {
           console.log(response);
           Swal.fire({
@@ -591,7 +597,7 @@ function validacionDatos(accion) {
       }
       /*let validarDui = "";
       $.ajax({
-        url: '../controller/CtrlPaciente.php',
+        url: '../controller/ctrlPaciente.php',
         data: {"dui": datosUsuario.dui, "accion": 'validarDui'},
         type: 'POST',
         dataType: 'json'
