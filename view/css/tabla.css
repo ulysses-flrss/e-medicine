@@ -8,7 +8,7 @@ table {
     border-radius: 10px;
     text-align: center;
     vertical-align:middle;
-    background-color: hsl(151, 60%, 60%);
+    background-color: hsl(151, 60%, 60%) !important;
 }
 
 .tablaUsuarios {
@@ -68,7 +68,7 @@ button:hover i{
 
 
 th {
-    background-color: hsl(147, 60%, 49%);
+    background-color: hsl(147, 60%, 49%) !important;
 }
 
 th,  tr, td {
