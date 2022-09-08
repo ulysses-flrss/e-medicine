@@ -13,6 +13,8 @@
     <title>Bienvenido E-Medicine</title>
 </head>
 <body>
+
+
     <section class="content">
         <div class="image-container">
             <img src="assets/imgs/logoEMedicine.png" alt="Logo E-Medicine" class="logo">
@@ -40,5 +42,7 @@
             </form>
         </div>
     </section>
+
+    <script src="view/js/responsive.js"></script>
 </body>
 </html>

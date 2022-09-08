@@ -107,5 +107,20 @@
       return $resultado;
     }
 
+    public function listadoCitasPaciente($idPaciente) {
+      $cn = new Conexion;
+      $dbh = $cn->getConexion();
+      $sql = "SELECT CONCAT(pacientes.nombre, ' ', pacientes.apellido) AS nombre, CONCAT(pacientes.peso, '/' ,pacientes.altura) AS info, fechaCita, horaCita, enfermedades, razonCita FROM citas WHERE idPaciente=$idPaciente  ORDER BY fechaCita DESC ";
+  
+      try {
+          $stmt = $dbh->prepare($sql);
+          $stmt->execute();
+          $cita = $stmt->fetchAll();
+          return $cita;
+      } catch (Exception $e) {
+          echo $e->getMessage();
+      }
+  }
+
   }
 ?>

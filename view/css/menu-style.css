@@ -3,7 +3,7 @@
   position: fixed;
   width: 4em;
   height: 95vh !important;
-  margin: 1em 0em;
+  margin: 1em 3em 1em 0 ;
   background-color: var(--aquaMenu-body-color);
   border-radius: 0 12px 12px 0;
   transition: 150ms all;
@@ -37,7 +37,7 @@
   /* Estilos para etiqueta <ul> */
   display: grid;
   height: 100%;
-  grid-template-rows: repeat(7, 12.5%);
+  grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
   padding: 0 !important;
 }
 
@@ -207,7 +207,7 @@
 
 @media screen and (max-width: 480px) {
   .link-text {
-    display: grid;
+    
   }
 }
 

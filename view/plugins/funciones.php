@@ -53,7 +53,17 @@
                     <i class='fa-solid fa-person-breastfeeding icon'></i>
                         <span class='link-text'>Familiares</span>
                     </a>
-                </li>";
+                </li>
+                
+                <li class='bar-item' id='li-familiares' title='Familiares'>
+                    <a href='../view/viewPacienteCitas.php?idUsuario=".$datos[0]."&sesion=true' class='bar-link' >
+
+                    <i class='fa-regular fa-calendar-check icon'></i>
+                        <span class='link-text'>Citas Programadas</span>
+                    </a>
+                </li>
+
+        ";
         break;
 
         case 'invitado':

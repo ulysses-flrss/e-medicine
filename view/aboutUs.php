@@ -191,7 +191,7 @@ require_once("plugins/funciones.php")
           </div>
           <div class="card__content">
             <p class="card__title text--medium">
-                ludwig Ernesto Estrada Parada
+                Ludwig Ernesto Estrada Parada
 
             </p>
             <div class="card__info">

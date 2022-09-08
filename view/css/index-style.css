@@ -31,7 +31,7 @@ span {
   justify-items: center;
   margin: 1em auto;
   width: 50vw !important;
-  height: 37.5vh !important;
+  height: fit-content !important;
   padding: 1em;
 
   background-color: #f14d60;
@@ -123,8 +123,9 @@ div#autor {
   font-weight: bolder;
   width: 80%;
   text-align: center;
-  height: 9vh;
+  height: fit-content;
   margin: auto;
+  padding: 0.15em 0 ;
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
@@ -145,10 +146,12 @@ div#descripcion {
 div#fechaPublicacion {
   display: grid;
   width: 80%;
-  height: 9vh;
+  height: fit-content;
   margin: auto;
+  padding: 0.15em 0 ;
   justify-items: center;
   justify-content: center;
+  text-align: center;
   align-items: center;
   font-size: 1.5em;
 }
@@ -213,44 +216,7 @@ img.imagenEspecialidad {
   transform: scale(1.03);
 }
 
-/* Moviles en Vertical */
-@media screen and (max-width: 480px) {
-  #bienvenida {
-    font-size: 2em;
-  }
 
-  div#autor {
-    font-size: 1em;
-  }
-
-  div#descripcion {
-    font-size: 1.5em;
-  }
-
-  div#fechaPublicacion {
-    font-size: 1em;
-  }
-}
-
-/* Tablets en vertical / Celulares en Horizontal */
-
-@media screen and (max-width: 759px) and (min-width: 481px) {
-  #bienvenida {
-    font-size: 1.5em;
-  }
-
-  div#autor {
-    font-size: 1em;
-  }
-
-  div#descripcion {
-    font-size: 1.5em;
-  }
-
-  div#fechaPublicacion {
-    font-size: 0.85em;
-  }
-}
 .tittleE {
   display: flex;
   align-items: center;
@@ -405,5 +371,67 @@ h3 {
 
 p:not(p:first-child) {
   font-family: var(--bodyFont);
+}
+
+
+/* Moviles en Vertical */
+@media screen and (max-width: 485px) {
+  #bienvenida {
+    font-size: 2em;
+  }
+
+  div#autor {
+    font-size: 1em;
+  }
+
+  div#descripcion {
+    font-size: 1.5em;
+  }
+
+  div#fechaPublicacion {
+    font-size: 1em;
+  }
+
+  #container-bienvenida {
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 0;
+    margin: 1em auto;
+    width: 55vw !important;
+  }
+
+  p:first-child {
+    font-size: 0.75em;
+  }
+
+  .cards {
+    margin: 0 15em;
+    display: grid;
+    align-items: center;
+    /* grid-auto-flow: column; */
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    row-gap: 2em;
+    justify-items: center;
+  }
+}
+
+/* Tablets en vertical / Celulares en Horizontal */
+
+@media screen and (max-width: 759px) and (min-width: 481px) {
+  #bienvenida {
+    font-size: 1.5em;
+  }
+
+  div#autor {
+    font-size: 1em;
+  }
+
+  div#descripcion {
+    font-size: 1.5em;
+  }
+
+  div#fechaPublicacion {
+    font-size: 0.85em;
+  }
 }
 
