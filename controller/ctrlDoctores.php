@@ -71,5 +71,11 @@
         }
         $r = "OK";
         echo json_encode($r);
-    }
+    }else if($accion=="eliminar"){
+      require_once '../model/daoDoctor.php';
+      $dao = new daoDoctor();
+      $dao->eliminarCitas($cod);
+      $r = $dao->eliminar($cod);
+      echo json_encode($r);
+  }
 ?>

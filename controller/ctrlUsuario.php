@@ -9,6 +9,7 @@
   if($accion=="eliminar"){
       require_once '../model/daoPaciente.php';
       $dao = new DaoPaciente();
+      $dao->eliminarCitas($cod);
       $r = $dao->eliminar($cod);
       echo json_encode($r);
   }

@@ -375,7 +375,7 @@ function eliminarUser(tipoUser, idUsuario, idPerfil){
     return false;
   }else if (tipoUser == "doctor"){
     $.ajax({
-      url: '../controller/ctrlDoctor.php',
+      url: '../controller/ctrlDoctores.php',
       data: {"idUsuario": idUsuario, "accion": 'eliminar'},
       type: 'POST',
       dataType: 'json'
@@ -445,7 +445,7 @@ function eliminarUser(tipoUser, idUsuario, idPerfil){
 
 }
 
-function publicarAnuncio(ubi){
+function publicarAnuncio(ubi, tipo){
   console.log("función abierta");
   //*let anuncioData = retornarDatos('publicarAnuncio');
   console.log(document.getElementById('accion').value);
@@ -475,9 +475,12 @@ function publicarAnuncio(ubi){
           console.log('then');
           console.log(ubi);
           /*window.setTimeout(2000);*/
-          if (ubi == "main")
-            window.location.href="../view/viewDoctor.php";
-          else if (ubi == "view")
+          if (ubi == "main"){
+            if (tipo == 'doctor')
+              window.location.href="../view/viewDoctor.php";
+            else if (tipo == 'admin')
+              window.location.href="../view/viewAdmin.php";
+          }else if (ubi == "view")
             window.location.href="../view/viewCrearAnuncios.php";
         });
       } else {

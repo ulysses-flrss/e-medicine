@@ -57,6 +57,30 @@ class DaoPaciente{
             echo "Error: " . $e->getMessage();
         }
     }
+    public function eliminarCitas($idPaciente){
+        $cn = new Conexion;
+        $dbh = $cn->getConexion();
+        $sql = "DELETE FROM citasfamiliares WHERE idPaciente=:idPaciente";
+
+        try{
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindParam(':idPaciente',$idPaciente);
+            if ($stmt->execute()) {
+                $sql = "DELETE FROM citas WHERE idPaciente=:idPaciente";
+                $stmt = $dbh->prepare($sql);
+                $stmt->bindParam(':idPaciente',$idPaciente);
+                if ($stmt->execute()) {
+                    return "OK";
+                }else{
+                    return "ERROR: el paciente ya ha sido borrado.";
+                }
+            }else{
+                return "ERROR: el paciente ya ha sido borrado.";
+            }
+        }catch(PDOException $e){
+            echo "Error: " . $e->getMessage();
+        }
+    }
     public function getCodigo(){
         $cn = new Conexion();
         $dbh = $cn->getConexion();
@@ -138,7 +162,7 @@ class DaoPaciente{
                 return $datos;
             }
         }else{ //VERIFICANDO SI ES DE UN DOCTOR YA REGISTRADO
-            $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor), pass FROM doctores WHERE idDoctor=:idUser";
+            $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor), pass FROM doctores WHERE idDoctor=:idUser OR DUI=:idUser";
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':idUser', $idUser);
             $stmt->execute();

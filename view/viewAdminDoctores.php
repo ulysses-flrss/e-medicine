@@ -23,6 +23,10 @@
     <title>Ver Doctores | E-Medicine </title>
     <link rel="stylesheet" href="css/viewAdmin-style.css">
     <?php links() ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css">
 </head>
 <body>
     <?php menu() ?>
@@ -60,7 +64,7 @@
                                 <td>
                                     <ul>
                                         <li><a href='../view/viewDoctoresEdit.php?ubicacion=admin&idUsuario=".$doc['idDoctor']."'><button><i class='fas fa-edit'></i></button></a></li>
-                                        <li><button><i class='fas fa-trash-alt'></i></button></li>
+                                        <li><button onclick='eliminarUser(\"doctor\",\"".$doc['idDoctor']."\",\"\");'><i class='fas fa-trash-alt'></i></button></li>
                                     </ul>
                                 </td>
                                 </tr>";
@@ -73,5 +77,13 @@
     </main>
 
     <?php footer() ?>
+    <script src="../view/js/password.js"></script>
+    <script src="../view/js/funciones.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../view/js/all.min.js"></script>
+    <script src="../view/js/bootstrap.min.js"></script>
+    <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
+    <script src="../view/js/selectCita.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>

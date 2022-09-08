@@ -46,13 +46,10 @@
                             <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
                         </div>
 
-
-
-
                         <div class="submit">
-                            <div class="password-change">
+                            <!--<div class="password-change">
                                 <a href="../controller/ctrlLogin.php?accion=cambiarPass" class="submit-text">Olvidé mi contraseña</a>
-                            </div>
+                            </div>-->
 
                             <button type="submit" name="accion" value="enviar" class="enviar" id="enviar" onclick="login();">Iniciar Sesión</button>
 

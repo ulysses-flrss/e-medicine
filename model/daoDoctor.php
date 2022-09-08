@@ -64,32 +64,72 @@
         }
 
         public function getCodigo(){
-        $cn = new Conexion();
-        $dbh = $cn->getConexion();
-        $sql = "SELECT idDoctor FROM doctores WHERE idDoctor LIKE 'D-%' ORDER BY idDoctor DESC";
-        $stmt=$dbh->prepare($sql);
-        $stmt->execute();
-        $row = $stmt->fetch();
-        if(isset($row[0])){
-            $division = explode('-', $row[0]);
-            if ($division[1] > 0 && $division[1] < 9){
-                $c = "D-0000" . ($division[1]+1);
-                return $c;
-            }elseif ($division[1] < 99){
-                $c = "D-000" . ($division[1]+1);
-                return $c;
-            }elseif ($division[1] < 999) {
-                $c = "D-00" . ($division[1]+1);
-                return $c;
+            $cn = new Conexion();
+            $dbh = $cn->getConexion();
+            $sql = "SELECT idDoctor FROM doctores WHERE idDoctor LIKE 'D-%' ORDER BY idDoctor DESC";
+            $stmt=$dbh->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetch();
+            if(isset($row[0])){
+                $division = explode('-', $row[0]);
+                if ($division[1] > 0 && $division[1] < 9){
+                    $c = "D-0000" . ($division[1]+1);
+                    return $c;
+                }elseif ($division[1] < 99){
+                    $c = "D-000" . ($division[1]+1);
+                    return $c;
+                }elseif ($division[1] < 999) {
+                    $c = "D-00" . ($division[1]+1);
+                    return $c;
+                }else{
+                    $c = "D-0" . ($division[1]+1);
+                    return $c;
+                }
             }else{
-                $c = "D-0" . ($division[1]+1);
+                $c = "D-00001";
                 return $c;
             }
-        }else{
-            $c = "D-00001";
-            return $c;
         }
-    }
+        public function eliminar($id){
+            $cn = new Conexion();
+            $dbh = $cn->getConexion();
+            $sql = "DELETE FROM doctores WHERE idDoctor=:idDoctor";
+            try{
+                $stmt = $dbh->prepare($sql);
+                $stmt->bindParam(':idDoctor',$id);
+                if ($stmt->execute()){
+                    return "OK";
+                }else{
+                    return "Ha ocurrido un error inesperado al eliminar la cuenta.";
+                }
+            }catch(PDOException $e){
+                echo "Error: " . $e->getMessage();
+            }
+        }
+        public function eliminarCitas($idDoctor){
+            $cn = new Conexion;
+            $dbh = $cn->getConexion();
+            $sql = "DELETE FROM citasfamiliares WHERE idDoctor=:idDoctor";
+
+            try{
+                $stmt = $dbh->prepare($sql);
+                $stmt->bindParam(':idDoctor',$idDoctor);
+                if ($stmt->execute()) {
+                    $sql = "DELETE FROM citas WHERE idDoctor=:idDoctor";
+                    $stmt = $dbh->prepare($sql);
+                    $stmt->bindParam(':idDoctor',$idDoctor);
+                    if ($stmt->execute()) {
+                        return "OK";
+                    }else{
+                        return "ERROR: el doctor ya ha sido borrado.";
+                    }
+                }else{
+                    return "ERROR: el doctor ya ha sido borrado.";
+                }
+            }catch(PDOException $e){
+                echo "Error: " . $e->getMessage();
+            }
+        }
     }
 
 ?>
