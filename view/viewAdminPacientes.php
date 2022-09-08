@@ -34,7 +34,7 @@
         <article>
             <a href="../view/viewRegister.php" class="agregarUser">
                 <img class = "add-image" src="../assets/imgs/add.png" alt="">
-                <span class="add-text">Agregar Paciente</span>
+                <p style="font-size:6vw;" class="add-text">Agregar Paciente</p>
             </a>
             <section>
 
