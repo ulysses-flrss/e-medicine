@@ -93,7 +93,7 @@
         public function eliminar($id){
             $cn = new Conexion();
             $dbh = $cn->getConexion();
-            $sql = "DELETE FROM doctores WHERE idDoctor=:idDoctor";
+            $sql = "DELETE FROM doctores WHERE idDoctor = :idDoctor";
             try{
                 $stmt = $dbh->prepare($sql);
                 $stmt->bindParam(':idDoctor',$id);
