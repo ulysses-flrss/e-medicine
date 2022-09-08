@@ -7,13 +7,15 @@
 body {
   background-color: #e0e6e3 !important;
   color: black;
+  
 }
 
 .allContainer {
   width: 100vw;
   padding-top: 2em;
   display: grid;
-  justify-self: flex-start;
+  
+
 }
 
 .links {

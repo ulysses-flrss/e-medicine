@@ -110,10 +110,11 @@
     public function listadoCitasPaciente($idPaciente) {
       $cn = new Conexion;
       $dbh = $cn->getConexion();
-      $sql = "SELECT CONCAT(pacientes.nombre, ' ', pacientes.apellido) AS nombre, CONCAT(pacientes.peso, '/' ,pacientes.altura) AS info, fechaCita, horaCita, enfermedades, razonCita FROM citas WHERE idPaciente=$idPaciente  ORDER BY fechaCita DESC ";
+      $sql = "SELECT CONCAT(doctores.nombreDoctor, ' ', doctores.apellidoDoctor) AS nomDoc, citas.especialidadM, fechaCita, horaCita, razonCita FROM citas INNER JOIN doctores ON doctores.idDoctor = citas.doctor WHERE idPaciente = :idPaciente ORDER BY fechaCita DESC ";
   
       try {
           $stmt = $dbh->prepare($sql);
+          $stmt->bindParam(':idPaciente', $idPaciente);
           $stmt->execute();
           $cita = $stmt->fetchAll();
           return $cita;

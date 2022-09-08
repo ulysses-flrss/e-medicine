@@ -13,8 +13,8 @@ body{
     /* width: 100vw;
     height: 100vh; */
     background-color: var(--aquaBright-body-color);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+
     padding-top: 1em;
 }
 
@@ -23,15 +23,16 @@ body{
     border-radius: 15px;
     width: 90%;
     height: fit-content;
-    margin: auto auto 2em 6em;
+    margin: auto auto 2em 4em;
     background-color: var(--aquaBright-body-color);
     font-family: var(--menuFont);
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
     justify-content: center;
+    row-gap: 2em;
     justify-items: center;
+    justify-self: center;
     align-items: center;
     align-content: center;
     text-align: center;
@@ -106,9 +107,9 @@ input:focus:not(.submit input) {
 }
 
 .fecha, .peso, .altura, .perfil, .especialidad-medica, .doctor {
-    display: grid;
+    display: flex;
     align-items: center;
-    grid-template-rows: 1fr 1fr;
+    flex-direction: column;
     justify-items: center;
     text-align: center;
     font-size: 1.05em;
@@ -163,4 +164,37 @@ input:focus:not(.submit input) {
     background-color: black;
     color: white;
     box-shadow: none;
+}
+
+@media screen and (max-width: 485px) {
+    
+.perfil {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.submit {
+    display: grid;
+    width: 100%;
+    margin: 3em;
+    justify-content: center;
+    grid-area: auto;
+}
+
+}
+
+@media screen and (max-width: 759px) and (min-width: 481px) {
+    
+.perfil {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.submit {
+    display: grid;
+    width: 100%;
+    margin: 3em;
+    justify-content: center;
+    grid-area: auto;
+}
 }
