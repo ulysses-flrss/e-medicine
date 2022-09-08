@@ -9,12 +9,11 @@
         $datos = explode('/', $dataUser);
 
         $codPaciente = $datos[0];
-    
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 
 <head>
@@ -28,18 +27,13 @@
 <body>
     <?php menu() ?>
     <main class="all-container">
-        
         <article>
-            <a href="../controller/ctrlAdmin.php?accion=addDoctor" class="agregarUser">
+            <a href="../view/viewRegisterDoctor.php?ubicacion=doctor" class="agregarUser">
                 <img class = "add-image" src="../assets/imgs/add.png" alt="">
                 <span class="add-text">Agregar Doctor</span>
             </a>
             <section>
-
-            
-
                 <table>
-                    
                 <tr>
                     <th>ID de Doctor</th>
                     <th>Nombres</th>

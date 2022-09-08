@@ -24,12 +24,12 @@ class DaoPaciente{
             echo "Error: " . $e->getMessage();
         }
     }
-    
+
     public function editarPaciente($idPaciente, $nombre, $apellido, $peso, $altura, $fechaNacimiento, $fechaIngreso,  $genero, $municipio, $correo, $telefono, $DUI, $pass){
         $cn = new Conexion();
         $dbh = $cn->getConexion();
         $sql = "UPDATE pacientes SET nombre='$nombre', apellido='$apellido', peso='$peso', altura='$altura', fechaNacimiento='$fechaNacimiento', fechaIngreso='$fechaIngreso', genero='$genero', municipio='$municipio', correo='$correo', pass='$pass', telefono='$telefono', DUI='$DUI' WHERE idPaciente='$idPaciente'";
-        
+
         try{
             $stmt = $dbh->prepare($sql);
             if ($stmt->execute()) {
@@ -190,16 +190,28 @@ class DaoPaciente{
     public function validarDui($dui){
         $conexion = new Conexion;
         $dbh = $conexion->getConexion();
-        $sql = "SELECT DUI FROM pacientes";
+        $sql = "SELECT * DUI FROM pacientes";
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
         $listDui = $stmt->fetchAll();
         foreach ($listDui as $listDuis) {
             if ($listDuis['DUI'] == $dui){
                 $validacion = "copia";
-                return $validacion;
+                echo json_encode($validacion);
             }
         }
+        $sql = "SELECT * DUI FROM doctores";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute();
+        $listDui = $stmt->fetchAll();
+        foreach ($listDui as $listDuis) {
+            if ($listDuis['DUI'] == $dui){
+                $validacion = "copia";
+                echo json_encode($validacion);
+            }
+        }
+        $r = "OK";
+        echo json_encode($r);
     }
 
     public function extraerDatos($idPaciente){
@@ -212,7 +224,7 @@ class DaoPaciente{
             $stmt->bindParam(':idPaciente',$idPaciente);
             $stmt->execute();
             $datosDoc = $stmt->fetch();
-            return $datosDoc;       
+            return $datosDoc;
         } catch (PDOException $e) {
             echo "ERROR: " . $e->getMessage();
         }

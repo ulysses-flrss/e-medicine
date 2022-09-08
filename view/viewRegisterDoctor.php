@@ -4,7 +4,7 @@
     $ubicacion = isset($_REQUEST['ubicacion'])?$_REQUEST['ubicacion']:"";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,29 +28,20 @@
         <article>
             <section class="form-container">
                 <form id = "form" class="form-register" method="POST" onsubmit="submitForm(event)">
+                <?php  echo "<input type='hidden' name='ubi' id='ubi' value='".$ubicacion."'>";  ?>
                     <div class="nombre div-section">
                         <label for="nom">Nombre: *</label>
-                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre">
+                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre" value='Elizabeth Damaris'>
                     </div>
 
                     <div class="apellido div-section">
                         <label for="ape">Apellido: *</label>
-                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido">
-                    </div>
-
-                    <div class="peso div-section">
-                        <label for="pe">Peso(lb): *</label>
-                        <input type="text" name="pe" id="pe" placeholder="Peso en Libras">
-                    </div>
-
-                    <div class="altura div-section">
-                        <label for="al">Altura(cm): *</label>
-                        <input type="text" name="al" id="al" placeholder="Altura en cm">
+                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido" value='Granadino Rivas'>
                     </div>
 
                     <div class="fecha div-section">
                         <label for="fn">Fecha de Nacimiento: *</label>
-                        <input type="date" name="fn" id="fn">
+                        <input type="date" name="fn" id="fn" value='2000-11-07'>
                     </div>
 
                     <div class="genre div-section">
@@ -62,72 +53,49 @@
 
                         <div class="female">
                             <label for="femenino" class="genero">Femenino: </label>
-                            <input type="radio" name="gen" id="femenino" value="femenino">
+                            <input type="radio" name="gen" id="femenino" value="femenino" checked>
                         </div>
                     </div>
 
-                    <div class="municipio div-section">
-                        <label for="municipio">Municipio: *</label>
-                        <select name="muni" id="muni">
-                            <option value="">-- Seleccione un Municipio --</option>
-                            <option value="San Salvador">San Salvador</option>
-                            <option value="Aguilares">Aguilares</option>
-                            <option value="Apopa">Apopa</option>
-                            <option value="Ayutuxtepeque">Ayutuxtepeque</option>
-                            <option value="Ciudad Delgado">Ciudad Delgado</option>
-                            <option value="Cuscatancingo">Cuscatancingo</option>
-                            <option value="El Paisnal">El Paisnal</option>
-                            <option value="Guazapa">Guazapa</option>
-                            <option value="Ilopango">Ilopango</option>
-                            <option value="Mejicanos">Mejicanos</option>
-                            <option value="Nejapa">Nejapa</option>
-                            <option value="Panchimalco">Panchimalco</option>
-                            <option value="Rosario de Mora">Rosario de Mora</option>
-                            <option value="San Marcos">San Marcos</option>
-                            <option value="San Martin">San Martín</option>
-                            <option value="Santiago Texacuangos">Santiago Texacuangos</option>
-                            <option value="Santo Tomas">Santo Tomás</option>
-                            <option value="Soyapango">Soyapango</option>
-                            <option value="Tonacatepeque">Tonacatepeque</option>
+                    <div class="municipio">
+                        <label for="especialidad-medica">Especialidad Médica:</label>
+                        <select name="em" id="em" class="selectDinamic" class="municipio">
+                            <option value="">-- Seleccione una Especialidad --</option>
                         </select>
                     </div>
 
                     <div class = "div-section">
                         <label for="">Correo Electrónico:</label>
-                        <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value="">
+                        <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value="nuevo@correo.com">
                     </div>
 
                     <div class = "div-section password-section">
                         <label id="pass1" for="pass">Contraseña: *</label>
-                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" value="">
+                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" value="123damaris">
                         <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
 
                         <label id="pass2" for="pass">Confirmar Contraseña: *</label>
-                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" value="">
+                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" value="123damaris">
                         <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i>
                     </div>
 
                     <div class = "div-section last-section">
                         <label for="tel" id="telLabel">Número de Teléfono: *</label>
-                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" value="">
+                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" value="7062-0796">
 
                         <label for="dui" id="duiLabel">Ingrese su DUI: *</label>
-                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." value="">
+                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." value="77458123-1">
                     </div>
 
-                <?php
-                    echo "<input type='hidden' name='ubi' id='ubi' value='".$ubicacion."'>";
-                ?>
-
-                    <div class="submit">
-                        <a href="../index.php" class="account">Ya tengo Cuenta</a>
-                        <button type="submit" class="disenoBoton" name="accion" value="registrarUser" onclick="registrarUser();">Registrarse</button>
+                    <div class='submit'>
+                        <button type='submit' class='disenoBoton' name='accion' value='registrarUser' onclick='registrarUser();'>Registrarse</button>
                     </div>
                 </form>
             </section>
         </article>
     </main>
     <script src="../view/js/password.js"></script>
+    <script src="../view/js/comprobarCita.js"></script>
     <script src="../view/js/funciones.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../view/js/all.min.js"></script>
@@ -135,5 +103,33 @@
     <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
     <script src="../view/js/selectCita.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.selectDinamic');
+            listarEspecial();
+        });
+
+        $("#em").change(function() {
+            let idEspecialidad = $("#em").val();
+            listarDoctor(idEspecialidad);
+        });
+
+        $(document).ready(function() {
+            let idUsuario = $("#idUsuario").val();
+            let nameUsuario = $("#nameUsuario").val();
+            listarFamiliar(idUsuario, nameUsuario);
+        });
+
+        $("#idPerfil").change(function() {
+            let idPerfil = $("#idPerfil").val();
+            let idUsuario = $("#idUsuario").val();
+            listarDatosFamiliar(idPerfil, idUsuario);
+        });
+
+        $("#citaFamiliar").change(function(){
+            let idUsuario = $("#idUsuario").val();
+            listarDatosPaciente(idUsuario);
+        })
+    </script>
 </body>
 </html>
