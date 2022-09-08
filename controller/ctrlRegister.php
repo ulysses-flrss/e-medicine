@@ -13,19 +13,20 @@
   $eMail = isset($_POST['email'])?$_POST['email']:"";
   $dui = isset($_POST['dui'])?$_POST['dui']:"";
 
-  if ($accion == "registrarUserD"){
-    require_once '../model/classDoctor.php';
-    require_once '../model/daoDoctor.php';
-    require_once '../model/DaoPaciente.php';
+  if ($accion == "registrarUserD") {
+    require_once "../model/classDoctor.php";
+    require_once "../model/daoDoctor.php";
+    require_once "../model/DaoPaciente.php";
 
     $dao = new daoDoctor();
-    $daoD = new DaoPaciente();
-    $duiVal = $daoD->validarDui($duiP);
+  //  $duiVal = $dao->validarDui($dui);
 
-    $cod = $dao->getCodigo();
-    $Doctor = new Doctor($cod,$nombreDoctor,$apellidoDoctor,$fechaNac,$genero,$em,$eMail,$password,$telefono,$dui);
-    $dao->insertar($Doctor);
-    $r = $Doctor->idDoctor;
-    echo json_encode($r);
+   $cod = $dao->getCodigo();
+   $doctor = new Doctor($cod, $nombreDoctor, $apellidoDoctor, $fechaNac, $genero, $em, $eMail, $password, $telefono, $dui);
+   $dao->insertar($doctor);
+   $r = $doctor->idDoctor;
+
+  echo json_encode($r);
+
   }
 ?>
