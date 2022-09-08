@@ -86,7 +86,7 @@
                         <label for="dui" id="duiLabel">Ingrese su DUI: *</label>
                         <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9.">
                     </div>
-    
+
                     <div class='submit'>
                         <button type='submit' class='disenoBoton' name='accion' value='registrarUserD' onclick='registrarUser();'>Registrarse</button>
                     </div>

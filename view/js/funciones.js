@@ -261,7 +261,7 @@ function registrarUser() {
       });
       console.log('validación true');
       $.ajax({
-          url: '../controller/ctrlDoctores.php',
+          url: '../controller/ctrlRegister.php',
           data: retornarDatos("registrarUserD"),
           type: 'POST',
           dataType: 'json'
