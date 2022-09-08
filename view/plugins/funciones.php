@@ -7,7 +7,7 @@
       <link rel='stylesheet' href='../view/css/root-style.css'>
       <link rel='stylesheet' href='../view/css/menu-style.css'>
       <link rel='stylesheet' href='../view/css/footer-style.css'>
-
+      <meta name='viewport' content='width=device-width', initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous'>
 
   <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>

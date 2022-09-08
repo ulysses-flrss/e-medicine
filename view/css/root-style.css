@@ -33,6 +33,7 @@ body {
   display: grid;
   min-height: 100vh !important;
   grid-template-rows: 1fr auto;
+  overflow-x: hidden;
 }
 
 .allContainer {
@@ -43,6 +44,7 @@ body {
   grid-template-columns: auto;
   grid-row-gap: 1em;
   background-color: var(--background-color);
+  overflow-x: hidden;
 }
 
 .disenoBoton {

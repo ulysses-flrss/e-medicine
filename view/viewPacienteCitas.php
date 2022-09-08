@@ -20,10 +20,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Citas | E-Medicine </title>
     <link rel="stylesheet" href="css/viewAdmin-style.css">
     <?php links() ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/start/jquery-ui.css">
 </head>
 <body>
     <?php menu() ?>
@@ -37,14 +40,11 @@
                 <table>
                     
                 <tr>
-                    <th>Nombre Paciente</th>
-                    <th>Nombre Doctor</th>
-                    <th>Peso/Altura</th>
+                    <th>Doctor</th>
                     <th>Especialidad</th>
-                    <th>Enfermedades</th>
-                    <th>Razon Cita</th>
                     <th>Fecha Cita</th>
                     <th>Hora Cita</th>
+                    <th>Razon Cita</th>
 
                 </tr>
 
@@ -59,10 +59,11 @@
                     
                     foreach ($citas as $cita) {
                         echo "<tr>
-                                <td>".$cita['nombre']."</td>
                                 <td>".$cita['nomDoc']."</td>
-                                <td>".$cita['info']."</td>
-                                <td>".$cita['especialidad']."</td>
+                                <td>".$cita['especialidadM']."</td>
+                                <td>".$cita['fechaCita']."</td>
+                                <td>".$cita['horaCita']."</td>
+                                <td>".$cita['razonCita']."</td>
                                 
                                 </tr>";
                     }
