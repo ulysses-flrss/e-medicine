@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-09-2022 a las 04:01:51
+-- Tiempo de generación: 08-09-2022 a las 07:58:40
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -63,39 +63,7 @@ CREATE TABLE IF NOT EXISTS `anuncios` (
   PRIMARY KEY (`id`),
   KEY `idUsuario` (`idUsuario`),
   KEY `idUsuario_2` (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3;
-
---
--- Volcado de datos para la tabla `anuncios`
---
-
-INSERT INTO `anuncios` (`id`, `idUsuario`, `nombre`, `contenidoAnuncio`, `fechaPublicacion`) VALUES
-(1, 'D-00001', 'Alexandra Sandoval', 'adasdasdasdasda', '0000-00-00 00:00:00'),
-(2, 'D-00001', 'Alexandra Sandoval', 'sadasdasdasdasd', '2022-09-01 05:00:31'),
-(3, 'D-00001', 'Alexandra Sandoval', 'Clínica Abierta todos los días', '2022-09-01 06:45:23'),
-(4, 'D-00001', 'Alexandra Sandoval', 'sweets Alerts', '2022-09-04 05:10:33'),
-(5, 'D-00001', 'Alexandra Sandoval', 'Anuncio nuevo', '2022-09-04 05:24:36'),
-(6, 'D-00001', 'Alexandra Sandoval', 'Nuevito', '2022-09-04 05:31:16'),
-(7, 'D-00001', 'Alexandra Sandoval', 'Anuncio nuevito', '2022-09-04 05:37:03'),
-(8, 'D-00001', 'Alexandra Sandoval', 'Nuevito el anuncinho', '2022-09-04 05:37:29'),
-(9, 'D-00001', 'Alexandra Sandoval', 'Última prueba', '2022-09-04 05:37:40'),
-(10, 'D-00001', 'Alexandra Sandoval', 'Pru3ba final', '2022-09-04 05:37:52'),
-(11, 'D-00001', 'Alexandra Sandoval', 'Anuncio desde la principal', '2022-09-04 20:50:57'),
-(12, 'D-00001', 'Alexandra Sandoval', 'Anuncio nuevo\n', '2022-09-04 21:20:26'),
-(13, 'D-00001', 'Alexandra Sandoval', 'Luego del if', '2022-09-04 21:22:40'),
-(14, 'D-00001', 'Alexandra Sandoval', 'Con el if consolelog', '2022-09-04 21:23:32'),
-(15, 'D-00001', 'Alexandra Sandoval', 'Anuncio pause', '2022-09-04 21:25:46'),
-(16, 'D-00001', 'Alexandra Sandoval', 'Sin el location', '2022-09-04 21:26:10'),
-(17, 'D-00001', 'Alexandra Sandoval', 'Nueva prueba', '2022-09-05 03:11:38'),
-(18, 'D-00001', 'Alexandra Sandoval', 'Yo creo que sirve', '2022-09-05 03:12:08'),
-(19, 'D-00001', 'Alexandra Sandoval', 'Creo que sirve esto', '2022-09-05 03:12:24'),
-(20, 'D-00001', 'Alexandra Sandoval', 'Última prueba de la redirección', '2022-09-05 03:12:45'),
-(21, 'D-00001', 'Alexandra Sandoval', 'Anuncio con un punto.', '2022-09-05 03:25:29'),
-(22, 'D-00001', 'Alexandra Sandoval', 'Anuncio con un punto. Luego texto', '2022-09-05 03:25:42'),
-(23, 'D-00001', 'Alexandra Sandoval', 'Anuncio con un punto. Luego texto.', '2022-09-05 03:25:54'),
-(24, 'D-00001', 'Alexandra Sandoval', 'Anuncio con:', '2022-09-05 03:26:03'),
-(25, 'D-00001', 'Alexandra Sandoval', 'Anuncio con:\n\nSaltos de línea.', '2022-09-05 04:30:45'),
-(26, 'D-00001', 'Alexandra Sandoval', 'Anuncios ', '2022-09-05 04:36:16');
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -122,19 +90,6 @@ CREATE TABLE IF NOT EXISTS `citas` (
   KEY `idDoctor` (`doctor`),
   KEY `idPaciente` (`idPaciente`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
-
---
--- Volcado de datos para la tabla `citas`
---
-
-INSERT INTO `citas` (`idCita`, `idPaciente`, `peso`, `altura`, `fechaNacimiento`, `fechaCreacion`, `especialidadM`, `doctor`, `fechaCita`, `horaCita`, `enfermedades`, `razonCita`) VALUES
-(1, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'N-003', 'D-00011', '2022-08-31', '10:30:00', '', 'dasdasdasdasd'),
-(2, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'MG-002', 'D-00006', '2022-09-15', '10:30:00', '', 'asdasdasd'),
-(3, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'C-001', 'D-00001', '2022-08-31', '10:30:00', '', 'asdasdadasd'),
-(4, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'N-003', 'D-00011', '2022-09-20', '08:30:00', '', 'sadsad'),
-(5, 'P-00001', '120', '173', '2003-11-17', '2022-09-01', 'N-003', 'D-00011', '2022-09-14', '11:00:00', '', 'asdsada'),
-(6, 'P-00001', '120', '173', '2003-11-17', '2022-09-08', 'MG-002', 'D-00005', '2022-09-26', '08:00:00', '', 'asdf'),
-(7, 'P-00001', '120', '173', '2003-11-17', '2022-09-08', 'C-001', 'D-00003', '2022-09-27', '08:30:00', '', 'Tos seca');
 
 -- --------------------------------------------------------
 
@@ -163,13 +118,6 @@ CREATE TABLE IF NOT EXISTS `citasfamiliares` (
   KEY `idEspecialidad` (`especialidadM`),
   KEY `idDoctor` (`doctor`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
-
---
--- Volcado de datos para la tabla `citasfamiliares`
---
-
-INSERT INTO `citasfamiliares` (`idCitaFamiliar`, `idPerfil`, `idPaciente`, `peso`, `altura`, `fechaNacimiento`, `fechaCreacion`, `especialidadM`, `doctor`, `fechaCita`, `horaCita`, `enfermedades`, `razonCita`) VALUES
-(9, 'P-00001-1', 'P-00001', '123', '123', '2001-04-21', '2022-09-03', 'P-004', 'D-00015', '2022-09-23', '11:00:00', '', 'aslkdflka');
 
 -- --------------------------------------------------------
 
@@ -298,14 +246,11 @@ CREATE TABLE IF NOT EXISTS `pacientes` (
 
 INSERT INTO `pacientes` (`idPaciente`, `nombre`, `apellido`, `peso`, `altura`, `fechaNacimiento`, `fechaIngreso`, `genero`, `municipio`, `correo`, `pass`, `telefono`, `DUI`) VALUES
 ('P-00001', 'José Guillermo', 'Granadino Rivas', '120', '173', '2003-11-17', '2021-09-02', 'masculino', 'Soyapango', 'guillermogr211@gmail.com', '123guille', '7062-0796', '29702238-9'),
+('P-00002', 'Jefferson Alexis', 'Castro Castro', '210', '180', '2004-07-03', '2022-09-06', 'masculino', 'Soyapango', 'elnegrofc@uncorreo.com', 'cheffeljeff', '6677-1890', '45678321-0'),
 ('P-00003', 'Ulises Adonay', 'Flores Martínez', '130', '168', '2004-03-10', '2021-09-08', 'masculino', 'San Salvador', 'ulisesflow@gmail.com', '123Uli', '7865-3412', '54434621-1'),
-('P-00004', 'Jefferson Alexis', 'Castro Castro', '210', '180', '2004-07-03', '2022-09-06', 'masculino', 'Soyapango', 'elnegrofc@uncorreo.com', 'cheffeljeff', '6677-1890', '45678321-0'),
-('P-00005', 'Carlos Leandro', 'Walker Bellerín', '150', '175', '2004-03-26', '2022-09-06', 'masculino', 'San Salvador', 'walker@crack.com', '123walker', '7893-0851', '98765432-1'),
-('P-00006', 'Ludwig Ernesto', 'Estrada Parada', '200', '165', '2003-09-11', '2022-09-06', 'masculino', 'San Salvador', 'messi@barca.com', 'messicrack', '1234-5678', '12345678-9'),
-('P-00008', 'Dayana Belén', 'Granadino Rivas', '150', '170', '2003-07-11', '2022-09-06', 'femenino', 'San Salvador', 'belen@gmail.com', '123belen', '7062-0796', '94875215-7'),
-('P-00009', 'Anthony Isaac', 'Granadino Rivas', '140', '178', '2003-11-17', '2022-09-07', 'masculino', 'San Salvador', 'nuevo@corre.com', 'anthony11', '7062-0796', '77458123-1'),
-('P-00010', 'Elizabeth Damaris', 'Granadino Rivas', '140', '170', '2003-03-10', '2022-09-07', 'femenino', 'San Salvador', 'nuevo@corre.com', 'damaris31', '7829-1749', '29034601-9'),
-('P-00011', 'Samuel Ernesto', 'Bonilla Arias', '235', '178', '2004-03-01', '2022-09-08', 'masculino', 'Aguilares', 'nuevo@corre.com', 'samuel312', '6677-1890', '66789256-9');
+('P-00004', 'Carlos Leandro', 'Walker Bellerín', '150', '175', '2004-03-26', '2022-09-06', 'masculino', 'San Salvador', 'walker@crack.com', '123walker', '7893-0851', '98765432-1'),
+('P-00005', 'Ludwig Ernesto', 'Estrada Parada', '200', '165', '2003-09-11', '2022-09-06', 'masculino', 'San Salvador', 'messi@barca.com', 'messicrack', '1234-5678', '12345678-9'),
+('P-00006', 'Samuel Ernesto', 'Bonilla Arias', '235', '178', '2004-03-01', '2022-09-08', 'masculino', 'Aguilares', 'nuevo@corre.com', 'samuel312', '6677-1890', '66789256-9');
 
 --
 -- Restricciones para tablas volcadas
