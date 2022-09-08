@@ -6,12 +6,14 @@ require_once '../controller/ctrlUsuario.php';
 require_once "../model/DaoPaciente.php";
 
 $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+$idUsuario = $cod;
+$ubicacion = isset($_REQUEST['ubicacion'])?$_REQUEST['ubicacion']:"";
 $dataUser = username($cod);
 
 $datos = explode('/', $dataUser);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,12 +37,19 @@ $datos = explode('/', $dataUser);
             <section class="form-container">
                 <!-- <form id = "form" class="form-register" method="POST" onsubmit="submitForm(event)"> -->
 
-                <?php echo
-                "<input type='hidden' id='idUsuario' name='idUsuario' value='". $datos[0]."'>"; 
+                <?php if ($ubicacion == "admin"){
+                    echo
+                    "<input type='hidden' id='idUsuario' name='idUsuario' value='". $idUsuario."'>";
 
-                
+                    $dao = new DaoPaciente();
+                    $datosPac = $dao->extraerDatos($idUsuario);
+                }else{
+                    echo
+                    "<input type='hidden' id='idUsuario' name='idUsuario' value='". $datos[0]."'>";
+
                     $dao = new DaoPaciente();
                     $datosPac = $dao->extraerDatos($datos[0]);
+                }
                     ?>
 
 
@@ -105,8 +114,6 @@ $datos = explode('/', $dataUser);
                         <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value=" <?php echo $datosPac[8] ?> " >
                     </div>
 
-                    
-
                     <div class = "div-section last-section">
                         <label for="tel" id="telLabel">Número de Teléfono: *</label>
                         <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" value="<?php echo $datosPac[10] ?>">
@@ -126,11 +133,9 @@ $datos = explode('/', $dataUser);
                         <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i> -->
                     </div>
 
+                    <?php echo "<input type=hidden name='ubi' id='ubi' value='".$ubicacion."'></input>"; ?>
 
-
-                    
                         <button type="submit" class="disenoBoton" name="accion" value="Editar Datos" onclick="editarPaciente();">Editar Datos</button>
-                    
                 <!-- </form> -->
             </section>
         </article>
@@ -141,7 +146,6 @@ $datos = explode('/', $dataUser);
     <script src="../view/js/all.min.js"></script>
     <script src="../view/js/bootstrap.min.js"></script>
     <script src="../assets/SweetAlert/dist/sweetalert2.all.min.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 </body>
 </html>

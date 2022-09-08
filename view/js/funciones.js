@@ -516,7 +516,13 @@ function editarDoctor () {
           title: '¡Éxito!',
           text: 'Los datos han sido actualizados correctamente.',
           footer: 'E-MEDICINE ©'
-        }).then((result)=> window.location.href = "../view/viewDoctor.php")
+        }).then(function(result){
+          if (document.getElementById('ubi').value == 'admin'){
+            window.location.href = "../view/viewAdminDoctores.php"
+          }else{
+            window.location.href = "../view/viewDoctor.php";
+          }
+        });
       } else {
         console.log(response);
         Swal.fire({
@@ -534,6 +540,7 @@ function editarDoctor () {
   }
 
   function editarPaciente() {
+    console.log(document.getElementById('ubi').value);
     console.log("entrando a funcion editarPaciente");
     // if (accion == "editarDoctor") {
       // let datos = retornarDatos("editarDoctor");
@@ -552,7 +559,13 @@ function editarDoctor () {
             title: '¡Éxito!',
             text: 'Los datos han sido actualizados correctamente.',
             footer: 'E-MEDICINE ©'
-          }).then((result)=> window.location.href = "../view/viewPaciente.php")
+          }).then((result)=>{
+            if (document.getElementById('ubi').value == "admin"){
+              window.location.href = "../view/viewAdminPacientes.php"
+            }else{
+              window.location.href = "../view/viewPaciente.php"
+            }
+          });
         } else {
           console.log(response);
           Swal.fire({

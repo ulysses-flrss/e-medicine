@@ -64,7 +64,7 @@
                                 <td>".$pacient['apellido']."</td>
                                 <td>
                                     <ul>
-                                        <li><button><i class='fas fa-edit'></i></button></li>
+                                        <li><a href='../view/viewPacienteEdit.php?ubicacion=admin&idUsuario=".$pacient['idPaciente']."'><button><i class='fas fa-edit'></i></button></a></li>
                                         <li><button onclick='eliminarUser(\"".$tipo."\",\"".$pacient['idPaciente']."\", \"\");'><i class='fas fa-trash-alt'></i></button></li>
                                     </ul>
                                 </td>

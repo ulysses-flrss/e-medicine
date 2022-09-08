@@ -5,6 +5,8 @@ require_once '../controller/ctrlUsuario.php';
 require_once "../model/daoDoctor.php";
 
 $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+$idUsuario = $cod;
+$ubicacion = isset($_REQUEST['ubicacion'])?$_REQUEST['ubicacion']:"";
 
     $dataUser = username($cod);
 
@@ -12,7 +14,7 @@ $datos = explode('/', $dataUser);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,22 +31,29 @@ $datos = explode('/', $dataUser);
     <main>
         <div class="inicio-registro">
             <img src="../assets/imgs/logoEMedicine.png" alt="" class="logo">
-            <h1 class="bienvenida-registro">Editar Perfil</h1>                
+            <h1 class="bienvenida-registro">Editar Perfil</h1>
         </div>
-        
 
         <article>
             <section class="form-container">
                 <!-- <form action="../controller/ctrlDoctores.php?accion=editar" class="form-register" method="POST"> -->
 
-                <?php echo"<input type='hidden' id='idUsuario' name='idUsuario' value='".$datos[0]."'>"; 
+                <?php if ($ubicacion == "admin"){
+                    echo
+                    "<input type='hidden' id='idUsuario' name='idUsuario' value='". $idUsuario."'>";
 
-                
+                    $dao = new daoDoctor();
+                    $datosDoc = $dao->extraerDatos($idUsuario);
+                }else{
+                    echo
+                    "<input type='hidden' id='idUsuario' name='idUsuario' value='". $datos[0]."'>";
+
                     $dao = new daoDoctor();
                     $datosDoc = $dao->extraerDatos($datos[0]);
-    ?>
-                    
-                <div class="third-line">    
+                }
+                    ?>
+
+                <div class="third-line">
                     <div class="nombres">
                         <label for="">Nombres:</label>
                         <input type="text" name="nom" id="nom" class="name" placeholder="Ingrese sus Nombres" value="<?php echo $datosDoc[0] ?>">
@@ -55,22 +64,21 @@ $datos = explode('/', $dataUser);
                         <input type="text" name="ape" id="ape" class="name" placeholder="Ingrese sus Nombres" value="<?php echo $datosDoc[1] ?>">
                     </div>
                 </div>
-                    
+
                 <div class="second-line">
                     <div class="telefono">
                         <label for="">Teléfono: *</label>
                         <input type="tel" name="tel" id="tel" placeholder="1234-5678" value="<?php echo $datosDoc[2] ?>">
-                    </div>      
-                    
+                    </div>
+
                     <div class="correo">
                         <label for="">Correo: *</label>
                         <input type="email" name="mail" id="mail" placeholder="user@dominio.com" value="<?php echo $datosDoc[3] ?>">
-                    </div>  
+                    </div>
                 </div>
-                    
-                    
-                    
-                    
+
+                <?php echo "<input type=hidden name='ubi' id='ubi' value='".$ubicacion."'></input> ";?>
+
                         <button type="submit" class="disenoBoton" name="accion" onclick = "editarDoctor();" value="Editar Datos"> Editar Datos </button>
                 <!-- </form> -->
 

@@ -43,7 +43,7 @@
 
                 </tr>
 
-                <?php 
+                <?php
                 if (!isset($doctores)) {
                     require_once("../model/DaoPaciente.php");
                 } else {
@@ -51,7 +51,6 @@
                 }
                     $dao = new DaoPaciente();
                     $doctores = $dao->listadoDoctores();
-                    
                     foreach ($doctores as $doc) {
                         echo "<tr>
                                 <td>".$doc['idDoctor']."</td>
@@ -60,7 +59,7 @@
                                 <td>".$doc['especialidadM']."</td>
                                 <td>
                                     <ul>
-                                        <li><button><i class='fas fa-edit'></i></button></li>
+                                        <li><a href='../view/viewDoctoresEdit.php?ubicacion=admin&idUsuario=".$doc['idDoctor']."'><button><i class='fas fa-edit'></i></button></a></li>
                                         <li><button><i class='fas fa-trash-alt'></i></button></li>
                                     </ul>
                                 </td>
