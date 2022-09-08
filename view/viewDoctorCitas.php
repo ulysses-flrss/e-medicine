@@ -27,7 +27,7 @@ $datos = explode('/', $dataUser);
 
     <main class="all-container">
     <div class="table-responsive">
-    <table class="table table-striped table-dark">
+    <table class="table">
         <thead>
            <tr>
                 <th scope="col">ID Paciente</th>
@@ -64,7 +64,7 @@ $datos = explode('/', $dataUser);
         </table>
     </div>
     <div class="table-responsive">
-        <table class="table table-striped table-dark">
+        <table class="table">
             <tr>
                 <th scope="col">ID Familiar</th>
                 <th scope="col">Nombre Completo</th>
