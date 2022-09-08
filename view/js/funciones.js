@@ -301,7 +301,7 @@ function registrarUser() {
         e.preventDefault();
       });
       $.ajax({
-          url: '../controller/ctrlPaciente.php',
+          url: '../controller/ctrlUsuario.php',
           data: retornarDatos("registrarUser"),
           type: 'POST',
           dataType: 'json'
@@ -318,7 +318,7 @@ function registrarUser() {
           }).then((result)=>{
             if (document.getElementById('ubi').value == "admin"){
               window.location.href="../view/viewAdminPacientes.php";
-            }else if (document.getElementById('ubi').value == "paciente"){
+            }else{
               window.location.href="../view/viewLogin.php";
             }
           });

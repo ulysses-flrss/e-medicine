@@ -5,6 +5,17 @@
 
   $accion = isset($_REQUEST['accion'])?$_REQUEST['accion']:"";
   $cod = isset($_REQUEST['idUsuario'])?$_REQUEST['idUsuario']:"";
+  $nombre = isset($_REQUEST['nom'])?$_REQUEST['nom']:"";
+  $apellido = isset($_REQUEST['ape'])?$_REQUEST['ape']:"";
+  $peso = isset($_REQUEST['pe'])?$_REQUEST['pe']:"";
+  $altura = isset($_REQUEST['al'])?$_REQUEST['al']:"";
+  $fechaNac = isset($_REQUEST['fn'])?$_REQUEST['fn']:"";
+  $genero = isset($_REQUEST['gen'])?$_REQUEST['gen']:"";
+  $municipio = isset($_REQUEST['muni'])?$_REQUEST['muni']:"";
+  $eMail = isset($_REQUEST['email'])?$_REQUEST['email']:"";
+  $password = isset($_REQUEST['pass'])?$_REQUEST['pass']:"";
+  $telefono = isset($_REQUEST['tel'])?$_REQUEST['tel']:"";
+  $duiP = isset($_REQUEST['dui'])?$_REQUEST['dui']:"";
 
   if($accion=="eliminar"){
       require_once '../model/daoPaciente.php';
@@ -12,6 +23,17 @@
       $dao->eliminarCitas($cod);
       $r = $dao->eliminar($cod);
       echo json_encode($r);
+  }
+
+  if ($accion == "registrarUser") {
+    require_once "../model/classPaciente.php";
+    require_once "../model/DaoPaciente.php";
+    $dao = new DaoPaciente();
+    $cod = $dao->getCodigo();
+    $paciente = new Paciente($cod, $nombre, $apellido, $peso, $altura, $fechaNac, $genero, $municipio, $eMail, $password, $telefono, $duiP);
+    $dao -> insertar($paciente);
+    $r = $paciente->idPaciente;
+    echo json_encode($r);
   }
 
   function username($idUsuario){
