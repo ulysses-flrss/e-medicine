@@ -2,7 +2,7 @@ RewriteEngine On
 
 ErrorDocument 404 http://localhost/e-medicine/404.php
 
-#Options All -Indexes
+Options All -Indexes
 #RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1
 
 RewriteBase /e-medicine/

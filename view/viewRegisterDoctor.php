@@ -31,17 +31,17 @@
                 <?php  echo "<input type='hidden' name='ubi' id='ubi' value='".$ubicacion."'>";  ?>
                     <div class="nombre div-section">
                         <label for="nom">Nombre: *</label>
-                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre" value='Elizabeth Damaris'>
+                        <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre">
                     </div>
 
                     <div class="apellido div-section">
                         <label for="ape">Apellido: *</label>
-                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido" value='Granadino Rivas'>
+                        <input type="text" name="ape" id="ape" placeholder="Ingrese su Apellido">
                     </div>
 
                     <div class="fecha div-section">
                         <label for="fn">Fecha de Nacimiento: *</label>
-                        <input type="date" name="fn" id="fn" value='2000-11-07'>
+                        <input type="date" name="fn" id="fn">
                     </div>
 
                     <div class="genre div-section">
@@ -53,7 +53,7 @@
 
                         <div class="female">
                             <label for="femenino" class="genero">Femenino: </label>
-                            <input type="radio" name="gen" id="femenino" value="femenino" checked>
+                            <input type="radio" name="gen" id="femenino" value="femenino">
                         </div>
                     </div>
 
@@ -66,25 +66,25 @@
 
                     <div class = "div-section">
                         <label for="">Correo Electrónico:</label>
-                        <input type="email" name="email" id="email" placeholder="Ingrese su Correo" value="nuevo@correo.com">
+                        <input type="email" name="email" id="email" placeholder="Ingrese su Correo">
                     </div>
 
                     <div class = "div-section password-section">
                         <label id="pass1" for="pass">Contraseña: *</label>
-                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña" value="123damaris">
+                        <input type="password" name="pass" id="password" placeholder="Ingrese su Contraseña">
                         <i class="fa-solid fa-eye-slash icon" id="eye1" title="Mostrar Contraseña"></i>
 
                         <label id="pass2" for="pass">Confirmar Contraseña: *</label>
-                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña" value="123damaris">
+                        <input type="password" name="pass" id="password2" placeholder="Repita su Contraseña">
                         <i class="fa-solid fa-eye-slash icon" id="eye2" title="Mostrar Contraseña"></i>
                     </div>
 
                     <div class = "div-section last-section">
                         <label for="tel" id="telLabel">Número de Teléfono: *</label>
-                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678" value="7062-0796">
+                        <input type="text" name="tel" id="tel" placeholder="Ejemplo: 1234-5678">
 
                         <label for="dui" id="duiLabel">Ingrese su DUI: *</label>
-                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9." value="77458123-1">
+                        <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9.">
                     </div>
 
                     <div class='submit'>
