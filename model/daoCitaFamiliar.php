@@ -65,7 +65,7 @@
     public function listarDoctor($idEspecialidad){
       $cn = new Conexion();
       $dbh = $cn->getConexion();
-      $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor), genero, vacaciones FROM doctores WHERE especialidadM=:idEspecialidad";
+      $sql = "SELECT idDoctor, CONCAT(nombreDoctor, ' ', apellidoDoctor), genero FROM doctores WHERE especialidadM=:idEspecialidad";
       $stmt = $dbh->prepare($sql);
       $stmt->bindParam(':idEspecialidad', $idEspecialidad);
       $stmt->execute();
