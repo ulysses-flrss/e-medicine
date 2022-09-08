@@ -175,12 +175,13 @@ function programarCita() {
       });
       return false;
     } else {
-      Swal.fire({
+      /*Swal.fire({
         type: 'error',
         title: '¡ERROR!',
-        text: 'Está malo....',
+        text: 'Ha ingresado un dato inválido.',
         footer: 'E-MEDICINE ©'
-      });
+      });*/
+      return false;
     }
   }
 }
@@ -460,7 +461,7 @@ function editarDoctor () {
       }
     }).fail (function (response) {
        console.log(response);
-       sweetAl("Función no disponible por el momento, intente más tarde"); 
+       sweetAl("Función no disponible por el momento, intente más tarde");
     });
     return false;
   }
@@ -496,12 +497,12 @@ function editarDoctor () {
         }
       }).fail (function (response) {
          console.log(response);
-         sweetAl("Función no disponible por el momento, intente más tarde"); 
+         sweetAl("Función no disponible por el momento, intente más tarde");
       });
       return false;
     }
 // }
- 
+
 function validacionDatos(accion) {
   let hoy = new Date();
   let dia = hoy.getDate();
@@ -510,7 +511,8 @@ function validacionDatos(accion) {
   let expAltura = /^([0-1][0-9][0-9])|([2][0-2][0-9])$/;
   let expPeso = /^([0-4][0-9][0-9])$/;
   let expFechaNac = /^([1][9][2-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0-2])[-]([0][1-9]|[1][0-2])[-]([0-2][0-9]|[3][0-1])$/;
-  let expRazCita = /^([a-zA-Z0-9]{4,})$/;
+  let expCita = /^([0-2][0-9]|[3][0-1])[/]([0][1-9]|[1][0-2])[/]([1][9][2-9][0-9]|[2][0][0-1][0-9]|[2][0][2][0-2])$/;
+  let expRazCita = /^([\w\u00C0-\u017F]+\s*[0-9]*)*.*\w*$/m;
   if (accion == "publicarAnuncio"){
     if (!expRazCita.test(document.getElementById('contenidoAnuncio'))){
       sweetAl("No puede publicar un anuncio vacío");
@@ -521,14 +523,37 @@ function validacionDatos(accion) {
   }
   if (accion == "programarCita"){
     console.log("Programar Cita");
+    console.log("validar cita");
     let datosUsuario = retornarDatos("programarCita");
     let expEnf = /^([a-zA-Z]*)$/;
 
-    if (expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades) && expRazCita.test(datosUsuario.razon)) {
+    console.log((/*expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades)/* && */expRazCita.test(datosUsuario.razon)));
+
+    //if (expAltura.test(datosUsuario.al) && expPeso.test(datosUsuario.pe) && expFechaNac.test(datosUsuario.fn) && expEnf.test(datosUsuario.enfermedades) && expRazCita.test(datosUsuario.razon)) {
+    if (!expAltura.test(datosUsuario.al)){
+      sweetAl('La altura ingresada es inválida.');
+      return false;
+    } else if (!expPeso.test(datosUsuario.pe)) {
+      sweetAl('El peso ingresado es inválido.');
+      return false;
+    }else if (datosUsuario.em == "") {
+      sweetAl('Debe seleccionar una especialidad para su cita');
+      return false;
+    } else if (datosUsuario.doctor == "") {
+      sweetAl('Debe seleccionar un doctor para su cita');
+      return false;
+    }else if (!expFechaNac.test(datosUsuario.fc) && !expCita.test(datosUsuario.fc)){
+      sweetAl('La fecha para la cita ingresada es inválida.');
+      return false;
+    }else if (!expEnf.test(datosUsuario.enfermedades)) {
+      sweetAl('El campo de enfermedades poseen datos inválidados.');
+      return false;
+    } else if (!expRazCita.test(datosUsuario.razon)) {
+      sweetAl('La razón ingresada es inválida.');
+      return false;
+    }else{
       console.log(retornarDatos('programarCita'));
       return true;
-    } else {
-      return false;
     }
   }else if (accion == "registrarUser"){
     console.log("Registrar User");
