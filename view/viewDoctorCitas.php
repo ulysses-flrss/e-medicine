@@ -15,7 +15,9 @@ $datos = explode('/', $dataUser);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/viewAdmin-style.css">
+    <link rel="stylesheet" href="css/tabla.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
     <title>Ver Citas</title>
 
     <?php links() ?>
@@ -24,16 +26,20 @@ $datos = explode('/', $dataUser);
     <?php menu() ?>
 
     <main class="all-container">
-    <table>
-            <tr>
-                <th>ID Paciente</th>
-                <th>Nombre Completo</th>
-                <th>Fecha de la Cita</th>
-                <th>Hora de la Cita</th>
-                <th>Enfermedades/ <br> Alergias</th>
-                <th>Razon de Cita/ <br> Sintomas</th>
+    <div class="table-responsive">
+    <table class="table table-striped table-dark">
+        <thead>
+           <tr>
+                <th scope="col">ID Paciente</th>
+                <th scope="col">Nombre Completo</th>
+                <th scope="col">Fecha de la Cita</th>
+                <th scope="col">Hora de la Cita</th>
+                <th scope="col">Enfermedades/ <br> Alergias</th>
+                <th scope="col">Razon de Cita/ <br> Sintomas</th>
             </tr>
 
+        </thead>
+        <tbody scope="row">    
         <?php
             if (!isset($cita)) {
                     require_once("../model/daoCita.php");
@@ -44,7 +50,7 @@ $datos = explode('/', $dataUser);
                     $cita = $dao->listadoCitas($datos[0]);
                     
                     foreach ($cita as $cit) {
-                        echo "<tr>
+                        echo "<tr >
                                 <td>".$cit['idPaciente']."</td>
                                 <td>".$cit['nombre']."</td>
                                 <td>".$cit['fechaCita']."</td>
@@ -54,17 +60,18 @@ $datos = explode('/', $dataUser);
                                 </tr>";
                     }
                  ?>
-
+         </tbody>
         </table>
-
-        <table>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-dark">
             <tr>
-                <th>ID Familiar</th>
-                <th>Nombre Completo</th>
-                <th>Fecha de la Cita</th>
-                <th>Hora de la Cita</th>
-                <th>Enfermedades/ <br> Alergias</th>
-                <th>Razon de Cita/ <br> Sintomas</th>
+                <th scope="col">ID Familiar</th>
+                <th scope="col">Nombre Completo</th>
+                <th scope="col">Fecha de la Cita</th>
+                <th scope="col">Hora de la Cita</th>
+                <th scope="col">Enfermedades/ <br> Alergias</th>
+                <th scope="col">Razon de Cita/ <br> Sintomas</th>
             </tr>
 
         <?php
@@ -89,7 +96,7 @@ $datos = explode('/', $dataUser);
                  ?>
 
         </table>
-    
+    </div>
 
     </main>
         
