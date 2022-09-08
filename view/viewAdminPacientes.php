@@ -33,7 +33,7 @@
         <article>
             <a href="../view/viewRegister.php?ubicacion=admin" class="agregarUser">
                 <img class = "add-image" src="../assets/imgs/add.png" alt="">
-                <p style="font-size:6vw;" class="add-text">Agregar Paciente</p>
+                <p style="font-size:4vw;" class="add-text">Agregar Paciente</p>
             </a>
             <section>
 

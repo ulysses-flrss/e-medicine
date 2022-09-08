@@ -28,7 +28,7 @@
         <article>
             <section class="form-container">
                 <form id = "form" class="form-register" method="POST" onsubmit="submitForm(event)">
-                <?php  echo "<input type='hidden' name='ubi' id='ubi' value='".$ubicacion."'>";  ?>
+                <?php  echo "<input type='hidden' name='ubi' id='ubi' value='".$ubicacion."'>"; ?>
                     <div class="nombre div-section">
                         <label for="nom">Nombre: *</label>
                         <input type="text" name="nom" id="nom" placeholder="Ingrese su Nombre">
@@ -86,9 +86,9 @@
                         <label for="dui" id="duiLabel">Ingrese su DUI: *</label>
                         <input type="text" name="dui" id="dui" placeholder="Ejemplo: 12345678-9.">
                     </div>
-
+    
                     <div class='submit'>
-                        <button type='submit' class='disenoBoton' name='accion' value='registrarUser' onclick='registrarUser();'>Registrarse</button>
+                        <button type='submit' class='disenoBoton' name='accion' value='registrarUserD' onclick='registrarUser();'>Registrarse</button>
                     </div>
                 </form>
             </section>
