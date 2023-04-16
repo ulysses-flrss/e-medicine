@@ -626,9 +626,9 @@ function validacionDatos(accion, tuser) {
     } else if (datosUsuario.doctor == "") {
       sweetAl('Debe seleccionar un doctor para su cita');
       return false;
-    }else if (!expFechaNac.test(datosUsuario.fc) && !expCita.test(datosUsuario.fc)){
-      sweetAl('La fecha para la cita ingresada es inválida.');
-      return false;
+    // }else if (!expFechaNac.test(datosUsuario.fc) && !expCita.test(datosUsuario.fc)){
+    //   sweetAl('La fecha para la cita ingresada es inválida.');
+    //   return false;
     }else if (!expEnf.test(datosUsuario.enfermedades)) {
       sweetAl('El campo de enfermedades poseen datos inválidados.');
       return false;
